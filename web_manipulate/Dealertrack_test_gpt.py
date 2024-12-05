@@ -1,20 +1,19 @@
 import os
-from dotenv import load_dotenv
-from pprint import pprint
+import time
 import requests
+from dotenv import load_dotenv
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import Select
-import time 
 
+#######################################################################  Login  ##############################################################################
+#############################################################################################################################################################
 # .env 파일에서 환경 변수 로드
 load_dotenv()
 DEALERTRACK_ID = os.getenv("DEALERTRACK_ID")
@@ -67,8 +66,9 @@ for name, value in cookies.items():
 # 쿠키를 적용한 후 새로고침
 driver.refresh()
 driver.get("https://www.dealertrack.ca/DTCanada/Core/application/application_new_type.aspx")
-# iframe = driver.find_element("xpath", "/html/frameset/frame[1]")
 
+#############################################################  Crate New Application 선택 ######################################################################
+################################################################################################################################################################
 # "main" 프레임으로 전환
 iframe = driver.find_element(By.ID, "iFrm")
 driver.switch_to.frame(iframe)
@@ -78,29 +78,18 @@ driver.switch_to.frame("main")
 # ddAsset에서 'Automotive' 선택 (value="AU")
 asset_dropdown = Select(driver.find_element(By.ID, "ddAsset"))
 asset_dropdown.select_by_value("AU")
-time.sleep(1)
-# print("Selected Asset 1 :", asset_dropdown.first_selected_option.text)
 
 # ddLenders에서 'Scotiabank' 선택 (value="BNS")
 lenders_dropdown = Select(driver.find_element(By.ID, "ddLenders"))
 lenders_dropdown.select_by_value("BNS")
-time.sleep(1)
-# print("Selected Lender 1 :", lenders_dropdown.first_selected_option.text)
 
 # ddProduct에서 'Lease' 선택 (value="1")
+time.sleep(1)
+
 product_dropdown = Select(driver.find_element(By.ID, "ddProduct"))
 product_dropdown.select_by_value("2")
+
 time.sleep(1)
-# print("Selected Product 1 :", product_dropdown.first_selected_option.text)
-
-# ddApplicantType에서 'Consumer' 선택 (value="1")
-# ApplicantType_dropdown = Select(driver.find_element(By.ID, "ddApplicantType"))
-# ApplicantType_dropdown.select_by_value("1")
-
-# 선택한 옵션 출력 (선택된 옵션 확인)
-print("Selected Asset 2 :", asset_dropdown.first_selected_option.text)
-print("Selected Lender 2 :", lenders_dropdown.first_selected_option.text)
-print("Selected Product 2 :", product_dropdown.first_selected_option.text)
 
 # 'Continue' 버튼 찾기
 continue_button = driver.find_element(By.ID, "btnSave")
@@ -108,39 +97,215 @@ print(continue_button)
 continue_button.click() # 버튼 클릭 (폼 제출)
 print("Form submitted successfully!") # 브라우저가 새 페이지로 이동한 후 확인
 
-# creatapp.click()
+
+########################################################### Deal Management page ###############################################################################
+##################################################################################################################################################################
+
+time.sleep(1)
+# 드롭다운 요소 찾기
+salutation_dropdown = driver.find_element(By.ID, "ctl21_ctl20_ctl00_ddlSalutation")
+
+# Selenium의 Select 클래스 사용
+select = Select(salutation_dropdown)
+
+# "Mr." 옵션 선택
+select.select_by_visible_text("Mr.")
+# 선택한 옵션 확인
+selected_option = select.first_selected_option
+print(f"Selected option: {selected_option.text}")  # 출력: "Mr."
+
+time.sleep(1)
+# First Name 입력 필드 찾기
+first_name_input = driver.find_element(By.ID, "ctl21_ctl20_ctl00_txtFirstName")
+
+# 텍스트 입력
+first_name_input.send_keys("John")
+
+# 입력된 값 확인
+entered_value = first_name_input.get_attribute("value")
+print(f"Entered value: {entered_value}")  # 출력: "John"
+
+time.sleep(1)
+# Middle Name 입력 필드 찾기
+middle_name_input = driver.find_element(By.ID, "ctl21_ctl20_ctl00_txtMiddleName")
+
+# Middle Name 데이터 입력
+middle_name_input.send_keys("Edward")
+
+# 입력된 값 확인
+entered_value = middle_name_input.get_attribute("value")
+print(f"Entered Middle Name: {entered_value}")  # 출력: "Edward"
+
+time.sleep(1)
+# Last Name 입력 필드 찾기
+last_name_input = driver.find_element(By.ID, "ctl21_ctl20_ctl00_txtLastName")
+
+# 데이터 입력
+last_name_input.send_keys("Smith")
+
+# 입력된 값 확인
+entered_value = last_name_input.get_attribute("value")
+print(f"Entered Last Name: {entered_value}")  # 출력: "Smith"
+
+time.sleep(1)
+# 드롭다운 메뉴 요소 찾기
+suffix_dropdown = Select(driver.find_element(By.ID, "ctl21_ctl20_ctl00_ddlSuffix"))
+
+# "SR" 값 선택
+suffix_dropdown.select_by_value("SR")  # value 속성이 "SR"인 옵션 선택
+
+# 선택된 옵션 확인
+selected_option = suffix_dropdown.first_selected_option
+print(f"Selected Suffix: {selected_option.text}")  # 출력: "SR"
+
+####################################################################################################
+# SIN 입력 필드 요소 찾기
+sin_input = driver.find_element(By.ID, "ctl21_ctl20_ctl00_txtSIN")
+sin_input.click()
+sin_input = driver.find_element(By.CLASS_NAME, "MaskedEditFocus")
+
+# SIN 데이터 입력
+sin_data = "555555555"  # 예시 SIN 번호
+sin_input.send_keys(sin_data)  # 데이터 입력
+time.sleep(1)
+
+# 입력 확인
+print(f"SIN Entered: {sin_input.get_attribute('value')}")
+# class="MaskedEditFocus" 요소 찾기
+phone_input = driver.find_element(By.CLASS_NAME, "MaskedEditFocus")
+# 전화번호 입력
+phone_number = "4374536013"  # 예시 전화번호
+phone_input.send_keys(phone_number)  # 새로운 데이터 입력
+time.sleep(1)
+# 입력 확인
+print(f"Phone Number Entered: {phone_input.get_attribute('value')}")
 
 
-# # iframe 전환 (frameset 내의 첫 번째 프레임으로 전환)
-# iframe = WebDriverWait(driver, 10).until(
-#     EC.presence_of_element_located((By.ID, "iFrm"))
-# )
-# driver.switch_to.frame(iframe)  # 해당 iframe으로 전환
-# print(f"---{iframe}---")
-# # Create App 버튼 클릭 (ID가 "PrepareApp"인 요소를 클릭)
-# create_app_element = WebDriverWait(driver, 10).until(
-#     EC.element_to_be_clickable((By.ID, "PrepareApp"))
-# )
-# print(f"---{create_app_element}---")
-# # 클릭하여 Create App 활성화
-# create_app_element.click()
+# class="MaskedEditFocus" 요소 찾기
+mobile_phone_input = driver.find_element(By.CLASS_NAME, "MaskedEditFocus")
+# 전화번호 입력
+mobile_phone_number = "4374536003"  # 예시 전화번호
+# phone_input.clear()  # 기존 값 삭제
+mobile_phone_input.send_keys(mobile_phone_number)  # 새로운 데이터 입력
+time.sleep(1)
+# 입력 확인
+print(f"Mobile Phone Number Entered: {mobile_phone_input.get_attribute('value')}")
 
-# # 드롭다운 요소 (ddLenders) 기다리기
-# dropdown_element = WebDriverWait(driver, 10).until(
-#     EC.presence_of_element_located((By.ID, "ddLenders"))
-# )
+# class="MaskedEditFocus" 요소 찾기
+month_input = driver.find_element(By.ID, "ctl21_ctl20_ctl00_txtDateofBirth_MM")
 
-# # 드롭다운에서 "Scotiabank" 선택
-# select = Select(dropdown_element)
-# select.select_by_visible_text("Scotiabank")
-
-# # 선택한 옵션 확인
-# selected_option = select.first_selected_option
-# print(f"Selected option: {selected_option.text}")
-
-# # 페이지의 현재 URL 출력
-# print(f"New URL after click: {driver.current_url}")
+# 월 입력
+month_value  = "12"
+month_input.send_keys(month_value)  
+time.sleep(1)
+# 입력 확인
+print(f"Month Entered: {month_input.get_attribute('value')}")
 
 
-# # 브라우저 종료
+
+day_input = driver.find_element(By.ID, "ctl21_ctl20_ctl00_txtDateofBirth_DD")
+# 일 입력
+day_value  = "6"  # 예시 전화번호
+day_input.send_keys(day_value)  # 새로운 데이터 입력
+time.sleep(1)
+# 입력 확인
+print(f"Day Entered: {day_input.get_attribute('value')}")
+
+
+# class="MaskedEditFocus" 요소 찾기
+year_input = driver.find_element(By.ID, "ctl21_ctl20_ctl00_txtDateofBirth_YYYY")
+
+# year 입력
+year_value  = "2024"
+year_input.send_keys(year_value)  
+time.sleep(1)
+# 입력 확인
+print(f"Year Entered: {year_input.get_attribute('value')}")
+####################################################################################################
+
+# Gender 드롭다운 찾기
+gender_select = driver.find_element(By.ID, "ctl21_ctl20_ctl00_ddlGender")
+
+# 드롭다운을 Select 객체로 변환
+select = Select(gender_select)
+
+# "Female" 옵션 선택
+select.select_by_value("FEMALE")
+
+# 선택된 값 확인
+selected_option = select.first_selected_option
+time.sleep(1)
+print(f"Selected Gender: {selected_option.text}")
+
+
+
+# Marital Status 드롭다운 찾기
+marital_status_select = driver.find_element(By.ID, "ctl21_ctl20_ctl00_ddlMaritalStatus")
+
+# 드롭다운을 Select 객체로 변환
+select = Select(marital_status_select)
+
+# "Married" 옵션 선택
+select.select_by_value("MR")
+
+# 선택된 값 확인
+selected_option = select.first_selected_option
+time.sleep(1)
+print(f"Selected Marital Status: {selected_option.text}")
+
+
+
+
+# 이메일 입력 필드 찾기
+email_input = driver.find_element(By.ID, "ctl21_ctl20_ctl00_txtEmail")
+
+# 이메일 데이터 입력
+email_input.send_keys("example@example.com")
+
+# 입력된 이메일 값 확인
+entered_email = email_input.get_attribute("value")
+time.sleep(1)
+
+print(f"Entered Email: {entered_email}")
+
+# 'Language' 드롭다운 찾기
+language_dropdown = driver.find_element(By.ID, "ctl21_ctl20_ctl00_ddlLanguage")
+
+# Select 객체로 드롭다운을 제어
+select = Select(language_dropdown)
+
+# 'English' 선택 (value="en-CA")
+select.select_by_value("en-CA") # fr-CA
+
+
+# Postal Code 입력 필드 찾기
+postal_code_input = driver.find_element(By.ID, "ctl21_ctl21_ctl00_txtPostalCode")
+postal_code_input.click()
+postal_code_input = driver.find_element(By.CLASS_NAME, "MaskedEditFocus")
+
+# 우편번호 입력 (예시 값)
+postal_code = "m2n 2y8"  # 원하는 우편번호로 대체하세요
+
+# 우편번호 데이터 입력
+postal_code_input.send_keys(postal_code)
+
+# 입력된 값 확인
+entered_value = postal_code_input.get_attribute("value")
+# time.sleep(1)
+print(f"Entered Postal Code: {entered_value}")
+
+# 'Address Lookup' 버튼 찾기
+address_lookup_button = driver.find_element(By.ID, "ctl21_ctl21_ctl00_btnPostalCodeLookup")
+
+# 버튼 클릭
+address_lookup_button.click()
+
+# 버튼 클릭 후 결과를 확인할 수 있도록 시간 대기
+time.sleep(1)  # 필요한 경우 기다려주세요.
+print("Address Lookup button clicked successfully!")
+
+#드라이버 종료
+# time.sleep(1)
+# time.sleep(1)
+# time.sleep(1)
 # driver.quit()
