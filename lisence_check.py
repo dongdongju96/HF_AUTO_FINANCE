@@ -1,9 +1,12 @@
 import os
 import json
 from pprint import pprint
+from pyairtable import Api
+from datetime import datetime
 from dotenv import load_dotenv
 from google.cloud import vision
-from pyairtable import Api
+
+
 
 
 class AirtableAPI:
@@ -73,10 +76,13 @@ class LicenseDetection:
     def perform_task_for_keyword(self, keyword, client_data_id):
         """Perform task based on detected license keyword"""
         if keyword == 'G1':
-            self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "G1 license"})
+            self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Need at least G1 license"})
         elif keyword == 'G':
-            pass
+            self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Need at least G1 license"})
         elif keyword == 'G2':
+            # Dealer check 매크로 실행
+            # Dealer check에 고객 데이터 값 입력
+            # AIRTABLE_CLIENT_DATA_ID값과 table_list_current_date.json을 조회해서 ID 값과 비교 후 매크로 값 입력
             pass
         else:
             self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Can't find license CLASS"})
@@ -84,6 +90,15 @@ class LicenseDetection:
     def process_records(self):
         """Process records from Airtable and detect licenses"""
         table_list = self.airtable_client.get_all_records()
+        # 현재 날짜를 파일 이름에 추가
+        current_date = datetime.now().strftime('%Y-%m-%d')  # "YYYY-MM-DD" 형식
+        file_name = os.path.join(".", "airtable_data", f"table_list_{current_date}.json")
+
+        # 데이터를 JSON 파일로 저장
+        with open(file_name, 'w', encoding='utf-8') as file:
+            json.dump(table_list, file, ensure_ascii=False, indent=4)
+
+        print(f"Data saved to {file_name}")
         
         for record in table_list:
             if "Driver's License" in record["fields"] and record["fields"]["Status"] == "New Lead":
