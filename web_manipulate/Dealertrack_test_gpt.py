@@ -16,9 +16,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import Select
-from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 
-# json 파일 읽기 향후 data id 값 비교로 진행
 import json
 
 # func
@@ -49,8 +48,7 @@ file_name = os.path.join(".", "airtable_data", f"table_list_2024-12-11.json")
 # JSON 파일 읽기
 with open(file_name, 'r', encoding='utf-8') as file:
     _data = json.load(file)
-
-_data = _data[9]
+_data = _data[0]
 #######################################################################  Login  ##############################################################################
 #############################################################################################################################################################
 # .env 파일에서 환경 변수 로드
@@ -97,7 +95,7 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), opti
 # 웹페이지 로드
 driver.get(dealertrack_default_url)
 
-print("now started")
+print(f"now started")
 
 # Requests 세션의 쿠키를 Selenium으로 복사
 cookies = session.cookies.get_dict()
@@ -108,6 +106,8 @@ for name, value in cookies.items():
 driver.refresh()
 driver.get("https://www.dealertrack.ca/DTCanada/Core/application/application_new_type.aspx")
 
+wait = WebDriverWait(driver, 20)
+
 #############################################################  Crate New Application 선택 ######################################################################
 ################################################################################################################################################################
 # "main" 프레임으로 전환
@@ -115,7 +115,6 @@ iframe = driver.find_element(By.ID, "iFrm")
 driver.switch_to.frame(iframe)
 driver.switch_to.frame("main")
 
-wait = WebDriverWait(driver, 10)
 
 ### 드롭다운 요소 찾기
 # ddAsset에서 'Automotive' 선택 (value="AU")
@@ -159,7 +158,7 @@ print("Form submitted successfully!") # 브라우저가 새 페이지로 이동�
 ################################################################################################################################################################
 
 try:
-    salutation_dropdown = WebDriverWait(driver, 10).until(
+    salutation_dropdown = WebDriverWait(driver, 20).until(
         EC.presence_of_element_located((By.ID, "ctl21_ctl20_ctl00_ddlSalutation"))
     )
     print("salutation_dropdown field is loaded.")
@@ -197,50 +196,30 @@ else:
 selected_option = select.first_selected_option
 print(f"Selected option: {selected_option.text}")  # 출력: "Mr."
 
-# time.sleep(1)
 # First Name 입력 필드 찾기
 first_name_input = driver.find_element(By.ID, "ctl21_ctl20_ctl00_txtFirstName")
-
-# 텍스트 입력
 first_name_input.send_keys(_data["fields"].get("First Name", ""))
 
-
-
-# 입력된 값 확인
 entered_value = first_name_input.get_attribute("value")
 print(f"Entered value: {entered_value}")  # 출력: "John"
 
-# time.sleep(1)
 # Middle Name 입력 필드 찾기
 middle_name_input = driver.find_element(By.ID, "ctl21_ctl20_ctl00_txtMiddleName")
 
 # Middle Name 데이터 입력
 middle_name_input.send_keys(_data["fields"].get("Middle Name", ""))
-
-# 입력된 값 확인
 entered_value = middle_name_input.get_attribute("value")
 print(f"Entered Middle Name: {entered_value}")  # 출력: "Edward"
 
 # time.sleep(1)
 # Last Name 입력 필드 찾기
 last_name_input = driver.find_element(By.ID, "ctl21_ctl20_ctl00_txtLastName")
-
-# 데이터 입력
 last_name_input.send_keys(_data["fields"].get("Last Name", ""))
 
-# 입력된 값 확인
 entered_value = last_name_input.get_attribute("value")
 print(f"Entered Last Name: {entered_value}")  # 출력: "Smith"
 
-# 드롭다운 메뉴 요소 찾기
 # suffix_dropdown = Select(driver.find_element(By.ID, "ctl21_ctl20_ctl00_ddlSuffix"))
-
-# # "SR" 값 선택
-# suffix_dropdown.select_by_value("SR")  # value 속성이 "SR"인 옵션 선택
-
-# # 선택된 옵션 확인
-# selected_option = suffix_dropdown.first_selected_option
-# print(f"Selected Suffix: {selected_option.text}")  # 출력: "SR"
 
 ################################################################# Number 입력 ####################################################################################
 # SIN 입력 필드 요소 찾기
@@ -251,40 +230,31 @@ if "SIN" in _data["fields"]:
 
     # SIN 데이터 입력
     _digit = _data["fields"].get("SIN", "")
-    # sin_data = "555 555 555"  # 예시 SIN 번호
+    # sin_data = "555 555 555"
     if len(_digit) == 9:
         sin_input.send_keys(_data["fields"].get("SIN", ""))
     # 입력 확인
     print(f"SIN Entered: {sin_input.get_attribute('value')}")
 
-# time.sleep(1)
-
 # class="MaskedEditFocus" 요소 찾기
 phone_field = wait.until(EC.presence_of_element_located((By.ID, "ctl21_ctl20_ctl00_txtPhone")))
 phone_field.click()
 phone_input = driver.find_element(By.CLASS_NAME, "MaskedEditFocus")
-# phone_field.clear()
 # 전화번호 입력
-# phone_number = "4374536013"  # 예시 전화번호
+# phone_number = "4374536013"
 if "Phone" in _data["fields"]:
     phone_number = remove_country_code_and_non_digits(_data["fields"]["Phone"])
 phone_input.send_keys(phone_number)
-
-# time.sleep(1)
-# 입력 확인
 print(f"Phone Number Entered: {phone_input.get_attribute('value')}")
 
 
 # class="MaskedEditFocus" 요소 찾기
 mobile_phone_input = driver.find_element(By.CLASS_NAME, "MaskedEditFocus")
 # 전화번호 입력
-# mobile_phone_number = "4374536003"  # 예시 전화번호
-# phone_input.clear()  # 기존 값 삭제
+# mobile_phone_number = "4374536003"
 if "Phone" in _data["fields"]:
     mobile_phone_number = remove_country_code_and_non_digits(_data["fields"]["Phone"])
 mobile_phone_input.send_keys(mobile_phone_number)
-# time.sleep(1)
-# 입력 확인
 print(f"Mobile Phone Number Entered: {mobile_phone_input.get_attribute('value')}")
 
 
@@ -296,20 +266,15 @@ year, month, day = date_of_birth.split("-")
 month_input = driver.find_element(By.ID, "ctl21_ctl20_ctl00_txtDateofBirth_MM")
 
 # 월 입력
-# month_value  = "12"
 month_input.send_keys(month)  
-# time.sleep(1)
-# 입력 확인
 print(f"Month Entered: {month_input.get_attribute('value')}")
 
 
 
 day_input = driver.find_element(By.ID, "ctl21_ctl20_ctl00_txtDateofBirth_DD")
 # 일 입력
-# day_value  = "6"  # 예시 전화번호
-day_input.send_keys(day)  # 새로운 데이터 입력
-# time.sleep(1)
-# 입력 확인
+# day_value  = "6"
+day_input.send_keys(day)
 print(f"Day Entered: {day_input.get_attribute('value')}")
 
 
@@ -319,18 +284,12 @@ year_input = driver.find_element(By.ID, "ctl21_ctl20_ctl00_txtDateofBirth_YYYY")
 # year 입력
 # year_value  = "2024"
 year_input.send_keys(year)  
-# time.sleep(1)
-# 입력 확인
 print(f"Year Entered: {year_input.get_attribute('value')}")
 ################################################################################################################################################################## 
-
-
 # Gender 드롭다운 찾기
 gender_select = driver.find_element(By.ID, "ctl21_ctl20_ctl00_ddlGender")
-
 # 드롭다운을 Select 객체로 변환
 select = Select(gender_select)
-
 # "Female" 옵션 선택
 if "Gender" in _data["fields"] and _data["fields"]["Gender"]:
     if _data["fields"]["Gender"]=="Male":
@@ -340,9 +299,7 @@ if "Gender" in _data["fields"] and _data["fields"]["Gender"]:
 else:
     pass
 
-# 선택된 값 확인
 selected_option = select.first_selected_option
-# time.sleep(1)
 print(f"Selected Gender: {selected_option.text}")
 
 # Marital Status 드롭다운 찾기
@@ -366,21 +323,15 @@ if "Marital Status" in _data["fields"] and _data["fields"]["Marital Status"]:
 else:
     pass
 
-# 선택된 값 확인
 selected_option = select.first_selected_option
-# time.sleep(1)
 print(f"Selected Marital Status: {selected_option.text}")
 
 # 이메일 입력 필드 찾기
 email_input = driver.find_element(By.ID, "ctl21_ctl20_ctl00_txtEmail")
-
-# 이메일 데이터 입력
 email_input.send_keys(_data["fields"].get("Email", ""))
 
 # 입력된 이메일 값 확인
 entered_email = email_input.get_attribute("value")
-# time.sleep(1)
-
 print(f"Entered Email: {entered_email}")
 
 # 'Language' 드롭다운 찾기
@@ -414,25 +365,20 @@ postal_code_input = driver.find_element(By.CLASS_NAME, "MaskedEditFocus")
 
 # 우편번호 입력
 postal_code_input.send_keys(_data["fields"].get("Postal Code", ""))
-
-# 입력된 값 확인
 entered_value = postal_code_input.get_attribute("value")
-# time.sleep(1)
 print(f"Entered Postal Code: {entered_value}")
 
 # 'Address Lookup' 버튼 찾기
 address_lookup_button = driver.find_element(By.ID, "ctl21_ctl21_ctl00_btnPostalCodeLookup")
-
-# 버튼 클릭
 address_lookup_button.click()
 
 # 버튼 클릭 후 결과를 확인할 수 있도록 시간 대기
-time.sleep(3)  # 필요한 경우 기다려주세요.
+time.sleep(5)
 print("Address Lookup button clicked successfully!")
 
 # 'Duration in Years' 텍스트 필드 요소 찾기
 try:
-    duration_years_input = WebDriverWait(driver, 10).until(
+    duration_years_input = WebDriverWait(driver, 20).until(
         EC.presence_of_element_located((By.ID, "ctl21_ctl21_ctl00_CDurationCurrentAddress_Y"))
     )
     print("Duration field is loaded.")
@@ -440,28 +386,18 @@ except:
     print("Timeout: Duration input field was not found.")
 
 # Duration at Current Address
-# 값 입력 (예: '5')
 # duration_years_value = "2"
-# duration_years_input.send_keys(duration_years_value)
 duration_years_input.send_keys(_data["fields"].get("Duration at Current Address", ""))
-
-# 입력된 값 확인
 entered_value = duration_years_input.get_attribute("value")
-print(f"Entered Duration in Years: {entered_value}")  # 출력: Entered Duration in Years: 5
+print(f"Entered Duration in Years: {entered_value}")
 
 # 'Duration in Months' 텍스트 필드 요소 찾기
 duration_months_input = driver.find_element(By.ID, "ctl21_ctl21_ctl00_CDurationCurrentAddress_M")
-
-# 값 입력 (예: '6')
 duration_months_value = "6"
 duration_months_input.send_keys(duration_months_value)
 
-# 입력된 값 확인
 entered_value = duration_months_input.get_attribute("value")
-print(f"Entered Duration in Months: {entered_value}")  # 출력: Entered Duration in Months: 6
-
-
-
+print(f"Entered Duration in Months: {entered_value}")
 
 ######################################################## Previous Address #################################################################
 ###########################################################################################################################################
@@ -496,7 +432,7 @@ if "Housing Status" in _data["fields"] and _data["fields"]["Housing Status"]:
         mortgage_holder_input.clear()
         mortgage_holder_input.send_keys(_data["fields"].get("Lender", ""))
         entered_value = mortgage_holder_input.get_attribute("value")
-        print(f"Entered Mortgage Holder: {entered_value}")  # 출력: Entered Mortgage Holder: ABC Bank
+        print(f"Entered Mortgage Holder: {entered_value}")
 
     elif _data["fields"]["Housing Status"]=="Own Free & Clear":
         select.select_by_value("OF")
@@ -507,52 +443,28 @@ if "Housing Status" in _data["fields"] and _data["fields"]["Housing Status"]:
 else:
     pass
 
-
-# 선택한 옵션 확인
 selected_option = select.first_selected_option
-print(f"Selected Home Option: {selected_option.text}")  # 출력: Own with Mortgage
-
-# # JSON 데이터에서 옵션 값 로드 (예시)
-# home_option_value = json_data["home_status"]  # 예: 'OW'
-
-# # 옵션 선택
-# select.select_by_value(home_option_value)
-
+print(f"Selected Home Option: {selected_option.text}")
 
 # 'Market Value' 입력 필드 찾기
 market_value_input = driver.find_element(By.ID, "ctl21_ctl23_ctl00_txtmarketValue")
 
-# 값 입력 (예: 500000)
 # Market Value
-market_value_input.clear()  # 기존 값 삭제
+market_value_input.clear()
 market_value_input.send_keys(_data["fields"].get("Market Value", ""))
 
-# 입력된 값 확인
 entered_value = market_value_input.get_attribute("value")
-print(f"Entered Market Value: {entered_value}")  # 출력: Entered Market Value: 500000
-
-
-# # JSON 데이터에서 값 로드 (예시)
-# market_value = json_data["market_value"]  # 예: '500000'
-
-# # 값 입력
-# market_value_input.clear()
-# market_value_input.send_keys(market_value)
+print(f"Entered Market Value: {entered_value}")
 
 # 'Mortgage Amount' 입력 필드 찾기
 mortgage_amount_input = driver.find_element(By.ID, "ctl21_ctl23_ctl00_txtMortgageAmount")
 
-# 값 입력 (예: 200000)
-# mortgage_amount = "200000"
-# mortgage_amount_input.send_keys(mortgage_amount)
 # Mortgage Amount
-mortgage_amount_input.clear()  # 기존 값 삭제
+mortgage_amount_input.clear()
 market_value_input.send_keys(_data["fields"].get("Mortgage Amount", ""))
 
-
-# 입력된 값 확인
 entered_value = mortgage_amount_input.get_attribute("value")
-print(f"Entered Mortgage Amount: {entered_value}")  # 출력: Entered Mortgage Amount: 200000
+print(f"Entered Mortgage Amount: {entered_value}")
 
 # 'Mortgage Holder' 입력 필드 찾기
 # Lender
@@ -571,17 +483,12 @@ print(f"Entered Mortgage Amount: {entered_value}")  # 출력: Entered Mortgage A
 # 'Monthly Payment' 입력 필드 찾기
 monthly_payment_input = driver.find_element(By.ID, "ctl21_ctl23_ctl00_txtMonthlyPayment")
 
-# 값 입력 (예: '1200')
 # Monthly Payment
-# monthly_payment = "1200"
-# monthly_payment_input.send_keys(monthly_payment)
-monthly_payment_input.clear()  # 기존 값 삭제
+monthly_payment_input.clear() 
 monthly_payment_input.send_keys(_data["fields"].get("Monthly Payment", ""))
 
-
-# 입력된 값 확인
 entered_value = monthly_payment_input.get_attribute("value")
-print(f"Entered Monthly Payment: {entered_value}")  # 출력: Entered Monthly Payment: 1200
+print(f"Entered Monthly Payment: {entered_value}")
 
 
 
@@ -662,22 +569,16 @@ else:
 # employment_type = "Self-Employed"
 # select_employment_type.select_by_visible_text(employment_type)
 
-# 선택된 옵션 확인
 selected_option = select_employment_type.first_selected_option
-print(f"Selected Employment Type: {selected_option.text}")  # 출력: Selected Employment Type: Self-Employed
+print(f"Selected Employment Type: {selected_option.text}")
 
 # 'Current Employer' 입력 필드 찾기
 # Employer Name
 current_employer_input = driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtEmployerCurEmp")
-
-# 값 입력
-# current_employer_name = "Tech Solutions Inc."
-# current_employer_input.send_keys(current_employer_name)
 current_employer_input.send_keys(_data["fields"].get("Employer Name", ""))
 
-# 입력된 값 확인
 entered_value = current_employer_input.get_attribute("value")
-print(f"Entered Current Employer: {entered_value}")  # 출력: Entered Current Employer: Tech Solutions Inc.
+print(f"Entered Current Employer: {entered_value}")
 
 # 'Employment Status' 드롭다운 요소 찾기
 employment_status_dropdown = driver.find_element(By.ID, "ctl21_ctl24_ctl00_ddlStatusCurEmp")
@@ -695,12 +596,9 @@ select = Select(employment_status_dropdown)
 # SEAW : Seasonal Winter
 # SE : Self Employed
 employment_status_value = "FT"
-select.select_by_value(employment_status_value)
-
-# 선택된 값 확인
+current_employer_input.send_keys(_data["fields"].get("Employer Name", ""))
 selected_option = select.first_selected_option
-print(f"Selected Employment Status: {selected_option.text}")  # 출력: Selected Employment Status: Full time
-
+print(f"Selected Employment Status: {selected_option.text}")
 
 # 'Occupation' 입력 필드 찾기
 # Occupation 
@@ -752,38 +650,27 @@ select = Select(address_type_dropdown)
 # PB : Postal Box
 select.select_by_value("ST")
 
-# 선택된 옵션 확인
 selected_option = select.first_selected_option
-print(f"Selected Address Type: {selected_option.text}")  # 출력: Selected Address Type: Street
+print(f"Selected Address Type: {selected_option.text}")
 
 # 'Suite Number Current Employer' 입력 필드 찾기
 suite_number_input = driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtSuiteNumberCurEmp")
 
-# 텍스트 입력
 suite_number_input.send_keys("123A")
 
-# 입력된 값 확인
 entered_value = suite_number_input.get_attribute("value")
 print(f"Entered Suite Number: {entered_value}")  # 출력: Entered Suite Number: 123A
 
 # 'Street Number Current Employer' 입력 필드 찾기
 street_number_input = driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtStreetNumberCurEmp")
-
-# 텍스트 입력
 street_number_input.send_keys("456")
-
-# 입력된 값 확인
 entered_value = street_number_input.get_attribute("value")
 print(f"Entered Street Number: {entered_value}")  # 출력: Entered Street Number: 456
 
 
 # 'Street Name Current Employer' 입력 필드 찾기
 street_name_input = driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtStreetNameCurEmp")
-
-# 텍스트 입력
 street_name_input.send_keys("Maple Street")
-
-# 입력된 값 확인
 entered_value = street_name_input.get_attribute("value")
 print(f"Entered Street Name: {entered_value}")  # 출력: Entered Street Name: Maple Street
 
@@ -1052,7 +939,6 @@ postal_code_input.send_keys(_data["fields"].get("Employer Postal Code", ""))
 # 입력된 값 확인
 print(f"Entered Postal Code: {postal_code_input.get_attribute('value')}")  # 출력: Entered Postal Code: M1A 2B3
 
-time.sleep(1)
 # 'Telephone' 입력 필드 찾기
 # Employer Phone
 telephone_input = driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtTelephoneCurEmp")
@@ -1133,7 +1019,6 @@ select = Select(other_income_type_dropdown)
 other_income_type_value = "Disability Payments"
 select.select_by_visible_text(other_income_type_value)
 
-# 선택된 값 확인
 selected_option = select.first_selected_option
 print(f"Selected Other Income Type: {selected_option.text}")  # 출력: Selected Other Income Type: Disability Payments
 
@@ -1179,8 +1064,7 @@ if other_income_type_value=="Other":
 
     # 입력된 값 확인
     entered_value = other_description_input.get_attribute("value")
-    print(f"Entered Other Description: {entered_value}")  # 출력: Entered Other Description: Additional Income
-
+    print(f"Entered Other Description: {entered_value}")
 
 ######################################################## Financial Summary ################################################################
 ###########################################################################################################################################
@@ -1232,7 +1116,7 @@ vin_lookup_button = driver.find_element(By.ID, "ctl21_ctl19_ctl00_btnVINLookup")
 vin_lookup_button.click()
 
 # 'VIN Lookup' 제목이 나타날 때까지 대기
-WebDriverWait(driver, 10).until(
+WebDriverWait(driver, 20).until(
     EC.presence_of_element_located((By.ID, "DTC$ModalPopup$TitleID3"))
 )
 
@@ -1257,24 +1141,35 @@ rows = table.find_elements(By.TAG_NAME, "tr")
 
 # 'Series' 열에 있는 값을 비교할 값 설정
 # "Vehicle Trim"
-target_series = "Base"  # 예시로 "Touring" 설정 (원하는 값으로 수정)
+if "Vehicle Trim" in _data["fields"]:
+    target_series = str(_data["fields"].get("Vehicle Trim", ""))
 
-# 첫 번째 행은 헤더이므로 두 번째 행부터 시작
-for row in rows[1:]:
-    # 각 행의 모든 셀(td 요소)을 가져오기
-    cells = row.find_elements(By.TAG_NAME, "td")
-    
-    # 셀이 충분히 있는지 확인 (Series 열은 6번째, 인덱스는 5)
-    if len(cells) > 5:
-        # 'Series' 열의 값을 가져오기 (6번째 열)
-        series_value = cells[5].text.strip()
-        
-        # 'Series' 값이 target_series와 일치하는지 비교
-        if series_value == target_series:
-            # 해당 행의 라디오 버튼을 클릭 (라디오 버튼은 2번째 열에 있음)
-            radio_button = cells[1].find_element(By.TAG_NAME, "input")
-            radio_button.click()
-            break  # 일치하는 값을 찾으면 클릭하고 반복 종료
+    # 첫 번째 행은 헤더이므로 두 번째 행부터 시작
+    for row in rows[1:]:
+        # 각 행의 모든 셀(td 요소)을 가져오기
+        cells = row.find_elements(By.TAG_NAME, "td")
+
+        # 셀이 충분히 있는지 확인 (Series 열은 6번째, 인덱스는 5)
+        if len(cells) > 5:
+            # 'Series' 열의 값을 가져오기 (6번째 열)
+            series_value = cells[5].text.strip()
+
+            # 'Series' 값이 target_series와 일치하는지 비교
+            if series_value == target_series.capitalize() or \
+               series_value == target_series.upper() or \
+               series_value == target_series.lower():
+                # 해당 행의 라디오 버튼을 클릭 (라디오 버튼은 2번째 열에 있음)
+                radio_button = cells[1].find_element(By.TAG_NAME, "input")
+                radio_button.click()
+                break  # 일치하는 값을 찾으면 클릭하고 반복 종료
+    else:
+        # 일치하는 값이 없을 경우 첫 번째 라디오 버튼 클릭
+        first_row = rows[1]
+        first_radio_button = first_row.find_elements(By.TAG_NAME, "td")[1].find_element(By.TAG_NAME, "input")
+        first_radio_button.click()
+
+# print(f"일치하는 값: {matching_value}")
+
 
 # 'Close' 버튼 클릭
 # try:
@@ -1535,17 +1430,16 @@ print(f"Selected Program: {selected_option.text}")
 # wait.until(EC.presence_of_element_located((By.ID, "ctl21_ctl23_ctl00_txtCashPrice")))
 cash_price_input = wait.until(EC.element_to_be_clickable((By.ID, "ctl21_ctl23_ctl00_txtCashPrice")))
 
-# 기존 값 지우기
-cash_price_input.clear()
-time.sleep(1)
-
 # 값 입력하기
+cash_price_input.click()
+time.sleep(0.5)
+
 cash_price_input.send_keys(str(_data["fields"].get("Cash Price", "")))
+cash_price_input.send_keys(Keys.TAB)
 
 # 입력된 값 확인
 entered_value = cash_price_input.get_attribute("value")
-print(f"Entered Cash Price: {entered_value}")  # 출력: Entered Cash Price: 25000
-
+print(f"Entered Cash Price: {entered_value}")  
 ######################################################### Financing Terms #################################################################
 ###########################################################################################################################################
 # Loan Term
@@ -1597,7 +1491,7 @@ select_payment_frequency.select_by_value(payment_frequency_value)
 
 # 선택된 값 확인
 selected_option = select_payment_frequency.first_selected_option
-print(f"Selected Payment Frequency: {selected_option.text}")  # 출력: Selected Payment Frequency: Bi-Weekly
+print(f"Selected Payment Frequency: {selected_option.text}")
 
 time.sleep(1)
 # # 'Dealer Interest Rate' 입력 필드 찾기
@@ -1682,6 +1576,12 @@ while True:
 ############################################### Additional Lender Information #############################################################
 ###########################################################################################################################################
 
+scene_card_input = wait.until(EC.element_to_be_clickable((By.ID, "ctl21_ctl20_ctl00_txtSceneCard")))
+scene_card_input.send_keys("5718683723")
+
+entered_value = scene_card_input.get_attribute("value")
+print(f"Entered Scene Card: {entered_value}")
+
 # # 'Sales Code' 입력 필드 찾기
 # sales_code_input = driver.find_element(By.ID, "ctl21_ctl20_ctl00_txtSalesCode")
 
@@ -1702,329 +1602,183 @@ while True:
 
 #################################################################### Trade In #############################################################
 ###########################################################################################################################################
-# 'Year' 입력 필드 찾기
-year_input = driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtYear")
+if "Trade In" in _data["fields"]:
+    if _data["fields"].get("Trade In", "")=="Yes":
 
-# 값 입력 (예: '2024')
-year_value = "2024"
-year_input.clear()  # 기존 값 지우기
-year_input.send_keys(year_value)
+        # Trade-In Year
+        year_input = driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtYear")
+        year_input.clear()
+        year_input.send_keys(_data["fields"].get("Trade-In Year", ""))  # 새로운 값 입력
 
-# 입력된 값 확인
-entered_value = year_input.get_attribute("value")
-print(f"Entered Year: {entered_value}")  # 출력: Entered Year: 2024
+        entered_value = year_input.get_attribute("value")
+        print(f"Entered Cash Down Payment: {entered_value}")
 
-# 'Make' 입력 필드 찾기
-make_input = driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtMake")
+        # Trade-In Make
+        make_input = driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtMake")
+        make_input.clear()
+        make_input.send_keys(_data["fields"].get("Trade-In Make", ""))
+        entered_value = make_input.get_attribute("value")
+        print(f"Entered Cash Down Payment: {entered_value}")
 
-# 값 입력 (예: 'Toyota')
-make_value = "Toyota"
-make_input.clear()  # 기존 값 지우기
-make_input.send_keys(make_value)
+        # Trade-In Model
+        model_input = driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtModel")
+        model_input.clear()
+        model_input.send_keys(_data["fields"].get("Trade-In Model", ""))
+        entered_value = model_input.get_attribute("value")
+        print(f"Entered Cash Down Payment: {entered_value}")
 
-# 입력된 값 확인
-entered_value = make_input.get_attribute("value")
-print(f"Entered Make: {entered_value}")  # 출력: Entered Make: Toyota
+        # Trade-In VIN
+        vin_input = driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtVIN")
+        vin_input.clear()
+        vin_input.send_keys(_data["fields"].get("Trade-In VIN", ""))
+        entered_value = vin_input.get_attribute("value")
+        print(f"Entered Cash Down Payment: {entered_value}")
 
-# 'Model' 입력 필드 찾기
-model_input = driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtModel")
+        # Trade-In Odometer
+        mileage_input = driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtMileage")
+        mileage_input.clear()
+        mileage_input.send_keys(_data["fields"].get("Trade-In Odometer", ""))
+        entered_value = mileage_input.get_attribute("value")
+        print(f"Entered Cash Down Payment: {entered_value}")
+        
+        # Allowance
+        allowance_input = driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtAllowance")
+        allowance_input.clear()
+        allowance_input.send_keys(_data["fields"].get("Allowance", ""))
+        entered_value = allowance_input.get_attribute("value")
+        print(f"Entered Cash Down Payment: {entered_value}")
 
-# 값 입력 (예: 'Corolla')
-model_value = "Corolla"
-model_input.clear()  # 기존 값 지우기
-model_input.send_keys(model_value)
-
-# 입력된 값 확인
-entered_value = model_input.get_attribute("value")
-print(f"Entered Model: {entered_value}")  # 출력: Entered Model: Corolla
-
-# 'Body Style' 입력 필드 찾기
-body_style_input = driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtBodyStyle")
-
-# 값 입력 (예: 'Sedan')
-body_style_value = "Sedan"
-body_style_input.clear()  # 기존 값 지우기
-body_style_input.send_keys(body_style_value)
-
-# 입력된 값 확인
-entered_value = body_style_input.get_attribute("value")
-print(f"Entered Body Style: {entered_value}")  # 출력: Entered Body Style: Sedan
-
-# 'VIN' 입력 필드 찾기
-vin_input = driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtVIN")
-
-# 값 입력 (예: '1HGCM82633A123456')
-vin_value = "1HGCM82633A123456"
-vin_input.clear()  # 기존 값 지우기
-vin_input.send_keys(vin_value)
-
-# 입력된 값 확인
-entered_value = vin_input.get_attribute("value")
-print(f"Entered VIN: {entered_value}")  # 출력: Entered VIN: 1HGCM82633A123456
-
-
-# 'Mileage' 입력 필드 찾기
-mileage_input = driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtMileage")
-
-# 값 입력 (예: '10000')
-mileage_value = "10000"
-mileage_input.clear()  # 기존 값 지우기
-mileage_input.send_keys(mileage_value)
-
-# 입력된 값 확인
-entered_value = mileage_input.get_attribute("value")
-print(f"Entered Mileage: {entered_value}")  # 출력: Entered Mileage: 10000
-
-
-# 'Allowance' 입력 필드 찾기
-allowance_input = driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtAllowance")
-
-# 값 입력 (예: '500')
-allowance_value = "500"
-allowance_input.clear()  # 기존 값 지우기
-allowance_input.send_keys(allowance_value)
-
-# 입력된 값 확인
-entered_value = allowance_input.get_attribute("value")
-print(f"Entered Allowance: {entered_value}")  # 출력: Entered Allowance: 500
 
 #################################################################### Lien #################################################################
 ###########################################################################################################################################
 # 'Lien Amount' 입력 필드 찾기
-lien_amount_input = driver.find_element(By.ID, "ctl21_ctl25_ctl00_txtLienAmount")
+if "Trade-In Lien" in _data["fields"]:
+    if _data["fields"].get("Trade-In Lien", "")=="Yes":
+        lien_amount_input = driver.find_element(By.ID, "ctl21_ctl25_ctl00_txtLienAmount")
+        lien_amount_input.clear()
+        lien_amount_input.send_keys(_data["fields"].get("Trade-In Lien", ""))
+        entered_value = lien_amount_input.get_attribute("value")
+        print(f"Entered Lien Amount: {entered_value}")
 
-# 값 입력 (예: '2000')
-lien_amount_value = "2000"
-lien_amount_input.clear()  # 기존 값 지우기
-lien_amount_input.send_keys(lien_amount_value)
-
-# 입력된 값 확인
-entered_value = lien_amount_input.get_attribute("value")
-print(f"Entered Lien Amount: {entered_value}")  # 출력: Entered Lien Amount: 2000
-
+        # balance_owe_to
+        # Trade-In Lender
+        balance_owe_to_input = driver.find_element(By.ID, "ctl21_ctl25_ctl00_txtBalanceOwedTo")
+        balance_owe_to_input.clear()
+        balance_owe_to_input.send_keys(_data["fields"].get("Trade-In Lender", ""))
+        entered_value = balance_owe_to_input.get_attribute("value")
+        print(f"Entered Lien Amount: {entered_value}")
 
 ################################################################### Taxes #################################################################
 ###########################################################################################################################################
 # 'Province' 드롭다운 필드 찾기
-province_dropdown = driver.find_element(By.ID, "ctl21_ctl27_ctl00_ddlProvince")
+# province_dropdown = driver.find_element(By.ID, "ctl21_ctl27_ctl00_ddlProvince")
 
-# 값 선택 (예: '9' -> Ontario)
-province_value = "9"
-select = Select(province_dropdown)  # Selenium의 Select 클래스 사용
-select.select_by_value(province_value)  # 값으로 선택
+# # '9' -> Ontario)
+# province_value = "9"
+# select = Select(province_dropdown)
+# select.select_by_value(province_value)
 
-# 선택된 값 확인
-selected_value = select.first_selected_option.get_attribute("value")
-print(f"Selected Province Value: {selected_value}")  # 출력: Selected Province Value: 9
+# # 'PST' 드롭다운 필드 찾기
+# pst_dropdown = driver.find_element(By.ID, "ctl21_ctl27_ctl00_ddlPST")
 
-# 선택된 텍스트 확인 (예: Ontario)
-selected_text = select.first_selected_option.text
-print(f"Selected Province Text: {selected_text}")  # 출력: Selected Province Text: Ontario
+# # 'GSTHST' 드롭다운 필드 찾기
+# gst_hst_dropdown = driver.find_element(By.ID, "ctl21_ctl27_ctl00_ddlGSTHST")
 
-# 'PST' 드롭다운 필드 찾기
-pst_dropdown = driver.find_element(By.ID, "ctl21_ctl27_ctl00_ddlPST")
+# if pst_value=="0":
+#     # 'PSTExemption' 드롭다운 필드 찾기
+#     pst_exemption_dropdown = driver.find_element(By.ID, "ctl21_ctl27_ctl00_ddlPSTExemption")
 
-# 값 선택 (예: '8' -> 8.000)
-pst_value = "8"
-select = Select(pst_dropdown)  # Selenium의 Select 클래스 사용
-select.select_by_value(pst_value)  # 값으로 선택
-
-# 선택된 값 확인
-selected_value = select.first_selected_option.get_attribute("value")
-print(f"Selected PST Value: {selected_value}")  # 출력: Selected PST Value: 8
-
-# 선택된 텍스트 확인 (예: 8.000)
-selected_text = select.first_selected_option.text
-print(f"Selected PST Text: {selected_text}")  # 출력: Selected PST Text: 8.000
-
-# 'GSTHST' 드롭다운 필드 찾기
-gst_hst_dropdown = driver.find_element(By.ID, "ctl21_ctl27_ctl00_ddlGSTHST")
-
-# 값 선택 (예: '5' -> 5.00)
-gst_hst_value = "5"
-select = Select(gst_hst_dropdown)  # Selenium의 Select 클래스 사용
-select.select_by_value(gst_hst_value)  # 값으로 선택
-
-# 선택된 값 확인
-selected_value = select.first_selected_option.get_attribute("value")
-print(f"Selected GSTHST Value: {selected_value}")  # 출력: Selected GSTHST Value: 5
-
-# 선택된 텍스트 확인 (예: 5.00)
-selected_text = select.first_selected_option.text
-print(f"Selected GSTHST Text: {selected_text}")  # 출력: Selected GSTHST Text: 5.00
-
-if pst_value=="0":
-    # 'PSTExemption' 드롭다운 필드 찾기
-    pst_exemption_dropdown = driver.find_element(By.ID, "ctl21_ctl27_ctl00_ddlPSTExemption")
-
-    # 값 선택 (예: '1' -> Charitable Organization)
-    pst_exemption_value = "1"
-    select = Select(pst_exemption_dropdown)  # Selenium의 Select 클래스 사용
-    select.select_by_value(pst_exemption_value)  # 값으로 선택
-
-    # 선택된 값 확인
-    selected_value = select.first_selected_option.get_attribute("value")
-    print(f"Selected PSTExemption Value: {selected_value}")  # 출력: Selected PSTExemption Value: 1
-
-    # 선택된 텍스트 확인 (예: Charitable Organization)
-    selected_text = select.first_selected_option.text
-    print(f"Selected PSTExemption Text: {selected_text}")  # 출력: Selected PSTExemption Text: Charitable Organization
-
-if gst_hst_value=="0":
-    # 'GSTExemption' 드롭다운 필드 찾기
-    gst_exemption_dropdown = driver.find_element(By.ID, "ctl21_ctl27_ctl00_ddlGSTExemption")
-
-    # 값 선택 (예: '2' -> Diplomatic)
-    gst_exemption_value = "2"
-    select = Select(gst_exemption_dropdown)  # Selenium의 Select 클래스 사용
-    select.select_by_value(gst_exemption_value)  # 값으로 선택
-
-    # 선택된 값 확인
-    selected_value = select.first_selected_option.get_attribute("value")
-    print(f"Selected GSTExemption Value: {selected_value}")  # 출력: Selected GSTExemption Value: 2
-
-    # 선택된 텍스트 확인 (예: Diplomatic)
-    selected_text = select.first_selected_option.text
-    print(f"Selected GSTExemption Text: {selected_text}")  # 출력: Selected GSTExemption Text: Diplomatic
+# if gst_hst_value=="0":
+#     # 'GSTExemption' 드롭다운 필드 찾기
+#     gst_exemption_dropdown = driver.find_element(By.ID, "ctl21_ctl27_ctl00_ddlGSTExemption")
 #################################################################### Fees #################################################################
 ###########################################################################################################################################
 # 'CashDownPayment' 입력 필드 찾기
-cash_down_payment_input = driver.find_element(By.ID, "ctl21_ctl28_ctl00_txtCashDownPayment")
+# Cash Down Payment
+if "Cash Down Payment" in _data["fields"]:
+    cash_down_payment_input = driver.find_element(By.ID, "ctl21_ctl28_ctl00_txtCashDownPayment")
+    cash_down_payment_input.clear()
+    cash_down_payment_input.send_keys(_data["fields"].get("Cash Down Payment", ""))
 
-# 값 입력 (예: '5000')
-cash_down_payment_value = "5000"
-cash_down_payment_input.clear()  # 기존 값 지우기
-cash_down_payment_input.send_keys(cash_down_payment_value)  # 새로운 값 입력
-
-# 입력된 값 확인
-entered_value = cash_down_payment_input.get_attribute("value")
-print(f"Entered Cash Down Payment: {entered_value}")  # 출력: Entered Cash Down Payment: 5000
-
-# 'Rebate' 입력 필드 찾기
-rebate_input = driver.find_element(By.ID, "ctl21_ctl28_ctl00_txtRebate")
-
-# 값 입력 (예: '1000')
-rebate_value = "1000"
-rebate_input.clear()  # 기존 값 지우기
-rebate_input.send_keys(rebate_value)  # 새로운 값 입력
-
-# 입력된 값 확인
-entered_value = rebate_input.get_attribute("value")
-print(f"Entered Rebate: {entered_value}")  # 출력: Entered Rebate: 1000
-
+    entered_value = cash_down_payment_input.get_attribute("value")
+    print(f"Entered Cash Down Payment: {entered_value}")
 
 # 'Other Taxable' 입력 필드 찾기
-other_taxable_input = driver.find_element(By.ID, "ctl21_ctl28_ctl00_txtOtherTaxable")
+# "Other Taxable Amounts"
+if "Other Taxable Amounts" in _data["fields"]:
+    if "Theft Protection" in _data["fields"]:
+        if _data["fields"].get("Theft Protection", "")=="Yes":
+            # Theft Protection Amount
+            if int(_data["fields"].get("Theft Protection Amount", ""))>=99 or int(_data["fields"].get("Theft Protection Amount", ""))<=250:
+                theft_protection_amount = int(_data["fields"].get("Theft Protection Amount", ""))
+                print(f"theft_protection_amount: {theft_protection_amount}")
 
-# 값 입력 (예: '500')
-other_taxable_value = "500"
-other_taxable_input.clear()  # 기존 값 지우기
-other_taxable_input.send_keys(other_taxable_value)  # 새로운 값 입력
+                other_taxable_input = driver.find_element(By.ID, "ctl21_ctl28_ctl00_txtOtherTaxable")
+                other_taxable_input.clear()
 
-# 입력된 값 확인
-entered_value = other_taxable_input.get_attribute("value")
-print(f"Entered Other Taxable: {entered_value}")  # 출력: Entered Other Taxable: 500
+                other_taxable_amount = int(_data["fields"].get("Other Taxable Amounts", "")) + theft_protection_amount
 
+                other_taxable_input.send_keys(other_taxable_amount)
+                entered_value = other_taxable_input.get_attribute("value")
+                print(f"Entered Other Taxable: {entered_value}")
 
-# 'Other Taxable Description' 입력 필드 찾기
-other_taxable_desc_input = driver.find_element(By.ID, "ctl21_ctl28_ctl00_txtOtherTaxableDesc")
+                other_taxable_desc_input = driver.find_element(By.ID, "ctl21_ctl28_ctl00_txtOtherTaxableDesc")
+                other_taxable_desc_input.clear()
+                other_taxable_desc_input.send_keys("ADMIN/OMVIC/THEFT PROTECTION")
+                entered_value = other_taxable_desc_input.get_attribute("value")
+                print(f"Entered Other Taxable Description: {entered_value}")
 
-# 값 입력 (예: 'Example Description')
-other_taxable_desc_value = "Example Description"
-other_taxable_desc_input.clear()  # 기존 값 지우기
-other_taxable_desc_input.send_keys(other_taxable_desc_value)  # 새로운 값 입력
+        else:
+            other_taxable_input = driver.find_element(By.ID, "ctl21_ctl28_ctl00_txtOtherTaxable")
+            other_taxable_input.clear()
+            other_taxable_input.send_keys(_data["fields"].get("Other Taxable Amounts", ""))
+            entered_value = other_taxable_input.get_attribute("value")
+            print(f"Entered Other Taxable: {entered_value}")
+            
+            if "Other Taxable Description" in _data["fields"]:
+                other_taxable_desc_input = driver.find_element(By.ID, "ctl21_ctl28_ctl00_txtOtherTaxableDesc")
+                other_taxable_desc_input.clear()
+                other_taxable_desc_input.send_keys(_data["fields"].get("Other Taxable Description", ""))  # 새로운 값 입력
+                entered_value = other_taxable_desc_input.get_attribute("value")
+                print(f"Entered Other Taxable Description: {entered_value}")
+            else:
+                other_taxable_desc_input = driver.find_element(By.ID, "ctl21_ctl28_ctl00_txtOtherTaxableDesc")
+                other_taxable_desc_input.clear()
+                other_taxable_desc_input.send_keys("ADMIN/OMVIC")
+                entered_value = other_taxable_desc_input.get_attribute("value")
+                print(f"Entered Other Taxable Description: {entered_value}")
 
-# 입력된 값 확인
-entered_value = other_taxable_desc_input.get_attribute("value")
-print(f"Entered Other Taxable Description: {entered_value}")  # 출력: Entered Other Taxable Description: Example Description
 
 # 'Other Non-Taxable' 입력 필드 찾기
-other_non_taxable_input = driver.find_element(By.ID, "ctl21_ctl28_ctl00_txtOtherNonTaxable")
-
-# 값 입력 (예: '1000')
-other_non_taxable_value = "1000"
-other_non_taxable_input.clear()  # 기존 값 지우기
-other_non_taxable_input.send_keys(other_non_taxable_value)  # 새로운 값 입력
-
-# 입력된 값 확인
-entered_value = other_non_taxable_input.get_attribute("value")
-print(f"Entered Other Non-Taxable: {entered_value}")  # 출력: Entered Other Non-Taxable: 1000
-
+# other_non_taxable_input = driver.find_element(By.ID, "ctl21_ctl28_ctl00_txtOtherNonTaxable")
 
 # 'Other Non-Taxable Description' 입력 필드 찾기
-other_non_taxable_desc_input = driver.find_element(By.ID, "ctl21_ctl28_ctl00_txtOtherNonTaxableDesc")
-
-# 값 입력 (예: 'Additional Fee')
-other_non_taxable_desc_value = "Additional Fee"
-other_non_taxable_desc_input.clear()  # 기존 값 지우기
-other_non_taxable_desc_input.send_keys(other_non_taxable_desc_value)  # 새로운 값 입력
-
-# 입력된 값 확인
-entered_value = other_non_taxable_desc_input.get_attribute("value")
-print(f"Entered Other Non-Taxable Description: {entered_value}")  # 출력: Entered Other Non-Taxable Description: Additional Fee
+# other_non_taxable_desc_input = driver.find_element(By.ID, "ctl21_ctl28_ctl00_txtOtherNonTaxableDesc")
 
 ##################################################### Aftermarket Service #################################################################
 ###########################################################################################################################################
 # 'Extended Warranty' 입력 필드 찾기
-extended_warranty_input = driver.find_element(By.ID, "ctl21_ctl30_ctl00_txtExtendedWarranty")
-
-# 값 입력 (예: '100')
-extended_warranty_value = "100"
-extended_warranty_input.clear()  # 기존 값 지우기
-extended_warranty_input.send_keys(extended_warranty_value)  # 새로운 값 입력
-
-# 입력된 값 확인
-entered_value = extended_warranty_input.get_attribute("value")
-print(f"Entered Extended Warranty: {entered_value}")  # 출력: Entered Extended Warranty: 100
+# extended_warranty_input = driver.find_element(By.ID, "ctl21_ctl30_ctl00_txtExtendedWarranty")
 
 # 'Extended Warranty Term' 선택 필드 찾기
-ex_warranty_term_select = Select(driver.find_element(By.ID, "ctl21_ctl30_ctl00_ddlExWarrantyTerm"))
-
-# 값 선택 (예: 'Manufacturer' 선택)
-ex_warranty_term_value = "2"  # "Manufacturer" 선택
-ex_warranty_term_select.select_by_value(ex_warranty_term_value)
-
-# 선택된 값 확인
-selected_value = ex_warranty_term_select.first_selected_option.text
-print(f"Selected Extended Warranty Term: {selected_value}")  # 출력: Selected Extended Warranty Term: Manufacturer
+# ex_warranty_term_select = Select(driver.find_element(By.ID, "ctl21_ctl30_ctl00_ddlExWarrantyTerm"))
 
 # 'Replacement Warranty' 입력 필드 찾기
-replacement_input = driver.find_element(By.ID, "ctl21_ctl30_ctl00_txtReplacement")
-
-# 값 입력 (예: '500')
-replacement_value = "50"
-replacement_input.clear()  # 기존 값 지우기
-replacement_input.send_keys(replacement_value)
-
-# 입력된 값 확인
-entered_value = replacement_input.get_attribute("value")
-print(f"Entered Replacement Warranty: {entered_value}")  # 출력: Entered Replacement Warranty: 500
-
+# replacement_input = driver.find_element(By.ID, "ctl21_ctl30_ctl00_txtReplacement")
 
 # 'Life Insurance' 입력 필드 찾기
-life_insurance_input = driver.find_element(By.ID, "ctl21_ctl30_ctl00_txtLifeInsurance")
-
-# 값 입력 (예: '1000')
-life_insurance_value = "10"
-life_insurance_input.clear()  # 기존 값 지우기
-life_insurance_input.send_keys(life_insurance_value)
-
-# 입력된 값 확인
-entered_value = life_insurance_input.get_attribute("value")
-print(f"Entered Life Insurance: {entered_value}")  # 출력: Entered Life Insurance: 1000
-
+# life_insurance_input = driver.find_element(By.ID, "ctl21_ctl30_ctl00_txtLifeInsurance")
 
 # 'AH Insurance' 입력 필드 찾기
-ah_insurance_input = driver.find_element(By.ID, "ctl21_ctl30_ctl00_txtAHInsurance")
-
-# 값 입력 (예: '500')
-ah_insurance_value = "10"
-ah_insurance_input.clear()  # 기존 값 지우기
-ah_insurance_input.send_keys(ah_insurance_value)
-
-# 입력된 값 확인
-entered_value = ah_insurance_input.get_attribute("value")
-print(f"Entered AH Insurance: {entered_value}")  # 출력: Entered AH Insurance: 500
+# Gap Insurance Amount
+if "Gap Insurance Amount" in _data["fields"]:
+    ah_insurance_input = wait.until(EC.element_to_be_clickable((By.ID, "ctl21_ctl30_ctl00_txtAHInsurance")))
+    ah_insurance_input.click()
+    ah_insurance_input.send_keys(str(_data["fields"].get("Gap Insurance Amount", "")))
+    entered_value = ah_insurance_input.get_attribute("value")
+    # Tab 키로 필드 벗어나기
+    ah_insurance_input.send_keys(Keys.TAB)
+    print(f"Entered Gap Insurance Amount: {entered_value}")
 
 ################################################## Defereal and Payment Date Options ######################################################
 ###########################################################################################################################################
