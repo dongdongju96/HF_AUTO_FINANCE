@@ -5,7 +5,7 @@ from pyairtable import Api
 from datetime import datetime
 from dotenv import load_dotenv
 from google.cloud import vision
-
+from web_manipulate.arrange_2 import DealerTrackAutomation
 
 
 
@@ -76,14 +76,19 @@ class LicenseDetection:
     def perform_task_for_keyword(self, keyword, client_data_id):
         """Perform task based on detected license keyword"""
         if keyword == 'G1':
-            self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Need at least G1 license"})
+            pass
+            # self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Need at least G1 license"})
         elif keyword == 'G':
             self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Need at least G1 license"})
         elif keyword == 'G2':
+            print("G2 liscence")
+            print(f"client_data_id : {client_data_id}")
             # Dealer check 매크로 실행
             # Dealer check에 고객 데이터 값 입력
             # AIRTABLE_CLIENT_DATA_ID값과 table_list_current_date.json을 조회해서 ID 값과 비교 후 매크로 값 입력
-            pass
+            automation = DealerTrackAutomation()
+            automation.run(client_data_id)
+            self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Auto input Done"})
         else:
             self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Can't find license CLASS"})
 
@@ -101,15 +106,25 @@ class LicenseDetection:
         print(f"Data saved to {file_name}")
         
         for record in table_list:
-            if "Driver's License" in record["fields"] and record["fields"]["Status"] == "New Lead":
+            if "Driver's License" in record["fields"] and record["fields"]["Status"] == "New Lead" and record["fields"]["First Name"] == "Test":
                 client_data_id = record["id"]
                 uri = record["fields"]["Driver's License"][0]["url"]
+                ## 이미지 디텍션한 파일이 있는지 확인
+                output_file_path = f"./image_detection_output/{client_data_id}.json"
+                if os.path.exists(output_file_path):
+                    with open(output_file_path, 'r', encoding='utf-8') as file:
+                        texts_list = json.load(file)
+                        texts_list = texts_list['texts_list']
+                    print("이미 인식한 이미지입니다.")
+                else:
+                    texts_list = self.detect_license_in_image(uri, client_data_id)
+                    print("이미지 인식을 실행합니다..")
 
-                texts_list = self.detect_license_in_image(uri, client_data_id)
                 found_keywords = self.check_keywords_in_texts(texts_list)
 
                 if found_keywords:
                     for keyword in found_keywords:
+
                         self.perform_task_for_keyword(keyword, client_data_id)
                 else:
                     self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Can't find license CLASS"})
