@@ -31,16 +31,30 @@ class DealerTrackAutomation:
 
     def setup_file_path(self):
         current_date = datetime.now().strftime('%Y-%m-%d')
-        # self.file_name = os.path.join(".", "airtable_data", f"table_list_{current_date}.json")
-        self.file_name = os.path.join(".", "airtable_data", f"table_list_2024-12-11.json")
+        self.file_name = os.path.join(".", "airtable_data", f"table_list_{current_date}.json")
+        # self.file_name = os.path.join(".", "airtable_data", f"table_list_2024-12-11.json")
 
-    def read_json_data(self):
+    def read_json_data(self, client_data_id):
         try:
             with open(self.file_name, 'r', encoding='utf-8') as file:
-                self.data = json.load(file)[0]
+                data = json.load(file)
+
+                # Search for the record matching client_data_id
+                matching_record = next((record for record in data if record.get("id") == client_data_id), None)
+                if matching_record:
+                    print(f"Found matching record for client_data_id '{client_data_id}': {matching_record}")
+                else:
+                    print(f"No matching record found for client_data_id '{client_data_id}'.")
+
+                self.data = matching_record
+
         except FileNotFoundError:
             print(f"File not found: {self.file_name}")
-            self.data = {}
+            return None
+
+        except json.JSONDecodeError as e:
+            print(f"Error decoding JSON: {e}")
+            return None
 
     def login(self):
         login_url = "https://auth.dealertrack.ca/idp/startSSO.ping?PartnerSpId=prod_dtc_sp_pingfed"
@@ -171,6 +185,13 @@ class DealerTrackAutomation:
             select = Select(salutation_dropdown)
 
             salutation = self.data["fields"].get("Salutation", "")
+            if salutation=="Mr":
+                salutation = "Mr."
+            elif salutation=="Ms":
+                salutation = "Ms."
+            elif salutation=="Mrs":
+                salutation = "Mrs."
+            
             if salutation in ["Dr.", "Mr.", "Ms.", "Miss", "Mrs."]:
                 select.select_by_visible_text(salutation)
             else:
@@ -228,6 +249,7 @@ class DealerTrackAutomation:
         select.select_by_value("en-CA")  # Select English by default
 
     def enter_postal_code(self):
+        text = "ST LAURENT"
         wait = WebDriverWait(self.driver, 20)
         try:
             postal_code_input = wait.until(
@@ -245,7 +267,40 @@ class DealerTrackAutomation:
 
         address_lookup_button = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_btnPostalCodeLookup")
         address_lookup_button.click()
-        time.sleep(5)
+        time.sleep(3)
+        try:
+            # Switch to iframe containing lookup details
+            iframe = self.driver.find_element(By.ID, "DTC$ModalPopup$Frame")
+            self.driver.switch_to.frame(iframe)
+
+            # 테이블 로드 대기
+            WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, "gvPostalCode")))
+
+            # 테이블 행 가져오기
+            rows = self.driver.find_elements(By.XPATH, "//table[@id='gvPostalCode']/tbody/tr")
+
+            # 첫 번째 행은 헤더이므로 제외하고 반복문 실행
+            for row in rows[1:]:
+                # 'Street Name' 값 가져오기
+                street_name = row.find_element(By.XPATH, "./td[2]").text.strip()
+                
+                # 비교 값과 일치 여부 확인
+                if street_name == text:
+                    # 라디오 버튼 클릭
+                    radio_button = row.find_element(By.XPATH, "./td[1]/input[@type='radio']")
+                    radio_button.click()
+                    print(f"Radio button for '{text}' clicked.")
+                    break
+            else:
+                print(f"No matching 'Street Name' found for '{text}'.")
+            btnOK = wait.until(EC.element_to_be_clickable((By.ID, "btnOK")))
+            # 버튼 클릭
+            btnOK.click()
+
+            self.driver.switch_to.parent_frame()
+        except:
+            pass
+
         print("Address Lookup button clicked successfully!")
 
     def enter_duration_at_current_address(self):
@@ -829,60 +884,63 @@ class DealerTrackAutomation:
         entered_value = input_field.get_attribute("value")
         print(f"Entered {field_name}: {entered_value}")
 
-    def enter_cash_down_payment(self):
-        if "Cash Down Payment" in self.data["fields"]:
-            self.enter_field("CashDownPayment", "Cash Down Payment")
-
     def enter_field(self, field_id, field_name):
         input_field = self.driver.find_element(By.ID, f"ctl21_ctl28_ctl00_txt{field_id}")
         input_field.clear()
         input_field.send_keys(self.data["fields"].get(field_name, ""))
+        input_field.send_keys(Keys.TAB)
         entered_value = input_field.get_attribute("value")
         print(f"Entered {field_name}: {entered_value}")
 
-    def enter_other_taxable_amounts(self):
-        if "Other Taxable Amounts" in self.data["fields"]:
-            if "Theft Protection" in self.data["fields"]:
-                if self.data["fields"].get("Theft Protection", "") == "Yes":
-                    self.handle_theft_protection()
-                else:
-                    self.enter_other_taxable_input("Other Taxable Amounts")
+    def enter_cash_down_payment(self):
+        if "Cash Down Payment" in self.data["fields"]:
+            self.enter_field("CashDownPayment", "Cash Down Payment")
 
-    def handle_theft_protection(self):
-        theft_protection_amount = int(self.data["fields"].get("Theft Protection Amount", ""))
-        if 99 <= theft_protection_amount <= 250:
-            print(f"Theft Protection Amount: {theft_protection_amount}")
-            other_taxable_amount = int(self.data["fields"].get("Other Taxable Amounts", "")) + theft_protection_amount
-            self.enter_other_taxable_input(other_taxable_amount)
-            self.enter_field("OtherTaxableDesc", "Other Taxable Description", "ADMIN/OMVIC/THEFT PROTECTION")
-
-    def enter_other_taxable_input(self, amount):
-        other_taxable_input = self.driver.find_element(By.ID, "ctl21_ctl28_ctl00_txtOtherTaxable")
-        other_taxable_input.clear()
-        other_taxable_input.send_keys(amount)
-        entered_value = other_taxable_input.get_attribute("value")
-        print(f"Entered Other Taxable: {entered_value}")
-
-    def enter_other_taxable_description(self, description):
-        other_taxable_desc_input = self.driver.find_element(By.ID, "ctl21_ctl28_ctl00_txtOtherTaxableDesc")
-        other_taxable_desc_input.clear()
-        other_taxable_desc_input.send_keys(description)
-        entered_value = other_taxable_desc_input.get_attribute("value")
-        print(f"Entered Other Taxable Description: {entered_value}")
+    def fill_text_field(self, field_id, text):
+        field = self.driver.find_element(By.ID, field_id)
+        field.clear()
+        field.send_keys(text)
+        entered_value = field.get_attribute("value")
+        print(f"Field '{field_id}' entered value: {entered_value}")
 
     def enter_gap_insurance_amount(self):
+        wait = WebDriverWait(self.driver, 20)
         if "Gap Insurance Amount" in self.data["fields"]:
-            gap_insurance_input = self.wait.until(EC.element_to_be_clickable((By.ID, "ctl21_ctl30_ctl00_txtAHInsurance")))
+            gap_insurance_input = wait.until(EC.element_to_be_clickable((By.ID, "ctl21_ctl30_ctl00_txtAHInsurance")))
             gap_insurance_input.click()
             gap_insurance_input.send_keys(str(self.data["fields"].get("Gap Insurance Amount", "")))
             entered_value = gap_insurance_input.get_attribute("value")
             gap_insurance_input.send_keys(Keys.TAB)
             print(f"Entered Gap Insurance Amount: {entered_value}")
 
-    def run(self):
+    def enter_other_taxable_amounts(self):
+        fields = self.data.get("fields", {})
+        other_taxable_amount = fields.get("Other Taxable Amounts", "")
+        theft_protection = fields.get("Theft Protection", "")
+        theft_protection_amount = fields.get("Theft Protection Amount", "")
+
+        if theft_protection == "Yes" and theft_protection_amount:
+            theft_protection_amount = int(theft_protection_amount)
+            if 99 <= theft_protection_amount <= 250:
+                other_taxable_amount = int(other_taxable_amount) + theft_protection_amount
+                print(f"Theft Protection Amount: {theft_protection_amount}")
+
+        if other_taxable_amount:
+            self.fill_text_field("ctl21_ctl28_ctl00_txtOtherTaxable", str(other_taxable_amount))
+            description = "ADMIN/OMVIC/THEFT PROTECTION" if theft_protection == "Yes" else fields.get("Other Taxable Description", "ADMIN/OMVIC")
+            self.fill_text_field("ctl21_ctl28_ctl00_txtOtherTaxableDesc", description)
+
+    def save_deal(self):
+        save_button = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable((By.ID, "btnSave2"))
+        )
+        save_button.click()
+        print("Save button clicked.")
+
+    def run(self,client_data_id):
         try:
             # Read JSON data
-            self.read_json_data()
+            self.read_json_data(client_data_id)
 
             # Login to DealerTrack
             self.login()
@@ -1018,9 +1076,11 @@ class DealerTrackAutomation:
 
             self.enter_other_taxable_amounts()
 
-            self.enter_other_taxable_description()
+            self.enter_other_taxable_amounts()
 
             self.enter_gap_insurance_amount()
+
+            # self.save_deal()
 
         except Exception as e:
             print(f"An error occurred: {e}")
