@@ -43,12 +43,12 @@ def remove_country_code_and_non_digits(input_text):
 # JSON 파일 경로 지정
 current_date = datetime.now().strftime('%Y-%m-%d')  # "YYYY-MM-DD" 형식
 # file_name = os.path.join(".", "airtable_data", f"table_list_{current_date}.json")
-file_name = os.path.join(".", "airtable_data", f"table_list_2024-12-11.json")
+file_name = os.path.join(".", "airtable_data", f"table_list_2024-12-18.json")
 
 # JSON 파일 읽기
 with open(file_name, 'r', encoding='utf-8') as file:
     _data = json.load(file)
-_data = _data[0]
+_data = _data[23]
 #######################################################################  Login  ##############################################################################
 #############################################################################################################################################################
 # .env 파일에서 환경 변수 로드
@@ -374,7 +374,49 @@ address_lookup_button.click()
 
 # 버튼 클릭 후 결과를 확인할 수 있도록 시간 대기
 time.sleep(5)
-print("Address Lookup button clicked successfully!")
+
+text = "ST LAURENT"
+# iframe로 전환 (VIN Lookup 창이 iframe에 포함되어 있으므로)
+
+try:
+    iframe = wait.until(EC.element_to_be_clickable((By.ID, "DTC$ModalPopup$Frame")))
+    driver.switch_to.frame(iframe)
+    # 테이블 로드 대기
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "gvPostalCode")))
+
+    # 테이블 행 가져오기
+    rows = driver.find_elements(By.XPATH, "//table[@id='gvPostalCode']/tbody/tr")
+
+    # 첫 번째 행은 헤더이므로 제외하고 반복문 실행
+    for row in rows[1:]:
+        # 'Street Name' 값 가져오기
+        street_name = row.find_element(By.XPATH, "./td[2]").text.strip()
+        
+        # 비교 값과 일치 여부 확인
+        if street_name == text:
+            # 라디오 버튼 클릭
+            radio_button = row.find_element(By.XPATH, "./td[1]/input[@type='radio']")
+            radio_button.click()
+            print(f"Radio button for '{text}' clicked.")
+            break
+    
+    else:
+        print(f"No matching 'Street Name' found for '{text}'.")
+
+    btnOK = wait.until(EC.element_to_be_clickable((By.ID, "btnOK")))
+    # 버튼 클릭
+    btnOK.click()
+
+    driver.switch_to.parent_frame()
+except:
+    pass
+    # 브라우저 닫기
+    # driver.quit()
+
+
+# iframe 밖으로 이동
+
+# driver.switch_to.default_content() 는 에러가 발생했음
 
 # 'Duration in Years' 텍스트 필드 요소 찾기
 try:
