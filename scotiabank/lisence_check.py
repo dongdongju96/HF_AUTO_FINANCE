@@ -110,7 +110,7 @@ class LicenseDetection:
         print(f"Data saved to {file_name}")
         
         for record in table_list:
-            if "Driver's License" in record["fields"] and record["fields"]["Status"] == "New Lead" and record["fields"]["First Name"] == "Test":
+            if "Driver's License" in record["fields"] and record["fields"]["Status"] == "New Lead":
                 client_data_id = record["id"]
                 uri = record["fields"]["Driver's License"][0]["url"]
                 ## 이미지 디텍션한 파일이 있는지 확인
