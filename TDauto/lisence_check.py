@@ -91,7 +91,7 @@ class LicenseDetection:
             except:
                 self.airtable_client.update_record(client_data_id, {"Notes": "Can't input Data with AI"})
                 
-            self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Auto input Done"})
+            # self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Auto input Done"})
 
         elif keyword == 'G2':
             print("G2 liscence")
