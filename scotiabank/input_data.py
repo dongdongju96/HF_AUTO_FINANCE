@@ -26,13 +26,14 @@ class DealerTrackAutomation:
 
     def load_env_variables(self):
         load_dotenv()
-        self.username = os.getenv("DEALERTRACK_ID")
-        self.password = os.getenv("DEALERTRACK_PASS")
+        self.username = os.getenv("MERCURY_ID")
+        self.password = os.getenv("MERCURY_PASS")
 
     def setup_file_path(self):
         current_date = datetime.now().strftime('%Y-%m-%d')
         # self.file_name = os.path.join(".", "airtable_data", f"table_list_{current_date}.json")
-        self.file_name = os.path.join(".", "airtable_data", f"table_list_2024-12-18.json")
+        # self.file_name = os.path.join(".", "airtable_data", f"table_list_2024-12-18.json")
+        self.file_name = os.path.join(".", "airtable_data", f"table_list_{current_date}.json")
 
     def read_json_data(self, client_data_id):
         try:
