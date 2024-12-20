@@ -77,7 +77,6 @@ class LicenseDetection:
     def perform_task_for_keyword(self, keyword, client_data_id):
         """Perform task based on detected license keyword"""
         if keyword == 'G1':
-            pass
             self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Need at least G2 license(AI)"})
         elif keyword == 'G':
             self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Need at least G2 license(AI)"})
@@ -89,7 +88,7 @@ class LicenseDetection:
             # AIRTABLE_CLIENT_DATA_ID값과 table_list_current_date.json을 조회해서 ID 값과 비교 후 매크로 값 입력
             automation = DealerTrackAutomation()
             try:
-                automation.run(client_data_id)
+                automation.run(airtable_client, client_data_id)
             except:
                 self.airtable_client.update_record(client_data_id, {"Notes": "Can't input Data with AI"})
                 
@@ -104,6 +103,7 @@ class LicenseDetection:
         current_date = datetime.now().strftime('%Y-%m-%d')  # "YYYY-MM-DD" 형식
         # file_name = os.path.join(r"C:\Users\HF\Desktop\airtable\TDauto\airtable_data", f"table_list_{current_date}.json")
         file_name = os.path.join(".", "airtable_data", f"table_list_{current_date}.json")
+        print(file_name)
 
         # 데이터를 JSON 파일로 저장
         with open(file_name, 'w', encoding='utf-8') as file:
