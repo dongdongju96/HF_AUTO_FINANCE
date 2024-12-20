@@ -251,7 +251,7 @@ class DealerTrackAutomation:
         select.select_by_value("en-CA")  # Select English by default
 
     def enter_postal_code(self, airtable_client, client_data_id):
-        text = "ST LAURENT"
+        address = self.data["fields"].get("Address", "")
         wait = WebDriverWait(self.driver, 10)
         try:
             postal_code_input = wait.until(
@@ -287,19 +287,19 @@ class DealerTrackAutomation:
                 street_name = row.find_element(By.XPATH, "./td[2]").text.strip()
                 
                 # 비교 값과 일치 여부 확인
-                if street_name == text:
+                if street_name in address:
                     # 라디오 버튼 클릭
                     radio_button = row.find_element(By.XPATH, "./td[1]/input[@type='radio']")
                     radio_button.click()
-                    print(f"Radio button for '{text}' clicked.")
+                    print(f"Radio button for '{street_name}' clicked.")
                     break
                 # 그냥 첫번째 것 클릭하도록 되어있다.
                 else:
                     radio_button = row.find_element(By.XPATH, "./td[1]/input[@type='radio']")
                     radio_button.click()
-                    print(f"Radio button for '{text}' clicked.")
+                    print(f"Radio button for '{street_name}' clicked.")
             else:
-                print(f"No matching 'Street Name' found for '{text}'.")
+                print(f"No matching 'Street Name' found for '{street_name}'.")
             btnOK = wait.until(EC.element_to_be_clickable((By.ID, "btnOK")))
             # 버튼 클릭
             btnOK.click()
