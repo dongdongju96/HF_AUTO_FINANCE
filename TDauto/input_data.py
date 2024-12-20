@@ -250,7 +250,7 @@ class DealerTrackAutomation:
         select = Select(language_dropdown)
         select.select_by_value("en-CA")  # Select English by default
 
-    def enter_postal_code(self):
+    def enter_postal_code(self, airtable_client, client_data_id):
         text = "ST LAURENT"
         wait = WebDriverWait(self.driver, 10)
         try:
@@ -293,6 +293,11 @@ class DealerTrackAutomation:
                     radio_button.click()
                     print(f"Radio button for '{text}' clicked.")
                     break
+                # 그냥 첫번째 것 클릭하도록 되어있다.
+                else:
+                    radio_button = row.find_element(By.XPATH, "./td[1]/input[@type='radio']")
+                    radio_button.click()
+                    print(f"Radio button for '{text}' clicked.")
             else:
                 print(f"No matching 'Street Name' found for '{text}'.")
             btnOK = wait.until(EC.element_to_be_clickable((By.ID, "btnOK")))
@@ -300,6 +305,8 @@ class DealerTrackAutomation:
             btnOK.click()
 
             self.driver.switch_to.parent_frame()
+
+            airtable_client.update_record(client_data_id, {"Notes": "Need check Address"})
         except:
             pass
 
@@ -706,7 +713,7 @@ class DealerTrackAutomation:
 
         # Create Select object
         select = Select(program_selection_dropdown)
-        program_selection_value = "1966420"  # Example value: Auto special
+        program_selection_value = "1976940"  # Example value: Auto special
         select.select_by_value(program_selection_value)
 
         # Check the selected value
@@ -734,7 +741,7 @@ class DealerTrackAutomation:
             return re.sub(r'\D', '', phone[-10:])  # Extract last 10 digits
         # Wait for the 'Term' dropdown field
         term_dropdown = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.ID, "ctl21_ctl32_ctl00_ddlTerm"))
+            EC.presence_of_element_located((By.ID, "ctl21_ctl32_ctl00_CTermDropDown1"))
         )
 
         # Create Select object
@@ -752,7 +759,7 @@ class DealerTrackAutomation:
         def remove_country_code_and_non_digits(phone):
             return re.sub(r'\D', '', phone[-10:])  # Extract last 10 digits
         # Find amortization dropdown
-        amortization_dropdown = self.driver.find_element(By.ID, "ctl21_ctl32_ctl00_ddlAmortization")
+        amortization_dropdown = self.driver.find_element(By.ID, "ctl21_ctl32_ctl00_CAmortizationPeriodDropDown1")
 
         # Create Select object and select value
         select_amortization = Select(amortization_dropdown)
@@ -767,7 +774,7 @@ class DealerTrackAutomation:
 
     def select_payment_frequency(self):
         # Find Payment Frequency dropdown
-        payment_frequency_dropdown = self.driver.find_element(By.ID, "ctl21_ctl32_ctl00_ddlPaymentFrequency")
+        payment_frequency_dropdown = self.driver.find_element(By.ID, "ctl21_ctl32_ctl00_CPaymentFrequencyDropDown1")
 
         # Create Select object
         select_payment_frequency = Select(payment_frequency_dropdown)
@@ -791,10 +798,10 @@ class DealerTrackAutomation:
         def remove_country_code_and_non_digits(phone):
             return re.sub(r'\D', '', phone[-10:])  # Extract last 10 digits
         
-        program_selection_value = "1966420"
+        program_selection_value = "1976484"
         
         while True:
-            select_element = wait.until(EC.element_to_be_clickable((By.ID, "ctl21_ctl32_ctl00_ddlInterestRate")))
+            select_element = wait.until(EC.element_to_be_clickable((By.ID, "ctl21_ctl32_ctl00_CInterestRateDropDown1")))
             options = select_element.find_elements(By.TAG_NAME, 'option')
 
             # 옵션이 없으면 다른 작업을 수행
@@ -805,8 +812,8 @@ class DealerTrackAutomation:
                 program_selection_dropdown = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_ddlProgram")
                 time.sleep(1)
 
-                if program_selection_value == "1966448":
-                    term_dropdown = self.driver.find_element(By.ID, "ctl21_ctl32_ctl00_ddlTerm")
+                if program_selection_value == "1958636":
+                    term_dropdown = self.driver.find_element(By.ID, "ctl21_ctl32_ctl00_CTermDropDown1")
 
                     # 드롭다운 선택을 위한 Select 객체 생성
                     select_term = Select(term_dropdown)
@@ -822,7 +829,7 @@ class DealerTrackAutomation:
 
 
                     # 'Amortization' 드롭다운 필드 찾기
-                    amortization_dropdown = self.driver.find_element(By.ID, "ctl21_ctl32_ctl00_ddlAmortization")
+                    amortization_dropdown = self.driver.find_element(By.ID, "ctl21_ctl32_ctl00_CAmortizationPeriodDropDown1")
 
                     # 드롭다운 선택을 위한 Select 객체 생성
                     select_amortization = Select(amortization_dropdown)
@@ -839,7 +846,7 @@ class DealerTrackAutomation:
                 # 값 선택 (예: 'AC AT CC ES')
                 # 1966420 = Auto special
                 # 1966448 = standard fixed rate
-                program_selection_value = "1966448"
+                program_selection_value = "1958636"
                 select.select_by_value(program_selection_value)
 
                 # 선택된 값 확인
@@ -908,7 +915,7 @@ class DealerTrackAutomation:
     def enter_gap_insurance_amount(self):
         wait = WebDriverWait(self.driver, 20)
         if "Gap Insurance Amount" in self.data["fields"]:
-            gap_insurance_input = wait.until(EC.element_to_be_clickable((By.ID, "ctl21_ctl30_ctl00_txtAHInsurance")))
+            gap_insurance_input = wait.until(EC.element_to_be_clickable((By.ID, "ctl21_ctl29_ctl00_txtAHInsurance")))
             gap_insurance_input.click()
             gap_insurance_input.send_keys(str(self.data["fields"].get("Gap Insurance Amount", "")))
             entered_value = gap_insurance_input.get_attribute("value")
@@ -939,7 +946,7 @@ class DealerTrackAutomation:
         save_button.click()
         print("Save button clicked.")
 
-    def run(self,client_data_id):
+    def run(self, airtable_client, client_data_id):
         try:
             # Read JSON data
             self.read_json_data(client_data_id)
@@ -989,7 +996,7 @@ class DealerTrackAutomation:
             self.select_language()
 
             # Fill postal code field
-            self.enter_postal_code()
+            self.enter_postal_code(airtable_client, client_data_id)
 
             # Fill duration field
             self.enter_duration_at_current_address()
@@ -1069,8 +1076,9 @@ class DealerTrackAutomation:
             self.select_payment_frequency()
 
             self.select_interest_rate()
-
-            self.enter_scene_card()
+            
+            # TD에는 없는 옵션
+            # self.enter_scene_card()
 
             self.enter_trade_in_details()
 
@@ -1082,7 +1090,7 @@ class DealerTrackAutomation:
 
             self.enter_gap_insurance_amount()
 
-            # self.save_deal()
+            self.save_deal()
 
         except Exception as e:
             print(f"An error occurred: {e}")
