@@ -731,7 +731,8 @@ class DealerTrackAutomation:
         time.sleep(0.5)
         cash_price_input.send_keys(str(self.data["fields"].get("Cash Price", "")))
         cash_price_input.send_keys(Keys.TAB)
-
+        time.sleep(0.5)
+        
         # Check the entered value
         entered_value = cash_price_input.get_attribute("value")
         print(f"Entered Cash Price: {entered_value}")
