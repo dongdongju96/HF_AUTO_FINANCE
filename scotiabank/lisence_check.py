@@ -76,9 +76,9 @@ class LicenseDetection:
     def perform_task_for_keyword(self, keyword, client_data_id):
         """Perform task based on detected license keyword"""
         if keyword == 'G1':
-            self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Need at least G1 license"})
+            self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Need at least G1 license(AI)"})
         elif keyword == 'G':
-            self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Need at least G1 license"})
+            self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Need at least G1 license(AI)"})
         elif keyword == 'G2':
             print("G2 liscence")
             print(f"client_data_id : {client_data_id}")
@@ -93,7 +93,7 @@ class LicenseDetection:
                 
             self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Auto input Done"})
         else:
-            self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Can't find license CLASS"})
+            self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Can't find license CLASS(AI)"})
 
     def process_records(self):
         """Process records from Airtable and detect licenses"""
