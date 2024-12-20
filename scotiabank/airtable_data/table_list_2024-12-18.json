@@ -1,0 +1,2734 @@
+[
+    {
+        "id": "rec0B49cOtTdznv9Z",
+        "createdTime": "2024-12-11T21:37:37.000Z",
+        "fields": {
+            "Email": "LOHAT@GMAIL.COM",
+            "First Name": "SOURAV",
+            "Status": "Follow Up",
+            "Salutation": "Mr",
+            "Phone": "+14378780788",
+            "Date of Birth": "2002-08-23",
+            "Gender": "Male",
+            "Address": "126 RUTHERFORD RD N",
+            "City": "BRAMPTON",
+            "Province": "Ontario",
+            "Duration at Current Address": 2,
+            "Housing Status": "Rent",
+            "Monthly Payment": 450,
+            "Employer Name": "BLACKSTONE STEAKHOUSE",
+            "Employment Status": "Full-time",
+            "Occupation": "SERVER",
+            "Duration of Employment": 2,
+            "Employer Address": "6435 ERIN MILLS",
+            "Employer City": "MISSISSAUGA",
+            "Postal Code": "L6V2J5",
+            "Employer Postal Code": "L5N4H4",
+            "Employer Phone": "+19054513384",
+            "Gross Income (Monthly or Annually)": 3400,
+            "Vehicle Year": 2023,
+            "Vehicle Make": "Hyundai",
+            "Vehicle Model": "ELANTRA",
+            "Cash Price": 33000,
+            "Odometer": 18300,
+            "Insurance Coverage": "No",
+            "Employer Province": "Ontario",
+            "Dealership Name": "AUTOVILLA",
+            "Vehicle Trim": "LUXURY HYBRID",
+            "Cash Down Payment": 1500,
+            "Other Taxable Amounts": 999,
+            "Warranty": "Yes",
+            "Gap Insurance": "Yes",
+            "Theft Protection": "No",
+            "Loan Term": "7 Years",
+            "Payment Frequency": "Bi-Weekly",
+            "Interest Rate": "7.99",
+            "VIN": "KMHLN4AJ8PU034389",
+            "Driver's License #": "L6161-72000-20823",
+            "Driver's License": [
+                {
+                    "id": "att0etOOzUB5q0bWB",
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/fPoYWW-SfXu7ymiqvZDShg/CuY4Jcgh617CjQMoPRmexlCBlTi7IawcbLgJF07HFepyj_jjvEY_WG2sClLdMcdxk5-nL8eE6-8J6dLfCZhqlt7epLJT4v24T8tcjsYwAP-pmS-D2OE_N66WLbJL7uarMsuQBA4MMXWuMjOwA_ruzP4OE3zx21QwDo07LoeryKI/37BFgtFtgFYjyXfKSxaAg34I94vELvQIyXLGx2fdexk",
+                    "filename": "SORAV LOHAT DL.pdf",
+                    "size": 57472,
+                    "type": "application/pdf",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/4kJbz7gD2RRc3Ulf4PYOeA/oNTgDFM8O0OyEuA0vrrxZiHskMgxr249Q4OBL9BiqlyOcfu13pqYt2d6mxFKObKL6yjageOzlL9D5oohTQ1fWSAzBH1wJVAPYJhwwVeFhY-DrCS2rMuBuBpdTAIU7m1wHN0CbP4QEqfELl45QdWzYw/zVA0TxEv3GeK2nXBjPf-zQ3NKUwapWZilJwSzlBoqdY",
+                            "width": 28,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/k9Vv-tN8EckP09eYg4xGsw/OgfUU6x_nzNLhPthvLUw7RjDfWJ_H__2vvnCeJppZalCz4WN6sOMTLVs7eWT_vyiFTWHUX-NXXrCZ6Q_KyzkNp9MdFUknp_svWhLJpimAYFl0WS53SZfs2ry9Sd65VEYhhssedfLQ-J-L5ZervyWDA/8p243wM7vQqNUjmyGTtNZlA7sYVvcbBM7g7EMrA2xSs",
+                            "width": 512,
+                            "height": 663
+                        }
+                    }
+                }
+            ],
+            "Last Name": "LOHAT",
+            "Marital Status": "Single",
+            "Team Member": "Jake",
+            "Follow Up": "2024-12-11T21:51:00.000Z",
+            "Notes": "need to confirm customer's address\nCustomer request to hold the file until dec.22 due to credit update\n",
+            "Dealer Status": "Verified",
+            "Co-Signer": "No",
+            "Trade In": "No",
+            "Other Taxable Description": "DOC FEE",
+            "Driver's License Expiry": "2029-01-05",
+            "Driver's License Class": "G",
+            "Gap Insurance Amount": 2500,
+            "Life Insurance": "No",
+            "Warranty Plan": "Principal",
+            "Warranty Amount": 2500,
+            "Warranty Term": 2,
+            "Warranty Mileage": "100000",
+            "Application Date": "2024-12-11T21:37:37.000Z",
+            "Customer Verification": "2024-12-11T21:45:00.000Z",
+            "Employer Verification": "2024-12-11T21:51:00.000Z"
+        }
+    },
+    {
+        "id": "rec3eZKJDAneGumXB",
+        "createdTime": "2024-12-17T22:15:46.000Z",
+        "fields": {
+            "Email": "EMAIL@NOEMAIL.COM",
+            "First Name": "CALVIN EWANE",
+            "Status": "Follow Up",
+            "Salutation": "Mr",
+            "Phone": "+14373839318",
+            "Date of Birth": "1987-10-11",
+            "Gender": "Male",
+            "Address": "46 PROUSE DRIVE",
+            "City": "BRAMPTON",
+            "Province": "Ontario",
+            "Duration at Current Address": 2.9,
+            "Housing Status": "Rent",
+            "Monthly Payment": 450,
+            "Employer Name": "GARDAWORLD",
+            "Employment Status": "Full-time",
+            "Occupation": "PATROL SUPERVISOR",
+            "Duration of Employment": 2.2,
+            "Employer Address": "400-2345 STANFEILD RD",
+            "Employer City": "MISSISSAUGA",
+            "Postal Code": "L6V3A8",
+            "Employer Postal Code": "L4Y3Y3",
+            "Employer Phone": "+18554642732",
+            "Gross Income (Monthly or Annually)": 4500,
+            "Vehicle Year": 2022,
+            "Vehicle Make": "Honda",
+            "Vehicle Model": "CIVIC",
+            "Cash Price": 33999,
+            "Odometer": 68000,
+            "Insurance Coverage": "No",
+            "Employer Province": "Ontario",
+            "Dealership Name": "BOOST AUTO ",
+            "Vehicle Trim": "EX",
+            "Cash Down Payment": 0,
+            "Other Taxable Amounts": 999,
+            "Warranty": "No",
+            "Gap Insurance": "Yes",
+            "Theft Protection": "Yes",
+            "Loan Term": "8 Years",
+            "Payment Frequency": "Bi-Weekly",
+            "Interest Rate": "6.99",
+            "VIN": "2HGFE2F50NH127121",
+            "Driver's License #": "E7062-10808-71011",
+            "Driver's License": [
+                {
+                    "id": "attyZNcSe6Io9CFWd",
+                    "width": 873,
+                    "height": 1600,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/6cyrzIoAIE7yD4WSd7Kpxg/zfNOL32KCL60NMudGTO1NApcCA1JA2KR2TVF5NMSMwOHK-BUj30p7gsTh_jBtQamV25p2fPO-xzTEk_hqeyXx8nfDusC18_f7s58xiK113hG_Lbd6KoOgUGE9wNQLzKQAWxjPPmgiBnfLjld7tQ6SM0Q66xISm2f6PhJgoX8h2gwEZj8SD_5rMgCJGD2kIXB/jS3j-tbl2ecFtkJN35xnro7deTDyBTaoknbH9swMwLM",
+                    "filename": "WhatsApp Image 2024-12-17 at 17.13.54.jpg",
+                    "size": 446493,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/nB8iJ_uk_sMITgbFQE-8rg/G73NtK5xrWf7K_Dzb2qk7HjEl7d12yZN1p_wsr0NLV7msxhuIO_FuMeV5KO68fCGNw_mni16SN8CMrs0RoNmIxXsjBwN8wYLKs8hkd-u8UR0UXjk8W9OQCshmGQ8Kf8FVZqfdr7pYfQVRQmxynOvkQ/-pahfpbIniaIjhcJnOc43c1z-UADsmM6AkNXjSnn1T0",
+                            "width": 20,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/IUT_FAgN3IWCxbNiay7msw/yVmEpmn-htkWg06V6HINojAvUhtKM7K_VkbqOrfVX7XAX_UsZSWl673pvTOtt_qe-UPEa_U6igR2LYlTCZkyHLo_Odb7MhSCz6mKijCL_c-bRTh3QSRKPIq1Mf2kwqu05lD3eekxSmPaoAFKUNvcbg/Vq8bmVkzreHYAg4sHUcj_ngWF5FEXb4W7V4WgDhMGpA",
+                            "width": 512,
+                            "height": 938
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/HR76l9kQEEGmljPEY5nFSg/8IxxRIDOSB0qWHjJQVFmfAjx2hOjKBHEWC6BCJxmG3GrgUzAP5WsH0a9jD7bmqaxOIhKZll8Hr45Kge6QU3f5cxsvz-RQHRVuBcU3Vw37A7pcGD7zCfJHVXMKWEYcX7YVBplbqkV04yEQ4j8l5VARw/IiTv3VAGmZ6r_dG7-s3Un6IUe-Nitwhtl1ySEY7tlwI",
+                            "width": 873,
+                            "height": 1600
+                        }
+                    }
+                },
+                {
+                    "id": "attxgINB6GYFePG1k",
+                    "width": 669,
+                    "height": 1598,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/VZb_lEObWC_mBz8KLebrNg/j6RFXOz-flnZVYJ9wjwICtGeD8tIlv-bk3YevVpXQFTbGLq6y4yzLVLieD5pVew-JNeyRFs4ICBB0ALvF6kvtOwgWX6M5dF_SkF7ebWbx7AEnxuyF8UXRUeZQa_8Im9ptmZNy2ZH-32o1IfL-nseMBnW-KOmYgc0Z0zPQ2-HJO7_awKkkyuq8MamUw35-PwNZW9z4PyKr2V0zAciJskdmA/NV2tFcXkAhWdqW8HF7CMTjRHO2PLJNj0dNB49vA17eY",
+                    "filename": "WhatsApp Image 2024-12-18 at 11.29.03_86f8f2d4.jpg",
+                    "size": 126856,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/cPsYrU36sl2QfTzF0AJY_g/ny7f5jK3_gH9Jy6Dt8_-fD3KfFl623UDXCDpTXyhA5RbWUVGssH9fBNkZhAT884eTkWivrDIQoUx-35DGdMYSI08aPgDrRJIbMlKdrq2cqbcJY6HNG7r3mQFeyP5g7lzxm_QYxfvyr_RmrQYsy8QOQ/cq-FVwW3UDrUCyBFAOdHQg_vxdYpC3-zYzDz_MUsgiE",
+                            "width": 15,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/b9Ii5Ji7dG5wZTb0dZ1ODg/YwFf5sPSdhk9YIr0cdDgBKlLdZdz5RFkSKpiyq_ShKYIoW2FrXoMp8eZfweZ-zxIWZg_QeI_qbSuX5rxdMISojR4nEK2ReSaQ4aAMNJUwCR7ff1sIs_e0sBwn1FBgVruF1qAcdGMO3F6atcUkzQ5Jg/xf0dqNk0k4EgoSmwfdsJwlWSuAkiwQdeT5uss4zOGzE",
+                            "width": 512,
+                            "height": 1223
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/RXSnIs7WI3zhF8DTFmignA/Q4-mTq7axW-3uLt_S3lqdQTVDjBnQZAeol_hKts7KQo00tTuGD-cq2JHcGiIihF52J8L_z-YwCErmbqddLSRKiM31JlrJlLcg8aqNKCLGKSSBW7I6o2qZpFOF9JGFCfTdyU-Qz6I6uxQKgI2VT4G9w/HcpatPgPBwRvC2UEIqyKT8ItLykcrm1E7dEDKKlyiRA",
+                            "width": 669,
+                            "height": 1598
+                        }
+                    }
+                }
+            ],
+            "Last Name": "EPIE",
+            "Marital Status": "Single",
+            "Notes": "- Customer verification is done, buy customer mention another dealership (toronto car sales) he wants to make sure not two dealership working on his file for financing, \n",
+            "Dealer Status": "New Lead",
+            "Co-Signer": "No",
+            "Trade In": "No",
+            "Other Taxable Description": "ADMIN/OMVIC",
+            "Driver's License Expiry": "2029-09-20",
+            "Driver's License Class": "G2",
+            "Gap Insurance Amount": 2999,
+            "Theft Protection Amount": 250,
+            "Life Insurance": "No",
+            "Application Date": "2024-12-17T22:15:46.000Z",
+            "Customer Verification": "2024-12-18T16:39:00.000Z"
+        }
+    },
+    {
+        "id": "rec9KFsRVSUT05DyM",
+        "createdTime": "2024-12-10T22:50:50.000Z",
+        "fields": {
+            "Email": "SATVIK8205SAHRAN@GMAIL.COM",
+            "First Name": "SATVIK",
+            "Status": "Cancelled",
+            "Salutation": "Mr",
+            "Phone": "+15066073996",
+            "Date of Birth": "2000-04-29",
+            "Gender": "Male",
+            "Address": "638 CENTER ST",
+            "City": "SAINT JOHN",
+            "Province": "New Brunswick",
+            "Duration at Current Address": 2,
+            "Housing Status": "Living with Parents",
+            "Employer Name": "ESSO",
+            "Employment Status": "Full-time",
+            "Occupation": "SHIFT SUPERVISOR",
+            "Duration of Employment": 2,
+            "Employer Address": "261 DIXON RD",
+            "Employer City": "ETOBICOKE",
+            "Postal Code": "E2M2P6",
+            "Employer Postal Code": "M9P2M4",
+            "Employer Phone": "+14162407717",
+            "Gross Income (Monthly or Annually)": 3250,
+            "Vehicle Year": 2018,
+            "Vehicle Make": "Honda",
+            "Vehicle Model": "CR-V",
+            "Cash Price": 25999,
+            "Odometer": 150000,
+            "Insurance Coverage": "No",
+            "Employer Province": "Ontario",
+            "Dealership Name": "QUICK AUTO SALES",
+            "Vehicle Trim": "TOURING",
+            "Cash Down Payment": 0,
+            "Other Taxable Amounts": 999,
+            "Warranty": "Yes",
+            "Gap Insurance": "Yes",
+            "Theft Protection": "No",
+            "Loan Term": "6 Years",
+            "Payment Frequency": "Bi-Weekly",
+            "Interest Rate": "7.99",
+            "VIN": "2HKRW2H96JH101603",
+            "Driver's License #": "S08600000000429",
+            "Driver's License": [
+                {
+                    "id": "attG3Vn1P2QpSauZV",
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/cLm82QFZVOrdnNsXfIzk_g/JWPiheb2dZDQRhjHo8-ie3EKkP46W1IdbYRBsYh_A6Si9fg7mLir16qLPGO-Vkmd0gtPPnKSfPCHvVlPIuyy3OIjVPsDIhxUViKU9SBc5oH1OQjjt2CJ3j2EvHIYUkUerw3cO6w83tY34YTpdX9MoBKkABbljRT88JEX0IgWACs/RFigZ4wLWIcrJFtBfN3AMkNyWadzxB42MQ6LzDXmTtE",
+                    "filename": "SATVIK SATVIK.pdf",
+                    "size": 773334,
+                    "type": "application/pdf",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/zuMuQvYGw-zXbSv35hJGNg/hc_KcOYj4kKThPQb3cY4q-9DpGrFHLMtV33B8Md6LNgVTvadpELqOxKpBZ51OLfHF-lHW9j_8u7lU9TKWKEgdFMhC2Mo7sbAA9e2OgGvgg7gMhPKsemYBNx7qNqfatnAHUbp4g-a8J4ifxYQHZ4ZtA/NcIEoXebL7UXZw_Am438Ht9V_7bAyvt_3B_1PPcCebA",
+                            "width": 47,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/bXAjJameNtJ7Duze_H-szg/7DnxqMAqu9Gyyninn05PaTEDNyJ_qvucktEA8bo-UGX_eIY9096-DGeEr6Gl6DnA3-45Z6vuDpeqnIn-tD2Olcs0226L_6QEl-8fgFSvM56DvaSs3_DwSTX9iWJPruH0-xtsXu1g_n3kmPjZv1kP1Q/veg-vWxspt8_iHHiuOOIrGIlbBODw6STYetlpeHfLcw",
+                            "width": 663,
+                            "height": 512
+                        }
+                    }
+                }
+            ],
+            "Last Name": "SATVIK",
+            "Marital Status": "Single",
+            "Team Member": "Yeop",
+            "Notes": "- One name can not be acceptable\n",
+            "Dealer Status": "New Lead",
+            "Co-Signer": "No",
+            "Trade In": "No",
+            "Other Taxable Description": "ADMIN",
+            "Driver's License Expiry": "2026-03-01",
+            "Driver's License Class": "G",
+            "Gap Insurance Amount": 2500,
+            "Life Insurance": "No",
+            "Warranty Plan": "Principal",
+            "Warranty Amount": 2500,
+            "Warranty Term": 2,
+            "Warranty Mileage": "80000",
+            "Application Date": "2024-12-10T22:50:50.000Z"
+        }
+    },
+    {
+        "id": "recBsJjuIJurlX5vn",
+        "createdTime": "2024-12-18T18:40:26.000Z",
+        "fields": {
+            "Status": "Processed",
+            "Dealer Status": "New Lead",
+            "Application Date": "2024-12-18T18:40:26.000Z"
+        }
+    },
+    {
+        "id": "recEvyd78LalPMrNI",
+        "createdTime": "2024-12-13T21:18:44.000Z",
+        "fields": {
+            "Email": "K@K.COM3",
+            "First Name": "AYTAC",
+            "Status": "Declined",
+            "Salutation": "Mr",
+            "Phone": "+16479049163",
+            "Date of Birth": "1971-01-01",
+            "Gender": "Male",
+            "Address": "101 WHITLEY AVE",
+            "City": "NORTH YORK",
+            "Province": "Ontario",
+            "Duration at Current Address": 3,
+            "Housing Status": "Rent",
+            "Monthly Payment": 675,
+            "Employer Name": "PRIDE GROUP LOGISTICS",
+            "Employment Status": "Full-time",
+            "Occupation": "TRUCK DRIVER",
+            "Duration of Employment": 2.5,
+            "Employer Address": "6050 DIXIE RD",
+            "Employer City": "MISSISSAUGA",
+            "Postal Code": "M3K1A1",
+            "Employer Postal Code": "L5T1A6",
+            "Employer Phone": "+18002777532",
+            "Gross Income (Monthly or Annually)": 7500,
+            "Vehicle Year": 2019,
+            "Vehicle Make": "BMW",
+            "Vehicle Model": "X5",
+            "Cash Price": 42999,
+            "Odometer": 117499,
+            "Insurance Coverage": "Yes",
+            "Employer Province": "Ontario",
+            "Dealership Name": "BOS AUTO",
+            "Vehicle Trim": "XDRIVE40I",
+            "Cash Down Payment": 500,
+            "Other Taxable Amounts": 999,
+            "Warranty": "Yes",
+            "Gap Insurance": "No",
+            "Theft Protection": "Yes",
+            "Loan Term": "7 Years",
+            "Payment Frequency": "Bi-Weekly",
+            "Interest Rate": "8.99",
+            "VIN": "5UXCR6C5XKLK80264",
+            "Driver's License #": "O9720-07107-10101",
+            "Driver's License": [
+                {
+                    "id": "attJEX6ZfObalH8Xv",
+                    "width": 1200,
+                    "height": 1600,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/bsoLdF4Mo9t475Hdovo5dQ/bRbiTB-YbMkmVcpk6k-kode0-BV0QEUY7DTldyWpz4mtqkE7bnfCWObCng4s89DN737zhpQaCnY2hjq1vjOjreZsZ5X1jUlIAPCjP6O3mmBBz9tzLT9yhbWqDwuTh78EtT4Ked3jGSLPp4Xn8GRx2odZ_lSFQgBdupDIzTaIg039siA0fD4Pcf7lT_cMGpDSoMMH5V06aQ38cYsV70lx6A/4diX_L6zKwxRuYK_4oOUy3uiF-vA07AxrZ14EZr2uKc",
+                    "filename": "WhatsApp Image 2024-12-13 at 10.47.02_80d16bde.jpg",
+                    "size": 493451,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/HYSqv46S4hKCO14ze9ETuw/V6FP0xFUIBrB7XAQw_iruG0WcZ6VrLTLEaCvQrv7UNGM57d3T5w8ybVUNKMKZ00jCeTi-Wy19MSTifjKJNRXJDdCt7wpOqFhtNcojrIUpcWHsO2ZJJPov8WB1DduxobiR59RiinemceAFNYiJwnEFw/tmURkTX5HugutWlFjhZSrMbU0DoUtu9ozKUDFyf_m80",
+                            "width": 27,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/JFZrQ-O_MmebC0motdnlKQ/9Ez9SnoVxdx8aKUzghI0ntpCVzU_OXCNiIpte8u-QWEgMBr1Ke7dqa05NlGmoh_PlMe7K5E3DTZc6LjCJeYjhs0n73tgmaiytIGlfdvk7KINyeJVMJSQZXcl5xCBT2Bw3omaKef8TdQZMJNATg38og/yyH2UMe4bahqDc0j_R17HWHkw7JjUcs0olHEqUXqgug",
+                            "width": 512,
+                            "height": 683
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/fdpXxt3ortR1sFfpEo0UGg/bPj5wYd2aZw5sBLElcWNJC8fky2KkKeoTRkTNSIboe-8g5YNNSh2dykMV83pTTK0pqAqs5qe-nX9Sp6hK28s7y9WYGPSwiRv8EJSjKSG1FH763Uxy9gpgymi-BSvrT9UqPhv_FQ1VBj7wJxi61MTrQ/mCUMESdXI2GPWgqBdLq1DQxOWvSnuBzbqDmrmA7kDtU",
+                            "width": 1200,
+                            "height": 1600
+                        }
+                    }
+                },
+                {
+                    "id": "attnkrlQMcH06pZng",
+                    "width": 1536,
+                    "height": 2048,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/cQgRzj81ejucryNdffNGXQ/B9B0trEQIpYjwG5KXDS8JbUiHrFuzjn3MP2YWqlCzNtO--5V2BGwIE0wcHCSd8nDyXXBN5JTwB23rUytN0G7pE-_NCRBvy562ualX1bVb8kP_QJZxSHRDlBupvSP91DNWbf3wRWWSmCMGRyIjaYCwPYAEXnyy9FkEKVJGv7bzmSnqracA-QyuKlQXQRPoncIoY3ixuuWGiSS9alyE3FGMg/rzmKIgOHsCn4YdP4u2PXv9XPJgjNPlXlQIePeJv-tjQ",
+                    "filename": "WhatsApp Image 2024-12-13 at 15.23.55_ec6dfb56.jpg",
+                    "size": 392475,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/HRKW769OMqfbgTjBQDJZVw/4ByL_mJqw9w4WiKJ-v8gThg3g1s5QGLsUyVQLDf1DylkeKpnMif6sRfzz4EeRlyjdzKmVTAlXZO2U_5tPqrw2upSfdCR98IdFUhWFmh0u7bRl0LRz1W0gS9bnFABxy5JGL1pqD3Gz0eGrYmwixCifA/eSMmPPgIrGhnd5ftC-eGgwqKeOxKtR7B1NpM5lGfeWo",
+                            "width": 27,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/CmDU_a2fXXMyGhUZWwtC8w/FfZ7V6uB_wil06JQ204t8pnOlKQFHn5L-mmxBXxpJmZR24JhXoPbLhu5h0uJBaWeJvlrH6thXh_m9uNLMdHvvR_7IbQZr-fbysMrCPCf34wJrpW8uaZz6bem8Tpd1UjumGVXxqmduSDtPhZWuSJpeA/LJfMv0jJng-xvOfxAtjN-i2ARwvuOctLpSKQMxEADlg",
+                            "width": 512,
+                            "height": 683
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/JMwAw781ZLHloWZnDZKUzw/1YIuYRrhLV0JvWp1ntuU7vvZJjh2cTs5MbAaXgXaVcGCaebd1iGaX2ajnQUHcmB4UIwTpdamWMeCv_YWDE2noPW65lwpq43RZbtKcrxo0y_UF5jh8bBQ5prIe4zZR7P01qdcwAxrQ4biD4_g1S2ePQ/fPqHf-yfz97h21ewMeOzk7sgeW10HW0z5I4XrPugp48",
+                            "width": 1536,
+                            "height": 2048
+                        }
+                    }
+                },
+                {
+                    "id": "attxbKFJdjEEubzks",
+                    "width": 1152,
+                    "height": 2048,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/4LS7wb7mHPSR7_z3EAzrEQ/xSa0CDbkQBHc5d6_eZV0BYspG-xhQgFIiWpfEtALsvNnEq836uo58a2mBmGkKalCgJDDZGhocIB4h7gfiXPy0dvt2hE_4yfc18whvFtUD-DGFIkiz6HeVhMVNL_XkpQkQPNDo_n89y1e6QE-MiMx4O0VZku4-pmGuKFwOFwWCOcnMxNmP2hpkAFE05UPg4O_Sy9QyhP0wfSLzbAiH88H9A/H4voIleEHJK00CoyrSnaym52jEov74wanJgrrZVsMqk",
+                    "filename": "WhatsApp Image 2024-12-13 at 16.04.45_30556049.jpg",
+                    "size": 285899,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/cftKw_QwQE8IwYvIoclW7w/YB3fpnZitgE2LoTGgYFPsbTX26cge5s41b9xPdzsV6YN2muQFrDreKM38z6aLJUkTo0X-Ki7HIEgZR_7bczdIMOrIe8_YoI236hJ_f2JwEIsPTl0HIL4dGG-pOKQgRDOgyFPzEt74B0m6INy0EPPYg/qWwV0mocGsrYyQZdTrv4Lq2EC3bLUXoG3aphECsFgCY",
+                            "width": 20,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/Ulgc-V-eU87nF2nPFiGmSQ/hXtFDzdKc4hK5tGcn0MAWxtcjyRrM0IFsE2Mn-t6VLDYpjvaybjaqk2w4gFGAOPHb95D1-49bHFltoAh-ny9-sOLvfzXI_pofztSmtOmk3-dcacsh9McIqb9sDnCB2z9RWvrLCgiX61H5nJa-i49yg/siRkYkD4gyJJTbQemMkMCEXDXkb-StLEYUL_fQrN2ng",
+                            "width": 512,
+                            "height": 910
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/4K6BwHP3lVQ1Nz_Tzy_BvQ/MomTSSXQH_cwTUC_NEmo52DULiVddsSjjCwmUeLmZ0V9TCvKlybUd0I6rJGxpw1qVDJuCr3HJ43IrinjvxdtlPHhtD450hk1TlBhkFy0JaVUjRqSWAdCC1Eljwyq_a3I7pvNh5WnqduT20-jephznw/pGQtZj7jvl37ZknDK0-LEePUN1xOCC0GORnQI_jAtNE",
+                            "width": 1152,
+                            "height": 2048
+                        }
+                    }
+                }
+            ],
+            "Last Name": "OZACAN",
+            "Marital Status": "Common Law",
+            "Team Member": "Jake",
+            "Follow Up": "2024-12-13T21:24:00.000Z",
+            "Notes": "CUSTOMER VERIFICATION IS DONE ,\nBUT NEED TO GET RECENT PAYSTUB FOR EMPLOYER VERF\n",
+            "Dealer Status": "New Lead",
+            "Co-Signer": "No",
+            "Trade In": "No",
+            "Other Taxable Description": "ADMIN/OMVIC",
+            "Driver's License Expiry": "2028-08-08",
+            "Driver's License Class": "G",
+            "Theft Protection Amount": 250,
+            "Life Insurance": "No",
+            "Warranty Plan": "Principal",
+            "Warranty Amount": 2999,
+            "Warranty Term": 2,
+            "Warranty Mileage": "0",
+            "Application Date": "2024-12-13T21:18:44.000Z",
+            "Customer Verification": "2024-12-13T21:23:00.000Z"
+        }
+    },
+    {
+        "id": "recIleu9HeYcqgBy8",
+        "createdTime": "2024-10-28T20:25:45.000Z",
+        "fields": {
+            "Email": "SOURABH11@GMAIL.COM",
+            "First Name": "SOURABH",
+            "Status": "Cancelled",
+            "Salutation": "Mr",
+            "Phone": "+14375573142",
+            "Date of Birth": "2001-10-01",
+            "Gender": "Male",
+            "Address": "27 CINRICKBAR DRIVE",
+            "City": "ETOBICOKE",
+            "Province": "Ontario",
+            "Duration at Current Address": 3,
+            "Housing Status": "Living with Parents",
+            "Employer Name": "IGUARD SECURITY",
+            "Employment Status": "Full-time",
+            "Occupation": "SUPERVISOR",
+            "Duration of Employment": 2,
+            "Employer Address": "101-20 STAVEBANK ROAD",
+            "Employer City": "MISSISSAUGA",
+            "Postal Code": "M9W6X2",
+            "Employer Postal Code": "L5G2T4",
+            "Employer Phone": "+19054448273",
+            "Gross Income (Monthly or Annually)": 4250,
+            "Vehicle Year": 2023,
+            "Vehicle Make": "Ford",
+            "Vehicle Model": "MUSTANG",
+            "Cash Price": 46999,
+            "Odometer": 3100,
+            "Insurance Coverage": "No",
+            "Employer Province": "Ontario",
+            "Dealership Name": "AUTO HOLICS",
+            "Vehicle Trim": "ECO BOOST PREM",
+            "Cash Down Payment": 2000,
+            "Other Taxable Amounts": 999,
+            "Gap Insurance": "Yes",
+            "Theft Protection": "No",
+            "Loan Term": "8 Years",
+            "Payment Frequency": "Bi-Weekly",
+            "Interest Rate": "7.49",
+            "VIN": "1FA6P8TH4N5117554",
+            "Driver's License #": "S6819-00000-11001",
+            "Driver's License": [
+                {
+                    "id": "attTOCkKAusOHZTPU",
+                    "width": 640,
+                    "height": 440,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/m-_ThMUpBYZLrjIdLXIoWA/qPh2XfKNBCkshUAM6P4K11C6tYB1TEJhYm-gIRCZV0fsdrrY7NKtm-sniXB7vl6n8IIEZazfkKPYpQKRUVUPThUMvzdnjbg25REkSlWehp_YVxM_9DWp_CEjivIJUSryCNRIz2qNZu9-DA14BWgtVaTo_RCZR8cnK8zI0Sbn6wugQrcrJvp4Ws-sL8TypDCN/jQHaD-j6_HBXTDBZgB6cHYlf9eTuWvToVgJyojwKUcY",
+                    "filename": "PHOTO-2024-10-25-14-41-46.jpg",
+                    "size": 125110,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/ZuORg0rjCKf5shX3jKpsZg/nKO7C5_PbY-B2Uc-MCe6jAWbgqi2nJ5KEAF15eWmgcynmAGjfqhFgcEpA8fZS1f08eG3GO-SNAFNae7FVW0Bv9jdjMSrxT5bqCkJ2HPpw1tm9PX7Z2Scu-4gMnS9T7c_9SAlLQOvshJSJfufNUBPSA/1o67yBtT_JF_Kh9Tva8e7XumPz1E_3XtXTQYefJhVGE",
+                            "width": 52,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/L_31UiywFPhQtCQVdimPAg/fbU9FRiI3DCP9f7n0Ugsy1U_m9LAy-2fu0rFa00kW81RM6fr7ega23ionlp__7Yt2Q0IibaWDXRQhYqoL2M9LsvIdovFyWrlCl6sVh_xIQfaGjBHsyRRNoYAZHdcgFoWtuRmXbzeM6WgjcEaWWVJpw/7FwFfANl7xbnGrSTj2oiZUsN8whvK_yA6SZJ5vipIeA",
+                            "width": 640,
+                            "height": 440
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/CHEDFmijrwjLxxKI9nxDUg/XYH73EdNhsWfguaO5tWRVOBlopMp7eKAJs1-Gp7A9FFbSi6r1UKGepzTVqsEKw_dZ8fceXLmU32930pXXMoCQAU0WeUACRn1PFmlmLCgVSLiNir-CI96uytO3mC4odwIf0yADM6f6rfmN3S1oVPwJQ/ZDh81ohlaS74dT1xiw0yNp-9rN_JO5XxWE3vmdxSGHQ",
+                            "width": 640,
+                            "height": 440
+                        }
+                    }
+                }
+            ],
+            "Last Name": "SOURABH",
+            "Marital Status": "Single",
+            "Team Member": "Yeop",
+            "Notes": "ONE LAST NAME\n",
+            "Dealership": [
+                "Gyro Mazda"
+            ],
+            "Dealer Status": "New Lead",
+            "Co-Signer": "No",
+            "Trade In": "No",
+            "Other Taxable Description": "ADMIN",
+            "Driver's License Expiry": "2028-09-11",
+            "Driver's License Class": "G2",
+            "Application Date": "2024-10-28T20:25:45.000Z"
+        }
+    },
+    {
+        "id": "recNTOLB3pF8TZe70",
+        "createdTime": "2024-12-17T22:31:53.000Z",
+        "fields": {
+            "Email": "GURMEETSANDHUSINGH@GMAIL.COM",
+            "First Name": "GURMEET",
+            "Status": "Follow Up",
+            "Salutation": "Mr",
+            "Phone": "+14372233286",
+            "Date of Birth": "1999-05-12",
+            "Gender": "Male",
+            "Address": "108-1971 ST. LAURENT BLVD",
+            "City": "OTTAWA",
+            "Province": "Ontario",
+            "Duration at Current Address": 2.6,
+            "Housing Status": "Rent",
+            "Monthly Payment": 500,
+            "Employer Name": "MUCHO BURRITO FRESH MEXICAN GRILL",
+            "Employment Status": "Full-time",
+            "Occupation": "STORE SUPERVISOR",
+            "Duration of Employment": 2,
+            "Employer Address": "515 INDUSTRIAL AVE",
+            "Employer City": "OTTAWA",
+            "Postal Code": "K1G3P8",
+            "Employer Postal Code": "K1G0Z1",
+            "Employer Phone": "+16138602444",
+            "Gross Income (Monthly or Annually)": 4200,
+            "Vehicle Year": 2019,
+            "Vehicle Make": "Volkswagen",
+            "Vehicle Model": "JETTA",
+            "Cash Price": 22999,
+            "Odometer": 73275,
+            "Insurance Coverage": "No",
+            "Employer Province": "Ontario",
+            "Dealership Name": "BOOST AUTO",
+            "Vehicle Trim": "EXECLINE",
+            "Cash Down Payment": 0,
+            "Other Taxable Amounts": 999,
+            "Warranty": "No",
+            "Gap Insurance": "Yes",
+            "Theft Protection": "Yes",
+            "Loan Term": "7 Years",
+            "Payment Frequency": "Bi-Weekly",
+            "Interest Rate": "6.99",
+            "VIN": "3VWG57BU1KM085713",
+            "Driver's License #": "S0403-30889-90512",
+            "Driver's License": [
+                {
+                    "id": "attH06bcHxvIN14MR",
+                    "width": 2048,
+                    "height": 1536,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/hByXuYQqFHCTpSKqnCSzNw/ejtROYr-ugsztLddYvaLoDaW5KeZ79RyQjRdI4OxySfobuyLZUePPUXRZlceFk96vfS4lyJQgv6YWo35dOBWILUNC6DuEPrg4A4DhTDZnozlRdIOC2EnIRa_6xPXaGuOTttrG7Q9eFArt30ud7BdNZImbYcXVhyGiZgF71dKu805_BAMhUk6-iRhX_0F7c52/mxTDmfS02yrQUgW2zyJ2Cdzr4Ja_4r2EBSGEiD-X0BE",
+                    "filename": "PHOTO-2024-12-17-17-20-54.jpg",
+                    "size": 862479,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/B68HVsLIBAVp9rOu0Mc2hQ/NcfbarVKsyyIk0sdf-EjA6AOJdOPFRRQ9DQ4vNejr6t-eGY99kt7HiHeS3kiGoUytx06aszuGP6PWDSR3oKH3b_2PLzGuUw-CtaMitK_oQ6AS72sr2MrZP0CIY9hxMCzeBmCAxQtyk4trVuunrZmTA/6he59UMREYFdeFAHTUOqtvUV72D9mnBrQWpErQezbaI",
+                            "width": 48,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/9KHvZyrdTeEA9u6ScznmWg/08l61IMiExyHkhIvKdjYRlU0TLY2BM_B3TT926xdHJB_1eJPD8zeQ9QvDAoFoyFxBBPXuljGN5ObbD-z3nxhSXC17vtfS2FPhtm4uiT8y2qSZlEmReCVqseEH8dBwyi2o1X1nTepP1pYHIaSYJpo9Q/89RLleP5QkskmLdRmPzks0JyrD8i2SsLF-tRk6dOCoo",
+                            "width": 683,
+                            "height": 512
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/1108kNwkTu7HZvfWOsBq1g/Sx6qzY0HGYVnqWVsDHXjTclRYRo1j0ntALXw1xY6voDAMOlgHTwhG54JmYJprHcjM2t8fv8VTQAmMQr_CLulSH-_BPs6UwSPy2w5pGe5vJaNb29XaVgc4kMpEMgMUAPW3My2sM2OzzW7dtRUjtwrZg/QqqXCUzHpJcffVr-TU6vOyDIjgCa85DbjapOiCqOeUI",
+                            "width": 2048,
+                            "height": 1536
+                        }
+                    }
+                }
+            ],
+            "Middle Name": "SINGH",
+            "Last Name": "SANDHU",
+            "Marital Status": "Single",
+            "Notes": "- Need at least G2 driver license\n",
+            "Dealer Status": "New Lead",
+            "Co-Signer": "No",
+            "Trade In": "No",
+            "Other Taxable Description": "ADMIN/OMVIC",
+            "Driver's License Expiry": "2028-06-10",
+            "Driver's License Class": "G1",
+            "Gap Insurance Amount": 2999,
+            "Theft Protection Amount": 250,
+            "Life Insurance": "No",
+            "Application Date": "2024-12-17T22:31:53.000Z",
+            "Customer Verification": "2024-12-18T15:20:00.000Z"
+        }
+    },
+    {
+        "id": "recPQH1usMiznMuZZ",
+        "createdTime": "2024-11-23T15:37:50.000Z",
+        "fields": {
+            "Email": "ASENO1055@GMAIL.COM",
+            "First Name": "HUI",
+            "Status": "Declined",
+            "Salutation": "Mr",
+            "Phone": "+16478868900",
+            "Date of Birth": "1987-05-18",
+            "Gender": "Male",
+            "Address": "56 DALLAS ROAD",
+            "City": "NORTH YORK",
+            "Province": "Ontario",
+            "Duration at Current Address": 3,
+            "Housing Status": "Own with Mortgage",
+            "Market Value": 4000000,
+            "Monthly Payment": 7600,
+            "Employer Name": "CAN-MAPLE EDUCATION & CULTURE",
+            "Employment Status": "Self-employed",
+            "Occupation": "DIRECTOR OF OPERATIONS ",
+            "Duration of Employment": 10,
+            "Employer Address": "2450 VICTORIA PARK AVE",
+            "Employer City": "NORTH YORK",
+            "Postal Code": "M2R2J6",
+            "Employer Postal Code": "M2J4A2",
+            "Employer Phone": "+16478868900",
+            "Gross Income (Monthly or Annually)": 350000,
+            "Vehicle Year": 2020,
+            "Vehicle Make": "Mercedes-Benz",
+            "Vehicle Model": "G CLASS",
+            "Cash Price": 225000,
+            "Odometer": 37699,
+            "Insurance Coverage": "Yes",
+            "Employer Province": "Ontario",
+            "Dealership Name": "B TOWN AUTO SALES",
+            "Vehicle Trim": "G 63 BRABUS",
+            "Cash Down Payment": 10000,
+            "Other Taxable Amounts": 999,
+            "Warranty": "No",
+            "Gap Insurance": "No",
+            "Theft Protection": "Yes",
+            "Loan Term": "6 Years",
+            "Payment Frequency": "Bi-Weekly",
+            "Interest Rate": "6.99",
+            "VIN": "W1NYC7HJXLX361613",
+            "Driver's License #": "W04183470870518",
+            "Driver's License": [
+                {
+                    "id": "attjmz3Q0xBHXaGCb",
+                    "width": 1152,
+                    "height": 2048,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/k858HzrIAV3Fu_kJoch5Eg/Zjkzs1uhRmPkC8KubV5F2mIl1g3rMMa3xO7OHfBHcZqKLLHo8Wm0RPORSNJ-LBNMlxTOE4xK1bnMe1544ZVp4kzgExWEiaL-f82jvYZzmEF8FvkrpWCIQzb-IWuHNp_OwXPWWl2566HifKGSnq1KiwGAwJ1suY4ubivX5J5Y55v5OuxwY4symXgJGGwzeZGm2bMTcIwwAGIDza3eI-npVw/KGyOUAI0w5tqUnAqp_ARXhGUzUDpHmtenWaJSqPkngg",
+                    "filename": "ca0a0960-d463-4ac8-996e-7f87fe71ca1b.jpg",
+                    "size": 303568,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/YonlHXmsG2KgizzpEUjeEw/XSv2GmgYcc1o1v2rMe-GCBABSr-qxJZXGiM_npxGHHNgovVIbTzSqexjtkqdzgmLtAfD9PCz0UwEkwQ-RbrNf7mZ8K4rGKh4-boEvRcYKu1VMh8VpXdyC3VJT-hZ68kA1gvSTyBGfXED6pkcGZKBpA/wES11DCsG2N6Um0aMttlsJ5El1OtvY0OTu38PmRjxKg",
+                            "width": 20,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/Rg1NGnddYMfLSVuvQO3Tag/2fHvYxMy_rmuZs6bMy458qNmydzi0DEA1pib7cyfJIVxbJMluN5R5r_ezKYiVSPp4hhoV0D4mQjKMS1j9qmNG7Z9pixKwBOTp_rl3zeAOk_vmwYtx7tLjuBliRDjPCneB__tsOITDfU5ISkn2Ly0PQ/EtEsbQqWONXkiJaW2qc7g2MQK8Bpwm7JhpeXwkIHLSk",
+                            "width": 512,
+                            "height": 910
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/2hp_WqXmR5yU2VfLUvSHIg/Das8cFYYp3_CcW2l3nO_VQCCY4m92xa9o2AdNqyOZ6nvcdbjnJYewylO15pWiGBSMmXk5xrE_R1j3nadq2S21ZeKNbUAkBKQf-wzu2zrsORF6GORM95FBvaMA86mwbHGpBru7IqUpu9CfAUXOzk5zQ/p9A-PHU0ELHew0Dxm8lGTMypsBj5feqjCWw5Ydve-mA",
+                            "width": 1152,
+                            "height": 2048
+                        }
+                    }
+                }
+            ],
+            "Last Name": "WANG",
+            "Marital Status": "Married",
+            "Team Member": "Kenny",
+            "Follow Up": "2024-11-23T16:57:00.000Z",
+            "Notes": "Need at least $25,000 cash down to be considered\n",
+            "Dealer Status": "Followed Up",
+            "Mortgage Amount": 1900000,
+            "Lender": "BMO",
+            "Co-Signer": "No",
+            "Trade In": "Yes",
+            "Trade-In Year": 2021,
+            "Trade-In Make": "Porsche",
+            "Trade-In Model": "911",
+            "Trade-In Colour": "RED",
+            "Trade-In VIN": "WP0AB2A96MS222799",
+            "Trade-In Odometer": 67100,
+            "Trade-In Lender": "SCOTIABANK",
+            "Trade-In Lien": "Yes",
+            "Allowance": 135000,
+            "Trade-In Ownership": [
+                {
+                    "id": "attJ71FvB1ZCjO88A",
+                    "width": 1152,
+                    "height": 2048,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/jGUVnaxQXmNDv67h4w1qdQ/01dekSmLiLXmABs91LY4xQv1codpHYnDzVRTGSEKB3EUhHEFtYeNa3pqOtseQ0WeMoQNA8l81TKZB_DSr39PBbquLdy_weRq4BOZKiFXXz7EBvM6Da5AB1H5VN9X5_BXW9GHBllGk6up7CHow1mEp_PncfFjMv3OvXLlXVmczlUpD_XG5qm_cFDCyOxR8k1Hu-ip1P8BNk_7NxByDuqYRQ/-PKoCvyk1xlqVuLkk1BGGJTXlYo0I_9LUJZ5q38R5-o",
+                    "filename": "ca0a0960-d463-4ac8-996e-7f87fe71ca1b.jpg",
+                    "size": 303568,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/zhhom4yXS0NNGAvlN0NTPA/Wx4wde-8t_Dmfj1WHKME_LViX_dAcz927kzxy2zcQ2B-Pivx8Sb5kxmHzpzXQyVVZ_llXGEEEeAZr5F0KOg1MO5mwPxIaPnVqVNPzkja1bzMrtOPYP7yn7AHYqqNubsdfx_HBVCAeRsGO6YogBzVkw/kx0Q8WAObju0U-t-ScgkOWgdUSRabzi_2H7cZGxFwJU",
+                            "width": 20,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/bc4eAHFnBW6-70Fn76uHYg/URhW4FDg4Uyf-Dou8ztxlG0A2UrOcqXAZlHzw8gQDoYhw3OXw2qXbdXXP3sqqXiKEKIfDe4_f4TIBtk-CQJwA0e2siUQhg-FnHffBGdylt2z0Y_FKSHvG9gUwE0sI6JfwvmmclH7vikRQZ6CM3cxjQ/DX3R7b1JM_kdcSw8CbA-zW-_uzVDyw4MeDXOzOl6K_8",
+                            "width": 512,
+                            "height": 910
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/yE66xqlVle2DL2B2ldDEXQ/SHhGT7uM_ciS5DUXmKC3krZeaGftGs7mNYBStJBb4ojsU1aWyAKOPgSU7HLqo4FfmhITfVmuREVwzJMrefquEuhIJR4s2AP7E1r85z6ZkTe3nhTtEMlclsKyY5Fkc777Xx4ROW78yG4VXK0BPtSupg/6P-06bJFzHwMTJuO-cq8oWQImiWMPtiFHSIbHv_CKjY",
+                            "width": 1152,
+                            "height": 2048
+                        }
+                    }
+                }
+            ],
+            "Trade-in Trim": "CARRERA 4 S",
+            "Lien Amount": 115000,
+            "Other Taxable Description": "ADMIN/OMVIC",
+            "Driver's License Expiry": "2027-05-18",
+            "Driver's License Class": "G",
+            "Theft Protection Amount": 200,
+            "Life Insurance": "No",
+            "Application Date": "2024-11-23T15:37:50.000Z"
+        }
+    },
+    {
+        "id": "recVbtAE3arHdxdE6",
+        "createdTime": "2024-12-04T17:59:43.000Z",
+        "fields": {
+            "Email": "GAURAVDALALXX03@GMAIL.COM",
+            "First Name": "GOURAV",
+            "Status": "Cancelled",
+            "Salutation": "Mr",
+            "Phone": "+16475012767",
+            "Date of Birth": "2003-04-25",
+            "Gender": "Male",
+            "Address": "3773 KEENAN CRESCENT",
+            "City": "MISSISSAUGA",
+            "Province": "Ontario",
+            "Duration at Current Address": 2,
+            "Housing Status": "Living with Parents",
+            "Employer Name": "AMAZON FULFILLMENT CENTRE",
+            "Employment Status": "Full-time",
+            "Occupation": "FORKLIFT OPERATOR",
+            "Duration of Employment": 2,
+            "Employer Address": "8050 HERITAGE ROAD",
+            "Employer City": "BRAMPTON",
+            "Postal Code": "L4T3M1",
+            "Employer Postal Code": "L6Y0C9",
+            "Employer Phone": "+18774671383",
+            "Gross Income (Monthly or Annually)": 4200,
+            "Vehicle Year": 2021,
+            "Vehicle Make": "Mercedes-Benz",
+            "Vehicle Model": "C-CLASS",
+            "Cash Price": 37999,
+            "Odometer": 78998,
+            "Insurance Coverage": "Yes",
+            "Employer Province": "Ontario",
+            "Dealership Name": "READY AUTO",
+            "Vehicle Trim": "C300",
+            "Cash Down Payment": 0,
+            "Other Taxable Amounts": 999,
+            "Warranty": "Yes",
+            "Gap Insurance": "Yes",
+            "Theft Protection": "No",
+            "Loan Term": "7 Years",
+            "Payment Frequency": "Bi-Weekly",
+            "Interest Rate": "7.99",
+            "VIN": "W1KWF8EB0MR645403",
+            "Driver's License #": "D0233-30000-30425",
+            "Driver's License": [
+                {
+                    "id": "attanFuxwkdr7qQyS",
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/Am9sE1H-w3DyADaS5c9mtA/Vs_k4FnBr3vq5YPNvcBNGPrs7Q6t3wVbXvuguDh0_Y2I8OixS4cguGbTL_Xi-CxwEVmhCktzKeiBgSA7O_IraupaOByFa4suEkL2KFlqoy7PdvnSOsk1Jg3lDxm5uv8howOSj7w6EIEG-A8H-jb2WAijIMDUKHPmyaE3-9UWp54/ccLdnSUIa8WIXMSEi8M-gQKC8UsbUb2cLgQQkM5WXQA",
+                    "filename": "GOURAV DALAL.pdf",
+                    "size": 532934,
+                    "type": "application/pdf",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/ihrWmWfIiG9T6EgdtxvC2g/H7WrvrrHV4EbXVrMTXml4rlhchP3tWqs_05GVq-fCUNuVx2YdA-9COU5Rqrz0P3n0Nhq44rShpqEoQt_C4uK7aMlJcNUERMBMfAagP80LyxMySdgdrl4TXNm6-pTPhZeOa1n4yga2pz3o5kDohOgTg/q8Oes74iGBT9vx4UEoxN72zR3tVDbIgvkCSteh9Q_O4",
+                            "width": 28,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/DVYjswaI3LNYQPQganCw9A/aJ6-LgUw6EUuQSMg31YUnkKTUA-xs3K2-zNx9lf49dADGZyHuR_8pPAZ2yDmtuiz-lw8lKG-VVAREoZjqzKvOhQLuQu_Ggk0C1F_G2NX4_KPzilEjCYhFqouX_-PPiuJAxzcsoULKj2ylNCXIjxlFA/E2gr23I6MuAuj69SwSMoFaAjXGGq8gN--ygXQn9nJtw",
+                            "width": 512,
+                            "height": 663
+                        }
+                    }
+                }
+            ],
+            "Last Name": "DALAL",
+            "Marital Status": "Single",
+            "Team Member": "Yeop",
+            "Follow Up": "2024-12-04T18:32:00.000Z",
+            "Notes": "- Need recent paystub from the customer\n- Need to get update with changed unit\n- Customer never came back to us with requirements and he still needs to have high value of vehicle\n",
+            "Dealer Status": "Processed",
+            "Co-Signer": "No",
+            "Trade In": "No",
+            "Other Taxable Description": "ADMIN",
+            "Driver's License Expiry": "2028-11-07",
+            "Driver's License Class": "G",
+            "Gap Insurance Amount": 2999,
+            "Life Insurance": "No",
+            "Warranty Plan": "Principal",
+            "Warranty Amount": 2999,
+            "Warranty Term": 24,
+            "Warranty Mileage": "40000",
+            "Application Date": "2024-12-04T17:59:43.000Z",
+            "Customer Verification": "2024-12-04T18:48:00.000Z"
+        }
+    },
+    {
+        "id": "recWzo1YWtykMlFXB",
+        "createdTime": "2024-11-21T22:33:41.000Z",
+        "fields": {
+            "Email": "LUBANPREETSHERGILL2004@GMAIL.COM",
+            "First Name": "LUBANPREET",
+            "Status": "Cancelled",
+            "Salutation": "Mr",
+            "Phone": "+14374301207",
+            "Date of Birth": "2004-01-02",
+            "Gender": "Male",
+            "Address": "1 MCINTOSH STREET",
+            "City": "SCARBOROUGH",
+            "Province": "Ontario",
+            "Duration at Current Address": 2,
+            "Housing Status": "Rent",
+            "Monthly Payment": 400,
+            "Employer Name": "TIM HORTONS",
+            "Employment Status": "Full-time",
+            "Occupation": "ASSOCIATE",
+            "Duration of Employment": 2,
+            "Employer Address": "2480 GERRARD ST E",
+            "Employer City": "SCARBOROUGH",
+            "Postal Code": "M1N3Y3",
+            "Employer Postal Code": "M1N4C3",
+            "Employer Phone": "+16473503972",
+            "Gross Income (Monthly or Annually)": 3500,
+            "Vehicle Year": 2023,
+            "Vehicle Make": "Volkswagen",
+            "Vehicle Model": "JETTA",
+            "Cash Price": 32990,
+            "Odometer": 6800,
+            "Insurance Coverage": "Yes",
+            "Employer Province": "Ontario",
+            "Dealership Name": "SIGMA CARS",
+            "Vehicle Trim": "HIGHLINE",
+            "Cash Down Payment": 3000,
+            "Other Taxable Amounts": 1998,
+            "Warranty": "No",
+            "Gap Insurance": "Yes",
+            "Theft Protection": "No",
+            "Loan Term": "8 Years",
+            "Payment Frequency": "Bi-Weekly",
+            "Interest Rate": "6.99",
+            "VIN": "3VWGM7BU8PM056767",
+            "Driver's License #": "S3369-49080-40102",
+            "Driver's License": [
+                {
+                    "id": "attNWzRaw5aXV77OW",
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/OolyJtPUnEs8F38yd5Vq8A/6iCoWaXLFIAcvx2sHE-UAYdvbJA0DDljNIkUTtOktzTIp7VZNhm9kmKhJXF4DWgpHQsSyvBEAvFJHZXa_YRu_t9UxUdSvdzj4rkoAI8toVnOTw4_FNg3zKpVlie2SRu6x_YwS_tME17-jKX0s09SfVpY8e8xtcore5khHCE1qS418XcS1LbIO1p_8-ZiHIQ0/2zZsg5PUKG3kDZi6B07KCO90Zme3LHXTuVVuee_tMWI",
+                    "filename": "SHERGILL_LUBANPREET_Passed.pdf",
+                    "size": 1678016,
+                    "type": "application/pdf",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/arDWVceTDe1sbV2KKpDgzw/-XuR7Sm1rS1CQHozQbKdoRf6xEs8Z3BfLA6sNckXOXnrt31f4eVBD11J-aGOjkDdBc6BQ--lqOpJ6cf2qUh4-KABFfVeZrTM-cHoWdgyddG-_EmChcfUxn7OrGWTQllgIA14dV4z8e_-JReI5UmVfw/g3abdeJtxN1vk-Uz01cYfAmP0U63eJR7uxxmu2MtC5o",
+                            "width": 28,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/odAIoDhitdy8cW1sRzelIw/k01dTZ8naxE5Ytw0pENhFD3xQlGt7TmazH5IHzQ-dSmf5ZMlXPRwCsXgavFgCjlPIRRPUR5DZmC9KnyuTJrVbuf0TG-ErzyPCJzlIohb3ivSoprDSQv6nghD9cdLLD2Uav4K4JbJdJWnW4pBwOxYBQ/PuEpv-foC4JSJYhjlALWtpYnRBsd3gU39_v1nJzqkBA",
+                            "width": 512,
+                            "height": 663
+                        }
+                    }
+                }
+            ],
+            "Middle Name": "SINGH",
+            "Last Name": "SHERGILL",
+            "Marital Status": "Single",
+            "Team Member": "Jake",
+            "Follow Up": "2024-11-21T22:57:00.000Z",
+            "Notes": "Need BOS , need Both verification to be done\nneed g2 driver license\nCustomer never came back to the dealership for sign\n",
+            "Dealer Status": "New Lead",
+            "Co-Signer": "No",
+            "Trade In": "No",
+            "Other Taxable Description": "ADMIN & SAFTEY FEE",
+            "Driver's License Expiry": "2025-02-17",
+            "Driver's License Class": "G",
+            "Gap Insurance Amount": 2999,
+            "Life Insurance": "No",
+            "Application Date": "2024-11-21T22:33:41.000Z"
+        }
+    },
+    {
+        "id": "recY1Wv5tJH5ydUBr",
+        "createdTime": "2024-12-10T19:16:29.000Z",
+        "fields": {
+            "Email": "RAJAT014789@GMAIL.COM",
+            "First Name": "RAJAT",
+            "Status": "Cancelled",
+            "Salutation": "Mr.",
+            "Phone": "(437) 226-8150",
+            "Date of Birth": "2020-09-14",
+            "Gender": "Male",
+            "Address": "2-216 THALER AVENUE",
+            "City": "KITCHENER",
+            "Province": "Ontario",
+            "Duration at Current Address": 4,
+            "Housing Status": "Living with Parents",
+            "Employer Name": "GARDAWORLD",
+            "Employment Status": "Full-time",
+            "Occupation": "SECURITY SUPERVISOR",
+            "Duration of Employment": 2,
+            "Employer Address": "490 YORK ROAD E",
+            "Employer City": "GUELPH",
+            "Postal Code": "N2A1R5",
+            "Employer Postal Code": "N1E6V1",
+            "Employer Phone": "+15198271880",
+            "Gross Income (Monthly or Annually)": 4000,
+            "Vehicle Year": 2019,
+            "Vehicle Make": "Land Rover",
+            "Vehicle Model": "RANGE ROVER",
+            "Cash Price": 41999,
+            "Odometer": 109560,
+            "Insurance Coverage": "No",
+            "Employer Province": "Ontario",
+            "Dealership Name": "AUTO HOLICS",
+            "Vehicle Trim": "SPORT",
+            "Cash Down Payment": 3000,
+            "Other Taxable Amounts": 999,
+            "Warranty": "No",
+            "Gap Insurance": "Yes",
+            "Theft Protection": "Yes",
+            "Loan Term": "7 Years",
+            "Payment Frequency": "Bi-Weekly",
+            "Interest Rate": "7.99",
+            "VIN": "SALWR2RK7KA828794",
+            "Driver's License #": "B3180-63800-00914",
+            "Driver's License": [
+                {
+                    "id": "atte9CpwGGlOncOJS",
+                    "width": 1266,
+                    "height": 812,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/xWSufSFibb-cMMQHb4E7Nw/EH3dD7Fomuh9syBi3no5-3JQJsB6JIrVgjzpx_GJLvq1TWycucJsmAbsVhTPMSf4Sx33ILJF91DvJ5VVltSOwwFwcyZhOUt2QSMHsPRZp5dtvPGVQDvsoillpYl-nU0FRWN5gGKvTuNQ6-5Uco59DHxgEHAGoexWG2UzyJmxOKujpDdOffxhPd5SkNOSESyL/C5YZqnKq6qqQGLBJYFgjXa9QzJeBU5CR8bUZTuDKv0g",
+                    "filename": "PHOTO-2024-12-03-12-41-02 (1).jpg",
+                    "size": 260330,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/M36Ejkig2v-KcQmnKe2d7g/NpwyFqjXJqDLAXDL5By5Pv7uKKGaOar_cEBM363SUQ5Wg30KA2IXZVIWgK7SyDI74x5LEh8zKZEEAOgkU6hinXpn4esRTE0XMiDJ7HyJ4V-5ueo0Y6dOPY9zw55YYUU-MVkaRpri3tt8WSULXEJrqA/UCIP3Dfvo_FRwm_oOMemIXfLesrpwsmEp19p1wEa_w4",
+                            "width": 56,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/55cKw4zBOb2Z0CgMr-LD2A/qcUwtjwUaOvu_89xDeqolkJNQu03EZAFTB1gVHM1yDiK9hBfu4w0yDOTLlxMDg96CGq1hb9jOMhB_dIqKH7JJ6SF9odiPWiRng2A9KOpWxdntlTXdAR15g4M1lDSctbJR6f7L4SxAmA0VbmHuMrorQ/QQLxu9D0lUT6QUokm5Z_fbHPe6inlKUS_IcdgXBeeSI",
+                            "width": 798,
+                            "height": 512
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/xSZzKSwU9nGAsBFNVmU5pQ/loUYhMg0a4XLd4Q0vCZAP9_8OszKbFF4ZGdew-e_E1xDYVt93F12IUPSUEjSCOdBN8y-R0ETZhIaQdqNXv35a612pA9FXMbT8Qcvr1E0aPrbNsulm-_SvXh9c0BhAkfowod0n0iEI3zu96dJb0gWNA/oE7sDBtgJM5B2dKV1cJy0ysBRmvIfap9_zY259P__iw",
+                            "width": 1266,
+                            "height": 812
+                        }
+                    }
+                }
+            ],
+            "Last Name": "BHANDARI",
+            "Marital Status": "Single",
+            "Team Member": "Yeop",
+            "Follow Up": "2024-12-10T19:19:00.000Z",
+            "Notes": "- Customer not answered\n- Customer phone # is incorrect\n- customer recently moved to new address , he has updated driver license. \n- currently full time work with regal security\n- Customer requested to do not proceed\n",
+            "Dealer Status": "Followed Up",
+            "Co-Signer": "No",
+            "Trade In": "No",
+            "Other Taxable Description": "ADMIN/OMVIC",
+            "Driver's License Expiry": "2024-12-21",
+            "Driver's License Class": "G",
+            "Gap Insurance Amount": 2500,
+            "Theft Protection Amount": 250,
+            "Life Insurance": "No",
+            "Application Date": "2024-12-10T19:16:29.000Z"
+        }
+    },
+    {
+        "id": "reca1mimNjTAgfTYA",
+        "createdTime": "2024-12-04T22:50:11.000Z",
+        "fields": {
+            "Email": "DALJEETGORAYA315@GMAIL.COM",
+            "First Name": "DALJEET",
+            "Status": "Declined",
+            "Salutation": "Mr",
+            "Phone": "+14376624315",
+            "Date of Birth": "1998-02-24",
+            "Gender": "Male",
+            "Address": "78 WILTON DR",
+            "City": "BRAMPTON",
+            "Province": "Ontario",
+            "Duration at Current Address": 2,
+            "Housing Status": "Living with Parents",
+            "Employer Name": "HENRY ROTBERG STEEL CONSTRUCTION LTD",
+            "Employment Status": "Full-time",
+            "Occupation": "STEEL FABRICATION",
+            "Duration of Employment": 2,
+            "Employer Address": "55 CREDITSTONE RD",
+            "Employer City": "CONCORD",
+            "Postal Code": "L6W3A1",
+            "Employer Postal Code": "L4K1N3",
+            "Employer Phone": "+19056691916",
+            "Gross Income (Monthly or Annually)": 5000,
+            "Vehicle Year": 2019,
+            "Vehicle Make": "Volkswagen",
+            "Vehicle Model": "JETTA",
+            "Cash Price": 16999,
+            "Odometer": 144000,
+            "Insurance Coverage": "Yes",
+            "Employer Province": "Ontario",
+            "Dealership Name": "BOOST AUTO",
+            "Vehicle Trim": "R LINE",
+            "Cash Down Payment": 2000,
+            "Other Taxable Amounts": 999,
+            "Warranty": "No",
+            "Gap Insurance": "Yes",
+            "Theft Protection": "Yes",
+            "Loan Term": "6 Years",
+            "Payment Frequency": "Bi-Weekly",
+            "Interest Rate": "6.99",
+            "VIN": "3VWE57BU1KM015877",
+            "Driver's License #": "S44901510980224",
+            "Driver's License": [
+                {
+                    "id": "attbk4pBOCO4vI2GU",
+                    "width": 1427,
+                    "height": 968,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/c39YyQBorh-YAvykhR6_Mw/mhKA0EAuhjakK0f-0X8nYxeQlKLyovLhcYjfmdeb0XfdAFEDHzoWPOfjQlE_M9QYRxCaU_Huj8mgZU-NM6IC5iCWoHbUNu4MS_novHw5mlZgVYIsYuipznTsl1dSpFKuoIAbCNkg8QwuQ_9x6zq_Pg/_5cb8dNSPXx48kqjbL3ngNG_vf3qPOfDTnFcNYvRTqs",
+                    "filename": "DL.jpg",
+                    "size": 247194,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/1-8SgZMH1YvsS5EhQ2ZBhg/xqmHgNl4zIndzUAssXmKLEjNDubmDOQrWPQq6qm6bHAobs7S56EMh6O9VdMAQ-UbAMBVNq4nCIBV-gNJ62zMZKgESA3zEfOh3BlbEnMX5CVnyGCFVrgdnndO8WT1VFpc0T_l6fNyLjWy1FpL2vz2WA/1ZIlmTYjlU7fuega25hMUERJWOvccd1VMGriviNMK8U",
+                            "width": 53,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/In2HVTOfQ74FLn69ZB36Kg/-lbPcLRxmsk2VsZ6PjStu77XN-bFfbqQeZ0y-EKiJmB0mPOPCWDniuqOEOyuWeciUAZmdWlj8D5tr77Lql42hKnrU8vZMZstz0UG0yma3cu2rHUVUNvwAK2rmJiiicmJF5nknZnAKBFxQ2eQsBqkZg/0qQsZ8WKaD3wDJ10H7yhFbzK9hnyMOIFV9dwuaCq2Xc",
+                            "width": 755,
+                            "height": 512
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/gcVatJ94xJlOQipeptxUjQ/Wow2046tlxzhLo6GGgIoD9aXUEkJ8g0laym7DbdVZ4YpxGXrReMpE0Czt6Bj5MGSoipgJUek2zionjFvrYkNNxbMrKLwCiYrChosneGpXWt0KtQvuWdEeBgxew4lGrr73-4jng9ItexNz8RWQ5pu5Q/L8v-FseYbjRqXG6bqKzS-E3xLyuZgFqZ3Jo_HTdKdyE",
+                            "width": 1427,
+                            "height": 968
+                        }
+                    }
+                }
+            ],
+            "Last Name": "SINGH",
+            "Marital Status": "Single",
+            "Team Member": "Yeop",
+            "Follow Up": "2024-12-04T23:00:00.000Z",
+            "Notes": "- Need SIN or qualified co-signer to be considered\n\n",
+            "Dealer Status": "Processed",
+            "Co-Signer": "No",
+            "Trade In": "No",
+            "Other Taxable Description": "ADMIN/OMVIC",
+            "Driver's License Expiry": "2028-11-06",
+            "Driver's License Class": "G2",
+            "Gap Insurance Amount": 3000,
+            "Theft Protection Amount": 250,
+            "Life Insurance": "No",
+            "Decision": [
+                {
+                    "id": "attBgoOh2tUeblNOI",
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/DYRhZKBIPwiMr996cdZwRQ/SAsVauTS_yPpyLhRFaFg8KtymuOIDmI866_mPLz9-GOhkrNT6M84l_UURqnUcSvbeov5YNxAZTu3xjiVF6Ilho3g3pvx0quzXi9uK6ZATk9IEECH-V6PWY1mOXScn6l-YduKprWtY6QsDl6WujurNw/hLNri6tyDfell2-6izD7ypiv37puPcCm69sPRciHWEE",
+                    "filename": "RBC.pdf",
+                    "size": 111618,
+                    "type": "application/pdf",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/KwEge7CmYib2Yanss69_UA/LWxZctFqchQ3oIQ8Gr8CDZpZJgLIj-H5JeVzj6ZHA6n_ZnY05UTWSL8kjh9AmANIWQFmG6f6ZHP3kqZ0kkZjNB-SD2tE5EC18V7fb-L2fN_albXx-UMt3o0pVPfOAJ4DP6UexA31HERkgkbG-MbKKw/5Koci-x4PGBpbmFPtWwPoc-t7hwuI1-S7mW6PRvPeYo",
+                            "width": 28,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/lseTBzns176HIiFO7lkzPQ/UanmXpS0wAM-aAdv_dkle2PM6Y2YKiaE3cvLPiZyWBkv7qXSoXg8XSta0_J0gjVpbQaD6TAV-xGO939kmfqNMJzRUa3h_GGItM4kkGhoSw3XCujJ10040eAI5A7sSn9eZeNlfPZKm7tYfxje0PHGqw/SoO1ekKw55TGuWQWVyrcpNalB4acemGbTOrsNmd32QU",
+                            "width": 512,
+                            "height": 663
+                        }
+                    }
+                },
+                {
+                    "id": "attCvcvcxTmq8zFTs",
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/ehBkqbunJD10y7xzqxQnCw/5PvoSvC_eKlgemZNyHs0c2aTOCQfAxd6I-gKDQ32EXj03gQCguAqSEiqNALg44jfccwdIlar_kExwmPlO2f9nEddD68N6h4sBPduXRf_FxyOa85JEgWbw3oMU49Du1f_qJer1nabNkoj53-LgemS6BXLHyythHnWy7Ji7Iiudjk/zLxeTVpU0sdM9c_n-2ZDWbdoj3anJgAjX39ETPQUjUk",
+                    "filename": "SCOTIA.pdf",
+                    "size": 113364,
+                    "type": "application/pdf",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/2vPCR0RLHR34FIUWhIZ9YA/Aqxqm9ca_GjL5rCDOUoPTE4WxZ9QUVgMShD-G-dQtY0KU7vXIuAVgjo34CjvNyatWsXXtzVMLPIATQd2CeXrShGvsSyZB8TiAxMdHCkH2KQFZSukTXqSFqD3w8BHGFA7-MtgnMHJr-MplA-6RwnKhg/zbjfGh6_Myju2eP_LWv990_UIEfxr1_GJv9_15DAAM0",
+                            "width": 28,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/OuFlbqXlTqRC7JxmTQf1dQ/iZYYN2q_bNq4_G9ETEjt8AQhvn9cdXBCHqwE1p65Ym5kXz6BPud_R6dzNXWLwqLP1A63l-Rs1jcfHUr85b-usFyivBgxWdSIJNz1ShOuY6y_YejTQyXPsNFbHfXvlfq_PGtp3y4GW12AVtOMQW59GA/E2URoyhzl5OkN5kEKDU9wnLt7sNK13JlUZPDQ1uAkYg",
+                            "width": 512,
+                            "height": 663
+                        }
+                    }
+                },
+                {
+                    "id": "attt4RD32V89JNR1W",
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/riXNtqQPRwdk7_RuouD_jg/9jR9_OUTbJFvSOnmgy7zcFHUjwIPUF8S1_-uZTe3jqXpgzFJVnBdgU-vL8ohrfUsFZPDb6mMo25wdBAs9Yt1OrpFqaqQFBO4CR98ejoP9OAks_maqyY1OK61yJXvKa5JBMGqh7kIAtw9LH8zXWaxzg/0X6qnJpVE7EgLAA1SPB_uYNb9NmK8D5QhHAOM__TWws",
+                    "filename": "TD.pdf",
+                    "size": 112364,
+                    "type": "application/pdf",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/B-LaCOoQ9u_oWMW3X23J2g/AJ06AxeRxcSOsaV192NNxn9Tu1COtSSPfnYJfr-RY6rLohP7yN4quj9dlRN5pCb4qNBTaNl_C14Ep4VeIhjYXPN87PSeNLopFpN2sd3jGNAuGXhzaZzx0wt5E4svohC5xuh5W0W09vSaA6NX8wYPlA/gtj4Wmi50fdw2E0dGAsX5ZTxEXhRyZPDaLG9zEVoH9c",
+                            "width": 28,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/BAjPhlfQEVmLJX5KflMrMw/WrEVa3zz3EzIOHHE0z30BsEoAx9IxbbwIAFGB7faTCYaACcyORZxyjSff_49JqNznrbLmonRx1YQA6ZgcNegDccmttMcCBKePVmtZ3jnb1NGiugibg-in7evl272oiSQX7ca-_d2_1xGGbxU4wZdSw/BHshu9KHptIO2BGdrKNueIVPkFm6R7p71iWtq7zT-ss",
+                            "width": 512,
+                            "height": 663
+                        }
+                    }
+                }
+            ],
+            "Application Date": "2024-12-04T22:50:11.000Z",
+            "Customer Verification": "2024-12-05T15:38:00.000Z"
+        }
+    },
+    {
+        "id": "reccgItk9KXTdiy45",
+        "createdTime": "2024-12-09T16:36:55.000Z",
+        "fields": {
+            "Email": "YUVRAJKAUSHAL0312@GMAIL.COM",
+            "First Name": "YUVRAJ",
+            "Status": "Declined",
+            "Salutation": "Mr",
+            "Phone": "+14376770312",
+            "Date of Birth": "2002-08-18",
+            "Gender": "Male",
+            "Address": "66 FANDOR WAY",
+            "City": "BRAMPTON",
+            "Province": "Ontario",
+            "Duration at Current Address": 2,
+            "Housing Status": "Rent",
+            "Monthly Payment": 450,
+            "Employer Name": "ECOM LOGISTICS",
+            "Employment Status": "Full-time",
+            "Occupation": "DELIVERY DRIVER",
+            "Duration of Employment": 1.5,
+            "Employer Address": "945 WILSON AVE UNIT 1-1",
+            "Employer City": "NORTH YORK",
+            "Postal Code": "L7A2H2",
+            "Employer Postal Code": "M3K1E8",
+            "Employer Phone": "+18008623315",
+            "Gross Income (Monthly or Annually)": 4856,
+            "Vehicle Year": 2022,
+            "Vehicle Make": "Chrysler",
+            "Vehicle Model": "300",
+            "Cash Price": 34999,
+            "Odometer": 84766,
+            "Insurance Coverage": "Yes",
+            "Employer Province": "Ontario",
+            "Dealership Name": "VIP MOTORS",
+            "Vehicle Trim": "S 4D AWD",
+            "Cash Down Payment": 7000,
+            "Other Taxable Amounts": 999,
+            "Warranty": "Yes",
+            "Gap Insurance": "Yes",
+            "Theft Protection": "Yes",
+            "Loan Term": "7 Years",
+            "Payment Frequency": "Bi-Weekly",
+            "Interest Rate": "7.99",
+            "VIN": "2C3CCABGXNH154548",
+            "Driver's License #": "K0897-79000-20818",
+            "Driver's License": [
+                {
+                    "id": "att0CRV0Wx0Lq1d80",
+                    "width": 3024,
+                    "height": 3004,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/xzcVRzwKuHJgPz1n6Cx0lQ/Brw92LzQ7NT1Wob9Wl0A2CkAiuuePM8829hs2iPcuVoHPVhHXOTR8akoEapCZCOvFZwopH_mXDd9yaakDzHEx7sNInXNrteg-5WdWWu6cyKTkZU6d2M9-mwq8-joVFPVZwYEHtSD9on5KZQTHdW-UunJXlV2CDmtD9vDcwyY4eU/WTbn64MhttDmlRUJk68Plf7HxgqLohVqaSFWpCG3-zA",
+                    "filename": "IMG_2777.jpg",
+                    "size": 2759740,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/lsBmQiXCwh_YajwhaX3TrQ/Sm47gDu_Z86sUxKnG4HTPSXBIJ1Jx9WhhMPPslLS-skj4OIscx9YiAQhVLic-zybRvzPyl3k5P3RVXqLJcDxj6nGojmDrn_99v3bQfddsq7k2E1DOb7dv9KIY_N_F8OoBBYZy-TAay3CaqT88gwNZQ/feCtnpssXw4R8DhOZ52uHQVsvdvfXYzgqFdyROB08Qw",
+                            "width": 36,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/nxKbF-WAReU_x85xOx5nZg/Yy-MiRKWlgZdK7olzg-7ZXQKqs1n1FWUlGjj6lx-K-h02ZyxEilJCRmBu4yQzgrrC78qO61aI4Cz0nvfLW2qUG2QGlCi41wz6VvAAflCSRprCk4KAljsfVDdp1kDYZiQhASUxf6Se9XV-BvuOQz4JQ/Z2ErGrk7Wq1YKvqsUtGb5mi8eSBgxaoZOrsw59tV5Kg",
+                            "width": 515,
+                            "height": 512
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/a4NAGc4lp-DSsNMVfoj0tA/IDxRBISIUcj1mdcFvqTtJwHXkr7d42Xxq8GOrda8mh_VjxX1hKfTmYvwCgDCf3czKpTGRmj8lwckEQiPGxe91n-hh4CeDkraF7hAMAkAZvmB4C45pDzictRcZJW9c4EeEVcE61A9-nLaCqHoNz06iA/cyQ3xteQAyvSpsedVBOlvPmlLYbjrIT0KzIZsg39Z8Q",
+                            "width": 3000,
+                            "height": 2980
+                        }
+                    }
+                }
+            ],
+            "Last Name": "KAUSHAL",
+            "Previous Employer Address": "3-158 KENNEDY ROAD",
+            "Previous Employer City": "BRAMPTON",
+            "Previous Employer Province": "Ontario",
+            "Previous Employer Postal Code": "L6W3G7",
+            "Previous Employer Phone": "+14376553040",
+            "Marital Status": "Single",
+            "Team Member": "Jake",
+            "Follow Up": "2024-12-09T17:00:00.000Z",
+            "Notes": "- Need to get employer verification\n- called twice to employer , no answer. need recent paystub\n",
+            "Dealer Status": "Followed Up",
+            "Co-Signer": "No",
+            "Trade In": "No",
+            "Previous Occupation": "STORE MANAGER",
+            "Previous Duration of Employment": 0.7,
+            "Previous Employer Name": "SAFA TURBAN",
+            "Other Taxable Description": "ADMIN / OMVIC",
+            "Driver's License Expiry": "2028-04-03",
+            "Driver's License Class": "G",
+            "Gap Insurance Amount": 2999,
+            "Theft Protection Amount": 250,
+            "Life Insurance": "No",
+            "Warranty Plan": "Principal",
+            "Warranty Amount": 1999,
+            "Decision": [
+                {
+                    "id": "att3wOYO9M4PbzjmY",
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/a5qX8kHYx-5DFLWzvpfskw/vPvhu4WV2HjAFKRq5Tba-W6xXoropInscgCgCO9stwNUWifxmuWunCVSRXjH0B_nAuEtepUj1lh0C9hwQ5EEevOEhkTuVRjWJywL5fZKfMerjvKukEqwj7c-lrJzZaRZWv1Nf7bjprp0HkLkhobV6Q/9vRoYmq-2TfVSdbDGiObaBRIJ9B70oXr3fBlTQ2SLLI",
+                    "filename": "RBC.pdf",
+                    "size": 113203,
+                    "type": "application/pdf",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/t21LzIp1xIXnxZKMOAA4gA/7KUrh7DzofjWmJu82Uj6uUkTkb60OdpscXoIiN4zF0qUuie3Aj198qmKaFT-r5M-bwEYpL2hV47cTXrgrU9PTOYj0nSeo_1Q0gqU6-2XCNhDWn97k4FSSK-tKW0dopF6u78IA5XtEpHQY0Hu_PDrBw/mObsdwQodp3FKCnjH0nJE7j1nf-mbNdAZPWxuQZLMb4",
+                            "width": 28,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/-hWMVb1hqQLIkH1ATiYzmQ/l6__fflN3Ub_F8LSgFAzb9FLci4seC_lxmRvB6uSRTVejhlTIHADbVPR3TpaSxQ5Rg0ITL3oBlhikGSvEMOlaxTU9IIeYTaJtod6KlbnhVqdrPtYQXGPV2BubTp2n0lbY19L-2YI3U2YNjaqc9jdfA/QMXABgYiZznlPCXQqZBuON59oLmzzb2fFcSFGI0lTD4",
+                            "width": 512,
+                            "height": 663
+                        }
+                    }
+                },
+                {
+                    "id": "attonrQjce2kG1NiV",
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/M7X5RlDZ9Br4JwXj2H627w/pNynnq7ktGVBj93B4z29iJZQ3woiiKcyCIHyVTRt8KGPq-ES6aih_T1Daj2G9Y7qpg6B8QJ6owNFgw2TS5SgZCGNmxhvvNZKE_4Fntnn_AVEJ5D1Fik_xX4XyoXro7_LzuYEqXb15-WOMyfjXnsPF0-yMIk1Pwk8e7_RZXKhLTs/gpzDNr3qDvCe3pIulhPiJ8-yls426IRldJUyaxbf4vs",
+                    "filename": "Print _ Imprimer.pdf",
+                    "size": 114190,
+                    "type": "application/pdf",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/1l-hFv6gu4ojoFVWc-X5aQ/bWKizrgKg4qOgBNYKs2fESDlB9hmxRddN_YtyYXd2MBxn5xy-m1q7W9RNyT2rJWYwAyd5s2YO8Cjh3BljwuNg5w89OUnsT5d923IwzsbwUaAJYHmq9L-FLQ46prCbPpyFPDdW29hERTCrYzj-aBClw/aVzSZ1Fv_1tU_A59Rgx9dtgvsN0AiyiUqyN4yBwrd58",
+                            "width": 28,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/ijRI5ephGwyo4ZxcjfyofQ/xmqUcgbZDl8mTdmWE-r1feHu7_SYQydBxWHxnLwdIV14QwkWL4D2X4B69_Ao0uipe0_vgMcygQlijK0dnrP0OPwJzATynL2EuI8rMtvALiAmVb_iCIkW5FTajLvwlEM9nqcHsgK7CvSEoSENpTUQ7Q/vbnV67Z19qsxyB8Raq89D7hkOG5VjnOmosingD3JQcQ",
+                            "width": 512,
+                            "height": 663
+                        }
+                    }
+                }
+            ],
+            "Warranty Term": 2,
+            "Warranty Mileage": "UNLIMITED",
+            "Application Date": "2024-12-09T16:36:55.000Z",
+            "Customer Verification": "2024-12-09T17:44:00.000Z"
+        }
+    },
+    {
+        "id": "rece2oXfdVSoYaRlh",
+        "createdTime": "2024-10-28T20:03:21.000Z",
+        "fields": {
+            "Email": "ABDUL123@GMAIL.COM",
+            "First Name": "ABDUL",
+            "Status": "Cancelled",
+            "Salutation": "Mr",
+            "Phone": "+14377666308",
+            "Date of Birth": "1997-11-02",
+            "Gender": "Male",
+            "Address": "1614 - 565 SHERBOURNE STREET",
+            "City": "TORONTO",
+            "Province": "Ontario",
+            "Duration at Current Address": 3,
+            "Housing Status": "Rent",
+            "Monthly Payment": 350,
+            "Employer Name": "YYZ9 - AMAZON FULFILLMENT CENTRE",
+            "Employment Status": "Full-time",
+            "Occupation": "FORKLIFT OPERATOR",
+            "Duration of Employment": 2,
+            "Employer Address": "6351 STEELES AVE",
+            "Employer City": "SCARBOROUGH",
+            "Postal Code": "M4X1W7",
+            "Employer Postal Code": "M1X0A1",
+            "Employer Phone": "+18774671383",
+            "Gross Income (Monthly or Annually)": 4250,
+            "Vehicle Year": 2024,
+            "Vehicle Make": "Toyota",
+            "Vehicle Model": "CAMRY",
+            "Cash Price": 46999,
+            "Odometer": 150,
+            "Insurance Coverage": "Yes",
+            "Employer Province": "Ontario",
+            "Dealership Name": "AUTO HOLICS",
+            "Vehicle Trim": "XSE",
+            "Cash Down Payment": 1000,
+            "Other Taxable Amounts": 999,
+            "Warranty": "No",
+            "Gap Insurance": "Yes",
+            "Theft Protection": "Yes",
+            "Loan Term": "8 Years",
+            "Payment Frequency": "Bi-Weekly",
+            "Interest Rate": "7.99",
+            "VIN": "4T1K61BKXRU126914",
+            "Driver's License #": "M6160-00249-71102",
+            "Driver's License": [
+                {
+                    "id": "atthYRBtjcfscLJiK",
+                    "width": 480,
+                    "height": 640,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/OGZIjPDU-YTJ_z774UORLg/db2QVQYwSAVdqxeSj3jPNUd2JN7V-sCyJgmJMRy_kh-FPSH3POO8o5hctCcHaFTaUKLHFEO0QsVmMvQQ7HvDE0ykSkuLTAn0DpXOVXbReOSIcR1TFi47uq5cPWOh3PO5BYJQERNttNg4WdNdJv2TCnRBHU1eC3u5Abj302OzEBM/pLk5gzaDi-Gge7VhaDaF76RO_z9G9hxhYrUwevt9v5I",
+                    "filename": "IMG_4888.jpg",
+                    "size": 58491,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/Q7QOHmSx5Az-LNv-JQ8lvA/ZMdzoq4czw8chVeoXBs2i8lalAX22zvfQpKcJHX5FitQaTPBorHlUfBHmH47sSfBNtBRjNNej63UR6Sf8ipIOl4yc-q0diDrfFAdMZQVB5IN5n0S1nwfIwPqAh3w84SPziWowTAoNHO_riVTdLMzqA/LHDYF5mzTWNffEV7LUbIN_ydozk4x_9ql1vu3xi8nMk",
+                            "width": 27,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/LG6K82sqyrJDxi5TSdGF9w/gQclfM7Aa9pUnVyHVJVLqDxBK_qu7CPBx_GioHWDhBAu8lbEkb8xG_cbKqqw5vpWN1hBMzBUk2ZGgu2Ff7HdNvsP2SyDHb3Z28Z6iW-82EhgXmrxrRj2K1ogx8UlKnVdci42IQNfx-HuQZBOJWgnpg/p1Jgy3zurytiHBtIxV4r0YmpFL-msVBxnlfYDE5EMHw",
+                            "width": 480,
+                            "height": 640
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/L9slD5m7SG6fu3qKFNB-vA/V_4KLoeygjIK-fVZ34tLO4Yd3rB6hOpQMN1N0c6hByOUejZk97nf-Cz96iebhQN9zXqKBZ-_gICmsqvI9v3SllIIGzUdLOb1XuUwtBTZSUotLJp66hpw1N0Xk06MKVsxvKRP_Nld-Z3-NXtwnQvlLw/Ir0oTkx9R7p1bBEkB978-xJjnPH_nIl6AoM16e3Zr1Y",
+                            "width": 480,
+                            "height": 640
+                        }
+                    }
+                }
+            ],
+            "Middle Name": "GHOUSE",
+            "Last Name": "MOHAMMAD",
+            "Marital Status": "Single",
+            "Team Member": "Yeop",
+            "Follow Up": "2024-10-28T22:58:00.000Z",
+            "Notes": "NEED CUSTOMER VERIFICATION AND PAYSTUB\n",
+            "Dealership": [
+                "Gyro Mazda"
+            ],
+            "Dealer Status": "New Lead",
+            "Co-Signer": "No",
+            "Trade In": "No",
+            "Co-Signer Driver's License #": "NA",
+            "Co-Signer Driver's License": [
+                {
+                    "id": "attt3T7sec0MCFwVn",
+                    "width": 480,
+                    "height": 640,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/D1sSBN6D178TTtZM0COH8A/jQHoY3bj9SNOTMPEgA9osv8rWuvfHCLPpPvdGhUsjI5W9yecNGb4ChNe_ULhyUAYfUY1TM9MkgEejTb3KfxsnlcN94lS7IhmGXWSb4nvzXCdQWdwORhzgdC6OYVpEovjn4-sRScAsXy8cDzDCwcnh1FsptDd4XyfSIfmuDq9VyY/e-TfyfpQAe8hmfpaLBTRpPtL4mQHEdAKF6beNzb8LJY",
+                    "filename": "IMG_4888.jpg",
+                    "size": 58491,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/RlfzywNVdervaEQqCwPgnA/5QMhnHcnGjnBcWGuIGpp-KQc_-7XjmiD8A9tdtXYyFYet_kLGZm9qeNMqbIs46qF5_jj__o8SBAmT3o3XSOeTeJK-LrfFlWxX0ZjkTGaciCT7o6KoPUP51-DRb_HsVaQbTGqZ_9uE6T8up9Vh5rpLw/JXFmuWWnpFrsQ7PLY5TGI7mykLuqgw-H2C_rZFsLYK4",
+                            "width": 27,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/W7OfZuehZT2UirOyGZr2ng/M2DU7vR1aaqk50ntSWPylnE6rxBvlac3nzKkHfLTwRAfpKLuvUR4iAfnExiENF5GVbpYegK12SUMSttgM8vBGQ8bwud_aK42bsLMUifRnFadukiPvdD_3PFqMULv5Ac84K9zcFW8XlGSqRIQ-xXqxQ/4sBGeNr-1PCsKyTO8GF4vS1tTpKiDsXp9ZeXhOYTrUc",
+                            "width": 480,
+                            "height": 640
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/2EnpKjw0A5_YnJDb71gvHg/JwXel2epnmi7RVylkaNYVLInnL4GOn9GZzjomp_ujGIyS4FlEMHixa_gJE2nMZop8CXfcK0oiPfXFHeixWekhYwDsKvTsPVUFZCLSm2DpqGaBa2k9mQKyRfpQsEXWi5TByIGsno5oZ_jzmhIsfksLA/FcZmV430BIpt2umXc0aB-4_Sp5yph5QQrb1kRCGW1wk",
+                            "width": 480,
+                            "height": 640
+                        }
+                    }
+                }
+            ],
+            "Other Taxable Description": "ADMIN / OMVIC",
+            "Driver's License Expiry": "2028-10-16",
+            "Driver's License Class": "G",
+            "Co-Signer License Expiry": "2024-10-01",
+            "Co-Signer Driver's License Class": "G",
+            "Application Date": "2024-10-28T20:03:21.000Z"
+        }
+    },
+    {
+        "id": "rechZCY0vFgLNofwO",
+        "createdTime": "2024-12-10T00:21:44.000Z",
+        "fields": {
+            "Email": "augustineok01@gmail.com",
+            "First Name": "AUGUSTINE",
+            "Status": "Follow Up",
+            "Salutation": "Mr",
+            "Phone": "+14372690030",
+            "Date of Birth": "1980-08-01",
+            "Gender": "Male",
+            "Address": "180 GOULDING AVE",
+            "City": "NORTH YORK",
+            "Province": "Ontario",
+            "Duration at Current Address": 2,
+            "Housing Status": "Rent",
+            "Monthly Payment": 650,
+            "Employer Name": "LINEAR INTERIOR SYSTEM",
+            "Employment Status": "Full-time",
+            "Occupation": "ASSEMBLER ",
+            "Duration of Employment": 3,
+            "Employer Address": "500 EDGELEY BLVD",
+            "Employer City": "CONCORD",
+            "Postal Code": "M2R2P4",
+            "Employer Postal Code": "L4K3S6",
+            "Employer Phone": "+19052650055",
+            "Gross Income (Monthly or Annually)": 5300,
+            "Vehicle Year": 2020,
+            "Vehicle Make": "Lexus",
+            "Vehicle Model": "RX350",
+            "Cash Price": 39990,
+            "Odometer": 71000,
+            "Insurance Coverage": "Yes",
+            "Employer Province": "Ontario",
+            "Dealership Name": "MAELEE AUTO",
+            "Vehicle Trim": "PREMIUM",
+            "Cash Down Payment": 7000,
+            "Other Taxable Amounts": 1799,
+            "Warranty": "No",
+            "Gap Insurance": "Yes",
+            "Theft Protection": "No",
+            "Loan Term": "8 Years",
+            "Payment Frequency": "Bi-Weekly",
+            "Interest Rate": "6.99",
+            "VIN": "2T2JZMDAXLC221812",
+            "Driver's License #": "04853-06718-00801",
+            "Driver's License": [
+                {
+                    "id": "attuZANrteKBLQIpY",
+                    "width": 1214,
+                    "height": 807,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/mN--Upr9YZMI2uMLmLpbAQ/7V0Lvs0Lmp0_gDE7BcCYZdxpphtepxDS3bh3F2lF0nwuDs_p1BNIOoiouDOHWVDt3eCrVRi9JwUX-Bpq6Xt7ltVJDDr5tLKgihwhz3FL9FAxrbl47RmZ5sJrm3XQbQaeSVlj1TmmWrKeQKRKY13SqWeNgTBNkq0710hTxTkyZfqpEaDFA5X1PtP4qSDA_cSI/OsfPs74EmbU0K4CYpR_wCRMBGB0VZVpl6_jjb9IzxX0",
+                    "filename": "PHOTO-2024-12-09-19-09-41.jpg",
+                    "size": 202658,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/7Crm3s2J05r4P3gLbpJZkg/Mj5-gb26wSz1tu18f_01KtOYmxzt9ygtn8JYL70hPnyl2krKyXno-ieZ9cHw-CCcwNoEcuJD8BH1gdzutFvwYedLua5ZmvQ7ts8KVeI-YS_1JnJBrwTqTjvK972EWyP1NHUZya8E3tT66DI50ftuyA/4voV_pYzhYbHxGJIQZJ4vsTtDV5xfzOCU-vS7kYDtEo",
+                            "width": 54,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/pOhP-iw7ZoYlE90bIHr0vg/GQ2lKbJAgPdl8G9-ozhGQBqsb0G_NWIov7CobRV48rD6b2qeND6Qg1wxBTSlaP7Uk2qYELGH3bULU65x48Kdn9SslAYMg0ALuOPX4o-wTgQi_M-FepsaLsDKkcIwpDkk-wOb3G_-Ymwyx38qvEjFyw/0VuGCSgbUQseZcc3Yc0g9Qvs38X2E9yR4k_sGb358Rs",
+                            "width": 770,
+                            "height": 512
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/45ZYSnPeavr-xhvR-nQXSQ/9fgloS_3gQDAU3PROr0mqpOOfk3ahAHPAF0xBPR5V4pTxgjbSGgRzQs5TL5qZKbUS4_TWwUhMETABDNOsKQOQLuVJnbgl6YJ3zdGcvmXTWsh-P_OBmmwhNt2Dj4j1_ipe5kfIDMGc3mVLxu2RFI_WQ/QroeCT6RzMCgxIilMJQ-s8Ei0Xd_Tw6FwNeke63hi_Q",
+                            "width": 1214,
+                            "height": 807
+                        }
+                    }
+                }
+            ],
+            "Last Name": "OKELUE",
+            "Marital Status": "Single",
+            "Team Member": "Jake",
+            "Follow Up": "2024-12-10T15:30:00.000Z",
+            "Notes": "Need at least G2 D.L\n",
+            "Dealer Status": "Followed Up",
+            "Co-Signer": "No",
+            "Trade In": "No",
+            "Other Taxable Description": "ADMIN+SAFETY",
+            "Driver's License Expiry": "2029-08-08",
+            "Driver's License Class": "G",
+            "Gap Insurance Amount": 2999,
+            "Life Insurance": "No",
+            "Application Date": "2024-12-10T00:21:44.000Z",
+            "Customer Verification": "2024-12-10T17:07:00.000Z"
+        }
+    },
+    {
+        "id": "rechsWaq9s9T9ZSIP",
+        "createdTime": "2024-11-19T01:14:32.000Z",
+        "fields": {
+            "Email": "1996.yash.preet.singh@gmail.com",
+            "First Name": "YASH PREET",
+            "Status": "Cancelled",
+            "Salutation": "Mr",
+            "Phone": "+15484680304",
+            "Date of Birth": "1996-09-06",
+            "Gender": "Male",
+            "Address": "B-88 NILE STREET",
+            "City": "STRATFORD",
+            "Province": "Ontario",
+            "Duration at Current Address": 2.7,
+            "Housing Status": "Rent",
+            "Monthly Payment": 300,
+            "Employer Name": "STRATFORD CHILDREN & SERVICES ",
+            "Employment Status": "Full-time",
+            "Occupation": "CHILD AND YOUTH WORKER",
+            "Duration of Employment": 2.2,
+            "Employer Address": "59 LORNE AVENUE",
+            "Employer City": "STRATFORD",
+            "Postal Code": "N5A4C8",
+            "Employer Postal Code": "N5A6S4",
+            "Employer Phone": "+15192733263",
+            "Gross Income (Monthly or Annually)": 5200,
+            "Vehicle Year": 2021,
+            "Vehicle Make": "Ford",
+            "Vehicle Model": "MUSTANG",
+            "Cash Price": 42990,
+            "Odometer": 35776,
+            "Insurance Coverage": "Yes",
+            "Employer Province": "Ontario",
+            "Dealership Name": "APPROVED CANADA",
+            "Vehicle Trim": "GT",
+            "Cash Down Payment": 1800,
+            "Other Taxable Amounts": 999,
+            "Warranty": "Yes",
+            "Gap Insurance": "Yes",
+            "Theft Protection": "Yes",
+            "Loan Term": "6 Years",
+            "Payment Frequency": "Monthly",
+            "Interest Rate": "8.99",
+            "VIN": "1FA6P8CF2M5102466",
+            "Driver's License #": "YO740-00009-60906",
+            "Driver's License": [
+                {
+                    "id": "att4xdDhCnfX0FaIR",
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/ltPbGR-VmszNddHD_tWc7A/xnRp4EIqIkluvY2hVGMbZf2z-ML9vtA6vH-lrWSlLLMMGptPIawiJ4NKdBWWN10h47tWdjNZk8NW0pUq_KAzpVNULHaN-5B51RiUVODCZpedq75l4KGEKCazrKhhQxZw_waBseWLzPWuBuJDuENZM6NlyyCBfXK571vNDkZJvKQ/SVtcU270sAr_gxfcuJUcsxvE1TEGKuXsbCrl7tzC1Ss",
+                    "filename": "Driver's Licence (4).pdf",
+                    "size": 458083,
+                    "type": "application/pdf",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/4_8z7tAE3WhW8ejiEjE9KQ/pdH4haUBQDKybumUthE0OPnIzn0FdtVJfjFwjOSRSPXNh-QU7JkIOOAe23eOuUCt1TRbDiQ-56T-SvlMi3O7ieK2xVqLYEjaAaMs8MrRhUGwsUP9DJBkxuNzW_1MeYUmoPfl8huzDEO5z4Ae42Z53A/kNQD-zIz8MMangCB-JvfZHaN9aV0GI7RtdmyPo-qElk",
+                            "width": 28,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/V630b6CMBVA2ly2Kgaq2aQ/AkXploxv7pg4NTuTwv2RXDua7uwTlmdWJyzrsuHK3u0tXsSVImpYoOFmSalTG0o9q4baemCaHKK69oLxO0vXLt6odW7BGLJSr4glhFdzabsEKhDKZM_PxEJFuJz5pVfPWIMDU2BLZbwICBuaM_SvBg/-edvSbrCsCf2yGLg3VJDterBzph3UOGAwwG4e7IMUOY",
+                            "width": 512,
+                            "height": 663
+                        }
+                    }
+                }
+            ],
+            "Last Name": "SINGH",
+            "Marital Status": "Single",
+            "Team Member": "Yeop",
+            "Follow Up": "2024-11-19T17:58:00.000Z",
+            "Notes": "ONE LAST NAME CAN NOT BE ACCEPTABLE\n\n",
+            "Dealer Status": "New Lead",
+            "Co-Signer": "No",
+            "Trade In": "No",
+            "Other Taxable Description": "ADMIN FEES",
+            "Driver's License Expiry": "2025-09-06",
+            "Driver's License Class": "G",
+            "Gap Insurance Amount": 3000,
+            "Theft Protection Amount": 250,
+            "Life Insurance": "No",
+            "Warranty Plan": "Plus",
+            "Warranty Amount": 3000,
+            "Warranty Term": 24,
+            "Warranty Mileage": "40000",
+            "Application Date": "2024-11-19T01:14:32.000Z"
+        }
+    },
+    {
+        "id": "recixfAr8l5lwFL6M",
+        "createdTime": "2024-12-03T19:36:27.000Z",
+        "fields": {
+            "Email": "vebroniae12@gmail.com",
+            "First Name": "VEBRONIA",
+            "Status": "Cancelled",
+            "Salutation": "Miss",
+            "Phone": "+14168780654",
+            "Date of Birth": "1999-04-28",
+            "Gender": "Female",
+            "Address": "46 PANORAMA COURT STREET",
+            "City": "ETOBICOKE",
+            "Province": "Ontario",
+            "Duration at Current Address": 2.11,
+            "Housing Status": "Living with Parents",
+            "Employer Name": "AMAZON FULFILMENT CENTER",
+            "Employment Status": "Full-time",
+            "Occupation": "MANAGER",
+            "Duration of Employment": 2.4,
+            "Employer Address": "74 ENTERPRISE RD",
+            "Employer City": "ETOBICOKE",
+            "Postal Code": "M9V4A4",
+            "Employer Postal Code": "M9W1C5",
+            "Employer Phone": "+18332667429",
+            "Gross Income (Monthly or Annually)": 1100,
+            "Vehicle Year": 2024,
+            "Vehicle Make": "Hyundai",
+            "Vehicle Model": "ELANTRA",
+            "Cash Price": 30499,
+            "Odometer": 26498,
+            "Insurance Coverage": "Yes",
+            "Employer Province": "Ontario",
+            "Dealership Name": "MAELEE AUTO",
+            "Vehicle Trim": "PREFERRED W/TECH",
+            "Cash Down Payment": 0,
+            "Warranty": "No",
+            "Gap Insurance": "No",
+            "Theft Protection": "No",
+            "Loan Term": "6 Years",
+            "Payment Frequency": "Bi-Weekly",
+            "Interest Rate": "6.99",
+            "VIN": "KMHLM4DG3RU716117",
+            "Driver's License #": "E8030-76309-95428",
+            "Driver's License": [
+                {
+                    "id": "attTGahYjiiYU5XbC",
+                    "width": 960,
+                    "height": 1280,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/pUnsbJ_cus4qTnXEmlV6Yw/JbTsZMKs-qf9eP4cCuqCfCnnk0_Xiie_bpVUM0obadHWYK3SmgWAToQxeeP2FLe-7H08y4NZN1-BwWphvvFEIhpY2jtpVtvhKCtmuEouHI_B98cd0cQk88SomAnobSUh5Xl-el_pEtZZl55eFjid5TlFne89T4CnO-fVjOXHAJo9TUxpG1N4RJKlf4-fmOoS/wT_cdHZ6Tr6Rpav7UBKBI2W6P9NK9ZdULtwD_Y5Lscc",
+                    "filename": "PHOTO-2024-11-26-16-06-35.jpg",
+                    "size": 278248,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/oh7eaKzCvvTkV7zz7DSSLg/IF5q9waVVjHotCoO_A-NQopYF7nrBwf8J901MP9iL4ROuVoTcg-fsYu8Bzvqfp8Sg6v5qufB-94f-tOEVDsTqPGW06Ja6zbYdsy8zFZyTpGKgxblIvh9qRqJDiqZ4gDsMpuDmPvxsnWF138EyqnzyQ/Xbw5rRVExTgWAzLZ_rugILOM0dCTxpr4jDVM5PA7JQw",
+                            "width": 27,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/PCHWknycsHgGbimVd9UpAA/wiUAskBmUPPe3WFGoCWDfd_L6sIXSoO3_g2YzL6-UU9e8FuRhznzKVtPzYjMCF9P-l8X8YhNzZ_y0c-KDK4NNDaTpf7dIKiZuluh-mLNmPTSbJ-kYtwv3uXi6rDcpI8yOtCxC-ZFABRHzboetGgs5A/FCMFEKQAy84Zq1ZO9OO-zdJqBZJ3jdDgtQ7ZuVIezVQ",
+                            "width": 512,
+                            "height": 683
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/kJp0LtnzsaSSEpdl-2GXIg/QYtycr4w9xVsdi7dj0b5F2q92h5O5DCsHD4iCGaDVUOAyFoRKyx0eRdZPLVIdnymbgr0_9iWUi-cSmgV3EY2gK5CRdRPre2qfVIG4ErexBKNeW0TpxBs8OeEBD0hQ3dXeO64tHyYG5646Fj9YTO9aQ/6KP-aaOdRyx-qQAbq3A4axg0kQMp4d2rE6yIbrNFoHc",
+                            "width": 960,
+                            "height": 1280
+                        }
+                    }
+                }
+            ],
+            "Last Name": "ESHO",
+            "Duplicate": true,
+            "Marital Status": "Single",
+            "Team Member": "Yeop",
+            "Notes": "Duplicate customer applied\n",
+            "Dealer Status": "New Lead",
+            "Co-Signer": "No",
+            "Trade In": "No",
+            "Driver's License Expiry": "2025-08-05",
+            "Driver's License Class": "G1",
+            "Life Insurance": "No",
+            "Application Date": "2024-12-03T19:36:27.000Z"
+        }
+    },
+    {
+        "id": "reckkVqdfHV6HuyHa",
+        "createdTime": "2024-12-17T19:34:21.000Z",
+        "fields": {
+            "Email": "NITINKUMARB16@GMAIL.COM",
+            "First Name": "NITIN KUMAR",
+            "Status": "Processed",
+            "Salutation": "Mr",
+            "Phone": "+16139305266",
+            "Date of Birth": "2002-08-16",
+            "Gender": "Male",
+            "Address": "3594 CAROLINA COURT ",
+            "City": "RIDGEWAY",
+            "Province": "Ontario",
+            "Duration at Current Address": 2,
+            "Housing Status": "Living with Parents",
+            "Employer Name": "QUESADA BURRITOS & TACOS",
+            "Employment Status": "Full-time",
+            "Occupation": "COOK",
+            "Duration of Employment": 2,
+            "Employer Address": "4-3860 DOMINION ROAD",
+            "Employer City": "FORT ERIE",
+            "Postal Code": "L0S1N0",
+            "Employer Postal Code": "L0S1N0",
+            "Employer Phone": "+12898769044",
+            "Gross Income (Monthly or Annually)": 4000,
+            "Vehicle Year": 2022,
+            "Vehicle Make": "Toyota",
+            "Vehicle Model": "CAMRY",
+            "Cash Price": 29999,
+            "Odometer": 89699,
+            "Insurance Coverage": "No",
+            "Employer Province": "Ontario",
+            "Dealership Name": "AUTO HOLICS ",
+            "Vehicle Trim": "SE",
+            "Cash Down Payment": 500,
+            "Other Taxable Amounts": 999,
+            "Warranty": "No",
+            "Gap Insurance": "Yes",
+            "Theft Protection": "Yes",
+            "Loan Term": "7 Years",
+            "Payment Frequency": "Bi-Weekly",
+            "Interest Rate": "6.99",
+            "VIN": "4T1G11AK1NU061371",
+            "Driver's License #": "B0589-59450-20186",
+            "Driver's License": [
+                {
+                    "id": "attZ6NY67orK4LPk3",
+                    "width": 3024,
+                    "height": 4032,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/LhJC7E7QPbxIqBbz5rwfAQ/kxAzddMmB1dDzBtlFNpsmcWc5j15sv3U6jfRHHhX-iOHgcylWUvzUL0FeZjZ9YPZJ3yuD_06KeA9pYg6NasNjqCoUfdoxZW0SPY1qD8WX19Ih8m4dXCFgZf2dfkOzdS655xyV8S0kuINoBlym1fTSz0BWm2sffum2bYX6tOkd5E/PuVc_IcKZm58QMUfhAcf7RkYZi_bqAoj6NE6VjdeORE",
+                    "filename": "IMG_6685.jpg",
+                    "size": 2082443,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/rGbWVJ0b24XdsglWKz_6Yg/k2BEoGItGn1yNRWnVsp7yBEkA0_3Q4axffZqfvMEAOV508WDtRtWDHKIyl8g4U-8Hfn2s9_ROQMmpHw8tQOzJYmqOqsxK_XD7UBVHCz7ogd4yAgy7j0FxTJZGxowM02e1IPkgIiAWusEOT6zXGpMPg/bm-QdDMHNmG5MaaKoHCwfyYMRfnwTK7vII597CWdcCI",
+                            "width": 27,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/20U3lXEy5vaXBgUVY0kxhw/84PODvDOdsO9mDSFoQJPbtRkNAgsV1hAwq5Q255QWzDW7LxvCt4piyqmSrVODncVIUuCfZLdt9ROuJWor10IEPDD553AYa6eUsMBKbxtie4_52-a-63Rnwg4c0XmP1shDAKG_DG39QogOgTjGVTVPA/i4hgJNxP-adbjAjsopNja6tZFfDi6Aaa4cY78l5Czvs",
+                            "width": 512,
+                            "height": 683
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/gIEHY0ziU5EWl5a8VwfPRQ/5BOqT2syfXJWDUVaN1RtjyaoceIeCAa4mNrEjyy0DpY_2WieFuPFbpoiiAIeE242uqPZOp4znttxPBCj_Pb4IAjaMcyMmDOuxoeB_q0BYEvd6tdeikL6OSvd6to7zAu3Uyrt6Aht4Nz3eVUv4UMYug/OTdR8ImAVn7ukA3_fJLWxRBHNErw2bhRIH98HOb_wsI",
+                            "width": 2250,
+                            "height": 3000
+                        }
+                    }
+                }
+            ],
+            "Last Name": "BARHPAIGGA",
+            "Marital Status": "Single",
+            "Dealer Status": "New Lead",
+            "Co-Signer": "No",
+            "Trade In": "No",
+            "Other Taxable Description": "ADMIN",
+            "Driver's License Expiry": "2029-02-06",
+            "Driver's License Class": "G2",
+            "Gap Insurance Amount": 2500,
+            "Theft Protection Amount": 250,
+            "Life Insurance": "No",
+            "Application Date": "2024-12-17T19:34:21.000Z",
+            "Customer Verification": "2024-12-17T20:57:00.000Z",
+            "Employer Verification": "2024-12-18T16:15:00.000Z"
+        }
+    },
+    {
+        "id": "recl8I8vWdRTcSdlZ",
+        "createdTime": "2024-12-11T04:29:47.000Z",
+        "fields": {
+            "Email": "imranalii88@gmail.com",
+            "First Name": "IMRAN",
+            "Status": "Approved",
+            "Salutation": "Mr",
+            "Phone": "+14378297777",
+            "Date of Birth": "1985-06-24",
+            "Gender": "Male",
+            "Address": "22 CLOTHIER STREET WEST",
+            "City": "KEMPTVILLE",
+            "Province": "Ontario",
+            "Duration at Current Address": 3,
+            "Housing Status": "Rent",
+            "Monthly Payment": 750,
+            "Employer Name": "RENOWN AUTO CENTER",
+            "Employment Status": "Full-time",
+            "Occupation": "MECHANIC",
+            "Duration of Employment": 4,
+            "Employer Address": "2-7 HARLECH COURT",
+            "Employer City": "THORNHILL",
+            "Postal Code": "K0G1J0",
+            "Employer Postal Code": "L3T6L5",
+            "Employer Phone": "+18665773091",
+            "Gross Income (Monthly or Annually)": 7500,
+            "Vehicle Year": 2024,
+            "Vehicle Make": "Toyota",
+            "Vehicle Model": "SIENNA",
+            "Cash Price": 55000,
+            "Odometer": 13950,
+            "Insurance Coverage": "No",
+            "Employer Province": "Ontario",
+            "Dealership Name": "MAELEE AUTO",
+            "Vehicle Trim": "LE",
+            "Cash Down Payment": 6200,
+            "Other Taxable Amounts": 1799,
+            "Warranty": "No",
+            "Gap Insurance": "Yes",
+            "Theft Protection": "Yes",
+            "Loan Term": "8 Years",
+            "Payment Frequency": "Monthly",
+            "Interest Rate": "7.99",
+            "VIN": "5TDGRKEC2RS214341",
+            "Driver's License #": "A-5335-36208-50624",
+            "Driver's License": [
+                {
+                    "id": "att9pu110gio2h8WU",
+                    "width": 1599,
+                    "height": 1088,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/zEM1b9LS4cc7PPuO8zspJw/apJbI2c-3BtyzahtlYcV3AnGlcpay6U_9HieuVb5QXBqRUz7IXDtunudXV7rIHxEI36nRrhBDsbWhaeYF6vNlTW_MAz_CZAOrxtfpHnojdTIGaJGWdBCPrtHWEXEdOa2kyk4m1Qcl85AilMDAK4IKx4T3FS4OFLwIsn1TrcQZqwkaoiY6UDHJyiqJBjo3jwvYwZUkSgG8SWUggB_43byxw/yLmS-12vWQ6UgF11rGRTP3xJV09VEJwG8kpUu28YRBo",
+                    "filename": "5e2eba37-1c93-4d2c-bac6-f3ac316b8003.jpg",
+                    "size": 396437,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/J6PIXoR7j7EXEXDgBFpWaQ/KJ3OvieVs_6VivMkNpQUmOKWTtIWOO2ME7PDS_ynjit4-ErOFe0YX2L6UZR1uok_ujYujZYaFYUoNJxVk_Y4EsIMs6bOCG2lKgi2Ggrk-xfEXUxpkne7n1a9GC46NqYjrmg8bBF45fQXUGopIxwvAw/cgEEQL-FdWywEoGSceSoizHC-zDxjc-KzpSMUKZX2Ec",
+                            "width": 53,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/ReHhg0WG_yDue7WVepSzwQ/qboQf3a6WlL7KtsBIOKK2BJYUSQUe6itcb07N8TcuCxGHKj-Gud0Nisxu0w9fNGFnNBTW7y4hF58Ebhrjg40uhBdnFC4-YtlaFy8e9RnF0PYA5M8LWDD6fZElPxlqjrCbC6LX_ojVfj6iFNaiP3CSQ/pqvFq9StuIzqqbjuadYaN_xE-aUhhR-gVraD3xLeiF8",
+                            "width": 752,
+                            "height": 512
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/hGorvGh1JbfBoCFtsjtnYA/r0b2A-qfCB5ZHGt47dSKId3mvHlxfHmEp8CxAzfIbspQDqw6XgfnZ1nr9wXdLXl6DUEjihO12SuN81OFLeQsdE4_TJX_4JTDb61LmsidzXAuZECcS-orkMi7ZVI4jOvxgx4kS0CxhTTEiI5AT6sRBQ/VX7pqLnIqLJ-cYIeU4jOd9RyfwVBqiJtMxkYwXWJbCw",
+                            "width": 1599,
+                            "height": 1088
+                        }
+                    }
+                }
+            ],
+            "Last Name": "ALI",
+            "Marital Status": "Married",
+            "Team Member": "Jake",
+            "Follow Up": "2024-12-11T15:36:00.000Z",
+            "Notes": "NEED TO CHANGE VEHICLE\n",
+            "Dealer Status": "Verified",
+            "Co-Signer": "No",
+            "Trade In": "No",
+            "Other Taxable Description": "SAFETY+ADMIN",
+            "Driver's License Expiry": "2027-11-16",
+            "Driver's License Class": "G",
+            "Gap Insurance Amount": 2500,
+            "Theft Protection Amount": 99,
+            "Life Insurance": "No",
+            "Application Date": "2024-12-11T04:29:47.000Z",
+            "Customer Verification": "2024-12-11T15:20:00.000Z",
+            "Employer Verification": "2024-12-11T20:41:00.000Z"
+        }
+    },
+    {
+        "id": "recqUPyb0csMbaNkL",
+        "createdTime": "2024-11-19T20:11:12.000Z",
+        "fields": {
+            "Email": "humayoonanwary5@gmail.com",
+            "First Name": "HUMAYOON",
+            "Status": "Cancelled",
+            "Salutation": "Mr",
+            "SIN": 570921098,
+            "Phone": "+16479016054",
+            "Date of Birth": "1967-02-15",
+            "Gender": "Male",
+            "Address": "1510-30 GODSTONE RD",
+            "City": "TORONTO",
+            "Province": "Ontario",
+            "Duration at Current Address": 3,
+            "Housing Status": "Rent",
+            "Monthly Payment": 500,
+            "Employer Name": "HOME TEACH",
+            "Employment Status": "Full-time",
+            "Occupation": "CONTRACTION SUPERVISOR",
+            "Duration of Employment": 4,
+            "Employer Address": "1706 DUNDAS ST E",
+            "Employer City": "MISSISSAUGA",
+            "Postal Code": "M2J3C6",
+            "Employer Postal Code": "L4X1L7",
+            "Employer Phone": "+14164270749",
+            "Gross Income (Monthly or Annually)": 150000,
+            "Vehicle Year": 2018,
+            "Vehicle Make": "Mercedes-Benz",
+            "Vehicle Model": "S-CLASS",
+            "Cash Price": 68888,
+            "Odometer": 136884,
+            "Insurance Coverage": "Yes",
+            "Employer Province": "Ontario",
+            "Dealership Name": "B TOWN AUTO SALES",
+            "Vehicle Trim": "S63",
+            "Cash Down Payment": 5000,
+            "Warranty": "No",
+            "Gap Insurance": "Yes",
+            "Theft Protection": "No",
+            "Loan Term": "6 Years",
+            "Payment Frequency": "Bi-Weekly",
+            "Interest Rate": "5.99",
+            "VIN": "WDDUG8JB9JA410597",
+            "Driver's License #": "A5596-35006-70215",
+            "Driver's License": [
+                {
+                    "id": "attKwQQ5wwivnFfpA",
+                    "width": 597,
+                    "height": 384,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/rOjPut_V5mVH0_xVLozXNA/xBC3cy0eurXqDyOT_3GEzzVGLqa_R1qOjI6GAs3-4qpL7R7bghYvJXV-E7z5y0RPiPsd0hfmEopPNn6471y7tIG82EM7pqenXmtP_phLynzvUrh_CLDy0fjPQiAvqMGvQ37i-79ff8vOI-wMgO478OMPUBHwQHblGCnAKQLHG6s/gmhn-Izum7jGYctZEi794SxKscUL7rGt-Jew0U_YZgM",
+                    "filename": "IMG_00141.jpg",
+                    "size": 101333,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/qCMo8pnbKKy6YyK3LkQluQ/F_Hkbmfdy0W2fnI26kGRm_3pnmdFgF2WbtKaJhQ1mG1clWD0y4ANzC3fbtPU7zIlkQECsmMuknWbTt9XiSaTdUsjWFioRoLBKdpBtVi8Hoibscb1yi-WghyXQhGw-cb4y6UZsjvZsBtol4oUGQfIIA/Lk9R7QoPE0_-in0RaDGLNQ5NtSItxLe_A8DsKeCevdY",
+                            "width": 56,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/ZpNIYmeFkvaySpWtzLP_2w/tj_DTuAQyaz3h9NPkgwkSRJTZ3CGzgG-M2RE4MKla--HiPZOMW_X0pP28alRwHUVdjZX7yVF6Zh6JNaUjWDodrSRrVlXsL3sBoSAX-G8ufczsBHbFDE3m4Ft3L7iR1jmcK-3qzCzqekUAjAwIwA8Cw/LfobrsPCIiEj21USJXTE0uSM0VX9GBBghI8G2ZIJP1E",
+                            "width": 597,
+                            "height": 384
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/O6jJHp3EPRnpNGfKCJREcg/OBZh-rtMCVIhiMy0c19dtCgYoIIim549njkiCUSkzYbXjejiMcsaWCtKqkbKS44RJKLR7kQmpUK3GBqzwK0m3OjaAWATrwJD0XHU-vsag6TZYYpWlMjurtSpIPx3CBRcI1uf1KVsf4EzP9FHcJOz-w/qHl_665C3YozoS96q7bfSQZvuauJcgeBI7ckmg3T9So",
+                            "width": 597,
+                            "height": 384
+                        }
+                    }
+                }
+            ],
+            "Last Name": "ANWARY",
+            "Marital Status": "Single",
+            "Team Member": "Jake",
+            "Follow Up": "2024-11-22T18:00:00.000Z",
+            "Notes": "Need customer  verification. BOS, called but no answer\nCustomer never answered\n\n",
+            "Dealer Status": "New Lead",
+            "Co-Signer": "No",
+            "Trade In": "No",
+            "Driver's License Expiry": "2027-02-15",
+            "Driver's License Class": "G",
+            "Gap Insurance Amount": 2999,
+            "Life Insurance": "No",
+            "Application Date": "2024-11-19T20:11:12.000Z"
+        }
+    },
+    {
+        "id": "recr9AMbd0OAzudpx",
+        "createdTime": "2024-12-08T00:46:40.000Z",
+        "fields": {
+            "Email": "GORASANDHU85@GMAIL.COM",
+            "First Name": "GURPREET ",
+            "Status": "Approved",
+            "Salutation": "Mr",
+            "Phone": "+14376165305",
+            "Date of Birth": "1994-05-06",
+            "Gender": "Male",
+            "Address": "107 STEWARDSHIP ROAD",
+            "City": "BRAMPTON",
+            "Province": "Ontario",
+            "Duration at Current Address": 2.1,
+            "Housing Status": "Living with Parents",
+            "Employer Name": "KTH SHELBURNE MANUFACTURING",
+            "Employment Status": "Full-time",
+            "Occupation": "WELDER",
+            "Duration of Employment": 2.5,
+            "Employer Address": "300 2ND LINE",
+            "Employer City": "SHELBURNE",
+            "Postal Code": "L7A4W8",
+            "Employer Postal Code": "L9V3N4",
+            "Employer Phone": "+15199253030",
+            "Gross Income (Monthly or Annually)": 5550,
+            "Vehicle Year": 2022,
+            "Vehicle Make": "Ford",
+            "Vehicle Model": "BRONCO",
+            "Cash Price": 54999,
+            "Odometer": 37242,
+            "Insurance Coverage": "Yes",
+            "Employer Province": "Ontario",
+            "Dealership Name": "FIRST MOTORS",
+            "Vehicle Trim": "OUTER BANKS",
+            "Cash Down Payment": 1000,
+            "Other Taxable Amounts": 999,
+            "Warranty": "No",
+            "Gap Insurance": "Yes",
+            "Theft Protection": "Yes",
+            "Loan Term": "7 Years",
+            "Payment Frequency": "Bi-Weekly",
+            "Interest Rate": "6.99",
+            "VIN": "1FMDE5DHXNLB25590",
+            "Driver's License #": "S0403-30889-40506",
+            "Driver's License": [
+                {
+                    "id": "att10PYNPi4Hs7ChZ",
+                    "width": 792,
+                    "height": 680,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/sEW8bs_ybPjUCVeqXWovsA/BHCsMHUP7Qh9WMWs6uxU-oM1bff829yJ08ED-wmHV_FEGgLrnEocWOxPe8G6Z8hacUyjIxwmVtl2D9jDpGgfZW1eKVl5Ii40V2rdcca5ueh1YZNOkG66S6n0TzC0KBnJrQWsX4wtcXikvoMtn_Neo9ZIdfSL7nP8O24IHOR6HVU/YbJUw9eUBju41ESW2y1ZNtta52tJjZr2zxq7qTi_CsA",
+                    "filename": "IMG_1004 dl.jpg",
+                    "size": 98226,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/-U0oPxjDYHOGDALq1vY3mA/sUvH0Zmegmn2ua6yQfTSitwhw31P268PsFZcNG7jURZq2IH9I1OeZE6HiFUsc16Ch2HuArap7zW62nw6aHMeiLB8wtVuGgiGYDS650MO6KQge4p6dTY0L69EXXptxh-hRU9IJUxL6mjGwXAN2waHmA/BWE1R6Rp3irD-nPS8zZRsiox5tHQNOzcIREJYJ_PBgA",
+                            "width": 42,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/5Go48S-A6RAU_eOu6xJEZA/SxLHmpvCfRV18Ew22BaKP_QtJBAJ8fE8FwJlV3NA_zOYCQjZZ3D3WfJJEYTqBJnm4PpKbuYi1NRbHyxwqeAGVgXLIg-5VzMGwtqVUFjbL45ZWDH8ckExbpaP5Pd5dkMoU1vJ_-T5ex589wIkjGVf1A/wBXCvBUFimbjyOuNsqTX3RgwbmKbNSg2lJW6xs8-eXo",
+                            "width": 596,
+                            "height": 512
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/vfzD4gulCM4Xf9Ps1clddQ/gL6PH8pcn-1E71NUNLb6IFMH4rL3VCHOIxto0XCQz29hBjSWFFipFXkwEPHr8ZQPXEEDKplw6OmG1RSZF3MBF0kUHmJBsbZGtzpBy9douUatlKiZuB88qtkuYXqY69nZ4w61xgjHb6Hc_cS6sbJcuA/3ukywHQZwSJnebdaKnC-a6zgkb-DTPUTTUb7aKD-ctQ",
+                            "width": 792,
+                            "height": 680
+                        }
+                    }
+                }
+            ],
+            "Middle Name": "SINGH",
+            "Last Name": "SANDHU",
+            "Marital Status": "Single",
+            "Team Member": "Jake",
+            "Follow Up": "2024-12-09T15:30:00.000Z",
+            "Notes": "- Received paystub\n",
+            "Dealer Status": "Verified",
+            "Co-Signer": "No",
+            "Trade In": "No",
+            "Other Taxable Description": "ADMIN ",
+            "Driver's License Expiry": "2027-08-05",
+            "Driver's License Class": "G",
+            "Gap Insurance Amount": 2999,
+            "Theft Protection Amount": 250,
+            "Life Insurance": "No",
+            "Warranty Plan": "Principal",
+            "Warranty Amount": 2999,
+            "Decision": [
+                {
+                    "id": "attkcbiLW10MsIYej",
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/YxrmPzj4lsVj4zbOySH5dA/Ud6PM0fTm4YierJgT8k3Gg5VgQjLk8WakPo7ZoXgzYZQoza6hxaqxOZmVaKDWNWAwFAh1awy2ClyaETkk_YwlC0WneNhAcDN6gq5JcAxFgLyjtyTNrpyN1VJlYAQu-bMpzFYHFdCpn9smzdtucPeOQ/hgZp95TrLeLWfJQL13nC64SujUHv96IIARbEN-kYLuU",
+                    "filename": "RBC.pdf",
+                    "size": 131447,
+                    "type": "application/pdf",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/CaMtTfQgVxmdFJsDf3iwZA/0wZKbvehwrPNFs8scXr6CjxRQq335zdlBstMseeq7gDdTUt7nMbg_AH5pbETwFzyz4h-ePKmPqSKFDvSwXqpwRQUOp3gLy8ydB7OqJcDoNs9qnitCn_EAn4J_eUqYhBW31ojQpb2Mw1FChWMLB0Onw/rdI_KNZg9qOf1tlOlyFgKHZ1eLdRUYahSqLVpwPv6zQ",
+                            "width": 28,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/nO8q9iLg-_xTTqvqOcFtPw/CYzpJxlS44hBQZVuUTT5_qQImoRV2q4bB_agRGX3ZHtvO0G3Fii1H8bUAAi3B-xJkNEntHik9JVZCVnDNqvfNqSzwhZ6RFdqWWncHTX5N0i_5-6ekx4iYqbnjSAxB-_YStpb785nRTvyBZfK91WFew/XX52TVSxhHOqESxi08KCk8MXq_35F37DBuAiZTn-VAc",
+                            "width": 512,
+                            "height": 663
+                        }
+                    }
+                }
+            ],
+            "Warranty Term": 2,
+            "Warranty Mileage": "UNLIMITIED",
+            "Application Date": "2024-12-08T00:46:40.000Z",
+            "Customer Verification": "2024-12-09T16:10:00.000Z",
+            "Employer Verification": "2024-12-09T18:16:00.000Z"
+        }
+    },
+    {
+        "id": "recsifjqEaEHj3MHI",
+        "createdTime": "2024-12-02T22:13:34.000Z",
+        "fields": {
+            "Email": "BTAPIAALEXIS@GMAIL.COM ",
+            "First Name": "BYRON ALEXIS",
+            "Status": "Approved",
+            "Salutation": "Mr",
+            "Phone": "+14168387857",
+            "Date of Birth": "1997-02-18",
+            "Gender": "Male",
+            "Address": "36 ASHBURNHAM ROAD",
+            "City": "TORONTO",
+            "Province": "Ontario",
+            "Duration at Current Address": 2,
+            "Housing Status": "Rent",
+            "Monthly Payment": 800,
+            "Employer Name": "NEW GENERATION GROUP",
+            "Employment Status": "Full-time",
+            "Occupation": "TAPPING",
+            "Duration of Employment": 2.2,
+            "Employer Address": "106 CORSTATE AVENUE",
+            "Employer City": "CONCORD",
+            "Postal Code": "M6H2K3",
+            "Employer Postal Code": "L4K4X2",
+            "Employer Phone": "+16478722730",
+            "Gross Income (Monthly or Annually)": 7600,
+            "Vehicle Year": 2022,
+            "Vehicle Make": "Volkswagen",
+            "Vehicle Model": "TAOS",
+            "Cash Price": 26999,
+            "Odometer": 41988,
+            "Insurance Coverage": "Yes",
+            "Employer Province": "Ontario",
+            "Dealership Name": "BOS AUTO",
+            "Vehicle Trim": "TRENDLINE",
+            "Cash Down Payment": 3000,
+            "Other Taxable Amounts": 999,
+            "Warranty": "Yes",
+            "Gap Insurance": "Yes",
+            "Theft Protection": "Yes",
+            "Loan Term": "5 Years",
+            "Payment Frequency": "Bi-Weekly",
+            "Interest Rate": "12.99",
+            "VIN": "3VVCX7B27NM019411",
+            "Driver's License #": "Y2929-10409-70218",
+            "Driver's License": [
+                {
+                    "id": "attEk7U0fbEpNnjUM",
+                    "width": 899,
+                    "height": 1599,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/2l7CWpjASH6Uy-bT7JLOqA/xHV5pg4WyEy60piQQ7_6scBTV0zSbaaBig7yjxl7JiFaC06Bi9OZySRz6o3uayhZUg8CwUq8kcINDZ24QOIocsahWpUawWo6Fn-zv276H8oGqsBQBnbcuAle9BOTL1mYhj8_iUqXiY5tw_4b8LwGSASmGSKxBtUwLRCGBczf3P8rCKZq83LaM8ciFl-PXyCSr_-jZHhEUgVro1YTNEKcJA/auZGpKLH7-dMqGyxi2NUPyMjvzl7hFVavVc0jOzYUWA",
+                    "filename": "e8b5f3ab-07c6-4e47-8210-fbff58f39261.jpg",
+                    "size": 190365,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/fG_NblHMdNA326LNXlj5xw/RO_XmzZRWSxkd8W9lKCNKRnJImSVVvfaXVqGjeVoU8jV_m_-TBk6LR0iezsgZ6NR1BYfIyFeLVEqbOkYFbnVgJvE_HEQVbrvyaJ0us3GXp9a2ZzZG1LghQXIFPUUtN4Q5A3m0obasuxA99Fg-PdNwA/H7xa5OC_s9HlyrDZVlUR3-zYKmdJeaXeqPBLfHZlTXg",
+                            "width": 20,
+                            "height": 35
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/3H6oqy21Q0dvP_p5q4HSCQ/mfTul9vhGOJUrra6K-PtHdSrMNpq600I-6ILaUzJgtp297LqnZfn0nrkkpIuqcnJuOC-xkGl3xikzWqyYOPCooShbJNI7YbFA-o9su3KyF3k2ooFVhN6AxHU-_YXIuyDIaSmc2hw2RDppFZ1zJ52EQ/5csJlqH5FVKu96BGbr1cJxxeZnWsEINHDDSJHsF8IZM",
+                            "width": 512,
+                            "height": 911
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/pqRH_khWLHhBj8_XJbDOCg/NA0bwAOkMlT3gHvyhKowhfIybnS5Xgcwu3vQUtzMKDpwaxdGUbwfZ1lSlnog7xQSYmHSk0R1SnmZkjffAjI59Rku0eIKkbScFX-rEses4T8WbpVT4-ojsrwAQdjsOAa8dZPYoPMbrXBC_wh0sKYBQw/FO-XaE7AAdT-lLNZtS-sj9R4IQ4NBFznd80dI4ig_8o",
+                            "width": 899,
+                            "height": 1599
+                        }
+                    }
+                },
+                {
+                    "id": "att4i1cSHhsHUt8UU",
+                    "width": 1920,
+                    "height": 1080,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/3JpZ803iBiBYY7ouEEEGtg/_kuiZen-2sPpGPMRuYEawkMFegZqCUTC9SUE9n_0X5aYURRZAMbzfVYz4UZm0JW6KH1F68QlFeXhMipCcqc_Tof2e2e9rvRJ0ncOHMrTCfZm8J-nm8JJ0kvNibaugJGmX7FnbbhLgJP-H9DfGTZQ2CbtnZZsoqsIyzaTRTSqjlh-kk41A89K9XoTo5clzVSFX-xtBchFwhUTUW2iR7021w/0XsNsHwWKYY3fo0QtYWh9znRIHUxhjXk78u2w97eG2I",
+                    "filename": "db910ecf-ebd8-43cd-847f-725ac6cd6716.jpg",
+                    "size": 313685,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/cuiZxNvv3rcgmXtDAdbKYg/3ypUbHqUSX5uVdfVYW473K7XPARK_EAHm5x1t8SKJnW7R8tPOZyKork5LEa-ZteqjKNNa5--cwNv6hSya6rSGJRuUNZpXyDUH1myggWoo3V_Gu37wDDFj1otDWysbJbU6LOkcRfvDWC-WUJKPGGeJw/8nRgHri98aG5PVwKwaktO4R_3OAHEhrOYBVIGS9rv2c",
+                            "width": 64,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/zP3A-TOrS2EESIsHHKhnCw/p4bzjEK5zjldO5sp00DZdVJWOknmcG-XChfvRmA8eBGusL48Y_JYFCRuaNymvLIwOA2Z_VhBdnvrZ1XgQ3lJtmtQaR7yG_sgqqdJszoH8vQ04XATp6vsOuDhwCnTL99d8iNEEmLJehP_1wfGzpX6WA/hexfTqHdO07ni-BphJUCaKlDYgFipZTBy-v3Oy9-LPM",
+                            "width": 910,
+                            "height": 512
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/ANeIH_qUWJHw8xRbd5_tsg/GW-f-ALYR2SXa7jD9MDSWxjkW9mHJZs89lGdvME2kC0Z3NRIStiXomqXrsBO05hCcMCLr55XJRANklAV7Zltv3zMWZM7bKZeMFzbCwQ8mk01wAjlaW1uL_05q04it1rvYkDKCSdsrpjcIUxTpfA1eQ/HxurfJH6kRIFjgFktLQT9EKn3sbZwtLGB4mdMPJg7Jg",
+                            "width": 1920,
+                            "height": 1080
+                        }
+                    }
+                }
+            ],
+            "Last Name": "YEVILAF TAPIA",
+            "Marital Status": "Single",
+            "Team Member": "Yeop",
+            "Follow Up": "2024-12-02T22:30:00.000Z",
+            "Notes": "- Need to check if we can stretch the term. \n",
+            "Dealer Status": "Verified",
+            "Co-Signer": "No",
+            "Trade In": "No",
+            "Other Taxable Description": "ADMIN/OMVIC",
+            "Driver's License Expiry": "2025-02-27",
+            "Driver's License Class": "G2",
+            "Gap Insurance Amount": 2500,
+            "Theft Protection Amount": 250,
+            "Life Insurance": "No",
+            "Warranty Plan": "Principal",
+            "Warranty Amount": 2500,
+            "Decision": [
+                {
+                    "id": "attEIOLpbnldIiLHj",
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/QzcBipaONos5Wzw-6iunBA/-s5BjvFEvfvsrQplTtlD_xgjNF7i_pmJErrcO7ff17AfUcTFAUkt_L1r8pzxw6355xY4tipkCWSCy1hcb3ncB8oZY_OD7gqmfMmCt4ml-hJfoQ_yENNWzPXfkdrnyeCmjvQcukij0zBNn0WT0lq2GBJ1FT1M_gTq3GbnI3veKgg/G6ZTx7lzhRKFV2kZKz-5SVruH9vYrLc6exZsl8Q46x8",
+                    "filename": "Print _ Imprimer.pdf",
+                    "size": 129900,
+                    "type": "application/pdf",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/b0v8SiWpCupEny-ONIQ7VQ/yRj9G75tabKqrg-gW0OsY6eghEx_yVQAg0GZyrcY3YrD70JmKC0MpDIOF83BxmMrA7gvPfTp7gPD5yQEaWTl_8ecn1HfDEwy3sV9qSr9VzA-eI4JYphkSFCYQFj8BsGVACsGh5GxaN1BN6gGjWk_8Q/f5yaA9v8UD6j9MdhHMCZ5vn-sAiPu95ir9QvzkhDyw0",
+                            "width": 28,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/M5HvIUsZRWOr8sM7XGeOkQ/gKO4-krSmYi7jFL97CLEUeNAVRxj8sLLq2G2doTYHHs0YIKqjyhaFUntN6-9GeN1X_RZXLk-RE0sPQ8aymIpvBKx-xy3mWHe07il_dPx6z-hA3JwNGHEP1hASiHto137XmZQ8Mci_SeZ3ssKh4wdAw/wUw10CWzwLu1CeD2E3RnxG4YW3kmUaZM5-0lde7JtR4",
+                            "width": 512,
+                            "height": 663
+                        }
+                    }
+                },
+                {
+                    "id": "att2Aq9jeJEXCVNEr",
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/roY0AKYVS4TPg68cUczL7w/avjZaUCNDoKuSG7dTlvTTZkuYA2qKH2_vCt7qAJWOqN9PYZL2Vkaf0M-BEx_MFvSusSdvTXvc-mSbdP1hkjx6vyz3tg45-WxG2r935jFXm4_u4vULZCQUPizlK1gGc6gWxZ1lOK7I3SBDWxgNY-FMdNEH26jEDBj6j-agU19nAM/3-OWd_UiCc92YLzuEw0H6l1CoAZUUvGH8BFbgKqJBx4",
+                    "filename": "Print _ Imprimer.pdf",
+                    "size": 130408,
+                    "type": "application/pdf",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/wJgOGBJW3SNvx-P0IaWz-Q/sDTkht-u6mRZGeQxs4IOBjmVKg6sgbePbLjE-AaQnX-vHHQLZXpR72UJTZ7mxBsJtV538kfeTcR1pAvH9onzZcfGfCxTFXVBWmkc9XrnmVe1sgMcoDfrAJgO0gsMtA-v8TR3ZNaa7FW94AEZ7JquiA/qWtTknRKUn--fZ-kNO8JWUhaK6BUY6-fg4cQ-79Xr5g",
+                            "width": 28,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/ogP82HeXQ5OIJZ2RJhLrtA/dKP-0U32VhDZQwwVmuQL8MoWWqgXrQP0HeQTUF6lB5N3e8Uvxn8D1k13WEmE7IrV8dYTpR-rx25eHxV5eN1EWKVwdonVLZTY6GKyv6sahTe7Aj22onYfI1O_SFpZFs9-bhRidev5GQP_QTdsd97Eyw/ZHgI34rpmrNf2Qgn2bfkK7wlsWp3sznDawJkCrk_DhU",
+                            "width": 512,
+                            "height": 663
+                        }
+                    }
+                },
+                {
+                    "id": "attJtL2hQRWHO0vuw",
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/vFSjEb99C4ONMuWoD7Oxng/Sns-YxIRVpbJlHymQWwTKpwmpE72jIzoLUisfUXcSvt8mtMY5ZIjN35dEyul5Ids2noC4z6JEnM-anu2HMsY2j_MWAVCebJHAdp0YosBRpTCE1dpVYvyzJi0YgwRdTb9_qg4Tw_GxE_J4GxqliICYA/nFS42GEVw-TxzJGk304VmkDXUAbsCr-2uBWK5jJ9aEs",
+                    "filename": "BNS.pdf",
+                    "size": 113293,
+                    "type": "application/pdf",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/1cFMoAr8OEDCqqXLEj2ecg/GblpfZRicdsY2N6F8zU8CI8h4l4xN3QE9Fiv4rOR2kiY9kI6UaDvsm9jewglQ-N0K0SZ_YdjTUKGlAB78qK4Vyv2QRF3B-gwi3KNiM-5bJIWraPS9d51cwullHVLdmyRnvX3rk18BNmZmdvLtGY5pw/zu9HrQ2Q6qJq_0JV0TSyQpAcxD07FkMm07UpzkboKlk",
+                            "width": 28,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/9q06bolXeseS8L8m58vWJQ/FYbdBbxUW-_tNmTU4rL1J0yRuX-b8UeJTbjnV72KDbFlOgC6jAuDDymwX0WVx8EXviZFX_bXps3eQQ63ofjx_FeBoCdqzE_4rRPnIt0KTmhnRsxGnnQMjwTDiYCdEoZerYImZxhiJhCQ3hfdtDSLYA/XtEUE-Ka6wzqXNmynV7GZK1lI2wN8iGjHm1RnSqq_-I",
+                            "width": 512,
+                            "height": 663
+                        }
+                    }
+                }
+            ],
+            "Warranty Term": 2,
+            "Warranty Mileage": "0",
+            "Application Date": "2024-12-02T22:13:34.000Z",
+            "Customer Verification": "2024-12-02T22:05:00.000Z",
+            "Employer Verification": "2024-12-02T22:25:00.000Z"
+        }
+    },
+    {
+        "id": "recsy23wpG9cGNJ7q",
+        "createdTime": "2024-12-17T19:51:43.000Z",
+        "fields": {
+            "Email": "EMAIL@GMAIL.COM",
+            "First Name": "LOVELEEN",
+            "Status": "Follow Up",
+            "Salutation": "Mr",
+            "Phone": "+19053240142",
+            "Date of Birth": "2005-06-25",
+            "Gender": "Male",
+            "Address": "6091 BURDETTE DRIVEEAST",
+            "City": "NIAGARA FALLS",
+            "Province": "Ontario",
+            "Duration at Current Address": 3,
+            "Housing Status": "Living with Parents",
+            "Employer Name": "JIMMY THE GREEK",
+            "Employment Status": "Full-time",
+            "Occupation": "COOK",
+            "Duration of Employment": 2,
+            "Employer Address": "221 GLENDALE AVENUE",
+            "Employer City": "ST. CATHARINES",
+            "Postal Code": "L2E5G8",
+            "Employer Postal Code": "L2T2K9",
+            "Employer Phone": "+19053240142",
+            "Gross Income (Monthly or Annually)": 3600,
+            "Vehicle Year": 2021,
+            "Vehicle Make": "Hyundai",
+            "Vehicle Model": "ELANTRA",
+            "Cash Price": 22999,
+            "Odometer": 83797,
+            "Insurance Coverage": "No",
+            "Employer Province": "Ontario",
+            "Dealership Name": "AUTO HOLICS",
+            "Vehicle Trim": "PREFERRED",
+            "Cash Down Payment": 1000,
+            "Other Taxable Amounts": 999,
+            "Warranty": "No",
+            "Gap Insurance": "Yes",
+            "Theft Protection": "Yes",
+            "Loan Term": "7 Years",
+            "Payment Frequency": "Bi-Weekly",
+            "Interest Rate": "6.99",
+            "VIN": "KMHLM4AG9MU153751",
+            "Driver's License #": "K9237-48900-50625",
+            "Driver's License": [
+                {
+                    "id": "att51elrHvtXTP8iS",
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/5mepwIGkkxi0cFcr6WwzMg/hCWRp4D91vd_9lvdE4Duj1FsCgJ-ArkyXxtAwy7xUA2-JtRh7onGWjq5QYrLdWOdIBuSoq6XGEdo5_q5Lu-I07-ZlS0fiedDfBkVs9dQn08Vopwd5Fd68WJk0NuCeEYlc90_G5EeHCNnJBEAUdRHLvGIOc_c_OKSUhj0YNCgGDI/N0kRoP5v6XNmKUShINZNT1ZeiVmYUPDDRxVKpKr_I6g",
+                    "filename": "G2 (1).pdf",
+                    "size": 1201393,
+                    "type": "application/pdf",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/7Ds2VGXsnrq22FrxVPzZhA/Y2jis_GDoj4thhWzIN4ezJTlAhD8sn_L1Qa-f1Ow9X3qEzee0fnwX0U9tpZEugzL9ryTYY7P5kYE1O2DWh-6gqS1OFGC2N3tNp-m1DVqiXDKVmUpK6NNzZN8kId1TEm3XdyEeg_9DMh-bXJhFsDptg/KU7SsRbZTXK0btOOJEHSqBP0VeqRhr2ZOQfFWtiQCYI",
+                            "width": 30,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/zVW1WXbK_VVieJhR-EYTdQ/vkicoThqyvDghh2UFNpy1nNCVCOHeTbOOHYlvjyWMXEFYe8az4aH5TUUDyrh-5S4uEf8D5gY3nIhIjZsNphmBt5WDVy88PShiMO5fUvGgKWtV-_g9IjuOt8HTb3nUWlj5SM7FP4isqu8SuyGOaZ8Pg/o8CaHT6hDu1T96T-PR1PMEwD8SGzXBFO_q3Jg_yZyqc",
+                            "width": 512,
+                            "height": 622
+                        }
+                    }
+                }
+            ],
+            "Last Name": "KUMAR",
+            "Marital Status": "Single",
+            "Notes": "- Customer did not answer for the verification 12/17/2024\n- Customer did not answer 12/18/2024 11:10 am\n",
+            "Dealer Status": "New Lead",
+            "Co-Signer": "No",
+            "Trade In": "No",
+            "Other Taxable Description": "ADMIN/OMVIC",
+            "Driver's License Expiry": "2025-03-16",
+            "Driver's License Class": "G2",
+            "Gap Insurance Amount": 2500,
+            "Theft Protection Amount": 250,
+            "Life Insurance": "No",
+            "Application Date": "2024-12-17T19:51:43.000Z"
+        }
+    },
+    {
+        "id": "recvAJSfIeiul1U4D",
+        "createdTime": "2024-11-04T17:31:51.000Z",
+        "fields": {
+            "Email": "liangfencolee@gmail.com",
+            "First Name": "FENCOLEE",
+            "Status": "Declined",
+            "Salutation": "Mrs",
+            "SIN": 578364622,
+            "Phone": "+14168876762",
+            "Date of Birth": "2002-03-29",
+            "Gender": "Male",
+            "Address": "83 BOROUGH DR UNIT1406",
+            "City": "TORONTO",
+            "Province": "Ontario",
+            "Duration at Current Address": 3,
+            "Housing Status": "Rent",
+            "Monthly Payment": 3200,
+            "Employer Name": "MAXMUM DRYWALL",
+            "Employment Status": "Full-time",
+            "Occupation": "DRYWALL - BOARDMAN",
+            "Duration of Employment": 3,
+            "Employer Address": "911 ROWNTREE DAIRY RD, WOODBRIDGE",
+            "Employer City": "TORONTO",
+            "Postal Code": "M1P5E4",
+            "Employer Postal Code": "L4L5W6",
+            "Employer Phone": "+19058564108",
+            "Gross Income (Monthly or Annually)": 7500,
+            "Vehicle Year": 2019,
+            "Vehicle Make": "Ford",
+            "Vehicle Model": "F150 LARIA ",
+            "Cash Price": 34000,
+            "Odometer": 158984.6,
+            "Insurance Coverage": "Yes",
+            "Employer Province": "Ontario",
+            "Dealership Name": "SOOLIM KOM",
+            "Vehicle Trim": "TRUCK",
+            "Cash Down Payment": 10000,
+            "Warranty": "No",
+            "Gap Insurance": "No",
+            "Theft Protection": "No",
+            "Loan Term": "7 Years",
+            "Payment Frequency": "Monthly",
+            "Interest Rate": "7.99",
+            "VIN": "1FTEW1E4XKFB91402",
+            "Driver's License #": "L40162600020329",
+            "Driver's License": [
+                {
+                    "id": "attU5LopNrten8RnB",
+                    "width": 3024,
+                    "height": 4032,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/qCXSYY-_OONTrqkdaIyWRA/_UT9KUnqan_gCbcXei6gjqBbrCha6FdkSRlDAmkls6DSkOn15vBWp4TwZu7c0oU3u1Dtj1OzMJa35hpv1x6F_PXArVBked6zB4vrZpcM7OdKChmp9P6X0akPWlHVeUta4tHOux5nWlgCV9iq9GPdnBGgYweN6wAO1OypL78qY1Y/Df95YXTHeof0XvQhuNCOT74vMh1X_KkhsoBF302AIsw",
+                    "filename": "image.jpg",
+                    "size": 2961251,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/ZjVAXLb3tZY58-PlBUa5uQ/A1Twkf3TVmiYI-7I2w11S3AyGRj9mfSpZI4Xf3GX86p9OI61tQBA46lXPVK9_qfNHb6U0rNFIKwWcZImiF89p7bMaafAnB8tQinSiGhg6QSnNEZDv-xXktkWQtf2hqzKrT-cXVH1oj4TEYe1tJnvXw/1YdKYM2cZ8_uT6feIvRQf8AIKZfhuxnl0j39p82fG4Y",
+                            "width": 27,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/puJmF_TUgheaDivOPEeojw/zPz2Y2la2ld9WfflMOgEvi0hobtubd9YGAn8Peg7nwZphgDsizb5_B9VoFcHigFBb2wTL2e9pdMm65B8m0LxqluMvL1d5RYTAQz87IEDkXkdq_xF9hf8WDKowFz2KLUY2F-akHdI-En3Xy2A8tmxLg/Y2oHeVZ7qsBt4bcUBjzj0iKANcVjt_bvVeDvP_GqQg0",
+                            "width": 512,
+                            "height": 683
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/IXRsBZVchWThBw-lc2CufA/xBdLI-XUyGP0Vv1MK2XR6vVjwAwY_EkInL32EvoKDf3V8JVxDJOUWC7htUjJESO92gHkMQypvnjKS8vnOXOyHOqEOMo7Jl0xP2dOxYBmF_YaQiXm62eS5Z5waT3pTbwzwnbv-xMb9jzlK53WYc8aiQ/eSLmp_hehLqlKvoYQXQ9_211xcqtoVIb1CP-EiWZ0Hc",
+                            "width": 2250,
+                            "height": 3000
+                        }
+                    }
+                }
+            ],
+            "Last Name": "LIANG",
+            "Marital Status": "Single",
+            "Team Member": "Yeop",
+            "Dealer Status": "New Lead",
+            "Co-Signer": "No",
+            "Trade In": "No",
+            "Driver's License Expiry": "2025-01-30",
+            "Driver's License Class": "G1",
+            "Life Insurance": "No",
+            "Application Date": "2024-11-04T17:31:51.000Z"
+        }
+    },
+    {
+        "id": "recvINbcSk0TndwOc",
+        "createdTime": "2024-12-18T15:15:02.000Z",
+        "fields": {
+            "Email": "GURMEETSANDHUSINGH_copy_for_test@GMAIL.COM",
+            "First Name": "Test",
+            "Status": "New Lead",
+            "Salutation": "Mr",
+            "Phone": "+14372233286",
+            "Date of Birth": "1999-05-12",
+            "Gender": "Male",
+            "Address": "108-1971 ST LAURENT BLVD",
+            "City": "OTTAWA",
+            "Province": "Ontario",
+            "Duration at Current Address": 2.6,
+            "Housing Status": "Rent",
+            "Monthly Payment": 500,
+            "Employer Name": "MUCHO BURRITO FRSH MEXICAN GRILL",
+            "Employment Status": "Full-time",
+            "Occupation": "STORE SUPERVISOR",
+            "Duration of Employment": 2,
+            "Employer Address": "515 INDUSTRIAL AVE",
+            "Employer City": "OTTAWA",
+            "Postal Code": "K1G3P8",
+            "Employer Postal Code": "K1G0Z1",
+            "Employer Phone": "+16138602444",
+            "Gross Income (Monthly or Annually)": 4200,
+            "Vehicle Year": 2019,
+            "Vehicle Make": "Volkswagen",
+            "Vehicle Model": "JETTA",
+            "Cash Price": 22999,
+            "Odometer": 73275,
+            "Insurance Coverage": "No",
+            "Employer Province": "Ontario",
+            "Dealership Name": "BOOST AUTO",
+            "Vehicle Trim": "EXECLINE",
+            "Cash Down Payment": 0,
+            "Other Taxable Amounts": 0,
+            "Warranty": "No",
+            "Gap Insurance": "Yes",
+            "Theft Protection": "No",
+            "Loan Term": "7 Years",
+            "Payment Frequency": "Bi-Weekly",
+            "Interest Rate": "6.99",
+            "VIN": "3VWG57BU1KM085713",
+            "Driver's License #": "S0403-30889-90512",
+            "Driver's License": [
+                {
+                    "id": "attuBBiUrJB453XG8",
+                    "width": 635,
+                    "height": 402,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/43_gzt-zMqPWS24N8q5ONg/ESLP7VMph1htyw1sq-mD3up4UvWTlheLHmvTQNx51tC_WRbMUZrz9UcXP3jUfyiwfgo5Ik1m-vlxsKfC7NeJUZNnXbA6GEluM1MBFkazLvdNkv0svbHujC9qocRFKwoTdRNO-aAjnPsqAVBttTUC_YYSwopBiyCUYTI6nrTY9UY/TRalkHFD_OAcycC5tJxS5igLfd8vOBV144_7jt-ig00",
+                    "filename": "g2_test.png",
+                    "size": 115265,
+                    "type": "image/png",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/Q4Mk23xYrlW7UpqRNcPSbw/NwZRbW_EO28y568k6C5-9GhAS5coslfVntE_WB_0BgCBd7dAT7nG_sNw6MqhMJ9n3MjTqBb042JuRJqSIkB8XR-8A1cT3HTW7dRbp8rJgRzmkoWyMANXqWtdvvZaMvVelzDKhazrMHndz_V34hP3Rw/r5zEOJhvOzuFZKd6hmTpEnVhdyDC5uykRGHihSays1A",
+                            "width": 57,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/ZDoUsblSZHMOU3mXeRTTTQ/a2hSOY02HSlk40-AvYjmNEe0OwO0rNdMi0wAj1lpJ1KCAZpuMyhGFJ0PonnW2Sj9Axo1iTPDcd4R1Q4W9RU-0MnuLQ5VwDglz9HlmjmSXM6QwVdBXzeFX_jtbQ-WfAhJGplkwvzJnTLiyugGeh8V9g/8jBqcwJCsKx7k8vleJxhf5vxyJFsLNm8NN8gjnrSAcI",
+                            "width": 635,
+                            "height": 402
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/2ZA2B1T_Rp-dpExRBKOcKg/LHNBGmyjcGVue6phRZnFZL2ykSFKAVWLleQDQYetAh1ofJKyfM23VfxGHWwJQC9DmKYiGLnbBzDf1ESi-nCAgxwrohyZi-CO0-SrlBYNnXl1fK3gIq6pq8jAEQgN3Q-7yrGD6jXeC5WZBXQHVm_VZQ/UGaLrQbedIDAPFds-jmCy6SZcOIQ8boLzfqfYE8vnUw",
+                            "width": 635,
+                            "height": 402
+                        }
+                    }
+                }
+            ],
+            "Middle Name": "dongju",
+            "Last Name": "copy",
+            "Duplicate": true,
+            "Marital Status": "Single",
+            "Notes": "Auto input Done\n",
+            "Dealer Status": "New Lead",
+            "Co-Signer": "No",
+            "Trade In": "No",
+            "Other Taxable Description": "0",
+            "Driver's License Expiry": "2028-06-10",
+            "Driver's License Class": "G1",
+            "Gap Insurance Amount": 2999,
+            "Life Insurance": "No",
+            "Application Date": "2024-12-18T15:15:02.000Z"
+        }
+    },
+    {
+        "id": "recww4jmSPq8i0Plh",
+        "createdTime": "2024-12-02T19:06:11.000Z",
+        "fields": {
+            "Email": "sarahhanna65@gmail.com",
+            "First Name": "SARAH",
+            "Status": "Declined",
+            "Salutation": "Ms.",
+            "Phone": "(647) 937-4376",
+            "Date of Birth": "1970-01-10",
+            "Gender": "Female",
+            "Address": "472 GREENWOOD DR ",
+            "City": "ANGUS",
+            "Province": "Ontario",
+            "Duration at Current Address": 3,
+            "Housing Status": "Rent",
+            "Monthly Payment": 700,
+            "Employer Name": "SILANI SWEET CHEESE",
+            "Employment Status": "Self-employed",
+            "Occupation": "CONTRACTOR",
+            "Duration of Employment": 4,
+            "Employer Address": "2-291 MAIN ST",
+            "Employer City": "WASAGA BEACH",
+            "Postal Code": "L0M1B6",
+            "Employer Postal Code": "L9Z0E8",
+            "Employer Phone": "(705) 794-4008",
+            "Gross Income (Monthly or Annually)": 82000,
+            "Vehicle Year": 2024,
+            "Vehicle Make": "Hyundai",
+            "Vehicle Model": "ELANTRA",
+            "Cash Price": 30000,
+            "Odometer": 26498,
+            "Insurance Coverage": "No",
+            "Employer Province": "Ontario",
+            "Dealership Name": "MAELEE AUTO",
+            "Vehicle Trim": "PREFERRED SUN N TECH",
+            "Cash Down Payment": 500,
+            "Other Taxable Amounts": 1799,
+            "Warranty": "No",
+            "Gap Insurance": "Yes",
+            "Theft Protection": "No",
+            "Loan Term": "8 Years",
+            "Payment Frequency": "Bi-Weekly",
+            "Interest Rate": "6.95",
+            "VIN": "KMHLM4DG3RU716117",
+            "Driver's License #": "H-0447-69107-05110",
+            "Driver's License": [
+                {
+                    "id": "attvvOJV0DqpQPksB",
+                    "width": 829,
+                    "height": 519,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/zqeZlFkG_HpBbPE13wuG7A/gxL3PsgJenGGOcQiIAu0kFWkY6Ovfe8SHEMdrM2CHNIUFl29NdeU7T--T28HzkqTpWLJavPASzNtachIGMdzhY-34mY5TL2P7McGhhHNJpCEoWiFjnL579Oer0vL7VPWbKtxiLZ1WtPvNuH4b3skAVnH3vFsd2Nc7lCt1ZITZzQ/jehzOhDKpfkr0hU3wKTEkhtsBzNyowOc-GZ4CeaoXxw",
+                    "filename": "IMG_8031.jpg",
+                    "size": 114350,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/ArHvhnG0V_UvYXvyb-GbEw/DDDCaVfsOyhB7CgU6L8sfFbgCGFTiOKNTJCczwg1qiPL6ZPCYfYi2ygUrrob9NY6mg1HHWDHyeyunXbgkM31WpRYF6IzBlLQy5SBWY6VztQ8hUzw6B4xnjJ8wuNILG-vWxuC5WAf3HAP4FcoNVz_RQ/2vDXM_2-3UHWoqUmXHozOoky3KYCOzLoG5XLJvC6v88",
+                            "width": 58,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/w0q38OMjsteHF77mxMJQ4A/aRrLsps5bp94htpaeLJemTDhG0RxVZMNWYscSUh0TQrRXbBgNqjLq1izGc77187sUcnWToBKRZMvLlwqdd7AfQMHOPTQ__RjhGXn8Ihk77x9Vx8NbMTOH0Te1-kcMleGROlkFe9I_TlYEu3U1L9Y-g/dqHL6qlrNpiwSZuzU3DWH7pWJSiWb4nSOO8YxdeAgEw",
+                            "width": 818,
+                            "height": 512
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/Piytpo2QqbTRFLbQR5h9Ew/_OLeEDY27sAicur88Nu2EgUkTSZ9TXU90tgQagXhV9hVSmobVnsqwYn-ErGEMzDcBUV7mYmvnpO_OKYs7cx3m1L_yIvowxzgCnnEKUPRzr9txS2muTjnox8byMYDSttddHLPrFl1I5Q_6kgc5ov6cQ/T3VTHVG59SaD724ya-trmQaw00dTG82hLFM99NQBcgg",
+                            "width": 829,
+                            "height": 519
+                        }
+                    }
+                }
+            ],
+            "Last Name": "HANNA",
+            "Marital Status": "Married",
+            "Team Member": "Jake",
+            "Notes": "- need correct employment information\n- Need two most recent paystubs from each customer\n- Need both SIN\n",
+            "Dealer Status": "Followed Up",
+            "Co-Signer": "Yes",
+            "Co-Signer First Name": "VEBRONIA",
+            "Co-Signer Last Name": "ESHO",
+            "Co-Signer Address": "506-46 PANORAMA CRT",
+            "Co-Signer Phone": "(416) 878-0654",
+            "Co-Signer City": "ETOIBICOKE",
+            "Co-Signer Postal Code": "M4V4A4",
+            "Co-Signer Date of Birth": "1999-04-28",
+            "Co-Signer Gender": "Female",
+            "Co-Signer Marital Status": "Single",
+            "Co-Signer Province": "Ontario",
+            "Co-Signer Duration at Current Address": 3,
+            "Co-Signer Housing Status": "Rent",
+            "Co-Signer Monthly Payment": 600,
+            "Trade In": "No",
+            "Co-Signer Salutation": "Ms.",
+            "Co-Signer Employment Status": "Full-time",
+            "Co-Signer Occupation": "FLOOR MANAGER",
+            "Co-Signer Employer Address": "74 ENTERPRISE RD",
+            "Co-Signer Employer City": "ETOBICOKE",
+            "Co-Signer Employer Province": "Ontario",
+            "Co-Signer Employer Postal Code": "M9W1C5",
+            "Co-Signer Employer Phone": "18332667429",
+            "Co-Signer Gross Income (Monthly or Annually)": 3900,
+            "Co-Signer Duration of Employment": 2,
+            "Co-Signer Employer Name": "AMAZON FULFILMENT CENTER",
+            "Co-Signer Driver's License #": "E8030-76309-95428",
+            "Co-Signer Driver's License": [
+                {
+                    "id": "attETCmXRmgbaWDmk",
+                    "width": 687,
+                    "height": 434,
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/QsiqJAm3KmFD92GVmYchvw/tV_WMEDzWqNw9Q-NU9Dl1x_mZZnVqq1KFk26dJRhrtW7K3Dc90f-lPkp-7y8rb61Y_AJ_FmnBm30brJqk0aUbeUERNhajcDXlywjOzeMA-DMVeBDuHx3-iV_M5e2FJDrDq0zyZImCWm2ZsWr8zdpnsrFjwlg1bC7bDkxyr7AWjo/uok2U8JCGAhHO1d8N_JYmB6Iw8dJ7JKlCC_xzmHX4fo",
+                    "filename": "IMG-20241130-WA0150.jpg",
+                    "size": 100995,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/EtH1qFd__BjjFpbGpd0wsg/bAunruE8voEEOBnWP2SDUKnvUXx6ysjRsWOh2wpiRdw42vqZg-Caz8U3zIZMuhs509VhwUeMpjLiKeBKOC4RV2o2G3vj-E6eDwClybnFlhQIYSiKBlVjoTmE8qtNdjEGk4_eYh88hbIBxOtifcwBKQ/en55Knp0OOu2sRmLE71QDWWNYgFqketKApU6M61P_yY",
+                            "width": 57,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/N9v0EUpaH6UcOo_bUOqY2A/4TIr5jel8Vj93C1nIrSPOnBfY32nGs2M1J9fbfhYZ4-x33-nR-EFjxi_-fVpPceqvVR5J4rmLG-towHGCzER0uEbDTu4KgW42Eht1JdpqKN0iP1ry0w34AyisG6kW-yCmemA_HxYB-AQm4TRMAZmPQ/84TfZbykwSCam3WmR017L3BHvImMN8bCUw18cgmn26k",
+                            "width": 687,
+                            "height": 434
+                        },
+                        "full": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/__BNoLYHEcv9WSxNkcFazQ/hj7w4SQhBImLcRDsJrbhSz_Fp91ty04kGzrLUtcjlvKoVIct3EX9Ho1KOwTCCGe8gvqilQ9EHUMZ-GmTor4YgK61F9YxLO1M6pncIG_Eb_L80whNymrf96DelqHFjzRSnIIJOxBKY8AVKd_49zjNSg/wQbIr7YJUsly1Fd3BB_C6uJiaf3I8unT7eTOYaO6xZU",
+                            "width": 687,
+                            "height": 434
+                        }
+                    }
+                }
+            ],
+            "Co-Signer Relation": "Other",
+            "Other Taxable Description": "ADMIN + SAFETY",
+            "Driver's License Expiry": "2026-12-01",
+            "Driver's License Class": "G",
+            "Co-Signer License Expiry": "2025-08-05",
+            "Co-Signer Driver's License Class": "G1",
+            "Gap Insurance Amount": 2999,
+            "Life Insurance": "No",
+            "Decision": [
+                {
+                    "id": "atticMd8g6pqNCIRd",
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/EA_7iB8fhqPrscH66ELifQ/LBphY5AlE06bMUBCjjuu9Q7uygX9dhGqHgUXdObChbqUhIPAgoLbTKLocbgWchmifIBBPMn81lbkmCS9zpS7sYZWbXAnZ0ceTJf4hGRdELM_Pjmu_xBptLaesuZqg6yYHzekmLzP0FmDMIwCSeJo1g/rvhSGE1Pud1yu6urzVnJ3vJ-bgxgQ-F0TRq68UowG8s",
+                    "filename": "BNS.pdf",
+                    "size": 112385,
+                    "type": "application/pdf",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/Re09lZNDcmjLzbCNsaq6aQ/_zqblEXkWEgr_cGc7D2SzDPVDzGlVQFJogu-o_a-c2WoosBQIjBSo9FI6Huaf7i_Z5apdEHvdmQjI3DAV0oe8NKITWB2cLiwdXTdhgkOVHUhsKjhIjICkcUAw8K5ToHS_CmKaiAQtTyYQ09aQHHOmA/plbkPo8PBLwBuVgwQtPZiUhn0EWl_RyrA5lwA4wJqG4",
+                            "width": 28,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/AzcxpB1yIjlzbHUzg2a_jg/vlgW62r_msZeAl7-MSH2i8zDtgeUbAilwchyOOgo10CLg3SbTsIePbHqt_WrT-blIynLfolkWz6LwT0eV2XCrcSC9NrfWQQ6pTYWk8lWIzDtIdSpQLlFU0Q1bc0gf_gsb0d2AAnu9Wg3uQg2UWHcdg/0jx5ok8tPDm_C_fKtveJRdSTxrSNxywKzguzRHxVP0U",
+                            "width": 512,
+                            "height": 663
+                        }
+                    }
+                },
+                {
+                    "id": "attZrDVj3nNOm69YK",
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/gpnLCBC9-A-jpNg_pYa7hw/4jRbaDxlEm9oNi2zxO-Hg0tnQPd_AO8uINemEBCQ_1Izicu1g-BhQbcCNi2av5RpLZXRQYKzNsNBzNeMHIuC3tbcNS2iUcV-DAFigTQHe9sXo2qbjZV4h6dYR3VwdxRFQN5J7Q4TAsXCP6B0gH50_g/phKwtd4kZaegFsMBHPKDcTID1ST3gi_4SZ7-Njf9ORw",
+                    "filename": "RBC.pdf",
+                    "size": 111207,
+                    "type": "application/pdf",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/MqbUb59UJNk3uZcireLUDw/mrMcPzDcxnJ2_5ma6hAZ2AnwQRi9jA_s2O5fawpAPM0w9pmUdnqBdswEmNEVt_AMeYC2uAImUkjGIJEgGNLCZxu7YZPE61YcTfKalp7puHFvGALEZfHmbYEJZYfC34DSMzoq58xNP528wSr8m4Uq8g/K6bGMtWdeI7mThoJ5jRMY_zD_R3rbV9m83FOfuNiMbU",
+                            "width": 28,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/JKMVluiEJlUSpcVoCBPc0w/IYlz6btZzYWMloo91fOxSs5pcNv2kIAW1psSSHTYLYs50Iy4hGPKqvtlKafLS_oHan42gYGqdZEWNzmnJv-ugPGRbvluPcGaEZi79QPxhKeMMGuMU00KBG3GdB71j56Nnk6GR1ixjhUGvk03yYNkWA/YhaN6MgfxrDoLUkeSg8lb94CfpLqkI3p1W7LX3qKRdg",
+                            "width": 512,
+                            "height": 663
+                        }
+                    }
+                },
+                {
+                    "id": "attTCANNjsoLmtCGn",
+                    "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/Hej4RoyrGNSiSlF4wgngNw/KJRSJHngg9RjxkRpZAGeWy68FsNyh-5KCdGj7T4HWOxBBxfCsIxtGj05Rs891w0M6DnJuCrA-DB0cYRNoOYnkmc3WxA5CaCePCZxTF0FtHYag5eZC_4NwmEeW4VvpdHyoRruLFYFXgyD7E-St7UfDg/2iDohP_-1vfGoVtQyG_fsJXZMzMrSX9qieIiPvjLOQI",
+                    "filename": "SDA.pdf",
+                    "size": 118126,
+                    "type": "application/pdf",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/2Q7BB49P2vmK7_-qk2M3Tg/XJ3GcRVlrSlLxS_kUr61xTVyAykVeOKHM6IC4eISgl0WHtmub38GsiOX8AHn6CJJxshKmny6LLnXLNxbtiu-lQJNmt5WZPqsmRlAsKh-z-IORqBHPGriGWV1i_0ITIZguQj6eSSP2jz9cv8_wTDwlA/Ngs-KUDW0eYhERQnH8DOupJvsAhGJSSGNQvMMjOYJ9E",
+                            "width": 28,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://v5.airtableusercontent.com/v3/u/36/36/1734559200000/okbhygCA--bHUzxxOC4_oQ/ds28_PXHRfROOJKi2P51PZ0pAqYFCCFkH1NU3xNbQx3k4KJGw9gdBuUhG_jpiL_R2Pti06hy4EreaOpXekfbBQ_apCuWk2PfrZfOkh_yDvpsFyFxF4T3DI5kcjYKhPjT8A6iccE7GS9PwLdkc9QcYA/n9ed_73jm-vND9zUrLwNKAIZKFDFEUoJKezs9ZsHlkU",
+                            "width": 512,
+                            "height": 663
+                        }
+                    }
+                }
+            ],
+            "Application Date": "2024-12-02T19:06:11.000Z"
+        }
+    }
+]
