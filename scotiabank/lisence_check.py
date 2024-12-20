@@ -142,6 +142,20 @@ class LicenseDetection:
                 found_keywords = self.check_keywords_in_texts(texts_list)
 
                 if found_keywords:
+                    # 고객 이름과 면허증 비교
+                    if str(record["fields"]["First Name"]) in found_keywords and str(record["fields"]["Last Name"]) in found_keywords:
+                        print("Customer name matches with license")
+                    elif str(record["fields"]["First Name"]) in found_keywords and str(record["fields"]["Last Name"]) not in found_keywords:
+                        print("Only First name matches with license")
+                        self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "- Only First name matches with license"})
+                    elif str(record["fields"]["First Name"]) not in found_keywords and str(record["fields"]["Last Name"]) in found_keywords:
+                        print("Only Last name matches with license")
+                        self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "- Only Last name matches with license"})
+                    elif str(record["fields"]["First Name"]) not in found_keywords and str(record["fields"]["Last Name"]) not in found_keywords:
+                        print("Customer name does not match with license")
+                        self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "- Customer name does not match with license"})
+
+                    # 라이센스 Class 비교    
                     for keyword in found_keywords:
 
                         self.perform_task_for_keyword(keyword, client_data_id)

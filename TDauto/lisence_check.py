@@ -130,6 +130,7 @@ class LicenseDetection:
             if "Driver's License" in record["fields"] and record["fields"]["Status"] == "New Lead" and record["fields"]["Phone"]==int(cus_phone_numer): # and record["fields"]["First Name"] == "Test":
                 client_data_id = record["id"]
                 uri = record["fields"]["Driver's License"][0]["url"]
+
                 ## 이미지 디텍션한 파일이 있는지 확인
                 output_file_path = f"./image_detection_output/{client_data_id}.json"
                 if os.path.exists(output_file_path):
@@ -144,6 +145,20 @@ class LicenseDetection:
                 found_keywords = self.check_keywords_in_texts(texts_list)
 
                 if found_keywords:
+                    # 고객 이름과 면허증 비교
+                    if str(record["fields"]["First Name"]) in found_keywords and str(record["fields"]["Last Name"]) in found_keywords:
+                        print("Customer name matches with license")
+                    elif str(record["fields"]["First Name"]) in found_keywords and str(record["fields"]["Last Name"]) not in found_keywords:
+                        print("Only First name matches with license")
+                        self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "- Only First name matches with license"})
+                    elif str(record["fields"]["First Name"]) not in found_keywords and str(record["fields"]["Last Name"]) in found_keywords:
+                        print("Only Last name matches with license")
+                        self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "- Only Last name matches with license"})
+                    elif str(record["fields"]["First Name"]) not in found_keywords and str(record["fields"]["Last Name"]) not in found_keywords:
+                        print("Customer name does not match with license")
+                        self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "- Customer name does not match with license"})
+                    
+                    # 라이센스 Class 비교
                     for keyword in found_keywords:
 
                         self.perform_task_for_keyword(keyword, client_data_id)
