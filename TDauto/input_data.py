@@ -26,8 +26,14 @@ class DealerTrackAutomation:
 
     def load_env_variables(self):
         load_dotenv()
-        self.username = os.getenv("BOSAUTO_ID")
-        self.password = os.getenv("BOSAUTO_PASS")
+        print("BOSAUTO = 1, MERCURY = 2")
+        d_s_n = input("Chosse DealerShip name : ")
+        if d_s_n == "1":
+            self.username = os.getenv("BOSAUTO_ID")
+            self.password = os.getenv("BOSAUTO_PASS")
+        elif d_s_n == "2":    
+            self.username = os.getenv("MERCURY_ID")
+            self.password = os.getenv("MERCURY_PASS")
 
     def setup_file_path(self):
         current_date = datetime.now().strftime('%Y-%m-%d')
@@ -950,7 +956,7 @@ class DealerTrackAutomation:
             EC.element_to_be_clickable((By.ID, "DTC$ModalPopup$OK"))
         )
         ok_button.click() 
-        
+
         print("Save button clicked.")
 
     def run(self, airtable_client, client_data_id):
