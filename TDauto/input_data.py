@@ -112,7 +112,7 @@ class DealerTrackAutomation:
 
     def fill_phone_fields(self):
         def remove_country_code_and_non_digits(phone):
-            return re.sub(r'\D', '', phone[-10:])  # Extract last 10 digits
+            return re.sub(r'\D', '', str(phone)[-10:])  # Extract last 10 digits
 
         if "Phone" in self.data["fields"]:
             phone_number = remove_country_code_and_non_digits(self.data["fields"]["Phone"])
@@ -533,7 +533,7 @@ class DealerTrackAutomation:
 
     def enter_employer_phone(self):
         def remove_country_code_and_non_digits(phone):
-            return re.sub(r'\D', '', phone[-10:])  # Extract last 10 digits
+            return re.sub(r'\D', '', str(phone)[-10:])  # Extract last 10 digits
         
         if "Employer Phone" in self.data["fields"]:
             employer_phone_number = remove_country_code_and_non_digits(self.data["fields"]["Employer Phone"])
@@ -739,7 +739,7 @@ class DealerTrackAutomation:
 
     def select_term(self):
         def remove_country_code_and_non_digits(phone):
-            return re.sub(r'\D', '', phone[-10:])  # Extract last 10 digits
+            return re.sub(r'\D', '', str(phone)[-10:])  # Extract last 10 digits
         # Wait for the 'Term' dropdown field
         term_dropdown = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.ID, "ctl21_ctl32_ctl00_CTermDropDown1"))
@@ -758,7 +758,7 @@ class DealerTrackAutomation:
 
     def select_amortization(self):
         def remove_country_code_and_non_digits(phone):
-            return re.sub(r'\D', '', phone[-10:])  # Extract last 10 digits
+            return re.sub(r'\D', '', str(phone)[-10:])  # Extract last 10 digits
         # Find amortization dropdown
         amortization_dropdown = self.driver.find_element(By.ID, "ctl21_ctl32_ctl00_CAmortizationPeriodDropDown1")
 
@@ -797,7 +797,7 @@ class DealerTrackAutomation:
     def select_interest_rate(self):
         wait = WebDriverWait(self.driver, 20)
         def remove_country_code_and_non_digits(phone):
-            return re.sub(r'\D', '', phone[-10:])  # Extract last 10 digits
+            return re.sub(r'\D', '', str(phone)[-10:])  # Extract last 10 digits
         
         program_selection_value = "1976484"
         
@@ -945,6 +945,12 @@ class DealerTrackAutomation:
             EC.element_to_be_clickable((By.ID, "btnSave2"))
         )
         save_button.click()
+
+        ok_button = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable((By.ID, "DTC$ModalPopup$OK"))
+        )
+        ok_button.click() 
+        
         print("Save button clicked.")
 
     def run(self, airtable_client, client_data_id):
@@ -1091,7 +1097,7 @@ class DealerTrackAutomation:
 
             self.enter_gap_insurance_amount()
 
-            self.save_deal()
+            # self.save_deal()
 
         except Exception as e:
             print(f"An error occurred: {e}")

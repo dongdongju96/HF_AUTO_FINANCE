@@ -26,13 +26,14 @@ class DealerTrackAutomation:
 
     def load_env_variables(self):
         load_dotenv()
-        self.username = os.getenv("DEALERTRACK_ID")
-        self.password = os.getenv("DEALERTRACK_PASS")
+        self.username = os.getenv("BOSAUTO_ID")
+        self.password = os.getenv("BOSAUTO_PASS")
 
     def setup_file_path(self):
         current_date = datetime.now().strftime('%Y-%m-%d')
         # self.file_name = os.path.join(".", "airtable_data", f"table_list_{current_date}.json")
-        self.file_name = os.path.join(".", "airtable_data", f"table_list_2024-12-18.json")
+        # self.file_name = os.path.join(".", "airtable_data", f"table_list_2024-12-18.json")
+        self.file_name = os.path.join(".", "airtable_data", f"table_list_{current_date}.json")
 
     def read_json_data(self, client_data_id):
         try:
@@ -111,7 +112,7 @@ class DealerTrackAutomation:
 
     def fill_phone_fields(self):
         def remove_country_code_and_non_digits(phone):
-            return re.sub(r'\D', '', phone[-10:])  # Extract last 10 digits
+            return re.sub(r'\D', '', str(phone)[-10:])  # Extract last 10 digits
 
         if "Phone" in self.data["fields"]:
             phone_number = remove_country_code_and_non_digits(self.data["fields"]["Phone"])
@@ -945,6 +946,12 @@ class DealerTrackAutomation:
             EC.element_to_be_clickable((By.ID, "btnSave2"))
         )
         save_button.click()
+
+        ok_button = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable((By.ID, "DTC$ModalPopup$OK"))
+        )
+        ok_button.click() 
+
         print("Save button clicked.")
 
     def run(self, airtable_client, client_data_id):
