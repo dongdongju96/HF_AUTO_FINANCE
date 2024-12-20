@@ -78,7 +78,7 @@ class LicenseDetection:
         if keyword == 'G1':
             self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Need at least G1 license(AI)"})
 
-        elif keyword == 'G' or keyword == 'A' or keyword == 'B' or keyword == 'C' or keyword == 'D' or keyword == 'E' or keyword == 'F':
+        elif keyword == 'G' or keyword == 'A' or keyword == 'AZ' or keyword == 'B' or keyword == 'C' or keyword == 'D' or keyword == 'E' or keyword == 'F':
             print("G liscence")
             print(f"client_data_id : {client_data_id}")
             # Dealer check 매크로 실행
@@ -163,7 +163,7 @@ AIRTABLE_API_KEY = os.getenv("AIRTABLE_WRITE_TOKEN")
 AIRTABLE_BASE_ID = os.getenv("AIRTABLE_BASE_ID")
 AIRTABLE_TABLE_NAME = os.getenv("AIRTABLE_TABLE_ID")
 GOOGLE_APPLICATION_CREDENTIALS = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
-LICENSE_KEYWORDS = ["G", "G1", "G2", "A", "B", "C", "D", "E", "F"]
+LICENSE_KEYWORDS = ["G", "G1", "G2", "A", "AZ", "B", "C", "D", "E", "F"]
 
 # Initialize Airtable and Google Vision clients
 airtable_client = AirtableAPI(AIRTABLE_API_KEY, AIRTABLE_BASE_ID, AIRTABLE_TABLE_NAME)
