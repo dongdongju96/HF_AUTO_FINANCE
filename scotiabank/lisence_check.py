@@ -77,8 +77,21 @@ class LicenseDetection:
         """Perform task based on detected license keyword"""
         if keyword == 'G1':
             self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Need at least G1 license(AI)"})
+
         elif keyword == 'G':
-            self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Need at least G1 license(AI)"})
+            print("G liscence")
+            print(f"client_data_id : {client_data_id}")
+            # Dealer check 매크로 실행
+            # Dealer check에 고객 데이터 값 입력
+            # AIRTABLE_CLIENT_DATA_ID값과 table_list_current_date.json을 조회해서 ID 값과 비교 후 매크로 값 입력
+            automation = DealerTrackAutomation()
+            try:
+                automation.run(airtable_client, client_data_id)
+            except:
+                self.airtable_client.update_record(client_data_id, {"Notes": "Can't input Data with AI"})
+                
+            self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Auto input Done"})
+
         elif keyword == 'G2':
             print("G2 liscence")
             print(f"client_data_id : {client_data_id}")
@@ -92,6 +105,7 @@ class LicenseDetection:
                 self.airtable_client.update_record(client_data_id, {"Notes": "Can't input Data with AI"})
                 
             self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Auto input Done"})
+            
         else:
             self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Can't find license CLASS(AI)"})
 
