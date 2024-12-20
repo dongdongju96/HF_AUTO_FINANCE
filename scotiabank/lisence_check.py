@@ -76,7 +76,7 @@ class LicenseDetection:
     def perform_task_for_keyword(self, keyword, client_data_id):
         """Perform task based on detected license keyword"""
         if keyword == 'G1':
-            self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Need at least G1 license(AI)"})
+            self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "- Need at least G1 license(AI)"})
 
         elif keyword == 'G' or keyword == 'A' or keyword == 'AZ' or keyword == 'B' or keyword == 'C' or keyword == 'D' or keyword == 'E' or keyword == 'F':
             print("G liscence")
@@ -88,7 +88,7 @@ class LicenseDetection:
             try:
                 automation.run(airtable_client, client_data_id)
             except:
-                self.airtable_client.update_record(client_data_id, {"Notes": "Can't input Data with AI"})
+                self.airtable_client.update_record(client_data_id, {"Notes": "- Can't input Data with AI"})
                 
             # self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Auto input Done"})
 
@@ -101,13 +101,12 @@ class LicenseDetection:
             automation = DealerTrackAutomation()
             try:
                 automation.run(airtable_client, client_data_id)
+                self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "- Auto input Done"})
             except:
-                self.airtable_client.update_record(client_data_id, {"Notes": "Can't input Data with AI"})
-                
-            self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Auto input Done"})
+                self.airtable_client.update_record(client_data_id, {"Notes": "- Can't input Data with AI"})
 
         else:
-            self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Can't find license CLASS(AI)"})
+            self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "- Can't find license CLASS(AI)"})
 
     def process_records(self):
         """Process records from Airtable and detect licenses"""
@@ -160,10 +159,10 @@ class LicenseDetection:
 
                         self.perform_task_for_keyword(keyword, client_data_id)
                 else:
-                    self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "Can't find license CLASS(AI)"})
+                    self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": "- Can't find license CLASS(AI)"})
 
             elif "Driver's License" not in record["fields"] and record["fields"]["Status"] == "New Lead" and record["fields"]["Phone"] == int(cus_phone_numer):
-                self.airtable_client.update_record(record["id"], {"Status": "Follow Up", "Notes": "No image URL(AI)"})
+                self.airtable_client.update_record(record["id"], {"Status": "Follow Up", "Notes": "- No image URL(AI)"})
             else:
                 # Update the status when the image URL is not available or the status is not 'New Lead'
                 pass
