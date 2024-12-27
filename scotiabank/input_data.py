@@ -199,6 +199,8 @@ class DealerTrackAutomation:
                 salutation = "Ms."
             elif salutation=="Mrs":
                 salutation = "Mrs."
+            elif salutation=="Dr":
+                salutation = "Dr."
             
             if salutation in ["Dr.", "Mr.", "Ms.", "Miss", "Mrs."]:
                 select.select_by_visible_text(salutation)
