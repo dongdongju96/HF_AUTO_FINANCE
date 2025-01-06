@@ -95,9 +95,11 @@ class DealerTrackAutomation:
     def fill_dropdown(self, dropdown_id, value):
         wait = WebDriverWait(self.driver, 20)
         dropdown_element = wait.until(EC.element_to_be_clickable((By.ID, dropdown_id)))
+        time.sleep(0.5)
         dropdown = Select(dropdown_element)
+        time.sleep(0.5)
         dropdown.select_by_visible_text(value)
-        print(f"Dropdown '{dropdown_id}' selected value: {value}")
+        # print(f"Dropdown '{dropdown_id}' selected value: {value}")
 
     def fill_text_field(self, field_id, text):
         field = self.driver.find_element(By.ID, field_id)
@@ -168,7 +170,7 @@ class DealerTrackAutomation:
 
         # Select "Automotive" from ddAsset
         self.fill_dropdown("ddAsset", "Automotive")
-
+        time.sleep(0.5)
         # Select "Scotiabank" from ddLenders
         self.fill_dropdown("ddLenders", "TD Auto Finance")
 
@@ -320,6 +322,37 @@ class DealerTrackAutomation:
 
         print("Address Lookup button clicked successfully!")
 
+    def select_address_type(self):
+        address_type_dropdown = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_ddlAddressType")
+        address_type_dropdown = Select(address_type_dropdown)
+
+        if "Address Type Current Employer" in self.data["fields"] and self.data["fields"]["Address Type"]:
+            address_type_map = {
+                "Street": "ST",
+                "Rural Route": "RR",
+                "Postal Box": "PB",
+            }
+            status = self.data["fields"]["Address Type Current Employer"]
+            address_type_dropdown.select_by_value(address_type_map.get(status, ""))
+        else:
+            address_type_dropdown.select_by_value("ST")
+    
+        selected_option = address_type_dropdown.first_selected_option
+        print(f"Selected Address Type Current Employer: {selected_option.text}")
+
+    def enter_suit_number(self):
+        suit_number_input = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_txtSuiteNumber")
+        suit_number_input.send_keys(2)
+        entered_value = suit_number_input.get_attribute("value")
+        print(f"Entered Suite Number : {entered_value}")
+
+    def enter_address_number(self):
+        suit_address_number_input = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_txtStreetNumber")
+        suit_address_number_input.send_keys(216)
+        entered_value = suit_address_number_input.get_attribute("value")
+        print(f"Entered Address Number : {entered_value}")
+
+
     def enter_duration_at_current_address(self):
         wait = WebDriverWait(self.driver, 20)
         try:
@@ -330,12 +363,12 @@ class DealerTrackAutomation:
         except:
             print("Timeout: Duration input field was not found.")
 
-        duration_years_input.send_keys(self.data["fields"].get("Duration at Current Address", ""))
+        duration_years_input.send_keys(self.data["fields"].get("Duration at Current Address (Years)", ""))
         entered_value = duration_years_input.get_attribute("value")
         print(f"Entered Duration in Years: {entered_value}")
 
         duration_months_input = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_CDurationCurrentAddress_M")
-        duration_months_value = "6"  # Assuming default value for demonstration
+        duration_months_value = self.data["fields"].get("Duration at Current Address (Month)", "")  # Assuming default value for demonstration
         duration_months_input.send_keys(duration_months_value)
         entered_value = duration_months_input.get_attribute("value")
         print(f"Entered Duration in Months: {entered_value}")
@@ -400,7 +433,7 @@ class DealerTrackAutomation:
                 "Office Staff": "Office Staff",
                 "Other": "Other",
                 "Production": "Production",
-                "Professional": "Professional",
+                "Progessional": "Professional", # airtable typo
                 "Retired": "Retired",
                 "Sales": "Sales",
                 "Self-Employed": "Self-Employed",
@@ -409,7 +442,7 @@ class DealerTrackAutomation:
                 "Student": "Student",
                 "Unemployed": "Unemployed",
             }
-            status = self.data["fields"]["Employment Status"]
+            status = self.data["fields"]["Employment Type"]
             select_employment_type.select_by_value(employment_type_map.get(status, ""))
 
         selected_option = select_employment_type.first_selected_option
@@ -459,12 +492,12 @@ class DealerTrackAutomation:
         except:
             print("Timeout: Duration input field was not found.")
 
-        duration_years_input.send_keys(self.data["fields"].get("Duration of Employment", ""))
+        duration_years_input.send_keys(self.data["fields"].get("Duration of Employment (Years)", ""))
         entered_value = duration_years_input.get_attribute("value")
         print(f"Entered Duration of Employment in Years: {entered_value}")
 
         duration_months_input = self.driver.find_element(By.ID, "ctl21_ctl24_ctl00_CDurationCurrentEmployerAddress_M")
-        duration_months_value = "6"  # Assuming default value for demonstration
+        duration_months_value = self.data["fields"].get("Duration at Previous Address (Month)", "")  # Assuming default value for demonstration
         duration_months_input.send_keys(duration_months_value)
         entered_value = duration_months_input.get_attribute("value")
         print(f"Entered Duration of Employment in Months: {entered_value}")
@@ -495,18 +528,35 @@ class DealerTrackAutomation:
 
     def enter_street_number_cur_employer(self):
         street_number_cur_employer_input = self.driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtStreetNumberCurEmp")
-        street_number_cur_employer_input.send_keys(self.data["fields"].get("Street Number Current Employer", ""))
+        # street_number_cur_employer_input.send_keys(self.data["fields"].get("Street Number Current Employer", ""))
+        street_number_cur_employer_input.send_keys(490) # for test
         entered_value = street_number_cur_employer_input.get_attribute("value")
         print(f"Entered Street Number Current Employer: {entered_value}")
 
     def enter_street_name_cur_employer(self):
         street_name_cur_employer_input = self.driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtStreetNameCurEmp")
-        street_name_cur_employer_input.send_keys(self.data["fields"].get("Street Name Current Employer", ""))
+        # street_name_cur_employer_input.send_keys(self.data["fields"].get("Street Name Current Employer", ""))
+        street_name_cur_employer_input.send_keys("YORK") # for test
         entered_value = street_name_cur_employer_input.get_attribute("value")
         print(f"Entered Street Name Current Employe: {entered_value}")
 
     def select_street_type_cur_employment(self):
-        pass
+        street_type_cur_employment_dropdown = self.driver.find_element(By.ID, "ctl21_ctl24_ctl00_ddlStreetTypeCurEmp")
+        street_type_cur_employment_dropdown = Select(street_type_cur_employment_dropdown)
+
+        # if "Address Type Current Employer" in self.data["fields"] and self.data["fields"]["Address Type"]:
+        #     address_type_map = {
+        #         "Street": "ST",
+        #         "Rural Route": "RR",
+        #         "Postal Box": "PB",
+        #     }
+        #     status = self.data["fields"]["Address Type Current Employer"]
+        #     street_type_cur_employment_dropdown.select_by_value(address_type_map.get(status, ""))
+        # else:
+        #     street_type_cur_employment_dropdown.select_by_value("RD")
+        street_type_cur_employment_dropdown.select_by_value("RD")
+        selected_option = street_type_cur_employment_dropdown.first_selected_option
+        print(f"Selected Address Type Current Employer: {selected_option.text}")
 
     def select_direction_cur_employment(self):
         pass
@@ -567,7 +617,8 @@ class DealerTrackAutomation:
                 "Week": "52",
             }
         status = self.data["fields"][""]
-        select.select_by_value(gross_income_per_map.get(status, ""))
+        # select.select_by_value(gross_income_per_map.get(status, ""))
+        select.select_by_value("12")
         selected_option = select.first_selected_option
         print(f"Selected Gross Income Per: {selected_option.text}")
 
@@ -821,7 +872,7 @@ class DealerTrackAutomation:
                 program_selection_dropdown = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_ddlProgram")
                 time.sleep(1)
 
-                if program_selection_value == "1958636":
+                if program_selection_value == "1979716":
                     term_dropdown = self.driver.find_element(By.ID, "ctl21_ctl32_ctl00_CTermDropDown1")
 
                     # 드롭다운 선택을 위한 Select 객체 생성
@@ -855,7 +906,7 @@ class DealerTrackAutomation:
                 # 값 선택 (예: 'AC AT CC ES')
                 # 1966420 = Auto special
                 # 1966448 = standard fixed rate
-                program_selection_value = "1958636"
+                program_selection_value = "1979716"
                 select.select_by_value(program_selection_value)
 
                 # 선택된 값 확인
@@ -1013,6 +1064,16 @@ class DealerTrackAutomation:
             # Fill postal code field
             self.enter_postal_code(airtable_client, client_data_id)
 
+            ###### Fill Address Fields ######
+            self.select_address_type()
+            self.enter_suit_number()
+            self.enter_address_number()
+            self.enter_suit_number_cur_employer()
+            self.enter_street_number_cur_employer()
+            self.enter_street_name_cur_employer()
+            self.select_street_type_cur_employment()
+            #################################
+
             # Fill duration field
             self.enter_duration_at_current_address()
 
@@ -1020,7 +1081,7 @@ class DealerTrackAutomation:
 
             self.enter_market_value_and_payments()
 
-            # self.select_employment_type()
+            self.select_employment_type()
 
             self.enter_employer_name()
 
