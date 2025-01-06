@@ -1,10 +1,14 @@
 import os
+import re
 import json
+import requests
 from pprint import pprint
 from pyairtable import Api
 from datetime import datetime
 from dotenv import load_dotenv
 from google.cloud import vision
+from google.cloud import storage
+from google.oauth2 import service_account
 from input_data import DealerTrackAutomation
 
 
@@ -25,8 +29,11 @@ class AirtableAPI:
 
 class GoogleVisionAPI:
     def __init__(self, credentials):
-        os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credentials
+        credentials = service_account.Credentials.from_service_account_file(
+            credentials
+        )
         self.client = vision.ImageAnnotatorClient()
+        self.storage_client = storage.Client(credentials=credentials)
 
     def detect_text(self, uri):
         """Detects text in the image provided by the URI"""
@@ -45,6 +52,42 @@ class GoogleVisionAPI:
         } for text in texts]
 
         return texts_list, structured_texts
+    
+    def upload_file_to_gcs(self, bucket_name, source_file_name, destination_blob_name):
+        """Uploads a file to the specified GCS bucket."""
+        
+        bucket = self.storage_client.bucket(bucket_name)
+        blob = bucket.blob(destination_blob_name)
+        blob.upload_from_filename(source_file_name)
+        print(f"File {source_file_name} uploaded to {destination_blob_name}.")
+
+    def async_detect_document(self, gcs_source_uri, gcs_destination_uri, batch_size=2):
+        """Performs asynchronous document OCR on a PDF file stored in GCS."""
+        feature = vision.Feature(type_=vision.Feature.Type.DOCUMENT_TEXT_DETECTION)
+        gcs_source = vision.GcsSource(uri=gcs_source_uri)
+        input_config = vision.InputConfig(gcs_source=gcs_source, mime_type="application/pdf")
+        gcs_destination = vision.GcsDestination(uri=gcs_destination_uri)
+        output_config = vision.OutputConfig(gcs_destination=gcs_destination, batch_size=batch_size)
+
+        async_request = vision.AsyncAnnotateFileRequest(
+            features=[feature], input_config=input_config, output_config=output_config
+        )
+        operation = self.client.async_batch_annotate_files(requests=[async_request])
+        print("Waiting for the operation to finish...")
+        operation.result(timeout=420)
+
+        # Retrieve output files from GCS
+        bucket_name, prefix = re.match(r"gs://([^/]+)/(.+)", gcs_destination_uri).groups()
+        bucket = self.storage_client.bucket(bucket_name)
+        blob_list = [blob for blob in bucket.list_blobs(prefix=prefix) if not blob.name.endswith("/")]
+
+        output_data = []
+        for blob in blob_list:
+            json_string = blob.download_as_bytes().decode("utf-8")
+            response = json.loads(json_string)
+            output_data.append(response)
+
+        return output_data
 
 
 class LicenseDetection:
@@ -52,6 +95,7 @@ class LicenseDetection:
         self.airtable_client = airtable_client
         self.vision_client = vision_client
         self.license_keywords = license_keywords
+
 
     def detect_license_in_image(self, uri, client_data_id):
         """Detect text in the image, save result to JSON"""
@@ -68,6 +112,16 @@ class LicenseDetection:
             json.dump(output_data, f, indent=4, ensure_ascii=False)
 
         return texts_list
+    
+    def detect_license_in_pdf(self, gcs_source_uri, gcs_destination_uri, client_data_id):
+        """Process the PDF, extract text, and save results."""
+        output_data = self.vision_client.async_detect_document(gcs_source_uri, gcs_destination_uri)
+
+        # Save results to a JSON file
+        output_file_path = f"./image_detection_output/{client_data_id}.json"
+        with open(output_file_path, "w", encoding="utf-8") as f:
+            json.dump(output_data, f, indent=4, ensure_ascii=False)
+        return output_data
 
     def check_keywords_in_texts(self, texts_list):
         """Check for license keywords in detected texts"""
@@ -126,19 +180,39 @@ class LicenseDetection:
         
         cus_phone_numer = input("Enter the customer's phone number: ")
         for record in table_list:
-            if "Driver's License" in record["fields"] and record["fields"]["Status"] == "New Lead" and record["fields"]["Phone"]==int(cus_phone_numer): # and record["fields"]["First Name"] == "Test":
+            if "Driver's License" in record["fields"] and record["fields"]["Status"] == "New Lead" and record["fields"]["Phone"]==int(cus_phone_numer) and record["fields"]["First Name"] == "RAJAT":
                 client_data_id = record["id"]
                 uri = record["fields"]["Driver's License"][0]["url"]
 
                 ## 이미지 디텍션한 파일이 있는지 확인
-                output_file_path = f"./image_detection_output/{client_data_id}.json"
+                output_file_path = f"image_detection_output/{client_data_id}.json"
                 if os.path.exists(output_file_path):
-                    with open(output_file_path, 'r', encoding='utf-8') as file:
-                        texts_list = json.load(file)
-                        texts_list = texts_list['texts_list']
+                    try:
+                        with open(output_file_path, 'r', encoding='utf-8') as file:
+                            texts_list = json.load(file)
+                            texts_list = texts_list['texts_list']
+
+                    except:
+                        with open(output_file_path, 'r', encoding='utf-8') as file:
+                            texts_list = json.load(file)
+                            texts_list = texts_list[0]["responses"][0]["fullTextAnnotation"]["text"].split("\n")
                     print("이미 인식한 이미지입니다.")
                 else:
-                    texts_list = self.detect_license_in_image(uri, client_data_id)
+                    try:
+                        print("이미지 인식 테스트 진행")
+                        texts_list = self.detect_license_in_image(uri, client_data_id)
+                        
+                    except:
+                        print("PDF 인식 테스트 진행")
+                        # pdf 로컬에 다운로드
+                        response = requests.get(uri)
+                        file = open(f"airtable_data/{client_data_id}.pdf", "wb")
+                        file.write(response.content)
+                        file.close()
+                        # pdf 파일을 gcs에 업로드
+                        vision_client.upload_file_to_gcs( "drive_licence_pdf", f"airtable_data/{client_data_id}.pdf", f"{client_data_id}.pdf")
+                        # pdf 파일을 gcs에서 읽어와서 이미지 디텍션
+                        texts_list = self.detect_license_in_pdf(f"gs://drive_licence_pdf/{client_data_id}.pdf", f"gs://drive_licence_pdf/output-folder/{client_data_id}/", client_data_id)[0]["responses"][0]["fullTextAnnotation"]["text"].split("\n")
                     print("이미지 인식을 실행합니다..")
 
                 found_keywords = self.check_keywords_in_texts(texts_list)
@@ -178,7 +252,7 @@ load_dotenv()
 AIRTABLE_API_KEY = os.getenv("AIRTABLE_WRITE_TOKEN")
 AIRTABLE_BASE_ID = os.getenv("AIRTABLE_BASE_ID")
 AIRTABLE_TABLE_NAME = os.getenv("AIRTABLE_TABLE_ID")
-GOOGLE_APPLICATION_CREDENTIALS = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+GOOGLE_APPLICATION_CREDENTIALS = os.getenv("GOOGLE_APPLICATION_CREDENTIALS2")
 LICENSE_KEYWORDS = ["G", "G1", "G2", "A", "AZ", "B", "C", "D", "E", "F"]
 
 # Initialize Airtable and Google Vision clients
