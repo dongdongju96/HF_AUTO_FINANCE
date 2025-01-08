@@ -26,7 +26,7 @@ class DealerTrackAutomation:
 
     def load_env_variables(self):
         load_dotenv()
-        print("BOSAUTO = 1, MERCURY = 2")
+        print("BOSAUTO = 1, MERCURY = 2, Jpate580 = 3")
         d_s_n = input("Chosse DealerShip name : ")
         if d_s_n == "1":
             self.username = os.getenv("BOSAUTO_ID")
@@ -34,6 +34,9 @@ class DealerTrackAutomation:
         elif d_s_n == "2":    
             self.username = os.getenv("MERCURY_ID")
             self.password = os.getenv("MERCURY_PASS")
+        elif d_s_n == "3":
+            self.username = os.getenv("DEALERTRACK_ID")
+            self.password = os.getenv("DEALERTRACK_PASS")
 
     def setup_file_path(self):
         current_date = datetime.now().strftime('%Y-%m-%d')
@@ -95,7 +98,9 @@ class DealerTrackAutomation:
     def fill_dropdown(self, dropdown_id, value):
         wait = WebDriverWait(self.driver, 20)
         dropdown_element = wait.until(EC.element_to_be_clickable((By.ID, dropdown_id)))
+        time.sleep(0.5)
         dropdown = Select(dropdown_element)
+        time.sleep(0.5)
         dropdown.select_by_visible_text(value)
         # print(f"Dropdown '{dropdown_id}' selected value: {value}")
 
@@ -976,7 +981,7 @@ class DealerTrackAutomation:
             EC.element_to_be_clickable((By.ID, "ctl21_ctl21_ctl00_ddlProgram"))
         )
         time.sleep(1)
-
+        select = Select(program_selection_dropdown)
         options = select.options  # <option> 요소 리스트
 
         keywords = ["Spring Special", "Summer Special", "Fall Special", "Winter Special"]
