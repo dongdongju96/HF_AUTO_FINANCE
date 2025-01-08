@@ -41,6 +41,18 @@ py 파일을 실행하기 위해서 Python을 설치해야합니다. [다운로�
 <aside>
 💡
 
+라이브러리 설치가 필요합니다.<p>
+
+requirments.txt 파일이 있는 폴더에서 cmd를 실행시키고 <p>
+```
+pip install -r requirments.txt
+```
+위의 텍스트를 입력해주세요.
+</aside>
+
+<aside>
+💡
+
 .env 파일 수정이 필요합니다.<p>
 
 .env 파일은 notepad 또는 메모장을 사용해서 수정할 수 있습니다.<p>
