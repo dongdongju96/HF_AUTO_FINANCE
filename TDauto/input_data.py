@@ -322,6 +322,78 @@ class DealerTrackAutomation:
 
         print("Address Lookup button clicked successfully!")
 
+    def enter_previous_postal_code(self, airtable_client, client_data_id):
+        if "OLD Duration at Current Address (Years)" in self.data["fields"]:
+            address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
+            
+
+        if "Duration at Current Address (Years)" in self.data["fields"]:
+            address_year = self.data["fields"].get("Duration at Current Address (Years)", "")
+            
+        if int(address_year) < 2:
+            return
+
+        address = self.data["fields"].get("Previous Address", "")
+        wait = WebDriverWait(self.driver, 10)
+        try:
+            postal_code_input = wait.until(
+                EC.presence_of_element_located((By.ID, "ctl21_ctl22_ctl00_txtPostalCode"))
+            )
+            print("postal_code_input field is loaded.")
+        except:
+            print("Timeout: postal_code_input field was not found.")
+
+        postal_code_input.click()
+        postal_code_input = self.driver.find_element(By.CLASS_NAME, "MaskedEditFocus")
+        postal_code_input.send_keys(self.data["fields"].get("Previous Postal Code", ""))
+        entered_value = postal_code_input.get_attribute("value")
+        print(f"Entered Postal Code: {entered_value}")
+
+        address_lookup_button = self.driver.find_element(By.ID, "ctl21_ctl22_ctl00_btnPostalCodeLookup")
+        address_lookup_button.click()
+        time.sleep(3)
+        try:
+            # Switch to iframe containing lookup details
+            iframe = wait.until(EC.element_to_be_clickable((By.ID, "DTC$ModalPopup$Frame")))
+            self.driver.switch_to.frame(iframe)
+
+            # 테이블 로드 대기
+            WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, "gvPostalCode")))
+
+            # 테이블 행 가져오기
+            rows = self.driver.find_elements(By.XPATH, "//table[@id='gvPostalCode']/tbody/tr")
+
+            # 첫 번째 행은 헤더이므로 제외하고 반복문 실행
+            for row in rows[1:]:
+                # 'Street Name' 값 가져오기
+                street_name = row.find_element(By.XPATH, "./td[2]").text.strip()
+                
+                # 비교 값과 일치 여부 확인
+                if street_name in address:
+                    # 라디오 버튼 클릭
+                    radio_button = row.find_element(By.XPATH, "./td[1]/input[@type='radio']")
+                    radio_button.click()
+                    print(f"Radio button for '{street_name}' clicked.")
+                    break
+                # 그냥 첫번째 것 클릭하도록 되어있다.
+                else:
+                    radio_button = row.find_element(By.XPATH, "./td[1]/input[@type='radio']")
+                    radio_button.click()
+                    print(f"Radio button for '{street_name}' clicked.")
+            else:
+                print(f"No matching 'Street Name' found for '{street_name}'.")
+            btnOK = wait.until(EC.element_to_be_clickable((By.ID, "btnOK")))
+            # 버튼 클릭
+            btnOK.click()
+
+            self.driver.switch_to.parent_frame()
+
+            airtable_client.update_record(client_data_id, {"Notes": "Need check Address"})
+        except:
+            pass
+
+        print("Address Lookup button clicked successfully!")
+
     def select_address_type(self):
 
         address_type_map = {
@@ -344,6 +416,37 @@ class DealerTrackAutomation:
         selected_option = address_type_dropdown.first_selected_option
         print(f"Selected Address Type Current Employer: {selected_option.text}")
 
+    def select_previous_address_type(self):
+        if "OLD Duration at Current Address (Years)" in self.data["fields"]:
+            address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
+            
+
+        if "Duration at Current Address (Years)" in self.data["fields"]:
+            address_year = self.data["fields"].get("Duration at Current Address (Years)", "")
+            
+        if int(address_year) < 2:
+            return
+        
+        address_type_map = {
+                "Street": "ST",
+                "Rural Route": "RR",
+                "Postal Box": "PB",
+            }
+        
+        address_type_dropdown = self.driver.find_element(By.ID, "ctl21_ctl22_ctl00_ddlAddressType")
+        address_type_dropdown = Select(address_type_dropdown)
+
+        # Address Type 필드가 존재할 때만 실행
+        if "Address Type" in self.data["fields"] and self.data["fields"]["Previous Address Type"]:
+            address_type = self.data["fields"]["Previous Address Type"]
+            address_type_dropdown.select_by_value(address_type_map.get(address_type, ""))
+        # 변경 전, OLD Address를 사용하는 경우
+        else:
+            address_type_dropdown.select_by_value("ST")
+    
+        selected_option = address_type_dropdown.first_selected_option
+        print(f"Selected Previous Address Type : {selected_option.text}")
+
     def enter_suit_number(self):
         suit_number_input = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_txtSuiteNumber")
 
@@ -358,6 +461,31 @@ class DealerTrackAutomation:
         suit_number_input.send_keys(2)
         entered_value = suit_number_input.get_attribute("value")
         print(f"Entered Suite Number : {entered_value}")
+
+    def enter_previous_suit_number(self):
+        if "OLD Duration at Current Address (Years)" in self.data["fields"]:
+            address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
+            
+
+        if "Duration at Current Address (Years)" in self.data["fields"]:
+            address_year = self.data["fields"].get("Duration at Current Address (Years)", "")
+            
+        if int(address_year) < 2:
+            return
+        
+        suit_number_input = self.driver.find_element(By.ID, "ctl21_ctl22_ctl00_txtSuiteNumber")
+
+        if "Address" in self.data["fields"]:
+            address = self.data["fields"].get("Previous Address", "")
+            pattern = r"(\d+), (\d+)\s+([\w\s]+)\s(\w+),\s([\w\s]+)"
+            match = re.match(pattern, address)
+            if match:
+                unit_number = match.group(1)  # 유닛 번호
+                suit_number_input.send_keys(unit_number)
+        
+        suit_number_input.send_keys(2)
+        entered_value = suit_number_input.get_attribute("value")
+        print(f"Entered Previous Suite Number : {entered_value}")
 
     def enter_address_number(self):
         suit_address_number_input = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_txtStreetNumber")
@@ -374,6 +502,31 @@ class DealerTrackAutomation:
         entered_value = suit_address_number_input.get_attribute("value")
         print(f"Entered Address Number : {entered_value}")
 
+    def enter_previous_address_number(self):
+        if "OLD Duration at Current Address (Years)" in self.data["fields"]:
+            address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
+            
+
+        if "Duration at Current Address (Years)" in self.data["fields"]:
+            address_year = self.data["fields"].get("Duration at Current Address (Years)", "")
+            
+        if int(address_year) < 2:
+            return
+        
+        suit_address_number_input = self.driver.find_element(By.ID, "ctl21_ctl22_ctl00_txtStreetNumber")
+
+        if "Address" in self.data["fields"]:
+            address = self.data["fields"].get("Previous Address", "")
+            pattern = r"(\d+), (\d+)\s+([\w\s]+)\s(\w+),\s([\w\s]+)"
+            match = re.match(pattern, address)
+            if match:
+                street_number = match.group(2)  # 유닛 번호
+                suit_address_number_input.send_keys(street_number)
+
+        suit_address_number_input.send_keys(216)
+        entered_value = suit_address_number_input.get_attribute("value")
+        print(f"Entered Previous Address Number : {entered_value}")
+
     def enter_street_name(self):
         street_name_input = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_txtStreetName")
 
@@ -389,7 +542,35 @@ class DealerTrackAutomation:
         entered_value = street_name_input.get_attribute("value")
         print(f"Entered Street Name : {entered_value}")
 
+    def enter_previous_street_name(self):
+        if "OLD Duration at Current Address (Years)" in self.data["fields"]:
+            address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
+            
+
+        if "Duration at Current Address (Years)" in self.data["fields"]:
+            address_year = self.data["fields"].get("Duration at Current Address (Years)", "")
+            
+        if int(address_year) < 2:
+            return
+        
+        street_name_input = self.driver.find_element(By.ID, "ctl21_ctl22_ctl00_txtStreetName")
+
+        if "Address" in self.data["fields"]:
+            address = self.data["fields"].get("Previous Address", "")
+            pattern = r"(\d+), (\d+)\s+([\w\s]+)\s(\w+),\s([\w\s]+)"
+            match = re.match(pattern, address)
+            if match:
+                street_name = match.group(3).strip()  # 유닛 번호
+                street_name_input.send_keys(street_name)
+        else: 
+            street_name_input.send_keys("Street Name")
+        entered_value = street_name_input.get_attribute("value")
+        print(f"Entered Previous Street Name : {entered_value}")
+
     def enter_street_type(self):
+        pass
+
+    def enter_previous_street_type(self):
         pass
 
     def enter_duration_at_current_address(self):
@@ -417,6 +598,38 @@ class DealerTrackAutomation:
         if "Duration at Current Address (Month)" in self.data["fields"]:
             duration_months_input = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_CDurationCurrentAddress_M")
             duration_months_value = self.data["fields"].get("Duration at Current Address (Month)", "")  # Assuming default value for demonstration
+            duration_months_input.send_keys(duration_months_value)
+            entered_value = duration_months_input.get_attribute("value")
+            print(f"Entered Duration in Months: {entered_value}")
+
+    def enter_duration_at_previous_address(self):
+        if "OLD Duration at Current Address (Years)" in self.data["fields"]:
+            address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
+            
+
+        if "Duration at Current Address (Years)" in self.data["fields"]:
+            address_year = self.data["fields"].get("Duration at Current Address (Years)", "")
+            
+        if int(address_year) < 2:
+            return
+        
+        wait = WebDriverWait(self.driver, 20)
+        try:
+            duration_years_input = wait.until(
+                EC.presence_of_element_located((By.ID, "ctl21_ctl22_ctl00_CDurationPreviousAddress_Y"))
+            )
+            print("Duration field is loaded.")
+        except:
+            print("Timeout: Duration input field was not found.")
+
+        if "Duration at Previous Address (Years)" in self.data["fields"]:
+            duration_years_input.send_keys(self.data["fields"].get("Duration at Previous Address (Years)", ""))
+            entered_value = duration_years_input.get_attribute("value")
+            print(f"Entered Duration in Years: {entered_value}")
+        
+        if "Duration at Previous Address (Month)" in self.data["fields"]:
+            duration_months_input = self.driver.find_element(By.ID, "ctl21_ctl22_ctl00_CDurationPreviousAddress_M")
+            duration_months_value = self.data["fields"].get("Duration at Previous Address (Month)", "")  # Assuming default value for demonstration
             duration_months_input.send_keys(duration_months_value)
             entered_value = duration_months_input.get_attribute("value")
             print(f"Entered Duration in Months: {entered_value}")
@@ -1173,10 +1386,21 @@ class DealerTrackAutomation:
             self.enter_address_number()
             self.enter_street_name()
             self.enter_street_type()
+            self.enter_duration_at_current_address()
             #################################
 
-            # Fill duration field
-            self.enter_duration_at_current_address()
+
+            # Fill previous postal code field
+            self.enter_previous_postal_code(airtable_client, client_data_id)
+
+            ###### Fill Address Fields ######
+            self.select_previous_address_type()
+            self.enter_previous_suit_number()
+            self.enter_previous_address_number()
+            self.enter_previous_street_name()
+            self.enter_previous_street_type()
+            self.enter_duration_at_previous_address()
+            #################################
 
             self.select_housing_status()
 
