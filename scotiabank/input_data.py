@@ -561,7 +561,7 @@ class DealerTrackAutomation:
                 "Office Staff": "Office Staff",
                 "Other": "Other",
                 "Production": "Production",
-                "Professional": "Professional",
+                "Progessional": "Professional",
                 "Retired": "Retired",
                 "Sales": "Sales",
                 "Self-Employed": "Self-Employed",
