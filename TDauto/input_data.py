@@ -401,7 +401,7 @@ class DealerTrackAutomation:
             print("Duration field is loaded.")
         except:
             print("Timeout: Duration input field was not found.")
-            
+
         # 변경 전 OLD Duration을 사용하는 경우
         if "OLD Duration at Current Address (Years)" in self.data["fields"]:
             duration_years_input.send_keys(self.data["fields"].get("OLD Duration at Current Address (Years)", ""))
@@ -540,15 +540,22 @@ class DealerTrackAutomation:
         except:
             print("Timeout: Duration input field was not found.")
 
-        duration_years_input.send_keys(self.data["fields"].get("Duration of Employment (Years)", ""))
-        entered_value = duration_years_input.get_attribute("value")
-        print(f"Entered Duration of Employment in Years: {entered_value}")
+        if "OLD Duration of Employment" in self.data["fields"]:
+            duration_years_input.send_keys(self.data["fields"].get("OLD Duration of Employment", ""))
+            entered_value = duration_years_input.get_attribute("value")
+            print(f"Entered Duration of Employment in Years: {entered_value}")
 
-        duration_months_input = self.driver.find_element(By.ID, "ctl21_ctl24_ctl00_CDurationCurrentEmployerAddress_M")
-        duration_months_value = self.data["fields"].get("Duration at Previous Address (Month)", "")  # Assuming default value for demonstration
-        duration_months_input.send_keys(duration_months_value)
-        entered_value = duration_months_input.get_attribute("value")
-        print(f"Entered Duration of Employment in Months: {entered_value}")
+        if "Duration of Employment (Years)" in self.data["fields"]:
+            duration_years_input.send_keys(self.data["fields"].get("Duration of Employment (Years)", ""))
+            entered_value = duration_years_input.get_attribute("value")
+            print(f"Entered Duration of Employment in Years: {entered_value}")
+        if "Duration of Employment (Month)" in self.data["fields"]:
+            duration_months_input = self.driver.find_element(By.ID, "ctl21_ctl24_ctl00_CDurationCurrentEmployerAddress_M")
+            duration_months_value = self.data["fields"].get("Duration of Employment (Month)", "")
+        
+            duration_months_input.send_keys(duration_months_value)
+            entered_value = duration_months_input.get_attribute("value")
+            print(f"Entered Duration of Employment in Months: {entered_value}")
 
     def select_address_type_cur_employment(self):
         address_type_cur_employment_dropdown = self.driver.find_element(By.ID, "ctl21_ctl24_ctl00_ddlAddressTypeCurEmp")
