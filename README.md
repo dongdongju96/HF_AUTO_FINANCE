@@ -5,7 +5,7 @@
 <aside>
 💡
 
-py 파일을 실행하기 위해서 Python을 설치해야합니다. [다운로드링크](https://www.python.org/downloads/)
+py 파일을 실행하기 위해서 Python을 설치해야합니다. [다운로드링크](https://www.python.org/downloads/) <br>
 웹사이트를 자동 조작하기 위해서 chromedriver를 설치해야합니다. [다운로드링크](https://sites.google.com/chromium.org/driver/downloads)
 
 </aside>
@@ -13,7 +13,7 @@ py 파일을 실행하기 위해서 Python을 설치해야합니다. [다운로�
 <aside>
 💡
 
-자동입력 프로그램을 사용하기 위해서는 컴퓨터에 아래의 파일이 필요합니다.
+자동입력 프로그램을 사용하기 위해서는 컴퓨터에 아래의 파일이 필요합니다.<br>
 아래의 형태로 파일 및 폴더를 다운로드해주세요.
 
 </aside>
@@ -41,12 +41,12 @@ py 파일을 실행하기 위해서 Python을 설치해야합니다. [다운로�
 <aside>
 💡
 
-.env 파일 수정이 필요합니다.
+.env 파일 수정이 필요합니다.<p>
 
-.env 파일은 notepad 또는 메모장을 사용해서 수정할 수 있습니다.
+.env 파일은 notepad 또는 메모장을 사용해서 수정할 수 있습니다.<p>
 
-파일을 열었을 때 다음과 같은 텍스트를 볼 수 있습니다.
-”GOOGLE_APPLICATION_CREDENTIALS” 부분에
+파일을 열었을 때 다음과 같은 텍스트를 볼 수 있습니다.<p>
+”GOOGLE_APPLICATION_CREDENTIALS” 부분에 <br>
 vision-api 파일경로를 따옴표 없이 복사 붙여넣기 해주세요.
 
 </aside>
