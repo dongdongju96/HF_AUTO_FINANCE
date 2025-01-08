@@ -323,17 +323,21 @@ class DealerTrackAutomation:
         print("Address Lookup button clicked successfully!")
 
     def select_address_type(self):
-        address_type_dropdown = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_ddlAddressType")
-        address_type_dropdown = Select(address_type_dropdown)
 
-        if "Address Type Current Employer" in self.data["fields"] and self.data["fields"]["Address Type"]:
-            address_type_map = {
+        address_type_map = {
                 "Street": "ST",
                 "Rural Route": "RR",
                 "Postal Box": "PB",
             }
-            status = self.data["fields"]["Address Type Current Employer"]
-            address_type_dropdown.select_by_value(address_type_map.get(status, ""))
+        
+        address_type_dropdown = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_ddlAddressType")
+        address_type_dropdown = Select(address_type_dropdown)
+
+        # Address Type 필드가 존재할 때만 실행
+        if "Address Type" in self.data["fields"] and self.data["fields"]["Address Type"]:
+            address_type = self.data["fields"]["Address Type"]
+            address_type_dropdown.select_by_value(address_type_map.get(address_type, ""))
+        # 변경 전, OLD Address를 사용하는 경우
         else:
             address_type_dropdown.select_by_value("ST")
     
@@ -342,16 +346,51 @@ class DealerTrackAutomation:
 
     def enter_suit_number(self):
         suit_number_input = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_txtSuiteNumber")
+
+        if "Address" in self.data["fields"]:
+            address = self.data["fields"].get("Address", "")
+            pattern = r"(\d+), (\d+)\s+([\w\s]+)\s(\w+),\s([\w\s]+)"
+            match = re.match(pattern, address)
+            if match:
+                unit_number = match.group(1)  # 유닛 번호
+                suit_number_input.send_keys(unit_number)
+        
         suit_number_input.send_keys(2)
         entered_value = suit_number_input.get_attribute("value")
         print(f"Entered Suite Number : {entered_value}")
 
     def enter_address_number(self):
         suit_address_number_input = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_txtStreetNumber")
+
+        if "Address" in self.data["fields"]:
+            address = self.data["fields"].get("Address", "")
+            pattern = r"(\d+), (\d+)\s+([\w\s]+)\s(\w+),\s([\w\s]+)"
+            match = re.match(pattern, address)
+            if match:
+                street_number = match.group(2)  # 유닛 번호
+                suit_address_number_input.send_keys(street_number)
+
         suit_address_number_input.send_keys(216)
         entered_value = suit_address_number_input.get_attribute("value")
         print(f"Entered Address Number : {entered_value}")
 
+    def enter_street_name(self):
+        street_name_input = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_txtStreetName")
+
+        if "Address" in self.data["fields"]:
+            address = self.data["fields"].get("Address", "")
+            pattern = r"(\d+), (\d+)\s+([\w\s]+)\s(\w+),\s([\w\s]+)"
+            match = re.match(pattern, address)
+            if match:
+                street_name = match.group(3).strip()  # 유닛 번호
+                street_name_input.send_keys(street_name)
+
+        street_name_input.send_keys("Street Name")
+        entered_value = street_name_input.get_attribute("value")
+        print(f"Entered Street Name : {entered_value}")
+
+    def enter_street_type(self):
+        pass
 
     def enter_duration_at_current_address(self):
         wait = WebDriverWait(self.driver, 20)
@@ -616,7 +655,7 @@ class DealerTrackAutomation:
                 "Month": "12",
                 "Week": "52",
             }
-        status = self.data["fields"][""]
+        # status = self.data["fields"][""]
         # select.select_by_value(gross_income_per_map.get(status, ""))
         select.select_by_value("12")
         selected_option = select.first_selected_option
@@ -1068,6 +1107,9 @@ class DealerTrackAutomation:
             self.select_address_type()
             self.enter_suit_number()
             self.enter_address_number()
+            self.enter_street_name()
+            self.enter_street_type()
+            
             self.enter_suit_number_cur_employer()
             self.enter_street_number_cur_employer()
             self.enter_street_name_cur_employer()
@@ -1113,7 +1155,7 @@ class DealerTrackAutomation:
 
             self.enter_gross_income()
 
-            # self.select_gross_income_per_dropdown()
+            self.select_gross_income_per_dropdown()
 
             # self.select_other_income_type_dropdown()
             
