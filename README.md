@@ -1,43 +1,95 @@
-# Introduction
+# 자동입력프로그램 사용방법
 
-This guide will help you to excute RPA(Robotic Process Automation), even if you have no prior coding experience.
+# 환경설정
 
-# Prerequisites
+<aside>
+💡
 
-- A computer with internet access
-- .env file
-- Python 3.13.0
+py 파일을 실행하기 위해서 Python을 설치해야합니다. [다운로드링크](https://www.python.org/downloads/)
+웹사이트를 자동 조작하기 위해서 chromedriver를 설치해야합니다. [다운로드링크](https://sites.google.com/chromium.org/driver/downloads)
 
-# Steps
+</aside>
 
-1. **Install Python:**
-    - Download and install Python from the official website: [python.org](https://www.python.org/downloads/)
-    - Follow the installation instructions for your operating system.
+<aside>
+💡
 
+자동입력 프로그램을 사용하기 위해서는 컴퓨터에 아래의 파일이 필요합니다.
+아래의 형태로 파일 및 폴더를 다운로드해주세요.
 
-2. **Download the Script:**
-    - Download the script from the repository or obtain it from the source provided.
-  
-3. **Open Command Prompt or Terminal:**
-    - On Windows, press `Win + R`, type `cmd`, and press Enter.
-    - On macOS, press `Cmd + Space`, type `Terminal`, and press Enter.
-    - On Linux, open your preferred terminal application.
-  
-4. **Navigate to the Script Directory:**
-    - Use the `cd` command to change the directory to where the `lisence_check.py` script is located. For example:
-      ```sh
-      cd /path/to/TDauto
-      ```
+</aside>
 
-5. **Run the Script:**
-    - Type the following command and press Enter:
-      ```sh
-      python lisence_check.py
-      ```
+```
+프로그램폴더(폴더명변경가능)
+├── TDauto
+│   ├── input_data.py
+│   ├── licence_check.py
+│   ├── .env
+│   ├── airtable_data
+│   └── image_detection_output
+│
+├── scotiabank
+│   ├── input_data.py
+│   ├── licence_check.py
+│   ├── .env
+│   ├── airtable_data
+│   └── image_detection_output
+│
+├── requirments.txt
+└── visionapi-XXXXXXXXXX.json
+```
 
-## Additional Resources
-- [Python Documentation](https://docs.python.org/3/)
-- [Command Prompt Basics](https://www.digitalcitizen.life/command-prompt-how-use-basic-commands/)
+<aside>
+💡
 
-## Contact
-For further assistance, please contact the support team or the script author.
+.env 파일 수정이 필요합니다.
+
+.env 파일은 notepad 또는 메모장을 사용해서 수정할 수 있습니다.
+
+파일을 열었을 때 다음과 같은 텍스트를 볼 수 있습니다.
+”GOOGLE_APPLICATION_CREDENTIALS” 부분에
+vision-api 파일경로를 따옴표 없이 복사 붙여넣기 해주세요.
+
+</aside>
+
+```
+# Dealer track
+BOSAUTO_ID=XXXXXXXX
+BOSAUTO_PASS=XXXXXXX
+
+# GCP
+GOOGLE_APPLICATION_CREDENTIALS=C:\Users\Desktop\airtable\visionapi-XXXXX-XXX.json
+```
+
+<aside>
+💡
+
+Dealer track 부분에서 ID와 PASSWORD를 변경할 수 있습니다.
+
+</aside>
+
+# 방법 1.
+
+1. Lender의 종류에 따라서 원하는 Bank 이름의 폴더에서 [licence.py](http://licence.py) 파일을 더블 클릭해주세요.
+2. 지시에 따라서 고객 전화번호, 딜러쉽을 선택한 뒤 엔터를 입력하세요.
+3. 인터넷 창이 열리고 자동 입력 프로그램이 실행됩니다.
+
+# 방법 2.
+
+1. Lender의 종류에 따라 해당 Lender 이름 폴더를 열어줍니다.
+여기서는 TDauto를 예시로 설명하겠습니다.
+    
+    ![image1.png](image1.png)
+    
+2. 파일탐색기 경로를 클릭하고 “cmd .” 입력 후 엔터를 클릭합니다. 
+
+![image2.png](image2.png)
+
+![image3.png](image3.png)
+
+1. cmd 창이 뜨고 경로가 `c:\User\….\TDauto`가 맞다면 `python lisence_check.py`를 입력 후 
+엔터를 눌러줍니다.
+    
+    ![image4.png](image4.png)
+    
+
+4.인터넷 창이 열리고 자동 입력 프로그램이 실행됩니다.
