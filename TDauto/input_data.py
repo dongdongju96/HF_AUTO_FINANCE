@@ -384,8 +384,8 @@ class DealerTrackAutomation:
             if match:
                 street_name = match.group(3).strip()  # 유닛 번호
                 street_name_input.send_keys(street_name)
-
-        street_name_input.send_keys("Street Name")
+        else: 
+            street_name_input.send_keys("Street Name")
         entered_value = street_name_input.get_attribute("value")
         print(f"Entered Street Name : {entered_value}")
 
@@ -852,8 +852,18 @@ class DealerTrackAutomation:
 
         # Create Select object
         select = Select(program_selection_dropdown)
-        program_selection_value = "1976940"  # Example value: Auto special
-        select.select_by_value(program_selection_value)
+        options = select.options  # <option> 요소 리스트
+        keywords = ["spring", "summer", "fall", "winter"]
+        for option in options:
+            text = option.text.strip().lower()  # 옵션 텍스트를 소문자로 변환
+            for keyword in keywords:
+                if keyword in text:
+                    print(f"Matching Option Found: {option.text.strip()}")
+                    select.select_by_visible_text(option.text.strip())  # 매칭된 옵션 선택
+                    break  # 한 번 매칭되면 중복 선택 방지
+                else:
+                    print(f"No Matching Option Found for '{keyword}'")
+                    pass
 
         # Check the selected value
         selected_option = select.first_selected_option
