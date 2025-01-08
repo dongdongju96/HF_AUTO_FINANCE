@@ -853,7 +853,7 @@ class DealerTrackAutomation:
         # Create Select object
         select = Select(program_selection_dropdown)
         options = select.options  # <option> 요소 리스트
-        keywords = ["spring", "summer", "fall", "winter"]
+        keywords = ["spring special", "special special", "fall special", "winter special"]
         for option in options:
             text = option.text.strip().lower()  # 옵션 텍스트를 소문자로 변환
             for keyword in keywords:
@@ -948,7 +948,16 @@ class DealerTrackAutomation:
         def remove_country_code_and_non_digits(phone):
             return re.sub(r'\D', '', str(phone)[-10:])  # Extract last 10 digits
         
-        program_selection_value = "1976484"
+        program_selection_dropdown = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_ddlProgram")
+        program_selection = Select(program_selection_dropdown)
+        selected_option = program_selection.first_selected_option
+        keywords = ["spring", "summer", "fall", "winter"]
+        for keyword in keywords:
+            if keyword in selected_option.text.strip().lower():
+                program_selection_value = keyword
+                break
+
+        
         
         while True:
             select_element = wait.until(EC.element_to_be_clickable((By.ID, "ctl21_ctl32_ctl00_CInterestRateDropDown1")))
@@ -962,7 +971,7 @@ class DealerTrackAutomation:
                 program_selection_dropdown = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_ddlProgram")
                 time.sleep(1)
 
-                if program_selection_value == "1979716":
+                if program_selection_value == "standard fixed":
                     term_dropdown = self.driver.find_element(By.ID, "ctl21_ctl32_ctl00_CTermDropDown1")
 
                     # 드롭다운 선택을 위한 Select 객체 생성
@@ -996,8 +1005,18 @@ class DealerTrackAutomation:
                 # 값 선택 (예: 'AC AT CC ES')
                 # 1966420 = Auto special
                 # 1966448 = standard fixed rate
-                program_selection_value = "1979716"
-                select.select_by_value(program_selection_value)
+                standard_option = "standard fixed"
+                program_selection_value = standard_option
+                options = select.options  
+                for option in options:
+                    text = option.text.strip().lower()  # 옵션 텍스트를 소문자로 변환
+                    if standard_option in text:
+                        print(f"Matching Option Found: {option.text.strip()}")
+                        select.select_by_visible_text(option.text.strip())  # 매칭된 옵션 선택
+                        break  # 한 번 매칭되면 중복 선택 방지
+                    else:
+                        print(f"No Matching Option Found for '{keyword}'")
+                        pass
 
                 # 선택된 값 확인
                 selected_option = select.first_selected_option
