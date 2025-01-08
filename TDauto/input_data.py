@@ -853,22 +853,22 @@ class DealerTrackAutomation:
         # Create Select object
         select = Select(program_selection_dropdown)
         options = select.options  # <option> 요소 리스트
-        keywords = ["spring special", "special special", "fall special", "winter special"]
+        keywords = ["Spring Special", "Summer Special", "Fall Special", "Winter Special"]
         for option in options:
-            text = option.text.strip().lower()  # 옵션 텍스트를 소문자로 변환
+            text = option.text.strip() # 옵션 텍스트를 소문자로 변환
             for keyword in keywords:
                 if keyword in text:
                     print(f"Matching Option Found: {option.text.strip()}")
                     select.select_by_visible_text(option.text.strip())  # 매칭된 옵션 선택
-                    break  # 한 번 매칭되면 중복 선택 방지
+                    # Check the selected value
+                    selected_option = select.first_selected_option
+                    print(f"Selected Program: {selected_option.text}")
+                    # 한 번 매칭되면 중복 선택 방지
+                    return
+
                 else:
                     print(f"No Matching Option Found for '{keyword}'")
-                    pass
-
-        # Check the selected value
-        selected_option = select.first_selected_option
-        print(f"Selected Program: {selected_option.text}")
-
+                    
     def enter_cash_price(self):
         # Wait for cash price field to be clickable
         cash_price_input = WebDriverWait(self.driver, 10).until(
@@ -950,15 +950,10 @@ class DealerTrackAutomation:
         
         program_selection_dropdown = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_ddlProgram")
         program_selection = Select(program_selection_dropdown)
-        selected_option = program_selection.first_selected_option
-        keywords = ["spring", "summer", "fall", "winter"]
-        for keyword in keywords:
-            if keyword in selected_option.text.strip().lower():
-                program_selection_value = keyword
-                break
+        program_selection_value = program_selection.first_selected_option
 
-        
-        
+        term_value = remove_country_code_and_non_digits(self.data["fields"].get("Loan Term", 0))
+
         while True:
             select_element = wait.until(EC.element_to_be_clickable((By.ID, "ctl21_ctl32_ctl00_CInterestRateDropDown1")))
             options = select_element.find_elements(By.TAG_NAME, 'option')
@@ -978,7 +973,7 @@ class DealerTrackAutomation:
                     select_term = Select(term_dropdown)
 
                     # 값을 선택 (예: '24')
-                    term_value = remove_country_code_and_non_digits(self.data["fields"].get("Loan Term", 0))
+                    
                     term_value = int(term_value) * 12 - 12
                     select_term.select_by_value(str(term_value))
 
@@ -1015,8 +1010,7 @@ class DealerTrackAutomation:
                         select.select_by_visible_text(option.text.strip())  # 매칭된 옵션 선택
                         break  # 한 번 매칭되면 중복 선택 방지
                     else:
-                        print(f"No Matching Option Found for '{keyword}'")
-                        pass
+                        print(f"No Matching Option Found for '{standard_option}'")
 
                 # 선택된 값 확인
                 selected_option = select.first_selected_option
