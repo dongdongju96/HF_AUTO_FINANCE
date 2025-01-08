@@ -78,18 +78,18 @@ Dealer track 부분에서 ID와 PASSWORD를 변경할 수 있습니다.
 1. Lender의 종류에 따라 해당 Lender 이름 폴더를 열어줍니다.
 여기서는 TDauto를 예시로 설명하겠습니다.
     
-    ![image1.png](image1.png)
+    ![image1.png](./image/image1.png)
     
 2. 파일탐색기 경로를 클릭하고 “cmd .” 입력 후 엔터를 클릭합니다. 
 
-![image2.png](image2.png)
+![image2.png](./image/image2.png)
 
-![image3.png](image3.png)
+![image3.png](./image/image3.png)
 
 1. cmd 창이 뜨고 경로가 `c:\User\….\TDauto`가 맞다면 `python lisence_check.py`를 입력 후 
 엔터를 눌러줍니다.
     
-    ![image4.png](image4.png)
+    ![image4.png](./image/image4.png)
     
 
 4.인터넷 창이 열리고 자동 입력 프로그램이 실행됩니다.
