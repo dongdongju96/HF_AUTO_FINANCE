@@ -577,21 +577,46 @@ class DealerTrackAutomation:
 
     def enter_suit_number_cur_employer(self):
         suit_number_cur_employer_input = self.driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtSuiteNumberCurEmp")
-        suit_number_cur_employer_input.send_keys(self.data["fields"].get("Suite Number Current Employer", ""))
+
+        if "Employer Address" in self.data["fields"]:
+            employer_address = self.data["fields"].get("Employer Address", "")
+            pattern = r"(\d+), (\d+)\s+([\w\s]+)\s(\w+),\s([\w\s]+)"
+            match = re.match(pattern, employer_address)
+            if match:
+                unit_number = match.group(1)
+                suit_number_cur_employer_input.send_keys(unit_number)
+
         entered_value = suit_number_cur_employer_input.get_attribute("value")
         print(f"Entered Suite Number Current Employer: {entered_value}")
 
     def enter_street_number_cur_employer(self):
         street_number_cur_employer_input = self.driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtStreetNumberCurEmp")
-        # street_number_cur_employer_input.send_keys(self.data["fields"].get("Street Number Current Employer", ""))
-        street_number_cur_employer_input.send_keys(490) # for test
+
+        if "Employer Address" in self.data["fields"]:
+            employer_address = self.data["fields"].get("Employer Address", "")
+            pattern = r"(\d+), (\d+)\s+([\w\s]+)\s(\w+),\s([\w\s]+)"
+            match = re.match(pattern, employer_address)
+            if match:
+                street_number = match.group(2)
+                street_number_cur_employer_input.send_keys(street_number)
+        else:
+            street_number_cur_employer_input.send_keys(490) # for test
+
         entered_value = street_number_cur_employer_input.get_attribute("value")
         print(f"Entered Street Number Current Employer: {entered_value}")
 
     def enter_street_name_cur_employer(self):
         street_name_cur_employer_input = self.driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtStreetNameCurEmp")
-        # street_name_cur_employer_input.send_keys(self.data["fields"].get("Street Name Current Employer", ""))
-        street_name_cur_employer_input.send_keys("YORK") # for test
+
+        if "Employer Address" in self.data["fields"]:
+            employer_address = self.data["fields"].get("Employer Address", "")
+            pattern = r"(\d+), (\d+)\s+([\w\s]+)\s(\w+),\s([\w\s]+)"
+            match = re.match(pattern, employer_address)
+            if match:
+                street_name = match.group(3).strip()
+                street_name_cur_employer_input.send_keys(street_name)
+        else:
+            street_name_cur_employer_input.send_keys("YORK") # for test
         entered_value = street_name_cur_employer_input.get_attribute("value")
         print(f"Entered Street Name Current Employe: {entered_value}")
 
@@ -1125,11 +1150,6 @@ class DealerTrackAutomation:
             self.enter_address_number()
             self.enter_street_name()
             self.enter_street_type()
-
-            self.enter_suit_number_cur_employer()
-            self.enter_street_number_cur_employer()
-            self.enter_street_name_cur_employer()
-            self.select_street_type_cur_employment()
             #################################
 
             # Fill duration field
@@ -1151,13 +1171,12 @@ class DealerTrackAutomation:
 
             self.select_address_type_cur_employment()
 
+            #############################
             self.enter_suit_number_cur_employer()
-
             self.enter_street_number_cur_employer()
-
             self.enter_street_name_cur_employer()
-
             self.select_street_type_cur_employment()
+            #############################
 
             self.select_direction_cur_employment()
 
