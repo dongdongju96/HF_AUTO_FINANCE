@@ -468,15 +468,38 @@ class DealerTrackAutomation:
         except:
             print("Timeout: Duration input field was not found.")
 
-        duration_years_input.send_keys(self.data["fields"].get("Duration at Current Address", ""))
-        entered_value = duration_years_input.get_attribute("value")
-        print(f"Entered Duration in Years: {entered_value}")
+        # 변경 전 OLD Duration을 사용하는 경우
 
-        duration_months_input = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_CDurationCurrentAddress_M")
-        duration_months_value = "6"  # Assuming default value for demonstration
-        duration_months_input.send_keys(duration_months_value)
-        entered_value = duration_months_input.get_attribute("value")
-        print(f"Entered Duration in Months: {entered_value}")
+        if "OLD Duration at Current Address (Years)" in self.data["fields"]:
+
+            duration_years_input.send_keys(self.data["fields"].get("OLD Duration at Current Address (Years)", ""))
+
+            entered_value = duration_years_input.get_attribute("value")
+
+            print(f"Entered Duration in Years: {entered_value}")
+
+
+
+        if "Duration at Current Address (Years)" in self.data["fields"]:
+
+            duration_years_input.send_keys(self.data["fields"].get("Duration at Current Address (Years)", ""))
+
+            entered_value = duration_years_input.get_attribute("value")
+
+            print(f"Entered Duration in Years: {entered_value}")
+
+
+        if "Duration at Current Address (Month)" in self.data["fields"]:
+
+            duration_months_input = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_CDurationCurrentAddress_M")
+
+            duration_months_value = self.data["fields"].get("Duration at Current Address (Month)", "")  # Assuming default value for demonstration
+
+            duration_months_input.send_keys(duration_months_value)
+
+            entered_value = duration_months_input.get_attribute("value")
+
+            print(f"Entered Duration in Months: {entered_value}")
 
     def select_housing_status(self):
         home_dropdown = self.driver.find_element(By.ID, "ctl21_ctl23_ctl00_ddlHome")
