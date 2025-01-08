@@ -97,7 +97,7 @@ class DealerTrackAutomation:
         dropdown_element = wait.until(EC.element_to_be_clickable((By.ID, dropdown_id)))
         dropdown = Select(dropdown_element)
         dropdown.select_by_visible_text(value)
-        print(f"Dropdown '{dropdown_id}' selected value: {value}")
+        # print(f"Dropdown '{dropdown_id}' selected value: {value}")
 
     def fill_text_field(self, field_id, text):
         field = self.driver.find_element(By.ID, field_id)
