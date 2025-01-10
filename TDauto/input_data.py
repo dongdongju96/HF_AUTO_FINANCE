@@ -1642,6 +1642,7 @@ class DealerTrackAutomation:
                     # 값을 선택 (예: '24')
                     else:
                         term_value = int(term_value) - 12
+
                     select_term.select_by_value(str(term_value))
 
                     time.sleep(1)
@@ -1660,7 +1661,7 @@ class DealerTrackAutomation:
 
                     selected_option = select_amortization.first_selected_option
                     print(f"Selected Amortization: {selected_option.text}")  # 출력: Selected Amortization: 36
-
+                    cnt += 1
                 # Select 객체 생성
                 select = Select(program_selection_dropdown)
 

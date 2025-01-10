@@ -1871,7 +1871,7 @@ class DealerTrackAutomation:
 
                     selected_option = select_amortization.first_selected_option
                     print(f"Selected Amortization: {selected_option.text}")  # 출력: Selected Amortization: 36
-
+                    cnt += 1
                 # Select 객체 생성
                 select = Select(program_selection_dropdown)
 
