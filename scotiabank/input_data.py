@@ -324,11 +324,148 @@ class DealerTrackAutomation:
             pass
 
         print("Address Lookup button clicked successfully!")
+    
+    def enter_previous_postal_code(self, airtable_client, client_data_id):
+
+        if "OLD Duration at Current Address (Years)" in self.data["fields"]:
+
+            old_address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
+
+
+
+        if "Duration at Current Address (Years)" in self.data["fields"]:
+
+            address_year = self.data["fields"].get("Duration at Current Address (Years)", "")
+
+
+
+        if address_year >= 2 or old_address_year >= 2:
+
+            return
+
+
+
+        address = self.data["fields"].get("Previous Address", "")
+
+        wait = WebDriverWait(self.driver, 10)
+
+        try:
+
+            postal_code_input = wait.until(
+
+                EC.presence_of_element_located((By.ID, "ctl21_ctl22_ctl00_txtPostalCode"))
+
+            )
+
+            print("postal_code_input field is loaded.")
+
+        except:
+
+            print("Timeout: postal_code_input field was not found.")
+
+
+
+        postal_code_input.click()
+
+        postal_code_input = self.driver.find_element(By.CLASS_NAME, "MaskedEditFocus")
+
+        postal_code_input.send_keys(self.data["fields"].get("Previous Postal Code", ""))
+
+        entered_value = postal_code_input.get_attribute("value")
+
+        print(f"Entered Postal Code: {entered_value}")
+
+
+
+        address_lookup_button = self.driver.find_element(By.ID, "ctl21_ctl22_ctl00_btnPostalCodeLookup")
+
+        address_lookup_button.click()
+
+        time.sleep(3)
+
+        try:
+
+            # Switch to iframe containing lookup details
+
+            iframe = wait.until(EC.element_to_be_clickable((By.ID, "DTC$ModalPopup$Frame")))
+
+            self.driver.switch_to.frame(iframe)
+
+
+
+            # 테이블 로드 대기
+
+            WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, "gvPostalCode")))
+
+
+
+            # 테이블 행 가져오기
+
+            rows = self.driver.find_elements(By.XPATH, "//table[@id='gvPostalCode']/tbody/tr")
+
+
+
+            # 첫 번째 행은 헤더이므로 제외하고 반복문 실행
+
+            for row in rows[1:]:
+
+                # 'Street Name' 값 가져오기
+
+                street_name = row.find_element(By.XPATH, "./td[2]").text.strip()
+
+                
+
+                # 비교 값과 일치 여부 확인
+
+                if street_name in address:
+
+                    # 라디오 버튼 클릭
+
+                    radio_button = row.find_element(By.XPATH, "./td[1]/input[@type='radio']")
+
+                    radio_button.click()
+
+                    print(f"Radio button for '{street_name}' clicked.")
+
+                    break
+
+                # 그냥 첫번째 것 클릭하도록 되어있다.
+
+                else:
+
+                    radio_button = row.find_element(By.XPATH, "./td[1]/input[@type='radio']")
+
+                    radio_button.click()
+
+                    print(f"Radio button for '{street_name}' clicked.")
+
+            else:
+
+                print(f"No matching 'Street Name' found for '{street_name}'.")
+
+            btnOK = wait.until(EC.element_to_be_clickable((By.ID, "btnOK")))
+
+            # 버튼 클릭
+
+            btnOK.click()
+
+
+
+            self.driver.switch_to.parent_frame()
+
+
+
+            airtable_client.update_record(client_data_id, {"Notes": "Need check Address"})
+
+        except:
+
+            pass
+
+
+
+        print("Address Lookup button clicked successfully!")
         
     def select_address_type(self):
-
-
-
         address_type_map = {
 
                 "Street": "ST",
@@ -367,7 +504,35 @@ class DealerTrackAutomation:
 
         print(f"Selected Address Type Current Employer: {selected_option.text}")
 
+    def select_previous_address_type(self):
+        if "OLD Duration at Current Address (Years)" in self.data["fields"]:
+            old_address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
 
+        if "Duration at Current Address (Years)" in self.data["fields"]:
+            address_year = self.data["fields"].get("Duration at Current Address (Years)", "")
+
+        if address_year >= 2 or old_address_year >= 2:
+            return
+        
+        address_type_map = {
+                "Street": "ST",
+                "Rural Route": "RR",
+                "Postal Box": "PB",
+            }
+        
+        address_type_dropdown = self.driver.find_element(By.ID, "ctl21_ctl22_ctl00_ddlAddressType")
+        address_type_dropdown = Select(address_type_dropdown)
+
+        # Address Type 필드가 존재할 때만 실행
+        if "Address Type" in self.data["fields"] and self.data["fields"]["Previous Address Type"]:
+            address_type = self.data["fields"]["Previous Address Type"]
+            address_type_dropdown.select_by_value(address_type_map.get(address_type, ""))
+        # 변경 전, OLD Address를 사용하는 경우
+        else:
+            address_type_dropdown.select_by_value("ST")
+    
+        selected_option = address_type_dropdown.first_selected_option
+        print(f"Selected Previous Address Type : {selected_option.text}")
 
     def enter_suit_number(self):
 
@@ -397,7 +562,29 @@ class DealerTrackAutomation:
 
         print(f"Entered Suite Number : {entered_value}")
 
+    def enter_previous_suit_number(self):
+        if "OLD Duration at Current Address (Years)" in self.data["fields"]:
+            old_address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
 
+        if "Duration at Current Address (Years)" in self.data["fields"]:
+            address_year = self.data["fields"].get("Duration at Current Address (Years)", "")
+
+        if address_year >= 2 or old_address_year >= 2:
+            return
+        
+        suit_number_input = self.driver.find_element(By.ID, "ctl21_ctl22_ctl00_txtSuiteNumber")
+
+        if "Address" in self.data["fields"]:
+            address = self.data["fields"].get("Previous Address", "")
+            pattern = r"(\d+), (\d+)\s+([\w\s]+)\s(\w+),\s([\w\s]+)"
+            match = re.match(pattern, address)
+            if match:
+                unit_number = match.group(1)  # 유닛 번호
+                suit_number_input.send_keys(unit_number)
+        
+        suit_number_input.send_keys(2)
+        entered_value = suit_number_input.get_attribute("value")
+        print(f"Entered Previous Suite Number : {entered_value}")
 
     def enter_address_number(self):
 
@@ -426,8 +613,30 @@ class DealerTrackAutomation:
         entered_value = suit_address_number_input.get_attribute("value")
 
         print(f"Entered Address Number : {entered_value}")
+    
+    def enter_previous_address_number(self):
+        if "OLD Duration at Current Address (Years)" in self.data["fields"]:
+            old_address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
 
+        if "Duration at Current Address (Years)" in self.data["fields"]:
+            address_year = self.data["fields"].get("Duration at Current Address (Years)", "")
 
+        if address_year >= 2 or old_address_year >= 2:
+            return
+        
+        suit_address_number_input = self.driver.find_element(By.ID, "ctl21_ctl22_ctl00_txtStreetNumber")
+
+        if "Address" in self.data["fields"]:
+            address = self.data["fields"].get("Previous Address", "")
+            pattern = r"(\d+), (\d+)\s+([\w\s]+)\s(\w+),\s([\w\s]+)"
+            match = re.match(pattern, address)
+            if match:
+                street_number = match.group(2)  # 유닛 번호
+                suit_address_number_input.send_keys(street_number)
+
+        suit_address_number_input.send_keys(216)
+        entered_value = suit_address_number_input.get_attribute("value")
+        print(f"Entered Previous Address Number : {entered_value}")
 
     def enter_street_name(self):
 
@@ -457,11 +666,92 @@ class DealerTrackAutomation:
 
         print(f"Entered Street Name : {entered_value}")
 
+    def enter_previous_street_name(self):
+        if "OLD Duration at Current Address (Years)" in self.data["fields"]:
+            old_address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
 
+        if "Duration at Current Address (Years)" in self.data["fields"]:
+            address_year = self.data["fields"].get("Duration at Current Address (Years)", "")
+
+        if address_year >= 2 or old_address_year >= 2:
+            return
+        
+        street_name_input = self.driver.find_element(By.ID, "ctl21_ctl22_ctl00_txtStreetName")
+
+        if "Address" in self.data["fields"]:
+            address = self.data["fields"].get("Previous Address", "")
+            pattern = r"(\d+), (\d+)\s+([\w\s]+)\s(\w+),\s([\w\s]+)"
+            match = re.match(pattern, address)
+            if match:
+                street_name = match.group(3).strip()  # 유닛 번호
+                street_name_input.send_keys(street_name)
+        else: 
+            street_name_input.send_keys("Street Name")
+        entered_value = street_name_input.get_attribute("value")
+        print(f"Entered Previous Street Name : {entered_value}")
 
     def enter_street_type(self):
+        street_type_dropdown = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_ddlStreetType")
+        street_type_dropdown = Select(street_type_dropdown)
 
-        pass
+        # Street Type 필드가 존재할 때만 실행
+        if "Street Type" in self.data["fields"] and self.data["fields"]["Street Type"]:
+            street_type = self.data["fields"]["Street Type"]
+            street_type_dropdown.select_by_visible_text(street_type)
+        # 변경 전, OLD Address를 사용하는 경우
+        else:
+            return
+    
+        selected_option = street_type_dropdown.first_selected_option
+        print(f"Selected Street Type Current Employer: {selected_option.text}")
+
+    def enter_previous_street_type(self):
+        if "OLD Duration at Current Address (Years)" in self.data["fields"]:
+            old_address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
+
+        if "Duration at Current Address (Years)" in self.data["fields"]:
+            address_year = self.data["fields"].get("Duration at Current Address (Years)", "")
+
+        if address_year >= 2 or old_address_year >= 2:
+            return
+        
+        street_type_dropdown = self.driver.find_element(By.ID, "ctl21_ctl22_ctl00_ddlStreetType")
+        street_type_dropdown = Select(street_type_dropdown)
+
+        # Street Type 필드가 존재할 때만 실행
+        if "Previous Street Type" in self.data["fields"] and self.data["fields"]["Previous Street Type"]:
+            street_type = self.data["fields"]["Previous Street Type"]
+            street_type_dropdown.select_by_visible_text(street_type)
+        # 변경 전, OLD Address를 사용하는 경우
+        else:
+            return
+    
+        selected_option = street_type_dropdown.first_selected_option
+        print(f"Selected Street Type Current Employer: {selected_option.text}")
+
+    def enter_direction(self):
+        direction_dropdown = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_ddlStreetType")
+        direction_dropdown = Select(direction_dropdown)
+
+        # Street Type 필드가 존재할 때만 실행
+        if "Direction" in self.data["fields"] and self.data["fields"]["Direction"]:
+            direction_status_map = {
+                "NORTH": "N",
+                "NORTH EAST": "NE",
+                "NORTH WEST": "NW",
+                "SOUTH": "S",
+                "SOUTH EAST": "SE",
+                "SOUTH WEST": "SW",
+                "WEST": "W",
+            }
+            status = self.data["fields"]["Direction"]
+            direction_dropdown.select_by_value(direction_status_map.get(status, ""))
+        # 변경 전, OLD Address를 사용하는 경우
+        else:
+            return
+    
+        selected_option = direction_dropdown.first_selected_option
+        print(f"Selected Direction: {selected_option.text}")
 
     def enter_duration_at_current_address(self):
         wait = WebDriverWait(self.driver, 20)
@@ -506,6 +796,72 @@ class DealerTrackAutomation:
 
             print(f"Entered Duration in Months: {entered_value}")
 
+    def enter_previous_direction(self):
+        if "OLD Duration at Current Address (Years)" in self.data["fields"]:
+            old_address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
+
+        if "Duration at Current Address (Years)" in self.data["fields"]:
+            address_year = self.data["fields"].get("Duration at Current Address (Years)", "")
+
+        if address_year >= 2 or old_address_year >= 2:
+            return
+        
+        direction_dropdown = self.driver.find_element(By.ID, "ctl21_ctl22_ctl00_ddlDirection")
+        direction_dropdown = Select(direction_dropdown)
+
+        # Street Type 필드가 존재할 때만 실행
+        if "Previous Direction" in self.data["fields"] and self.data["fields"]["Previous Direction"]:
+            direction_status_map = {
+                "NORTH": "N",
+                "NORTH EAST": "NE",
+                "NORTH WEST": "NW",
+                "SOUTH": "S",
+                "SOUTH EAST": "SE",
+                "SOUTH WEST": "SW",
+                "WEST": "W",
+            }
+            status = self.data["fields"]["Previous Direction"]
+            direction_dropdown.select_by_value(direction_status_map.get(status, ""))
+        # 변경 전, OLD Address를 사용하는 경우
+        else:
+            return
+    
+        selected_option = direction_dropdown.first_selected_option
+        print(f"Selected Direction: {selected_option.text}")
+
+    def enter_duration_at_previous_address(self):
+        if "OLD Duration at Current Address (Years)" in self.data["fields"]:
+            address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
+            
+
+        if "Duration at Current Address (Years)" in self.data["fields"]:
+            address_year = self.data["fields"].get("Duration at Current Address (Years)", "")
+            
+        if int(address_year) > 2:
+            return
+        
+        wait = WebDriverWait(self.driver, 20)
+        try:
+            duration_years_input = wait.until(
+                EC.presence_of_element_located((By.ID, "ctl21_ctl22_ctl00_CDurationPreviousAddress_Y"))
+            )
+            print("Duration field is loaded.")
+        except:
+            print("Timeout: Duration input field was not found.")
+
+        if "Duration at Previous Address (Years)" in self.data["fields"]:
+            duration_years_input.send_keys(self.data["fields"].get("Duration at Previous Address (Years)", ""))
+            entered_value = duration_years_input.get_attribute("value")
+            print(f"Entered Duration in Years: {entered_value}")
+        
+        if "Duration at Previous Address (Month)" in self.data["fields"]:
+            duration_months_input = self.driver.find_element(By.ID, "ctl21_ctl22_ctl00_CDurationPreviousAddress_M")
+            duration_months_value = self.data["fields"].get("Duration at Previous Address (Month)", "")  # Assuming default value for demonstration
+            duration_months_input.send_keys(duration_months_value)
+            entered_value = duration_months_input.get_attribute("value")
+            print(f"Entered Duration in Months: {entered_value}")
+
+    
     def select_housing_status(self):
         home_dropdown = self.driver.find_element(By.ID, "ctl21_ctl23_ctl00_ddlHome")
         select = Select(home_dropdown)
@@ -581,11 +937,53 @@ class DealerTrackAutomation:
         selected_option = select_employment_type.first_selected_option
         print(f"Selected Employment Type: {selected_option.text}")
 
+    def select_previous_employment_type(self):
+        employment_type_dropdown = self.driver.find_element(By.ID, "ctl21_ctl25_ctl00_ddlType")
+        select_employment_type = Select(employment_type_dropdown)
+
+        if "Previous Employment Status" in self.data["fields"] and self.data["fields"]["Previous Employment Status"]:
+            employment_type_map = {
+                "At Home": "At home",
+                "Executive": "Executive",
+                "Labourer": "Labourer",
+                "Office Staff": "Office Staff",
+                "Other": "Other",
+                "Production": "Production",
+                "Progessional": "Professional", # airtable typo
+                "Retired": "Retired",
+                "Sales": "Sales",
+                "Self-Employed": "Self-Employed",
+                "Service": "Service",
+                "Trades": "Trades",
+                "Student": "Student",
+                "Unemployed": "Unemployed",
+            }
+            status = self.data["fields"]["Previous Employment Type"]
+            select_employment_type.select_by_value(employment_type_map.get(status, ""))
+
+        selected_option = select_employment_type.first_selected_option
+        print(f"Selected Previous Employment Type: {selected_option.text}")
+
     def enter_employer_name(self):
         current_employer_input = self.driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtEmployerCurEmp")
         current_employer_input.send_keys(self.data["fields"].get("Employer Name", ""))
         entered_value = current_employer_input.get_attribute("value")
         print(f"Entered Current Employer: {entered_value}")
+
+    def enter_previous_employer_name(self):
+        if "Duration of Employment (Years)" in self.data["fields"]:
+            emlpoyment_duration_year = self.data["fields"].get("Duration of Employment (Years)", "")
+        
+        if "OLD Duration of Employment" in self.data["fields"]:
+            old_emlpoyment_duration_year = self.data["fields"].get("OLD Duration of Employment", "")
+
+        if emlpoyment_duration_year >= 2 or old_emlpoyment_duration_year >= 2:
+            return
+        
+        current_employer_input = self.driver.find_element(By.ID, "ctl21_ctl25_ctl00_txtEmployer")
+        current_employer_input.send_keys(self.data["fields"].get("Previous Employer Name", ""))
+        entered_value = current_employer_input.get_attribute("value")
+        print(f"Entered Previous Employer: {entered_value}")
 
     def select_employment_status_dropdown(self):
         employment_status_dropdown = self.driver.find_element(By.ID, "ctl21_ctl24_ctl00_ddlStatusCurEmp")
@@ -614,6 +1012,21 @@ class DealerTrackAutomation:
         occupation_input.send_keys(self.data["fields"].get("Occupation", ""))
         entered_value = occupation_input.get_attribute("value")
         print(f"Entered Occupation: {entered_value}")
+
+    def enter_previous_occupation(self):
+        if "Duration of Employment (Years)" in self.data["fields"]:
+            emlpoyment_duration_year = self.data["fields"].get("Duration of Employment (Years)", "")
+        
+        if "OLD Duration of Employment" in self.data["fields"]:
+            old_emlpoyment_duration_year = self.data["fields"].get("OLD Duration of Employment", "")
+
+        if emlpoyment_duration_year >= 2 or old_emlpoyment_duration_year >= 2:
+            return
+        
+        occupation_input = self.driver.find_element(By.ID, "ctl21_ctl25_ctl00_txtOccupation")
+        occupation_input.send_keys(self.data["fields"].get("Previous Occupation", ""))
+        entered_value = occupation_input.get_attribute("value")
+        print(f"Entered Previous Occupation: {entered_value}") 
 
     def enter_duration_of_employment(self):
         wait = WebDriverWait(self.driver, 20)
@@ -657,6 +1070,37 @@ class DealerTrackAutomation:
 
             print(f"Entered Duration of Employment in Months: {entered_value}")
 
+    def enter_previous_duration_of_employment(self):
+        if "Duration of Employment (Years)" in self.data["fields"]:
+            emlpoyment_duration_year = self.data["fields"].get("Duration of Employment (Years)", "")
+        
+        if "OLD Duration of Employment" in self.data["fields"]:
+            old_emlpoyment_duration_year = self.data["fields"].get("OLD Duration of Employment", "")
+
+        if emlpoyment_duration_year >= 2 or old_emlpoyment_duration_year >= 2:
+            return
+        
+        wait = WebDriverWait(self.driver, 20)
+        try:
+            duration_years_input = wait.until(
+                EC.presence_of_element_located((By.ID, "ctl21_ctl25_ctl00_CDurationPreviousEmployerAddress_Y"))
+            )
+            print("Duration field is loaded.")
+        except:
+            print("Timeout: Duration input field was not found.")
+
+        if "Previous Duration of Employment" in self.data["fields"]:
+            duration_years_input.send_keys(self.data["fields"].get("Previous Duration of Employment", ""))
+            entered_value = duration_years_input.get_attribute("value")
+            print(f"Entered Duration of Employment in Years: {entered_value}")
+
+        # if "Duration of Employment (Month)" in self.data["fields"]:
+        #     duration_months_input = self.driver.find_element(By.ID, "ctl21_ctl24_ctl00_CDurationCurrentEmployerAddress_M")
+        #     duration_months_value = self.data["fields"].get("Duration of Employment (Month)", "")        
+        #     duration_months_input.send_keys(duration_months_value)
+        #     entered_value = duration_months_input.get_attribute("value")
+        #     print(f"Entered Duration of Employment in Months: {entered_value}")
+
     def select_address_type_cur_employment(self):
         address_type_cur_employment_dropdown = self.driver.find_element(By.ID, "ctl21_ctl24_ctl00_ddlAddressTypeCurEmp")
         address_type_cur_employment_dropdown = Select(address_type_cur_employment_dropdown)
@@ -675,6 +1119,64 @@ class DealerTrackAutomation:
         selected_option = address_type_cur_employment_dropdown.first_selected_option
         print(f"Selected Address Type Current Employer: {selected_option.text}")
 
+    def select_address_type_prev_employment(self):
+        if "Duration of Employment (Years)" in self.data["fields"]:
+            emlpoyment_duration_year = self.data["fields"].get("Duration of Employment (Years)", "")
+        
+        if "OLD Duration of Employment" in self.data["fields"]:
+            old_emlpoyment_duration_year = self.data["fields"].get("OLD Duration of Employment", "")
+
+        if emlpoyment_duration_year >= 2 or old_emlpoyment_duration_year >= 2:
+            return
+        
+        address_type_cur_employment_dropdown = self.driver.find_element(By.ID, "ctl21_ctl25_ctl00_ddlAddressType")
+        address_type_cur_employment_dropdown = Select(address_type_cur_employment_dropdown)
+
+        if "Address Type Current Employer" in self.data["fields"] and self.data["fields"]["Address Type Current Employer"]:
+            address_type_map = {
+                "Street": "ST",
+                "Rural Route": "RR",
+                "Postal Box": "PB",
+            }
+            status = self.data["fields"]["Address Type Current Employer"]
+            address_type_cur_employment_dropdown.select_by_value(address_type_map.get(status, ""))
+        else:
+            address_type_cur_employment_dropdown.select_by_value("ST")
+    
+        selected_option = address_type_cur_employment_dropdown.first_selected_option
+        print(f"Selected Address Type Current Employer: {selected_option.text}")
+
+    def select_previous_employment_status_dropdown(self):
+        if "Duration of Employment (Years)" in self.data["fields"]:
+            emlpoyment_duration_year = self.data["fields"].get("Duration of Employment (Years)", "")
+        
+        if "OLD Duration of Employment" in self.data["fields"]:
+            old_emlpoyment_duration_year = self.data["fields"].get("OLD Duration of Employment", "")
+
+        if emlpoyment_duration_year >= 2 or old_emlpoyment_duration_year >= 2:
+            return
+        
+        employment_status_dropdown = self.driver.find_element(By.ID, "ctl21_ctl25_ctl00_ddlStatus")
+        select = Select(employment_status_dropdown)
+
+        if "Previous Employment Status" in self.data["fields"] and self.data["fields"]["Previous Employment Status"]:
+            employment_status_map = {
+                "Full-time": "FT",
+                "Full Time (Probation)": "FTP",
+                "Part Time (Casual)": "PTC",
+                "Part Time (Regular)": "PTR",
+                "Retired": "RET",
+                "Seasonal Summer": "SEAS",
+                "Seasonal Winter": "SEAW",
+                "Self Employed": "SE",
+            }
+        
+            status = self.data["fields"]["Previous Employment Status"]
+            select.select_by_value(employment_status_map.get(status, ""))
+
+        selected_option = select.first_selected_option
+        print(f"Selected Previous Employment Status: {selected_option.text}")
+
     def enter_suit_number_cur_employer(self):
         suit_number_cur_employer_input = self.driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtSuiteNumberCurEmp")
         if "Employer Address" in self.data["fields"]:
@@ -692,6 +1194,24 @@ class DealerTrackAutomation:
                 suit_number_cur_employer_input.send_keys(unit_number)
         entered_value = suit_number_cur_employer_input.get_attribute("value")
         print(f"Entered Suite Number Current Employer: {entered_value}")
+
+    def enter_suit_number_prev_employer(self):
+        if "Duration of Employment (Years)" in self.data["fields"]:
+            emlpoyment_duration_year = self.data["fields"].get("Duration of Employment (Years)", "")
+        
+        if "OLD Duration of Employment" in self.data["fields"]:
+            old_emlpoyment_duration_year = self.data["fields"].get("OLD Duration of Employment", "")
+
+        if emlpoyment_duration_year >= 2 or old_emlpoyment_duration_year >= 2:
+            return
+        
+        suit_number_prev_employer_input = self.driver.find_element(By.ID, "ctl21_ctl25_ctl00_txtSuiteNumber")
+
+        if "Previous Employer Suite Number" in self.data["fields"]:
+            prev_employer_suit_number = self.data["fields"].get("Previous Employer Suite Number", "")
+            suit_number_prev_employer_input.send_keys(prev_employer_suit_number)
+            entered_value = suit_number_prev_employer_input.get_attribute(prev_employer_suit_number)
+            print(f"Entered Suite Number Current Employer: {entered_value}")
 
     def enter_street_number_cur_employer(self):
         street_number_cur_employer_input = self.driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtStreetNumberCurEmp")
@@ -715,6 +1235,23 @@ class DealerTrackAutomation:
         entered_value = street_number_cur_employer_input.get_attribute("value")
         print(f"Entered Street Number Current Employer: {entered_value}")
 
+    def enter_street_number_prev_employer(self):
+        if "Duration of Employment (Years)" in self.data["fields"]:
+            emlpoyment_duration_year = self.data["fields"].get("Duration of Employment (Years)", "")
+        
+        if "OLD Duration of Employment" in self.data["fields"]:
+            old_emlpoyment_duration_year = self.data["fields"].get("OLD Duration of Employment", "")
+
+        if emlpoyment_duration_year >= 2 or old_emlpoyment_duration_year >= 2:
+            return
+        
+        street_number_prev_employer_input = self.driver.find_element(By.ID, "ctl21_ctl25_ctl00_txtStreetNumber")
+
+        if "Previous Employer Street Number" in self.data["fields"]:
+            prev_street_number = self.data["fields"].get("Previous Employer Street Number", "")
+            entered_value = street_number_prev_employer_input.get_attribute(prev_street_number)
+            print(f"Entered Street Number Current Employer: {entered_value}")
+
     def enter_street_name_cur_employer(self):
         street_name_cur_employer_input = self.driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtStreetNameCurEmp")
         if "Employer Address" in self.data["fields"]:
@@ -736,6 +1273,40 @@ class DealerTrackAutomation:
             street_name_cur_employer_input.send_keys("YORK") # for test
         entered_value = street_name_cur_employer_input.get_attribute("value")
         print(f"Entered Street Name Current Employe: {entered_value}")
+
+    def enter_street_name_prev_employer(self):
+        if "Duration of Employment (Years)" in self.data["fields"]:
+            emlpoyment_duration_year = self.data["fields"].get("Duration of Employment (Years)", "")
+        
+        if "OLD Duration of Employment" in self.data["fields"]:
+            old_emlpoyment_duration_year = self.data["fields"].get("OLD Duration of Employment", "")
+
+        if emlpoyment_duration_year >= 2 or old_emlpoyment_duration_year >= 2:
+            return
+        
+        street_name_prev_employer_input = self.driver.find_element(By.ID, "ctl21_ctl25_ctl00_txtStreetName")
+        if "Previous Employer Street Name" in self.data["fields"]:
+            employer_address = self.data["fields"].get("Previous Employer Street Name", "")
+            street_name_prev_employer_input.send_keys(employer_address)
+            entered_value = street_name_prev_employer_input.get_attribute(employer_address)
+            print(f"Entered Street Name Previous Employe: {entered_value}")
+    
+    def enter_street_number_prev_employer(self):
+        if "Duration of Employment (Years)" in self.data["fields"]:
+            emlpoyment_duration_year = self.data["fields"].get("Duration of Employment (Years)", "")
+        
+        if "OLD Duration of Employment" in self.data["fields"]:
+            old_emlpoyment_duration_year = self.data["fields"].get("OLD Duration of Employment", "")
+
+        if emlpoyment_duration_year >= 2 or old_emlpoyment_duration_year >= 2:
+            return
+        
+        street_number_prev_employer_input = self.driver.find_element(By.ID, "ctl21_ctl25_ctl00_txtStreetNumber")
+
+        if "Previous Employer Street Number" in self.data["fields"]:
+            prev_street_number = self.data["fields"].get("Previous Employer Street Number", "")
+            entered_value = street_number_prev_employer_input.get_attribute(prev_street_number)
+            print(f"Entered Street Number Current Employer: {entered_value}")
 
     def select_street_type_cur_employment(self):
         street_type_cur_employment_dropdown = self.driver.find_element(By.ID, "ctl21_ctl24_ctl00_ddlStreetTypeCurEmp")
@@ -770,15 +1341,109 @@ class DealerTrackAutomation:
 
         print(f"Selected Address Type Current Employer: {selected_option.text}")
 
-    def select_direction_cur_employment(self):
-        pass
+    def select_street_type_prev_employment(self):
+        if "Duration of Employment (Years)" in self.data["fields"]:
+            emlpoyment_duration_year = self.data["fields"].get("Duration of Employment (Years)", "")
+        
+        if "OLD Duration of Employment" in self.data["fields"]:
+            old_emlpoyment_duration_year = self.data["fields"].get("OLD Duration of Employment", "")
+
+        if emlpoyment_duration_year >= 2 or old_emlpoyment_duration_year >= 2:
+            return
+        
+        street_type_cur_employment_dropdown = self.driver.find_element(By.ID, "ctl21_ctl25_ctl00_ddlStreetType")
+        street_type_cur_employment_dropdown = Select(street_type_cur_employment_dropdown)
+
+        # Street Type 필드가 존재할 때만 실행
+        if "Previous Employer Street Type" in self.data["fields"] and self.data["fields"]["Previous Employer Street Type"]:
+            street_type = self.data["fields"]["Previous Employer Street Type"]
+            street_type_cur_employment_dropdown.select_by_visible_text(street_type)
+        # 변경 전, OLD Address를 사용하는 경우
+        else:
+            return
     
+        selected_option = street_type_cur_employment_dropdown.first_selected_option
+        print(f"Selected Street Type Previous Employer: {selected_option.text}")
+
+    def select_direction_cur_employment(self):
+        direction_dropdown = self.driver.find_element(By.ID, "ctl21_ctl24_ctl00_ddlDirectionCurEmp")
+        direction_dropdown = Select(direction_dropdown)
+
+        # Street Type 필드가 존재할 때만 실행
+        if "Employer Direction" in self.data["fields"] and self.data["fields"]["Employer Direction"]:
+            direction_status_map = {
+                "NORTH": "N",
+                "NORTH EAST": "NE",
+                "NORTH WEST": "NW",
+                "SOUTH": "S",
+                "SOUTH EAST": "SE",
+                "SOUTH WEST": "SW",
+                "WEST": "W",
+            }
+            status = self.data["fields"]["Employer Direction"]
+            direction_dropdown.select_by_value(direction_status_map.get(status, ""))
+        # 변경 전, OLD Address를 사용하는 경우
+        else:
+            return
+    
+        selected_option = direction_dropdown.first_selected_option
+        print(f"Selected Employer Direction: {selected_option.text}")
+    
+    def select_direction_prev_employment(self):
+        if "Duration of Employment (Years)" in self.data["fields"]:
+            emlpoyment_duration_year = self.data["fields"].get("Duration of Employment (Years)", "")
+        
+        if "OLD Duration of Employment" in self.data["fields"]:
+            old_emlpoyment_duration_year = self.data["fields"].get("OLD Duration of Employment", "")
+
+        if emlpoyment_duration_year >= 2 or old_emlpoyment_duration_year >= 2:
+            return
+        
+        direction_dropdown = self.driver.find_element(By.ID, "ctl21_ctl25_ctl00_ddlDirection")
+        direction_dropdown = Select(direction_dropdown)
+
+        # Street Type 필드가 존재할 때만 실행
+        if "Previous Employer Direction" in self.data["fields"] and self.data["fields"]["Previous Employer Direction"]:
+            direction_status_map = {
+                "NORTH": "N",
+                "NORTH EAST": "NE",
+                "NORTH WEST": "NW",
+                "SOUTH": "S",
+                "SOUTH EAST": "SE",
+                "SOUTH WEST": "SW",
+                "WEST": "W",
+            }
+            status = self.data["fields"]["Previous Employer Direction"]
+            direction_dropdown.select_by_value(direction_status_map.get(status, ""))
+        # 변경 전, OLD Address를 사용하는 경우
+        else:
+            return
+    
+        selected_option = direction_dropdown.first_selected_option
+        print(f"Selected Previous Employer Direction: {selected_option.text}")
+
     def enter_employer_city(self):
         employer_city_input = self.driver.find_element(By.ID, "ctl21_ctl24_ctl00__txtCityCurEmp")
         employer_city_input.clear()
         employer_city_input.send_keys(self.data["fields"].get("Employer City", ""))
         entered_value = employer_city_input.get_attribute("value")
         print(f"Entered Employer City: {entered_value}")
+
+    def enter_previous_employer_city(self):
+        if "Duration of Employment (Years)" in self.data["fields"]:
+            emlpoyment_duration_year = self.data["fields"].get("Duration of Employment (Years)", "")
+        
+        if "OLD Duration of Employment" in self.data["fields"]:
+            old_emlpoyment_duration_year = self.data["fields"].get("OLD Duration of Employment", "")
+
+        if emlpoyment_duration_year >= 2 or old_emlpoyment_duration_year >= 2:
+            return
+        
+        employer_city_input = self.driver.find_element(By.ID, "ctl21_ctl25_ctl00_txtCity")
+        employer_city_input.clear()
+        employer_city_input.send_keys(self.data["fields"].get("Previous Employer City", ""))
+        entered_value = employer_city_input.get_attribute("value")
+        print(f"Entered Previous Employer City: {entered_value}")
 
     def select_employer_province_dropdown(self):
         employer_province_dropdown = self.driver.find_element(By.ID, "ctl21_ctl24_ctl00__ddlProvinceCurEmp")
@@ -793,6 +1458,28 @@ class DealerTrackAutomation:
         selected_option = select.first_selected_option
         print(f"Selected Employer Province: {selected_option.text}")
 
+    def select_previous_employer_province_dropdown(self):
+        if "Duration of Employment (Years)" in self.data["fields"]:
+            emlpoyment_duration_year = self.data["fields"].get("Duration of Employment (Years)", "")
+        
+        if "OLD Duration of Employment" in self.data["fields"]:
+            old_emlpoyment_duration_year = self.data["fields"].get("OLD Duration of Employment", "")
+
+        if emlpoyment_duration_year >= 2 or old_emlpoyment_duration_year >= 2:
+            return
+        
+        employer_province_dropdown = self.driver.find_element(By.ID, "ctl21_ctl25_ctl00_ddlProvince")
+        select = Select(employer_province_dropdown)
+
+        employer_province_map = {
+                "Ontario": "9",
+                "Quebec": "11",
+            }
+        status = self.data["fields"]["Previous Employer Province"]
+        select.select_by_value(employer_province_map.get(status, ""))
+        selected_option = select.first_selected_option
+        print(f"Selected Previous Employer Province: {selected_option.text}")
+
     def enter_employer_postal_code(self):
         employer_postal_code_input = self.driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtPostalCodeCurEmp")
         employer_postal_code_input.click()
@@ -801,6 +1488,23 @@ class DealerTrackAutomation:
         entered_value = employer_postal_code_input.get_attribute("value")
         print(f"Entered Employer Postal Code: {entered_value}")
 
+    def enter_previous_employer_postal_code(self):
+        if "Duration of Employment (Years)" in self.data["fields"]:
+            emlpoyment_duration_year = self.data["fields"].get("Duration of Employment (Years)", "")
+        
+        if "OLD Duration of Employment" in self.data["fields"]:
+            old_emlpoyment_duration_year = self.data["fields"].get("OLD Duration of Employment", "")
+
+        if emlpoyment_duration_year >= 2 or old_emlpoyment_duration_year >= 2:
+            return
+        
+        employer_postal_code_input = self.driver.find_element(By.ID, "ctl21_ctl25_ctl00_txtPostalCode")
+        employer_postal_code_input.click()
+        employer_postal_code_input = self.driver.find_element(By.CLASS_NAME, "MaskedEditFocus")
+        employer_postal_code_input.send_keys(self.data["fields"].get("Previous Employer Postal Code", ""))
+        entered_value = employer_postal_code_input.get_attribute("value")
+        print(f"Entered Previous Employer Postal Code: {entered_value}")
+
     def enter_employer_phone(self):
         def remove_country_code_and_non_digits(phone):
             return re.sub(r'\D', '', str(phone)[-10:])  # Extract last 10 digits
@@ -808,6 +1512,26 @@ class DealerTrackAutomation:
         if "Employer Phone" in self.data["fields"]:
             employer_phone_number = remove_country_code_and_non_digits(self.data["fields"]["Employer Phone"])
             employer_phone_input = self.driver.find_element(By.ID, "ctl21_ctl24_ctl00_txtTelephoneCurEmp")
+            employer_phone_input.send_keys(employer_phone_number)
+            entered_value = employer_phone_input.get_attribute("value")
+            print(f"Entered Employer Phone: {entered_value}")
+
+    def enter_previous_employer_phone(self):
+        if "Duration of Employment (Years)" in self.data["fields"]:
+            emlpoyment_duration_year = self.data["fields"].get("Duration of Employment (Years)", "")
+        
+        if "OLD Duration of Employment" in self.data["fields"]:
+            old_emlpoyment_duration_year = self.data["fields"].get("OLD Duration of Employment", "")
+
+        if emlpoyment_duration_year >= 2 or old_emlpoyment_duration_year >= 2:
+            return
+        
+        def remove_country_code_and_non_digits(phone):
+            return re.sub(r'\D', '', str(phone)[-10:])  # Extract last 10 digits
+        
+        if "Previous Employer Phone" in self.data["fields"]:
+            employer_phone_number = remove_country_code_and_non_digits(self.data["fields"]["Previous Employer Phone"])
+            employer_phone_input = self.driver.find_element(By.ID, "ctl21_ctl25_ctl00_txtTelephone")
             employer_phone_input.send_keys(employer_phone_number)
             entered_value = employer_phone_input.get_attribute("value")
             print(f"Entered Employer Phone: {entered_value}")
@@ -984,7 +1708,7 @@ class DealerTrackAutomation:
         select = Select(program_selection_dropdown)
         options = select.options  # <option> 요소 리스트
 
-        keywords = ["Spring Special", "Summer Special", "Fall Special", "Winter Special"]
+        keywords = ["Auto Special"]
         program_flag = False
 
         for option in options:
@@ -1337,48 +2061,85 @@ class DealerTrackAutomation:
             self.enter_suit_number()
 
             self.enter_address_number()
-
             self.enter_street_name()
 
             self.enter_street_type()
 
+            self.enter_duration_at_current_address()
+
+            # Fill previous postal code field
+
+            self.enter_previous_postal_code(airtable_client, client_data_id)
+
+
+
+            ###### Fill Address Fields ######
+
+            self.select_previous_address_type()
+
+            self.enter_previous_suit_number()
+
+            self.enter_previous_address_number()
+
+            self.enter_previous_street_name()
+
+            self.enter_previous_street_type()
+
+            self.enter_duration_at_previous_address()
+
+            #################################
+
             #################################
             # Fill duration field
-            self.enter_duration_at_current_address()
 
             self.select_housing_status()
 
             self.enter_market_value_and_payments()
 
             self.select_employment_type()
+            self.select_previous_employment_type()
 
             self.enter_employer_name()
+            self.enter_previous_employer_name()
 
             self.select_employment_status_dropdown()
+            self.select_previous_employment_status_dropdown()
 
             self.enter_occupation()
+            self.enter_previous_occupation()
 
             self.enter_duration_of_employment()
+            self.enter_previous_duration_of_employment()
 
             self.select_address_type_cur_employment()
+            self.select_address_type_prev_employment()
 
             self.enter_suit_number_cur_employer()
+            self.enter_suit_number_prev_employer()
 
             self.enter_street_number_cur_employer()
+            self.enter_street_number_prev_employer()
 
             self.enter_street_name_cur_employer()
+            self.enter_street_name_prev_employer()
 
             self.select_street_type_cur_employment()
+            self.select_street_type_prev_employment()
 
             self.select_direction_cur_employment()
+            self.select_direction_prev_employment()
 
             self.enter_employer_city()
+            self.enter_previous_employer_city()
 
             self.select_employer_province_dropdown()
+            self.select_previous_employer_province_dropdown()
             
             self.enter_employer_postal_code()
+            self.enter_previous_employer_postal_code()
 
             self.enter_employer_phone()
+            self.enter_previous_employer_phone()
 
             self.enter_gross_income()
 
