@@ -563,10 +563,43 @@ class DealerTrackAutomation:
         print(f"Entered Previous Street Name : {entered_value}")
 
     def enter_street_type(self):
-        pass
+        street_type_dropdown = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_ddlStreetType")
+        street_type_dropdown = Select(street_type_dropdown)
+
+        # Street Type 필드가 존재할 때만 실행
+        if "Street Type" in self.data["fields"] and self.data["fields"]["Street Type"]:
+            street_type = self.data["fields"]["Street Type"]
+            street_type_dropdown.select_by_visible_text(street_type)
+        # 변경 전, OLD Address를 사용하는 경우
+        else:
+            return
+    
+        selected_option = street_type_dropdown.first_selected_option
+        print(f"Selected Street Type Current Employer: {selected_option.text}")
 
     def enter_previous_street_type(self):
-        pass
+        if "OLD Duration at Current Address (Years)" in self.data["fields"]:
+            old_address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
+
+        if "Duration at Current Address (Years)" in self.data["fields"]:
+            address_year = self.data["fields"].get("Duration at Current Address (Years)", "")
+
+        if address_year >= 2 or old_address_year >= 2:
+            return
+        
+        street_type_dropdown = self.driver.find_element(By.ID, "ctl21_ctl22_ctl00_ddlStreetType")
+        street_type_dropdown = Select(street_type_dropdown)
+
+        # Street Type 필드가 존재할 때만 실행
+        if "Street Type" in self.data["fields"] and self.data["fields"]["Street Type"]:
+            street_type = self.data["fields"]["Street Type"]
+            street_type_dropdown.select_by_visible_text(street_type)
+        # 변경 전, OLD Address를 사용하는 경우
+        else:
+            return
+    
+        selected_option = street_type_dropdown.first_selected_option
+        print(f"Selected Street Type Current Employer: {selected_option.text}")
 
     def enter_duration_at_current_address(self):
         wait = WebDriverWait(self.driver, 20)
@@ -605,7 +638,7 @@ class DealerTrackAutomation:
         if "Duration at Current Address (Years)" in self.data["fields"]:
             address_year = self.data["fields"].get("Duration at Current Address (Years)", "")
             
-        if int(address_year) < 2:
+        if int(address_year) > 2:
             return
         
         wait = WebDriverWait(self.driver, 20)
