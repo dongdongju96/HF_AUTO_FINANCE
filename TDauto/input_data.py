@@ -1246,7 +1246,7 @@ class DealerTrackAutomation:
                 "Quebec": "11",
             }
         status = self.data["fields"]["Employer Province"]
-        select.select_by_value(employer_province_map.get(status, ""))
+        select.select_by_visible_text(status)
         selected_option = select.first_selected_option
         print(f"Selected Employer Province: {selected_option.text}")
 
@@ -1268,7 +1268,7 @@ class DealerTrackAutomation:
                 "Quebec": "11",
             }
         status = self.data["fields"]["Previous Employer Province"]
-        select.select_by_value(employer_province_map.get(status, ""))
+        select.select_by_visible_text(status)
         selected_option = select.first_selected_option
         print(f"Selected Previous Employer Province: {selected_option.text}")
 
