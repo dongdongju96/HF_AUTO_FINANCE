@@ -1834,7 +1834,7 @@ class DealerTrackAutomation:
         while True:
             select_element = wait.until(EC.element_to_be_clickable((By.ID, "ctl21_ctl28_ctl00_ddlInterestRate")))
             options = select_element.find_elements(By.TAG_NAME, 'option')
-
+            
             # 옵션이 없으면 다른 작업을 수행
             if not options:
                 print("옵션 값이 없습니다. 다른 작업을 수행합니다.")
@@ -1850,7 +1850,7 @@ class DealerTrackAutomation:
                     select_term = Select(term_dropdown)
 
                     # 값을 선택 (예: '24')
-                    term_value = remove_country_code_and_non_digits(self.data["fields"].get("Loan Term", 0))
+                    # term_value = remove_country_code_and_non_digits(self.data["fields"].get("Loan Term", 0))
                     term_value = int(term_value) * 12 - 12
                     select_term.select_by_value(str(term_value))
 

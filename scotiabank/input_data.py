@@ -1850,7 +1850,7 @@ class DealerTrackAutomation:
                     select_term = Select(term_dropdown)
 
                     # 값을 선택 (예: '24')
-                    term_value = remove_country_code_and_non_digits(self.data["fields"].get("Loan Term", 0))
+                    # term_value = remove_country_code_and_non_digits(self.data["fields"].get("Loan Term", 0))
                     term_value = int(term_value) * 12 - 12
                     select_term.select_by_value(str(term_value))
 
