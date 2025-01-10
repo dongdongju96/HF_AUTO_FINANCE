@@ -1954,6 +1954,7 @@ class DealerTrackAutomation:
                         self.enter_trade_in_field("BalanceOwedTo", "Trade-In Lender")
 
     def enter_trade_in_field(self, field_id, field_name):
+        # ctl21_ctl23_ctl00_txtYear
         input_field = self.driver.find_element(By.ID, f"ctl21_ctl23_ctl00_txt{field_id}")
         input_field.clear()
         input_field.send_keys(self.data["fields"].get(field_name, ""))

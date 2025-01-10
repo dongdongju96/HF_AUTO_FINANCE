@@ -1939,14 +1939,16 @@ class DealerTrackAutomation:
                         self.enter_trade_in_field("BalanceOwedTo", "Trade-In Lender")
 
     def enter_trade_in_field(self, field_id, field_name):
-        input_field = self.driver.find_element(By.ID, f"ctl21_ctl24_ctl00_txt{field_id}")
+        # ctl21_ctl23_ctl00_txtYear
+        input_field = self.driver.find_element(By.ID, f"ctl21_ctl23_ctl00_txt{field_id}")
         input_field.clear()
         input_field.send_keys(self.data["fields"].get(field_name, ""))
         entered_value = input_field.get_attribute("value")
         print(f"Entered {field_name}: {entered_value}")
 
     def enter_field(self, field_id, field_name):
-        input_field = self.driver.find_element(By.ID, f"ctl21_ctl28_ctl00_txt{field_id}")
+        # ctl21_ctl26_ctl00_txtCashDownPayment
+        input_field = self.driver.find_element(By.ID, f"ctl21_ctl26_ctl00_txt{field_id}")
         input_field.clear()
         input_field.send_keys(self.data["fields"].get(field_name, ""))
         input_field.send_keys(Keys.TAB)
@@ -1967,7 +1969,7 @@ class DealerTrackAutomation:
     def enter_gap_insurance_amount(self):
         wait = WebDriverWait(self.driver, 20)
         if "Gap Insurance Amount" in self.data["fields"]:
-            gap_insurance_input = wait.until(EC.element_to_be_clickable((By.ID, "ctl21_ctl30_ctl00_txtAHInsurance")))
+            gap_insurance_input = wait.until(EC.element_to_be_clickable((By.ID, "ctl21_ctl27_ctl00_txtAHInsurance")))
             gap_insurance_input.click()
             gap_insurance_input.send_keys(str(self.data["fields"].get("Gap Insurance Amount", "")))
             entered_value = gap_insurance_input.get_attribute("value")
@@ -1987,9 +1989,9 @@ class DealerTrackAutomation:
                 print(f"Theft Protection Amount: {theft_protection_amount}")
 
         if other_taxable_amount:
-            self.fill_text_field("ctl21_ctl28_ctl00_txtOtherTaxable", str(other_taxable_amount))
+            self.fill_text_field("ctl21_ctl26_ctl00_txtOtherTaxable", str(other_taxable_amount))
             description = "ADMIN/OMVIC/THEFT PROTECTION" if theft_protection == "Yes" else fields.get("Other Taxable Description", "ADMIN/OMVIC")
-            self.fill_text_field("ctl21_ctl28_ctl00_txtOtherTaxableDesc", description)
+            self.fill_text_field("ctl21_ctl26_ctl00_txtOtherTaxableDesc", description)
 
     def save_deal(self):
         save_button = WebDriverWait(self.driver, 10).until(
