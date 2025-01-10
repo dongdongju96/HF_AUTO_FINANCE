@@ -324,13 +324,12 @@ class DealerTrackAutomation:
 
     def enter_previous_postal_code(self, airtable_client, client_data_id):
         if "OLD Duration at Current Address (Years)" in self.data["fields"]:
-            address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
-            
+            old_address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
 
         if "Duration at Current Address (Years)" in self.data["fields"]:
             address_year = self.data["fields"].get("Duration at Current Address (Years)", "")
-            
-        if int(address_year) < 2:
+
+        if address_year >= 2 or old_address_year >= 2:
             return
 
         address = self.data["fields"].get("Previous Address", "")
@@ -418,13 +417,12 @@ class DealerTrackAutomation:
 
     def select_previous_address_type(self):
         if "OLD Duration at Current Address (Years)" in self.data["fields"]:
-            address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
-            
+            old_address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
 
         if "Duration at Current Address (Years)" in self.data["fields"]:
             address_year = self.data["fields"].get("Duration at Current Address (Years)", "")
-            
-        if int(address_year) < 2:
+
+        if address_year >= 2 or old_address_year >= 2:
             return
         
         address_type_map = {
@@ -464,13 +462,12 @@ class DealerTrackAutomation:
 
     def enter_previous_suit_number(self):
         if "OLD Duration at Current Address (Years)" in self.data["fields"]:
-            address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
-            
+            old_address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
 
         if "Duration at Current Address (Years)" in self.data["fields"]:
             address_year = self.data["fields"].get("Duration at Current Address (Years)", "")
-            
-        if int(address_year) < 2:
+
+        if address_year >= 2 or old_address_year >= 2:
             return
         
         suit_number_input = self.driver.find_element(By.ID, "ctl21_ctl22_ctl00_txtSuiteNumber")
@@ -504,13 +501,12 @@ class DealerTrackAutomation:
 
     def enter_previous_address_number(self):
         if "OLD Duration at Current Address (Years)" in self.data["fields"]:
-            address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
-            
+            old_address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
 
         if "Duration at Current Address (Years)" in self.data["fields"]:
             address_year = self.data["fields"].get("Duration at Current Address (Years)", "")
-            
-        if int(address_year) < 2:
+
+        if address_year >= 2 or old_address_year >= 2:
             return
         
         suit_address_number_input = self.driver.find_element(By.ID, "ctl21_ctl22_ctl00_txtStreetNumber")
@@ -544,13 +540,12 @@ class DealerTrackAutomation:
 
     def enter_previous_street_name(self):
         if "OLD Duration at Current Address (Years)" in self.data["fields"]:
-            address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
-            
+            old_address_year = self.data["fields"].get("OLD Duration at Current Address (Years)", "")
 
         if "Duration at Current Address (Years)" in self.data["fields"]:
             address_year = self.data["fields"].get("Duration at Current Address (Years)", "")
-            
-        if int(address_year) < 2:
+
+        if address_year >= 2 or old_address_year >= 2:
             return
         
         street_name_input = self.driver.find_element(By.ID, "ctl21_ctl22_ctl00_txtStreetName")
