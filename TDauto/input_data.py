@@ -1067,16 +1067,33 @@ class DealerTrackAutomation:
         select = Select(program_selection_dropdown)
         options = select.options  # <option> 요소 리스트
         keywords = ["Spring Special", "Summer Special", "Fall Special", "Winter Special"]
+        program_flag = False
+
         for option in options:
+
+            program_flag = False # 첫 번째 keyword가 매칭되면 True로 설정
+            if program_flag:
+                break
+
             text = option.text.strip() # 옵션 텍스트를 소문자로 변환
+
             for keyword in keywords:
+
                 if keyword in text:
+
                     print(f"Matching Option Found: {option.text.strip()}")
+
                     select.select_by_visible_text(option.text.strip())  # 매칭된 옵션 선택
+
+                    program_flag = True
                     # Check the selected value
+
                     selected_option = select.first_selected_option
+
                     print(f"Selected Program: {selected_option.text}")
+
                     # 한 번 매칭되면 중복 선택 방지
+
                     return
 
                 else:
