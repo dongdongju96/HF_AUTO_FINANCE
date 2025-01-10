@@ -1830,7 +1830,7 @@ class DealerTrackAutomation:
         program_selection_value = program_selection.first_selected_option
 
         term_value = remove_country_code_and_non_digits(self.data["fields"].get("Loan Term", 0))
-        
+        cnt = 0
         while True:
             select_element = wait.until(EC.element_to_be_clickable((By.ID, "ctl21_ctl28_ctl00_ddlInterestRate")))
             options = select_element.find_elements(By.TAG_NAME, 'option')
@@ -1848,10 +1848,11 @@ class DealerTrackAutomation:
 
                     # 드롭다운 선택을 위한 Select 객체 생성
                     select_term = Select(term_dropdown)
-
+                    if cnt==0:
+                        term_value = int(term_value) * 12 - 12
                     # 값을 선택 (예: '24')
-                    # term_value = remove_country_code_and_non_digits(self.data["fields"].get("Loan Term", 0))
-                    term_value = int(term_value) * 12 - 12
+                    else:
+                        term_value = int(term_value) - 12
                     select_term.select_by_value(str(term_value))
 
                     time.sleep(1)

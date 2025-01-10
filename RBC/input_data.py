@@ -1647,7 +1647,7 @@ class DealerTrackAutomation:
         program_selection_value = program_selection.first_selected_option
 
         term_value = remove_country_code_and_non_digits(self.data["fields"].get("Loan Term", 0))
-
+        cnt = 0
         while True:
             select_element = wait.until(EC.element_to_be_clickable((By.ID, "ctl21_ctl29_ctl00_CInterestRateDropDown1")))
             options = select_element.find_elements(By.TAG_NAME, 'option')
@@ -1665,10 +1665,12 @@ class DealerTrackAutomation:
 
                     # 드롭다운 선택을 위한 Select 객체 생성
                     select_term = Select(term_dropdown)
-
-                    # 값을 선택 (예: '24')
                     
-                    term_value = int(term_value) * 12 - 12
+                    if cnt==0:
+                        term_value = int(term_value) * 12 - 12
+                    # 값을 선택 (예: '24')
+                    else:
+                        term_value = int(term_value) - 12
                     select_term.select_by_value(str(term_value))
 
                     time.sleep(1)
@@ -1698,7 +1700,7 @@ class DealerTrackAutomation:
                 program_selection_value = standard_option
                 options = select.options  
                 for option in options:
-                    text = option.text.strip().lower()  # 옵션 텍스트를 소문자로 변환
+                    text = option.text.strip()  # 옵션 텍스트를 소문자로 변환
                     if standard_option in text:
                         print(f"Matching Option Found: {option.text.strip()}")
                         select.select_by_visible_text(option.text.strip())  # 매칭된 옵션 선택
