@@ -1981,7 +1981,7 @@ class DealerTrackAutomation:
 
             self.select_interest_rate()
             
-            # TD에는 없는 옵션
+            # RBC에는 없는 옵션
             # self.enter_scene_card()
 
             self.enter_trade_in_details()
