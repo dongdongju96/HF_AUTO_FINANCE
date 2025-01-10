@@ -222,6 +222,10 @@ class LicenseDetection:
                     # 고객 이름과 면허증 비교
                     if str(record["fields"]["First Name"]) in found_keywords and str(record["fields"]["Last Name"]) in found_keywords:
                         print("Customer name matches with license")
+                        # 라이센스 Class 비교
+                        # 고객 이름과 면허증이 일치할 경우 아래 코드 실행
+                        # for keyword in found_keywords:
+                        #     self.perform_task_for_keyword(keyword, client_data_id, origin_notes)
                     elif str(record["fields"]["First Name"]) in found_keywords and str(record["fields"]["Last Name"]) not in found_keywords:
                         print("Only First name matches with license")
                         self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": f"{origin_notes}- Only First name matches with license"})
@@ -231,11 +235,13 @@ class LicenseDetection:
                     elif str(record["fields"]["First Name"]) not in found_keywords and str(record["fields"]["Last Name"]) not in found_keywords:
                         print("Customer name does not match with license")
                         self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": f"{origin_notes}- Customer name does not match with license"})
-                    
                     # 라이센스 Class 비교
+                    # 테스트가 끝난 뒤 실제 사용시에는 이 부분 삭제 한 뒤 위의 주석 처리된 코드를 사용
+                    # 고객 이름과 면허증이 일치할 경우 아래 코드 실행
                     for keyword in found_keywords:
 
                         self.perform_task_for_keyword(keyword, client_data_id, origin_notes)
+                    
                 else:
                     self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": f"{origin_notes}- Can't find license CLASS(AI)"})
 
