@@ -1718,9 +1718,10 @@ class DealerTrackAutomation:
         language_selection_dropdown = WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable((By.ID, "ctl21_ctl20_ctl00_ddlLanguage"))
         )
-
+        time.sleep(0.3)
         select = Select(language_selection_dropdown)
-        select.select_by_visible_text("English")
+        time.sleep(0.3)
+        select.select_by_value("en-CA")
 
 
     def select_program(self):
