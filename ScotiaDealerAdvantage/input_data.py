@@ -1708,7 +1708,7 @@ class DealerTrackAutomation:
         select = Select(program_selection_dropdown)
         options = select.options  # <option> 요소 리스트
 
-        keywords = ["AUTO"]
+        keywords = ["Star 7"]
         program_flag = False
 
         for option in options:
