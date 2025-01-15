@@ -2211,8 +2211,6 @@ class DealerTrackAutomation:
 
             self.enter_other_taxable_amounts()
 
-            self.enter_other_taxable_amounts()
-
             self.enter_gap_insurance_amount()
 
             # self.save_deal()
