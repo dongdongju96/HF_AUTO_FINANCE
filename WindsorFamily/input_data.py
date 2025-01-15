@@ -1970,6 +1970,7 @@ class DealerTrackAutomation:
         wait = WebDriverWait(self.driver, 20)
         if "Gap Insurance Amount" in self.data["fields"]:
             gap_insurance_input = wait.until(EC.element_to_be_clickable((By.ID, "ctl21_ctl26_ctl00_txtAHInsurance")))
+            time.sleep(0.5)
             gap_insurance_input.click()
             gap_insurance_input.send_keys(str(self.data["fields"].get("Gap Insurance Amount", "")))
             entered_value = gap_insurance_input.get_attribute("value")
