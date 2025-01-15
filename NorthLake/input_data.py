@@ -2184,9 +2184,10 @@ class DealerTrackAutomation:
             self.select_amortization()
 
             self.select_payment_frequency()
-
-            self.select_interest_rate()
-
+            try:
+                self.select_interest_rate()
+            except:
+                pass
             # NBC에는 없는 옵션
             # self.enter_scene_card()
 
