@@ -100,6 +100,10 @@ Dealer track 부분에서 ID와 PASSWORD를 변경할 수 있습니다.
 
 1. cmd 창이 뜨고 경로가 `c:\User\….\TDauto`가 맞다면 `python lisence_check.py`를 입력 후 
 엔터를 눌러줍니다.
+
+# 구조
+![map](./image/mermaid-diagram-2025-01-15-171210.png)
+
     
     ![image4.png](./image/image4.png)
     
