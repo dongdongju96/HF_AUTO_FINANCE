@@ -259,7 +259,7 @@ AIRTABLE_API_KEY = os.getenv("AIRTABLE_WRITE_TOKEN")
 AIRTABLE_BASE_ID = os.getenv("AIRTABLE_BASE_ID")
 AIRTABLE_TABLE_NAME = os.getenv("AIRTABLE_TABLE_ID")
 GOOGLE_APPLICATION_CREDENTIALS = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
-LICENSE_KEYWORDS = ["G", "G1", "G2", "A", "AZ", "B", "C", "D", "E", "F"]
+LICENSE_KEYWORDS = ["G", "G1", "G2", "A", "AZ", "B", "C", "D", "E"]
 
 # Initialize Airtable and Google Vision clients
 airtable_client = AirtableAPI(AIRTABLE_API_KEY, AIRTABLE_BASE_ID, AIRTABLE_TABLE_NAME)

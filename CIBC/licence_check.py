@@ -160,7 +160,7 @@ class LicenseDetection:
 
         else:
             self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": f"{origin_notes} - Can't find license CLASS(AI)"})
-
+    
     def process_records(self):
         """Process records from Airtable and detect licenses"""
         table_list = self.airtable_client.get_all_records()
@@ -235,7 +235,6 @@ class LicenseDetection:
                     # 테스트가 끝난 뒤 실제 사용시에는 이 부분 삭제 한 뒤 위의 주석 처리된 코드를 사용
                     # 고객 이름과 면허증이 일치할 경우 아래 코드 실행
                     for keyword in found_keywords:
-
                         self.perform_task_for_keyword(keyword, client_data_id, origin_notes)
                 else:
                     self.airtable_client.update_record(client_data_id, {"Status": "Follow Up", "Notes": f"{origin_notes} - Can't find license CLASS(AI)"})
@@ -255,7 +254,7 @@ AIRTABLE_API_KEY = os.getenv("AIRTABLE_WRITE_TOKEN")
 AIRTABLE_BASE_ID = os.getenv("AIRTABLE_BASE_ID")
 AIRTABLE_TABLE_NAME = os.getenv("AIRTABLE_TABLE_ID")
 GOOGLE_APPLICATION_CREDENTIALS = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
-LICENSE_KEYWORDS = ["G", "G1", "G2", "A", "AZ", "B", "C", "D", "E", "F"]
+LICENSE_KEYWORDS = ["G", "G1", "G2", "A", "AZ", "B", "C", "D", "E"]
 
 # Initialize Airtable and Google Vision clients
 airtable_client = AirtableAPI(AIRTABLE_API_KEY, AIRTABLE_BASE_ID, AIRTABLE_TABLE_NAME)
