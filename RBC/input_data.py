@@ -451,16 +451,14 @@ class DealerTrackAutomation:
     def enter_suit_number(self):
         suit_number_input = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_txtSuiteNumber")
 
-        if "Address" in self.data["fields"]:
-            address = self.data["fields"].get("Address", "")
-            pattern = r"(\d+), (\d+)\s+([\w\s]+)\s(\w+),\s([\w\s]+)"
-            match = re.match(pattern, address)
-            if match:
-                unit_number = match.group(1)  # 유닛 번호
-                suit_number_input.send_keys(unit_number)
-        
-        suit_number_input.send_keys(2)
+        if "Suite Number" in self.data["fields"]:
+
+            suit_number = self.data["fields"].get("Suite Number", "")
+
+            suit_number_input.send_keys(suit_number)
+
         entered_value = suit_number_input.get_attribute("value")
+
         print(f"Entered Suite Number : {entered_value}")
 
     def enter_previous_suit_number(self):
@@ -475,31 +473,23 @@ class DealerTrackAutomation:
         
         suit_number_input = self.driver.find_element(By.ID, "ctl21_ctl22_ctl00_txtSuiteNumber")
 
-        if "Address" in self.data["fields"]:
-            address = self.data["fields"].get("Previous Address", "")
-            pattern = r"(\d+), (\d+)\s+([\w\s]+)\s(\w+),\s([\w\s]+)"
-            match = re.match(pattern, address)
-            if match:
-                unit_number = match.group(1)  # 유닛 번호
-                suit_number_input.send_keys(unit_number)
+        if "Previous Suite Number" in self.data["fields"]:
+            p_suit_number = self.data["fields"].get("Previous Suite Number", "")
+            suit_number_input.send_keys(p_suit_number)
         
-        suit_number_input.send_keys(2)
         entered_value = suit_number_input.get_attribute("value")
         print(f"Entered Previous Suite Number : {entered_value}")
 
     def enter_address_number(self):
         suit_address_number_input = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_txtStreetNumber")
 
-        if "Address" in self.data["fields"]:
-            address = self.data["fields"].get("Address", "")
-            pattern = r"(\d+), (\d+)\s+([\w\s]+)\s(\w+),\s([\w\s]+)"
-            match = re.match(pattern, address)
-            if match:
-                street_number = match.group(2)  # 유닛 번호
-                suit_address_number_input.send_keys(street_number)
+        if "Street Number" in self.data["fields"]:
 
-        suit_address_number_input.send_keys(216)
+            street_number = self.data["fields"].get("Street Number", "")
+            suit_address_number_input.send_keys(street_number)
+
         entered_value = suit_address_number_input.get_attribute("value")
+
         print(f"Entered Address Number : {entered_value}")
 
     def enter_previous_address_number(self):
@@ -514,31 +504,27 @@ class DealerTrackAutomation:
         
         suit_address_number_input = self.driver.find_element(By.ID, "ctl21_ctl22_ctl00_txtStreetNumber")
 
-        if "Address" in self.data["fields"]:
-            address = self.data["fields"].get("Previous Address", "")
-            pattern = r"(\d+), (\d+)\s+([\w\s]+)\s(\w+),\s([\w\s]+)"
-            match = re.match(pattern, address)
-            if match:
-                street_number = match.group(2)  # 유닛 번호
-                suit_address_number_input.send_keys(street_number)
+        if "Previous Street Number" in self.data["fields"]:
+            p_street_number = self.data["fields"].get("Previous Street Number", "")    
+            suit_address_number_input.send_keys(p_street_number)
 
-        suit_address_number_input.send_keys(216)
         entered_value = suit_address_number_input.get_attribute("value")
         print(f"Entered Previous Address Number : {entered_value}")
 
     def enter_street_name(self):
         street_name_input = self.driver.find_element(By.ID, "ctl21_ctl21_ctl00_txtStreetName")
 
-        if "Address" in self.data["fields"]:
-            address = self.data["fields"].get("Address", "")
-            pattern = r"(\d+), (\d+)\s+([\w\s]+)\s(\w+),\s([\w\s]+)"
-            match = re.match(pattern, address)
-            if match:
-                street_name = match.group(3).strip()  # 유닛 번호
-                street_name_input.send_keys(street_name)
+        if "Street Name" in self.data["fields"]:
+
+            street_name = self.data["fields"].get("Street Name", "")
+
+            street_name_input.send_keys(street_name)
+
         else: 
             street_name_input.send_keys("Street Name")
+
         entered_value = street_name_input.get_attribute("value")
+
         print(f"Entered Street Name : {entered_value}")
 
     def enter_previous_street_name(self):
@@ -553,13 +539,9 @@ class DealerTrackAutomation:
         
         street_name_input = self.driver.find_element(By.ID, "ctl21_ctl22_ctl00_txtStreetName")
 
-        if "Address" in self.data["fields"]:
-            address = self.data["fields"].get("Previous Address", "")
-            pattern = r"(\d+), (\d+)\s+([\w\s]+)\s(\w+),\s([\w\s]+)"
-            match = re.match(pattern, address)
-            if match:
-                street_name = match.group(3).strip()  # 유닛 번호
-                street_name_input.send_keys(street_name)
+        if "Previous Street Name" in self.data["fields"]:
+            p_street_name = self.data["fields"].get("Previous Street Name", "")
+            street_name_input.send_keys(p_street_name)
         else: 
             street_name_input.send_keys("Street Name")
         entered_value = street_name_input.get_attribute("value")
