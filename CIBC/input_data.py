@@ -1831,14 +1831,14 @@ class DealerTrackAutomation:
         car_year_dropdown = self.driver.find_element(By.ID, "ctl21_ctl19_ctl00_ddlVehicleYear")
         car_year_selection = Select(car_year_dropdown)
         car_year_selection_value = int(car_year_selection.first_selected_option.text)
-        print(car_year_selection_value)
 
         term_value = remove_country_code_and_non_digits(self.data["fields"].get("Loan Term", 0))
         cnt = 0
+        global found_car_year
+        found_car_year = False
         while True:
             select_element = wait.until(EC.element_to_be_clickable((By.ID, "ctl21_ctl29_ctl00_CInterestRateDropDown1")))
             options = select_element.find_elements(By.TAG_NAME, 'option')
-            print("Options : ",options)
             # 옵션이 없으면 다른 작업을 수행
             if not options:
                 print("옵션 값이 없습니다. 다른 작업을 수행합니다.")
@@ -1888,12 +1888,12 @@ class DealerTrackAutomation:
                 
                 for option in options:
                     pattern = r"\b\d{4}-\d{4} Program\b"
-                    matches = re.findall(pattern, option)
+                    matches = re.findall(pattern, option.text)
                     for match in matches:
                         print(f"Matching Option Found: {match}")
-                        match_year_list = match[8].split("-")
+                        match_year_list = match[:9].split("-")
                         print(match_year_list)
-                        if match_year_list[1] >= car_year_selection_value and match_year_list[0] <= car_year_selection_value:
+                        if int(match_year_list[1]) >= car_year_selection_value and int(match_year_list[0]) <= car_year_selection_value:
                             select.select_by_visible_text(option.text.strip())
                             found_car_year = True
                             break
