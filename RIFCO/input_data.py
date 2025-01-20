@@ -3,7 +3,7 @@ import re
 import time
 import requests
 import traceback
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 from datetime import datetime
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -25,7 +25,7 @@ class DealerTrackAutomation:
         self.setup_file_path()
 
     def load_env_variables(self):
-        load_dotenv()
+        load_dotenv(find_dotenv())
         print("BOSAUTO = 1, MERCURY = 2, Jpate580 = 3")
         d_s_n = input("Chosse DealerShip name : ")
         if d_s_n == "1":

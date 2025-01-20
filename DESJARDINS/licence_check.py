@@ -5,7 +5,7 @@ import requests
 from pprint import pprint
 from pyairtable import Api
 from datetime import datetime
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 from google.cloud import vision
 from google.cloud import storage
 from google.oauth2 import service_account
@@ -197,14 +197,14 @@ class LicenseDetection:
                         with open(output_file_path, 'r', encoding='utf-8') as file:
                             texts_list = json.load(file)
                             texts_list = texts_list[0]["responses"][0]["fullTextAnnotation"]["text"].split("\n")
-                    print("이미 인식한 이미지입니다.")
+                    print("AI already detected the image.")
                 else:
                     try:
-                        print("이미지 인식 테스트 진행")
+                        print("Detecting license in the image..")
                         texts_list = self.detect_license_in_image(uri, client_data_id)
                         
                     except:
-                        print("PDF 인식 테스트 진행")
+                        print("Detecting license in the PDF..")
                         # pdf 로컬에 다운로드
                         response = requests.get(uri)
                         file = open(f"airtable_data/{client_data_id}.pdf", "wb")
@@ -214,7 +214,6 @@ class LicenseDetection:
                         vision_client.upload_file_to_gcs( "drive_licence_pdf", f"airtable_data/{client_data_id}.pdf", f"{client_data_id}.pdf")
                         # pdf 파일을 gcs에서 읽어와서 이미지 디텍션
                         texts_list = self.detect_license_in_pdf(f"gs://drive_licence_pdf/{client_data_id}.pdf", f"gs://drive_licence_pdf/output-folder/{client_data_id}/", client_data_id)[0]["responses"][0]["fullTextAnnotation"]["text"].split("\n")
-                    print("이미지 인식을 실행합니다..")
 
                 found_keywords = self.check_keywords_in_texts(texts_list)
 
@@ -255,7 +254,7 @@ class LicenseDetection:
 # Main execution
 
 # Load environment variables
-load_dotenv()
+load_dotenv(find_dotenv())
 AIRTABLE_API_KEY = os.getenv("AIRTABLE_WRITE_TOKEN")
 AIRTABLE_BASE_ID = os.getenv("AIRTABLE_BASE_ID")
 AIRTABLE_TABLE_NAME = os.getenv("AIRTABLE_TABLE_ID")
