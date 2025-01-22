@@ -26,7 +26,7 @@ class DealerTrackAutomation:
 
     def load_env_variables(self):
         load_dotenv(find_dotenv())
-        print("BOSAUTO = 1, MERCURY = 2, Jpate580 = 3")
+        print("BOSAUTO = 1, MERCURY = 2, Jpate580 = 3, SHERWAYNISSAN = 4")
         d_s_n = input("Chosse DealerShip name : ")
         if d_s_n == "1":
             self.username = os.getenv("BOSAUTO_ID")
@@ -37,6 +37,9 @@ class DealerTrackAutomation:
         elif d_s_n == "3":
             self.username = os.getenv("DEALERTRACK_ID")
             self.password = os.getenv("DEALERTRACK_PASS")
+        elif d_s_n == "4":
+            self.username = os.getenv("SHERWAYNISSAN_ID")
+            self.password = os.getenv("SHERWAYNISSAN_PASS")
 
     def setup_file_path(self):
         current_date = datetime.now().strftime('%Y-%m-%d')
@@ -164,23 +167,26 @@ class DealerTrackAutomation:
             print(f"Year Entered: {year_input.get_attribute('value')}")
 
     def fill_and_submit_form(self):
-        wait = WebDriverWait(self.driver, 10)
-
         # Switch to iframe
         iframe = self.driver.find_element(By.ID, "iFrm")
         self.driver.switch_to.frame(iframe)
         self.driver.switch_to.frame("main")
+        try:
+            non_oem_button = self.driver.find_element(By.ID, "OEMProgramCategory1_ctl00_lblStandard")
+            non_oem_button.click()
+        except:
+            pass
+        time.sleep(0.5)
 
         # Select "Automotive" from ddAsset
         self.fill_dropdown("ddAsset", "Automotive")
 
         # Select "Scotiabank" from ddLenders
         self.fill_dropdown("ddLenders", "CIBC Auto Finance")
-
+        time.sleep(0.5)
         # Select "Lease" from ddProduct
         self.fill_dropdown("ddProduct", "Loan")
-
-        time.sleep(1)
+        time.sleep(0.5)
 
         # Click the "Continue" button
         continue_button = self.driver.find_element(By.ID, "btnSave")

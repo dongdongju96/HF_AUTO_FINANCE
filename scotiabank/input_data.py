@@ -164,23 +164,25 @@ class DealerTrackAutomation:
             print(f"Year Entered: {year_input.get_attribute('value')}")
 
     def fill_and_submit_form(self):
-        wait = WebDriverWait(self.driver, 10)
-
         # Switch to iframe
         iframe = self.driver.find_element(By.ID, "iFrm")
         self.driver.switch_to.frame(iframe)
         self.driver.switch_to.frame("main")
-
+        try:
+            non_oem_button = self.driver.find_element(By.ID, "OEMProgramCategory1_ctl00_lblStandard")
+            non_oem_button.click()
+        except:
+            pass
+        time.sleep(0.5)
         # Select "Automotive" from ddAsset
         self.fill_dropdown("ddAsset", "Automotive")
 
         # Select "Scotiabank" from ddLenders
         self.fill_dropdown("ddLenders", "Scotiabank")
-
+        time.sleep(0.5)
         # Select "Lease" from ddProduct
         self.fill_dropdown("ddProduct", "Loan")
-
-        time.sleep(1)
+        time.sleep(0.5)
 
         # Click the "Continue" button
         continue_button = self.driver.find_element(By.ID, "btnSave")
