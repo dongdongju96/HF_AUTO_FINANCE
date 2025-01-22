@@ -1497,11 +1497,12 @@ class DealerTrackAutomation:
         select = Select(other_income_type_dropdown)
         if "Other Income Type" in self.data["fields"]:
             select.select_by_visible_text(self.data["fields"].get("Other Income Type", ""))
+            if self.data["fields"].get("Other Income Type", "") == "Other":
+                self.enter_other_description()
         selected_option = select.first_selected_option
         print(f"Selected Other Income Type: {selected_option.text}")
 
-        if self.data["fields"].get("Other Income Type", "") == "Other":
-            self.enter_other_description()
+        
 
     def enter_other_income(self):
         other_income_input = self.driver.find_element(By.ID, "ctl21_ctl26_ctl00_txtOtherIncome")

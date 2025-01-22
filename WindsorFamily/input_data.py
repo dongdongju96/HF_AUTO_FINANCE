@@ -1503,11 +1503,13 @@ class DealerTrackAutomation:
         if "Gross Income" in self.data["fields"]:
             status = self.data["fields"]["Other Income Type"]
             select.select_by_value(other_income_type_map.get(status, ""))
+
+            if other_income_type_map.get(status) == "Other":
+                self.enter_other_description()
         selected_option = select.first_selected_option
         print(f"Selected Other Income Type: {selected_option.text}")
 
-        if other_income_type_map.get(status) == "Other":
-            self.enter_other_description()
+        
 
     def enter_other_income(self):
         other_income_input = self.driver.find_element(By.ID, "ctl21_ctl26_ctl00_txtOtherIncome")
