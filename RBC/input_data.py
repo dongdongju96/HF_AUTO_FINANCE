@@ -1339,21 +1339,17 @@ class DealerTrackAutomation:
         other_income_type_dropdown = self.driver.find_element(By.ID, "ctl21_ctl26_ctl00_ddlOtherIncomeType")
         select = Select(other_income_type_dropdown)
 
-        other_income_type_map = {
-                
-            }
-        status = self.data["fields"][""]
-        select.select_by_value(other_income_type_map.get(status, ""))
+        select.select_by_visible_text(self.data["fields"].get("Other Income Type", ""))
         selected_option = select.first_selected_option
         print(f"Selected Other Income Type: {selected_option.text}")
 
-        if other_income_type_map.get(status) == "Other":
+        if self.data["fields"].get("Other Income Type", "") == "Other":
             self.enter_other_description()
 
     def enter_other_income(self):
         other_income_input = self.driver.find_element(By.ID, "ctl21_ctl26_ctl00_txtOtherIncome")
         other_income_input.clear()
-        other_income_input.send_keys(self.data["fields"].get("", ""))
+        other_income_input.send_keys(self.data["fields"].get("Other Income", ""))
         entered_value = other_income_input.get_attribute("value")
         print(f"Entered Other Income : {entered_value}")
 
@@ -1366,7 +1362,7 @@ class DealerTrackAutomation:
                 "Month": "12",
                 "Week": "52",
             }
-        status = self.data["fields"][""]
+        status = self.data["fields"]["Other Income Time Period"]
         select.select_by_value(other_income_per_map.get(status, ""))
         selected_option = select.first_selected_option
         print(f"Selected Other Income Per: {selected_option.text}")
@@ -1376,7 +1372,7 @@ class DealerTrackAutomation:
         other_description_input = self.driver.find_element(By.ID, "ctl21_ctl26_ctl00_txtOtherDescription")
 
         # Set the description value
-        other_description_value = "Additional Income"  # Replace with your value as needed
+        other_description_value =  self.data["fields"]["Other Income Description"] # Replace with your value as needed
         other_description_input.send_keys(other_description_value)
 
         # Verify the entered value
@@ -1923,13 +1919,13 @@ class DealerTrackAutomation:
 
             self.select_gross_income_per_dropdown()
 
-            # self.select_other_income_type_dropdown()
+            self.select_other_income_type_dropdown()
             
-            # self.enter_other_income()
+            self.enter_other_income()
             
-            # self.select_other_income_per_dropdown()
+            self.select_other_income_per_dropdown()
 
-            # self.enter_other_description
+            self.enter_other_description
 
             self.click_worksheet_link()
 
