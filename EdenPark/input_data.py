@@ -1474,7 +1474,8 @@ class DealerTrackAutomation:
     def enter_gross_income(self):
         gross_income_input = self.driver.find_element(By.ID, "ctl21_ctl26_ctl00_txtGrossIncome")
         gross_income_input.clear()
-        gross_income_input.send_keys(self.data["fields"].get("Gross Income (Monthly or Annually)", ""))
+        if "Gross Income" in self.data["fields"]:
+            gross_income_input.send_keys(self.data["fields"].get("Gross Income", ""))
         entered_value = gross_income_input.get_attribute("value")
         print(f"Entered Gross Income (Monthly or Annually): {entered_value}")
 
