@@ -1487,8 +1487,9 @@ class DealerTrackAutomation:
                 "Month": "12",
                 "Week": "52",
             }
-        status = self.data["fields"]["Gross Income Time Period"]
-        select.select_by_value(gross_income_per_map.get(status, ""))
+        if "Gross Income Time Period" in self.data["fields"]:
+            status = self.data["fields"]["Gross Income Time Period"]
+            select.select_by_value(gross_income_per_map.get(status, ""))
         selected_option = select.first_selected_option
         print(f"Selected Gross Income Per: {selected_option.text}")
 
@@ -1496,7 +1497,8 @@ class DealerTrackAutomation:
         other_income_type_dropdown = self.driver.find_element(By.ID, "ctl21_ctl26_ctl00_ddlOtherIncomeType")
         select = Select(other_income_type_dropdown)
 
-        select.select_by_visible_text(self.data["fields"].get("Other Income Type", ""))
+        if "Other Income Type" in self.data["fields"]:
+            select.select_by_visible_text(self.data["fields"].get("Other Income Type", ""))
         selected_option = select.first_selected_option
         print(f"Selected Other Income Type: {selected_option.text}")
 
@@ -1506,7 +1508,8 @@ class DealerTrackAutomation:
     def enter_other_income(self):
         other_income_input = self.driver.find_element(By.ID, "ctl21_ctl26_ctl00_txtOtherIncome")
         other_income_input.clear()
-        other_income_input.send_keys(self.data["fields"].get("Other Income", ""))
+        if "Other Income" in self.data["fields"]:
+            other_income_input.send_keys(self.data["fields"].get("Other Income", ""))
         entered_value = other_income_input.get_attribute("value")
         print(f"Entered Other Income : {entered_value}")
 
@@ -1519,8 +1522,9 @@ class DealerTrackAutomation:
                 "Month": "12",
                 "Week": "52",
             }
-        status = self.data["fields"]["Other Income Time Period"]
-        select.select_by_value(other_income_per_map.get(status, ""))
+        if "Other Income Time Period" in self.data["fields"]:
+            status = self.data["fields"]["Other Income Time Period"]
+            select.select_by_value(other_income_per_map.get(status, ""))
         selected_option = select.first_selected_option
         print(f"Selected Other Income Per: {selected_option.text}")
 
@@ -1529,8 +1533,9 @@ class DealerTrackAutomation:
         other_description_input = self.driver.find_element(By.ID, "ctl21_ctl26_ctl00_txtOtherDescription")
 
         # Set the description value
-        other_description_value =  self.data["fields"]["Other Income Description"] # Replace with your value as needed
-        other_description_input.send_keys(other_description_value)
+        if "Other Income Description" in self.data["fields"]:
+            other_description_value =  self.data["fields"]["Other Income Description"] # Replace with your value as needed
+            other_description_input.send_keys(other_description_value)
 
         # Verify the entered value
         entered_value = other_description_input.get_attribute("value")
