@@ -1263,30 +1263,13 @@ class DealerTrackAutomation:
 
         street_type_cur_employment_dropdown = Select(street_type_cur_employment_dropdown)
 
-
-
-        # if "Address Type Current Employer" in self.data["fields"] and self.data["fields"]["Address Type"]:
-
-        #     address_type_map = {
-
-        #         "Street": "ST",
-
-        #         "Rural Route": "RR",
-
-        #         "Postal Box": "PB",
-
-        #     }
-
-        #     status = self.data["fields"]["Address Type Current Employer"]
-
-        #     street_type_cur_employment_dropdown.select_by_value(address_type_map.get(status, ""))
-
-        # else:
-
-        #     street_type_cur_employment_dropdown.select_by_value("RD")
-
-        street_type_cur_employment_dropdown.select_by_value("RD")
-
+        if "Employer Street Type" in self.data["fields"]:
+            street_type = self.data["fields"]["Employer Street Type"]
+            street_type_cur_employment_dropdown.select_by_visible_text(street_type)
+        # 변경 전, OLD Address를 사용하는 경우
+        else:
+            return
+        
         selected_option = street_type_cur_employment_dropdown.first_selected_option
 
         print(f"Selected Address Type Current Employer: {selected_option.text}")
@@ -1506,7 +1489,7 @@ class DealerTrackAutomation:
         select.select_by_value(gross_income_per_map.get(status, ""))
         selected_option = select.first_selected_option
         print(f"Selected Gross Income Per: {selected_option.text}")
-        
+
     def select_other_income_type_dropdown(self):
         other_income_type_dropdown = self.driver.find_element(By.ID, "ctl21_ctl26_ctl00_ddlOtherIncomeType")
         select = Select(other_income_type_dropdown)
