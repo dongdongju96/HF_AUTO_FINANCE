@@ -1502,12 +1502,11 @@ class DealerTrackAutomation:
                 "Month": "12",
                 "Week": "52",
             }
-        # status = self.data["fields"][""]
-        # select.select_by_value(gross_income_per_map.get(status, ""))
-        select.select_by_value("12")
+        status = self.data["fields"]["Gross Income Time Period"]
+        select.select_by_value(gross_income_per_map.get(status, ""))
         selected_option = select.first_selected_option
         print(f"Selected Gross Income Per: {selected_option.text}")
-
+        
     def select_other_income_type_dropdown(self):
         other_income_type_dropdown = self.driver.find_element(By.ID, "ctl21_ctl26_ctl00_ddlOtherIncomeType")
         select = Select(other_income_type_dropdown)
