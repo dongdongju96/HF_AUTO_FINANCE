@@ -25,21 +25,21 @@ class DealerTrackAutomation:
         self.setup_file_path()
 
     def load_env_variables(self):
-        # os.path.join(".", "airtable_data", f"table_list_{current_date}.json")
-        # dotenv_path = os.path.join(".", "airtable_data", ".env")
-        # print(dotenv_path)
         load_dotenv(find_dotenv())
-        print("BOSAUTO = 1, MERCURY = 2, Jpate580 = 3")
+        print("SHERWAYNISSAN = 1, MERCURY = 2, BAYSIDE = 3, BOSAUTO = 4")
         d_s_n = input("Chosse DealerShip name : ")
         if d_s_n == "1":
-            self.username = os.getenv("BOSAUTO_ID")
-            self.password = os.getenv("BOSAUTO_PASS")
+            self.username = os.getenv("SHERWAYNISSAN_ID")
+            self.password = os.getenv("SHERWAYNISSAN_PASS")
         elif d_s_n == "2":    
             self.username = os.getenv("MERCURY_ID")
             self.password = os.getenv("MERCURY_PASS")
         elif d_s_n == "3":
-            self.username = os.getenv("DEALERTRACK_ID")
-            self.password = os.getenv("DEALERTRACK_PASS")
+            self.username = os.getenv("BAYSIDE_ID")
+            self.password = os.getenv("BAYSIDE_PASS")
+        elif d_s_n == "4":
+            self.username = os.getenv("BOSAUTO_ID")
+            self.password = os.getenv("BOSAUTO_PASS")
 
     def setup_file_path(self):
         current_date = datetime.now().strftime('%Y-%m-%d')
