@@ -1779,9 +1779,19 @@ class DealerTrackAutomation:
 
         if theft_protection == "Yes" and theft_protection_amount:
             theft_protection_amount = int(theft_protection_amount)
-            if 99 <= theft_protection_amount <= 250:
-                other_taxable_amount = int(other_taxable_amount) + theft_protection_amount
-                print(f"Theft Protection Amount: {theft_protection_amount}")
+            # if 99 <= theft_protection_amount <= 250:
+                # other_taxable_amount = int(other_taxable_amount) + theft_protection_amount
+            self.fill_text_field("ctl21_ctl28_ctl00_txtAntiTheft", str(theft_protection_amount))
+            print(f"Theft Protection Amount: {theft_protection_amount}")
+
+            anti_theft_type = self.driver.find_element(By.ID, "ctl21_ctl28_ctl00_ddlAntiTheft")
+            select = Select(anti_theft_type)
+
+            select.select_by_value("4")
+
+
+            selected_option = select.first_selected_option
+            print(f"Selected Anti-theft Type: {selected_option.text}")
 
         if other_taxable_amount:
             self.fill_text_field("ctl21_ctl26_ctl00_txtOtherTaxable", str(other_taxable_amount))
